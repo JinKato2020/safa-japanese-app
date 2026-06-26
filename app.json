@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "聞いて話せる日本語",
+    "slug": "safa-japanese-app",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "owner": "jinkato1914",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.safa.japanese",
+      "buildNumber": "1000"
+    },
+    "android": {
+      "package": "com.safa.japanese",
+      "versionCode": 1,
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "556e4b24-d6fb-492b-95a0-a94983509350"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# env / secrets
+.env*.local
+.env
+
+# logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+リポジトリ構成.pdf

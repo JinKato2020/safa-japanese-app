@@ -1,0 +1,89 @@
+import { ActivityIndicator, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useColors, useScheme } from './src/theme';
+import { AppProvider, useSettings } from './src/store/settings';
+import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
+import HomeScreen from './src/screens/HomeScreen';
+import DictScreen from './src/screens/DictScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import { ShortReadingScreen, LongReadingScreen } from './src/screens/PlaceholderScreen';
+
+const Tab = createBottomTabNavigator();
+
+type IoniconName = keyof typeof Ionicons.glyphMap;
+const TABS: { name: string; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
+  { name: 'ホーム', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
+  { name: '短文', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
+  { name: '長文', component: LongReadingScreen, icon: 'book', iconOff: 'book-outline' },
+  { name: '辞書', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
+  { name: '設定', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
+];
+
+function MainTabs() {
+  const c = useColors();
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: c.blue,
+        tabBarInactiveTintColor: c.faint,
+        tabBarStyle: { backgroundColor: c.surface, borderTopColor: c.line },
+      }}
+    >
+      {TABS.map((tab) => (
+        <Tab.Screen
+          key={tab.name}
+          name={tab.name}
+          component={tab.component}
+          options={{
+            tabBarIcon: ({ color, size, focused }) => (
+              <Ionicons name={focused ? tab.icon : tab.iconOff} size={size ?? 24} color={color} />
+            ),
+          }}
+        />
+      ))}
+    </Tab.Navigator>
+  );
+}
+
+function Root() {
+  const { hydrated } = useSettings();
+  const c = useColors();
+  const scheme = useScheme();
+
+  const navTheme = {
+    ...DefaultTheme,
+    colors: { ...DefaultTheme.colors, background: c.bg, card: c.surface, text: c.ink, border: c.line, primary: c.blue },
+  };
+
+  if (!hydrated) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: c.bg }}>
+        <ActivityIndicator color={c.blue} />
+      </View>
+    );
+  }
+
+  return (
+    <DesignThemeProvider scheme={scheme}>
+      <NavigationContainer theme={navTheme}>
+        <MainTabs />
+      </NavigationContainer>
+    </DesignThemeProvider>
+  );
+}
+
+export default function App() {
+  return (
+    <AppProvider>
+      <SafeAreaProvider>
+        <Root />
+        <StatusBar style="auto" />
+      </SafeAreaProvider>
+    </AppProvider>
+  );
+}
