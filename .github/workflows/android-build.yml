@@ -1,0 +1,93 @@
+name: safa-japanese-app (Android build)
+run-name: "safa-japanese-app — Android build (${{ github.event.head_commit.message || github.ref_name }})"
+
+# =============================================================================
+# 聞いて話せる日本語 (com.safa.japanese) — Android APK ビルド。
+#  ・公開リポ＝GitHub Actions 無料。手動(workflow_dispatch)で実行。
+#  ・署名は Expo 既定(debug鍵で署名された release APK)＝実機に入る。
+#    ストア提出時はアップロード鍵を Secrets 化して signingConfig を差し替える。
+#  ・submodule(safa-shared) 取得に submodules: recursive 必須。
+# =============================================================================
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Build profile (apk type)'
+        required: false
+        default: 'release'
+        type: choice
+        options:
+          - 'release'
+          - 'debug'
+
+permissions:
+  contents: read
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install npm dependencies
+        run: npm ci || npm install
+
+      - name: Calculate build number
+        run: |
+          BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
+          echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+          APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
+          echo "::notice::Build number: $BUILD_NUMBER (v$APP_VERSION)"
+          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Expo prebuild (Android)
+        env:
+          EXPO_NO_TELEMETRY: '1'
+        run: npx expo prebuild --platform android --clean
+
+      - name: Set versionCode = build number
+        run: |
+          GRADLE=android/app/build.gradle
+          sed -i "s/versionCode .*/versionCode $BUILD_NUMBER/" "$GRADLE"
+          grep -n "versionCode" "$GRADLE" | head -1
+
+      - name: Build APK (${{ github.event.inputs.profile || 'release' }})
+        run: |
+          cd android
+          if [ "${{ github.event.inputs.profile }}" = "debug" ]; then
+            ./gradlew assembleDebug --no-daemon
+          else
+            ./gradlew assembleRelease --no-daemon
+          fi
+
+      - name: Locate APK
+        run: |
+          APK=$(find android/app/build/outputs/apk -name "*.apk" | head -1)
+          if [ -z "$APK" ]; then echo "::error::APK not found"; find android/app/build/outputs -type f; exit 1; fi
+          echo "APK_PATH=$APK" >> $GITHUB_ENV
+          echo "::notice::APK: $APK ($(du -h "$APK" | cut -f1))"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: safa-japanese-android-build-${{ env.BUILD_NUMBER }}
+          path: ${{ env.APK_PATH }}
+          retention-days: 30
