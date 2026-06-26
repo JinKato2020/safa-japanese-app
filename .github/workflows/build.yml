@@ -1,0 +1,231 @@
+name: safa-japanese-app (build iOS + Android)
+run-name: "safa-japanese-app — build ${{ github.event.inputs.platform || 'all' }} (${{ github.event.head_commit.message || github.ref_name }})"
+
+# =============================================================================
+# 聞いて話せる日本語 (com.safa.japanese) — iOS と Android を「1回の起動で同時ビルド」。
+#  ・公開リポ=GitHub Actions 無料(macOS含む)。手動(workflow_dispatch)。
+#  ・iOS=macOSランナー / Android=Linuxランナー(技術上ジョブは別だが起動は1つ・並列)。
+#  ・inputs: platform(all/ios/android) ・ submit(true=iOSをTestFlight提出/外部公開)。
+#  ・submodule(safa-shared) 取得に submodules: recursive 必須。
+# 必要 Secrets:
+#  iOS: IOS_DIST_CERT_BASE64/_PASSWORD, IOS_TEAM_ID, IOS_PROVISIONING_PROFILE_BASE64,
+#       APP_STORE_CONNECT_KEY_ID/_ISSUER_ID/_API_KEY_BASE64
+#  Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+# =============================================================================
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Which platforms to build'
+        required: false
+        default: 'all'
+        type: choice
+        options: ['all', 'ios', 'android']
+      submit:
+        description: 'Submit iOS to TestFlight after build?'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+permissions:
+  contents: read
+
+env:
+  BUNDLE_ID: com.safa.japanese
+
+jobs:
+  # ---------------------------------------------------------------- Android
+  build-android:
+    if: ${{ github.event.inputs.platform == 'all' || github.event.inputs.platform == 'android' || github.event.inputs.platform == '' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Setup Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Install npm dependencies
+        run: npm ci || npm install
+      - name: Calculate build number
+        run: |
+          BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
+          echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+          APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
+          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
+      - name: Expo prebuild (Android)
+        env:
+          EXPO_NO_TELEMETRY: '1'
+        run: npx expo prebuild --platform android --clean
+      - name: Set versionCode = build number
+        run: sed -i "s/versionCode .*/versionCode $BUILD_NUMBER/" android/app/build.gradle
+      - name: Configure release signing
+        env:
+          KS_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KS_B64" | base64 --decode > android/app/release.keystore
+          if [ ! -s android/app/release.keystore ]; then echo "::error::keystore empty"; exit 1; fi
+          node -e '
+            const fs=require("fs");const p="android/app/build.gradle";let s=fs.readFileSync(p,"utf8");
+            if(!s.includes("RELEASE signing (CI)")){
+              s=s.replace(/signingConfigs\s*\{/, m=>m+`\n        // RELEASE signing (CI)\n        release {\n            storeFile file("release.keystore")\n            storePassword System.getenv("RELEASE_STORE_PASSWORD")\n            keyAlias System.getenv("RELEASE_KEY_ALIAS")\n            keyPassword System.getenv("RELEASE_KEY_PASSWORD")\n        }`);
+            }
+            s=s.replace(/signingConfig signingConfigs\.debug/g,"signingConfig signingConfigs.release");
+            fs.writeFileSync(p,s);
+          '
+          grep -q "RELEASE signing (CI)" android/app/build.gradle || { echo "::error::gradle patch failed"; exit 1; }
+      - name: Build AAB + APK (signed release)
+        env:
+          RELEASE_STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          cd android
+          ./gradlew bundleRelease assembleRelease --no-daemon
+      - name: Upload AAB (Play提出用)
+        uses: actions/upload-artifact@v4
+        with:
+          name: safa-japanese-android-aab-build-${{ env.BUILD_NUMBER }}
+          path: android/app/build/outputs/bundle/release/*.aab
+          retention-days: 30
+      - name: Upload APK (実機用・署名済)
+        uses: actions/upload-artifact@v4
+        with:
+          name: safa-japanese-android-apk-build-${{ env.BUILD_NUMBER }}
+          path: android/app/build/outputs/apk/release/*.apk
+          retention-days: 30
+
+  # ---------------------------------------------------------------- iOS
+  build-ios:
+    if: ${{ github.event.inputs.platform == 'all' || github.event.inputs.platform == 'ios' || github.event.inputs.platform == '' }}
+    runs-on: macos-26
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          submodules: recursive
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install npm dependencies
+        run: npm ci || npm install
+      - name: Calculate build number
+        run: |
+          BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
+          echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+          APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
+          echo "## 🍎 聞いて話せる日本語 v$APP_VERSION (iOS build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
+      - name: Expo prebuild (iOS)
+        env:
+          EXPO_NO_TELEMETRY: '1'
+        run: npx expo prebuild --platform ios --clean
+      - name: Detect Xcode project name
+        run: |
+          XCODEPROJ=$(ls -d ios/*.xcodeproj 2>/dev/null | head -1)
+          [ -z "$XCODEPROJ" ] && { echo "::error::No .xcodeproj"; exit 1; }
+          echo "PROJECT_NAME=$(basename "$XCODEPROJ" .xcodeproj)" >> $GITHUB_ENV
+      - name: Set build number in Info.plist
+        run: /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD_NUMBER" "ios/$PROJECT_NAME/Info.plist"
+      - name: Install CocoaPods dependencies
+        run: cd ios && pod install
+      - name: Setup signing keychain
+        env:
+          CERT_B64: ${{ secrets.IOS_DIST_CERT_BASE64 }}
+          CERT_PWD: ${{ secrets.IOS_DIST_CERT_PASSWORD }}
+        run: |
+          CERT_PWD_CLEAN=$(printf '%s' "$CERT_PWD" | tr -d '\r\n[:space:]')
+          KEYCHAIN_PATH="$RUNNER_TEMP/build.keychain-db"
+          security create-keychain -p "tempkeychain" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "tempkeychain" "$KEYCHAIN_PATH"
+          printf '%s' "$CERT_B64" | base64 --decode > cert.p12
+          [ -s cert.p12 ] || { echo "::error::Decoded .p12 empty"; exit 1; }
+          security import cert.p12 -k "$KEYCHAIN_PATH" -P "$CERT_PWD_CLEAN" -A -t cert -f pkcs12
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "tempkeychain" "$KEYCHAIN_PATH"
+          security list-keychains -d user -s "$KEYCHAIN_PATH" $(security list-keychains -d user | xargs)
+          rm cert.p12
+      - name: Install provisioning profile
+        env:
+          PROFILE_B64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROFILE_B64" | base64 --decode > profile.mobileprovision
+          PROFILE_UUID=$(security cms -D -i profile.mobileprovision | plutil -extract UUID raw -o - -)
+          echo "PROFILE_UUID=$PROFILE_UUID" >> $GITHUB_ENV
+          cp profile.mobileprovision "$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_UUID.mobileprovision"
+          rm profile.mobileprovision
+      - name: Create ExportOptions.plist
+        env:
+          TEAM_ID_RAW: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          TEAM_ID=$(printf '%s' "$TEAM_ID_RAW" | tr -d '\r\n[:space:]')
+          cat > ExportOptions.plist <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>teamID</key><string>$TEAM_ID</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>provisioningProfiles</key>
+            <dict><key>$BUNDLE_ID</key><string>$PROFILE_UUID</string></dict>
+            <key>uploadSymbols</key><true/>
+            <key>stripSwiftSymbols</key><true/>
+          </dict>
+          </plist>
+          EOF
+      - name: Build archive
+        env:
+          TEAM_ID_RAW: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          set -o pipefail
+          TEAM_ID=$(printf '%s' "$TEAM_ID_RAW" | tr -d '\r\n[:space:]')
+          cd ios
+          xcodebuild -workspace "${PROJECT_NAME}.xcworkspace" -scheme "${PROJECT_NAME}" \
+            -configuration Release -destination "generic/platform=iOS" \
+            -archivePath "build/App.xcarchive" \
+            CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM="$TEAM_ID" \
+            PROVISIONING_PROFILE_SPECIFIER="$PROFILE_UUID" \
+            CODE_SIGN_IDENTITY="Apple Distribution" archive
+      - name: Export IPA
+        run: |
+          set -o pipefail
+          cd ios
+          xcodebuild -exportArchive -archivePath build/App.xcarchive -exportPath build -exportOptionsPlist ../ExportOptions.plist
+          [ -n "$(find build -name '*.ipa' | head -1)" ] || { echo "::error::IPA export failed"; exit 1; }
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-ipa-build-${{ env.BUILD_NUMBER }}
+          path: ios/build/*.ipa
+          retention-days: 30
+      - name: Upload to TestFlight
+        if: ${{ github.event.inputs.submit == 'true' }}
+        env:
+          KEY_ID_RAW: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          ISSUER_ID_RAW: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          KEY_B64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+        run: |
+          KEY_ID=$(printf '%s' "$KEY_ID_RAW" | tr -d '\r\n[:space:]')
+          ISSUER_ID=$(printf '%s' "$ISSUER_ID_RAW" | tr -d '\r\n[:space:]')
+          mkdir -p ~/.appstoreconnect/private_keys
+          printf '%s' "$KEY_B64" | base64 --decode > ~/.appstoreconnect/private_keys/AuthKey_${KEY_ID}.p8
+          IPA_PATH=$(find ios/build -name "*.ipa" | head -1)
+          xcrun altool --upload-app --file "$IPA_PATH" --type ios --apiKey "$KEY_ID" --apiIssuer "$ISSUER_ID"
+          rm -rf ~/.appstoreconnect
