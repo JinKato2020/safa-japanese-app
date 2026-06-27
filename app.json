@@ -7,6 +7,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "owner": "jinkato1914",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2563eb"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.safa.japanese",
@@ -18,7 +24,11 @@
     "android": {
       "package": "com.safa.japanese",
       "versionCode": 1,
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2563eb"
+      }
     },
     "web": {
       "bundler": "metro"
@@ -27,6 +37,9 @@
       "eas": {
         "projectId": "556e4b24-d6fb-492b-95a0-a94983509350"
       }
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

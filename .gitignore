@@ -28,3 +28,4 @@ npm-debug.*
 yarn-debug.*
 yarn-error.*
 リポジトリ構成.pdf
+builds/

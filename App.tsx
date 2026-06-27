@@ -1,4 +1,5 @@
-import { ActivityIndicator, View } from 'react-native';
+import { Component, type ReactNode } from 'react';
+import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
@@ -11,6 +12,24 @@ import HomeScreen from './src/screens/HomeScreen';
 import DictScreen from './src/screens/DictScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import { ShortReadingScreen, LongReadingScreen } from './src/screens/PlaceholderScreen';
+
+// 本番(Release)はエラー画面(赤box)が出ず白画面になるため、起動時例外を画面に表示する保険。
+class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+  state = { error: null as Error | null };
+  static getDerivedStateFromError(error: Error) { return { error }; }
+  render() {
+    if (this.state.error) {
+      return (
+        <ScrollView style={{ flex: 1, backgroundColor: '#fff' }} contentContainerStyle={{ padding: 24, paddingTop: 64 }}>
+          <Text style={{ fontSize: 18, fontWeight: '800', color: '#dc2626', marginBottom: 8 }}>起動エラー</Text>
+          <Text style={{ fontSize: 13, color: '#0f172a' }}>{String(this.state.error?.message || this.state.error)}</Text>
+          <Text style={{ fontSize: 11, color: '#64748b', marginTop: 12 }}>{String(this.state.error?.stack || '').slice(0, 1500)}</Text>
+        </ScrollView>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -79,11 +98,13 @@ function Root() {
 
 export default function App() {
   return (
-    <AppProvider>
-      <SafeAreaProvider>
-        <Root />
-        <StatusBar style="auto" />
-      </SafeAreaProvider>
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <SafeAreaProvider>
+          <Root />
+          <StatusBar style="auto" />
+        </SafeAreaProvider>
+      </AppProvider>
+    </ErrorBoundary>
   );
 }
