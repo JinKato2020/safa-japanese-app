@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { View, Text, Pressable, StyleSheet, TextInput, FlatList, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
+import { useT } from '../i18n';
 import {
   loadSharedDict,
   syncDictCache,
@@ -14,10 +15,6 @@ import {
 } from '../../safa-shared/JLPT-Listening/dict/dictRemote';
 
 type Kubun = 'vocab' | 'kanji';
-const KUBUN: { key: Kubun; label: string }[] = [
-  { key: 'vocab', label: '単語' },
-  { key: 'kanji', label: '漢字' },
-];
 const LEVEL_ORDER = ['N5', 'N4', 'N3', 'N2', 'N1'];
 
 type Row =
@@ -26,7 +23,12 @@ type Row =
 
 export default function DictScreen() {
   const c = useColors();
+  const t = useT();
   const s = useMemo(() => makeStyles(c), [c]);
+  const KUBUN: { key: Kubun; label: string }[] = [
+    { key: 'vocab', label: t.dictWord },
+    { key: 'kanji', label: t.dictKanji },
+  ];
 
   const [dict, setDict] = useState<SharedDict | null>(null);
   const [error, setError] = useState(false);
@@ -105,7 +107,7 @@ export default function DictScreen() {
       );
     }
     const k = item.k;
-    const reading = [(k.on ?? []).length ? `音 ${(k.on ?? []).join('・')}` : '', (k.kun ?? []).length ? `訓 ${(k.kun ?? []).join('・')}` : '']
+    const reading = [(k.on ?? []).length ? `${t.onLabel} ${(k.on ?? []).join('・')}` : '', (k.kun ?? []).length ? `${t.kunLabel} ${(k.kun ?? []).join('・')}` : '']
       .filter(Boolean)
       .join('　');
     return (
@@ -114,7 +116,7 @@ export default function DictScreen() {
           <Text style={s.term}>{k.char}　<Text style={s.reading}>{reading}</Text></Text>
           <Text style={s.meaning}>{(k.meanings ?? []).join(', ')}</Text>
           <Text style={s.exampleEn}>
-            {[k.grade ? `小${k.grade}` : '', k.strokes ? `${k.strokes}画` : ''].filter(Boolean).join('　')}
+            {[k.grade ? t.gradeLabel(k.grade) : '', k.strokes ? t.strokesLabel(k.strokes) : ''].filter(Boolean).join('　')}
           </Text>
         </View>
       </View>
@@ -124,12 +126,12 @@ export default function DictScreen() {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.top}>
-        <Text style={s.tab}>辞書</Text>
+        <Text style={s.tab}>{t.dictKicker}</Text>
         <TextInput
           style={s.search}
           value={query}
           onChangeText={setQuery}
-          placeholder="語・読み・意味で検索"
+          placeholder={t.searchPlaceholder}
           placeholderTextColor={c.faint}
           autoCorrect={false}
           editable={!!dict}
@@ -147,7 +149,7 @@ export default function DictScreen() {
       {availLevels.length ? (
         <View style={[s.filters, s.filters2]}>
           <Pressable onPress={() => setLevel('all')} style={[s.chip, effLevel === 'all' && s.chipOn]}>
-            <Text style={[s.chipTxt, effLevel === 'all' && s.chipTxtOn]}>全</Text>
+            <Text style={[s.chipTxt, effLevel === 'all' && s.chipTxtOn]}>{t.all}</Text>
           </Pressable>
           {availLevels.map((l) => (
             <Pressable key={l} onPress={() => setLevel(l)} style={[s.chip, effLevel === l && s.chipOn]}>
@@ -160,17 +162,17 @@ export default function DictScreen() {
       {!dict ? (
         <View style={s.center}>
           {error ? (
-            <Text style={s.empty}>辞書を取得できませんでした（オフラインの可能性）。{'\n'}通信できる状態でもう一度開いてください。</Text>
+            <Text style={s.empty}>{t.dictError}</Text>
           ) : (
             <>
               <ActivityIndicator color={c.blue} />
-              <Text style={s.loadingTxt}>辞書を読み込み中…（初回のみ通信）</Text>
+              <Text style={s.loadingTxt}>{t.dictLoading}</Text>
             </>
           )}
         </View>
       ) : (
         <>
-          <Text style={s.count}>{results.length} 件</Text>
+          <Text style={s.count}>{t.resultsCount(results.length)}</Text>
           <FlatList
             data={results}
             keyExtractor={(i) => i.id}
@@ -178,7 +180,7 @@ export default function DictScreen() {
             initialNumToRender={20}
             contentContainerStyle={s.listBody}
             keyboardShouldPersistTaps="handled"
-            ListEmptyComponent={<Text style={s.empty}>該当なし</Text>}
+            ListEmptyComponent={<Text style={s.empty}>{t.noResults}</Text>}
           />
         </>
       )}

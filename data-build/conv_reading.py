@@ -55,6 +55,22 @@ for name in wb.sheetnames:
             **({"note":note} if note else {}),
         })
 
+# --- 各学習区分を 15問に縮小(本文=スクリプト単位を保ちつつ、累計15問で打ち切り) ---
+CAP=15
+for lv in LEVELS:
+    for ccode in CAT_ORDER:
+        scripts=data[lv][ccode]
+        kept=[]; n=0
+        for sd in scripts:
+            if n>=CAP: break
+            room=CAP-n
+            if len(sd["items"])<=room:
+                kept.append(sd); n+=len(sd["items"])
+            else:
+                trimmed=dict(sd); trimmed["items"]=sd["items"][:room]
+                kept.append(trimmed); n+=room
+        data[lv][ccode]=kept
+
 out={
   "generatedFrom":"読解.xlsx",
   "levels":LEVELS,

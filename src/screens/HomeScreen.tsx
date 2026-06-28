@@ -11,25 +11,30 @@ import {
 } from '../../safa-shared/JLPT-Listening/design';
 import Ring from '../components/Ring';
 import { useReadingProgress } from '../store/readingProgress';
+import { useT } from '../i18n';
 
-const WD = ['日', '月', '火', '水', '木', '金', '土'];
+const WD = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 // 連続学習バッジの段階(獲得は「最長連続」基準＝一度取れば消えない)。
-const STREAK_TIERS: { id: string; emoji: string; label: string; days: number }[] = [
-  { id: 'd3', emoji: '🔥', label: '3日連続', days: 3 },
-  { id: 'd7', emoji: '🌱', label: '1週間', days: 7 },
-  { id: 'd14', emoji: '⭐', label: '2週間', days: 14 },
-  { id: 'd30', emoji: '🏅', label: '1ヶ月', days: 30 },
-  { id: 'd60', emoji: '💎', label: '2ヶ月', days: 60 },
-  { id: 'd100', emoji: '👑', label: '100日', days: 100 },
+const STREAK_TIERS: { id: string; emoji: string; days: number }[] = [
+  { id: 'd3', emoji: '🔥', days: 3 },
+  { id: 'd7', emoji: '🌱', days: 7 },
+  { id: 'd14', emoji: '⭐', days: 14 },
+  { id: 'd30', emoji: '🏅', days: 30 },
+  { id: 'd60', emoji: '💎', days: 60 },
+  { id: 'd100', emoji: '👑', days: 100 },
 ];
 
 export default function HomeScreen() {
   const c = useColors();
+  const t = useT();
   const s = useMemo(() => makeStyles(c), [c]);
   const prog = useDailyProgress('safa-ja:progress');
   const { coverage } = useReadingProgress();
   const ringColor: Record<string, string> = { N5: c.green, N4: c.blue, N3: c.purple };
+  const badgeLabel: Record<string, string> = {
+    d3: t.badge3, d7: t.badge7, d14: t.badge14, d30: t.badge30, d60: t.badge60, d100: t.badge100,
+  };
 
   const week: WeekDay[] = useMemo(() => {
     return lastNDays(prog.today, 7).map((d) => ({
@@ -49,32 +54,30 @@ export default function HomeScreen() {
   }, [prog.today, prog.studied]);
 
   const best = Math.max(prog.streak, prog.longest);
-  const badges: BadgeItem[] = STREAK_TIERS.map((t) => ({
-    id: t.id,
-    emoji: t.emoji,
-    label: t.label,
-    hint: `${t.days}日連続で獲得`,
-    unlocked: best >= t.days,
+  const badges: BadgeItem[] = STREAK_TIERS.map((tier) => ({
+    id: tier.id,
+    emoji: tier.emoji,
+    label: badgeLabel[tier.id],
+    hint: t.badgeHint(tier.days),
+    unlocked: best >= tier.days,
   }));
   const earned = badges.filter((b) => b.unlocked).length;
 
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <ScrollView contentContainerStyle={s.body}>
-        <Text style={s.tab}>ホーム</Text>
-        <Text style={s.title}>聞いて話せる日本語</Text>
+        <Text style={s.tab}>{t.homeKicker}</Text>
+        <Text style={s.title}>{t.appName}</Text>
 
         {/* あいさつ / コンセプト */}
         <View style={s.hero}>
-          <Text style={s.heroTitle}>毎日つづけて、力にする。</Text>
-          <Text style={s.heroBody}>
-            学習した日は自動で記録されます。連続記録をのばして、バッジを集めましょう。
-          </Text>
+          <Text style={s.heroTitle}>{t.heroTitle}</Text>
+          <Text style={s.heroBody}>{t.heroBody}</Text>
         </View>
 
         {/* レベル別カバー率(読解) */}
         <Card style={s.block}>
-          <Text style={s.cardHead}>レベル別カバー率（読解）</Text>
+          <Text style={s.cardHead}>{t.coverageTitle}</Text>
           <View style={s.ringRow}>
             {coverage.map((cv) => (
               <View key={cv.level} style={s.ringItem}>
@@ -84,7 +87,7 @@ export default function HomeScreen() {
                   centerTop={`${Math.round(cv.ratio * 100)}%`}
                   centerBottom={cv.level}
                 />
-                <Text style={s.ringMeta}>{cv.done}/{cv.total}問</Text>
+                <Text style={s.ringMeta}>{cv.done} / {cv.total}</Text>
               </View>
             ))}
           </View>
@@ -92,29 +95,29 @@ export default function HomeScreen() {
 
         {/* 継続カード */}
         <Card style={s.block}>
-          <Text style={s.cardHead}>学習の記録</Text>
+          <Text style={s.cardHead}>{t.recordTitle}</Text>
           <StatRow
             stats={[
-              { value: `${prog.streak}`, label: '連続(日)' },
-              { value: `${prog.longest}`, label: '最長(日)' },
-              { value: `${prog.totalDays}`, label: '累計(日)' },
+              { value: `${prog.streak}`, label: t.statStreak },
+              { value: `${prog.longest}`, label: t.statLongest },
+              { value: `${prog.totalDays}`, label: t.statTotal },
             ]}
           />
           <View style={s.divider} />
-          <Text style={s.subHead}>今週</Text>
+          <Text style={s.subHead}>{t.thisWeek}</Text>
           <StreakWeek days={week} />
           <View style={s.divider} />
-          <Text style={s.subHead}>この5週間</Text>
+          <Text style={s.subHead}>{t.last5weeks}</Text>
           <StreakCalendar days={cal} />
         </Card>
 
         {/* 連続学習バッジ */}
         <Card style={s.block}>
           <View style={s.cardHeadRow}>
-            <Text style={s.cardHead}>連続学習バッジ</Text>
+            <Text style={s.cardHead}>{t.badgesTitle}</Text>
             <Text style={s.badgeCount}>{earned}/{STREAK_TIERS.length}</Text>
           </View>
-          <BadgeGrid badges={badges} achievedLabel="獲得済み" />
+          <BadgeGrid badges={badges} achievedLabel={t.badgeEarned} />
         </Card>
       </ScrollView>
     </SafeAreaView>

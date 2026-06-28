@@ -1,37 +1,66 @@
-// 設定タブ。テーマ切替＋辞書の出典表示＋バージョン/Build番号＋リセット。
-// 様式はまいにちJLPT ProfileScreen と同一。学習設定(目標級・母語・リマインダ等)は機能追加に合わせて拡張する。
+// 設定タブ。テーマ・言語選択・規約類(プライバシー/利用規約/評価)・辞書出典・版表示・初期化。
+// 文言は i18n(現在は英語)。様式はまいにちJLPT ProfileScreen と同一。
 import { useMemo, useState } from 'react';
-import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
+import { View, Text, Pressable, StyleSheet, ScrollView, Linking, Alert, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Application from 'expo-application';
+import * as StoreReview from 'expo-store-review';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
 import { useSettings, type ThemeMode } from '../store/settings';
+import { useT, LANGUAGES } from '../i18n';
 import { DICT_BASE_URL } from '../../safa-shared/JLPT-Listening/dict/dictRemote';
 
-// 共有辞書の出典（safa-shared/JLPT-Listening の正本に準拠。帰属表示は必須）。
-const DICT_SOURCE = 'JMdict / KANJIDIC2（EDRDG, CC BY-SA）・日本語WordNet（NICT）・例文 Tatoeba/田中コーパス';
+const ANDROID_PACKAGE = 'com.safa.japanese';
 
-const THEMES: { v: ThemeMode; label: string }[] = [
-  { v: 'light', label: 'ライト' },
-  { v: 'dark', label: 'ダーク' },
-  { v: 'auto', label: '自動' },
-];
+// 共有辞書の出典（safa-shared/JLPT-Listening の正本に準拠。帰属表示は必須）。
+const DICT_SOURCE = 'JMdict / KANJIDIC2 (EDRDG, CC BY-SA) · Japanese WordNet (NICT) · Examples: Tatoeba / Tanaka Corpus';
 
 export default function SettingsScreen() {
   const { settings, setSettings, reset } = useSettings();
+  const t = useT();
   const c = useColors();
   const s = useMemo(() => makeStyles(c), [c]);
   const [confirmReset, setConfirmReset] = useState(false);
 
+  const THEMES: { v: ThemeMode; label: string }[] = [
+    { v: 'light', label: t.themeLight },
+    { v: 'dark', label: t.themeDark },
+    { v: 'auto', label: t.themeAuto },
+  ];
+
+  const openUrl = async (url: string) => {
+    try {
+      const ok = await Linking.canOpenURL(url);
+      if (ok) await Linking.openURL(url);
+      else Alert.alert(t.openError, url);
+    } catch {
+      Alert.alert(t.openError, url);
+    }
+  };
+
+  const rate = async () => {
+    try {
+      if (await StoreReview.isAvailableAsync()) {
+        await StoreReview.requestReview();
+        return;
+      }
+    } catch { /* fall through */ }
+    // フォールバック: ストアの該当ページを開く
+    const url = Platform.OS === 'android'
+      ? `market://details?id=${ANDROID_PACKAGE}`
+      : 'itms-apps://apps.apple.com/app/id0';
+    openUrl(url);
+  };
+
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <ScrollView contentContainerStyle={s.body}>
-        <Text style={s.tab}>設定</Text>
-        <Text style={s.title}>設定</Text>
+        <Text style={s.tab}>{t.settingsKicker}</Text>
+        <Text style={s.title}>{t.settingsTitle}</Text>
 
-        {/* 表示設定 */}
+        {/* テーマ */}
         <View style={s.card}>
-          <Text style={s.setLbl}>テーマ</Text>
+          <Text style={s.setLbl}>{t.theme}</Text>
           <View style={s.chipRow}>
             {THEMES.map((th) => (
               <Pressable key={th.v} onPress={() => setSettings({ theme: th.v })} style={[s.chip, settings.theme === th.v && s.chipOn]}>
@@ -39,12 +68,38 @@ export default function SettingsScreen() {
               </Pressable>
             ))}
           </View>
+
+          {/* 言語選択(現在は英語のみ) */}
+          <Text style={s.setLbl}>{t.language}</Text>
+          <View style={s.chipRow}>
+            {LANGUAGES.map((lg) => (
+              <Pressable key={lg.code} onPress={() => setSettings({ language: lg.code })} style={[s.chip, settings.language === lg.code && s.chipOn]}>
+                <Text style={[s.chipTxt, settings.language === lg.code && s.chipTxtOn]}>{lg.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+
+        {/* 規約類 */}
+        <View style={s.card}>
+          <Text style={s.setLbl}>{t.legal}</Text>
+          <Pressable style={s.linkRow} onPress={() => openUrl(t.privacyUrl)}>
+            <Text style={s.linkTxt}>{t.privacy}</Text><Text style={s.chev}>›</Text>
+          </Pressable>
+          <View style={s.rowDivider} />
+          <Pressable style={s.linkRow} onPress={() => openUrl(t.termsUrl)}>
+            <Text style={s.linkTxt}>{t.terms}</Text><Text style={s.chev}>›</Text>
+          </Pressable>
+          <View style={s.rowDivider} />
+          <Pressable style={s.linkRow} onPress={rate}>
+            <Text style={s.linkTxt}>{t.rate}</Text><Text style={s.chev}>›</Text>
+          </Pressable>
         </View>
 
         {/* 出典・リセット */}
         <View style={s.card}>
-          <Text style={s.setLbl}>辞書データの出典</Text>
-          <Text style={s.credit}>{DICT_SOURCE}{'\n'}配信元: {DICT_BASE_URL}</Text>
+          <Text style={s.setLbl}>{t.dictSourceLabel}</Text>
+          <Text style={s.credit}>{DICT_SOURCE}{'\n'}{DICT_BASE_URL}</Text>
           <Pressable
             onPress={() => {
               if (confirmReset) { reset(); setConfirmReset(false); } else { setConfirmReset(true); }
@@ -52,7 +107,7 @@ export default function SettingsScreen() {
             style={[s.resetBtn, confirmReset && s.resetBtnArm]}
           >
             <Text style={[s.resetTxt, confirmReset && s.resetTxtArm]}>
-              {confirmReset ? 'もう一度押すと初期化' : 'データを初期化'}
+              {confirmReset ? t.resetArm : t.resetIdle}
             </Text>
           </Pressable>
         </View>
@@ -77,7 +132,7 @@ const makeStyles = (c: ThemeColors) =>
       padding: spacing.md, marginTop: spacing.sm,
     },
     setLbl: { fontSize: ty.small, fontWeight: '700', color: c.ink2, marginTop: spacing.sm, marginBottom: spacing.xs },
-    chipRow: { flexDirection: 'row', gap: spacing.sm },
+    chipRow: { flexDirection: 'row', gap: spacing.sm, flexWrap: 'wrap' },
     chip: {
       paddingVertical: spacing.sm, paddingHorizontal: spacing.md, borderRadius: radius.pill,
       borderWidth: 1, borderColor: c.line, backgroundColor: c.surface,
@@ -85,6 +140,10 @@ const makeStyles = (c: ThemeColors) =>
     chipOn: { borderColor: c.blue, backgroundColor: c.blueLight },
     chipTxt: { fontSize: ty.small, color: c.ink2, fontWeight: '600' },
     chipTxtOn: { color: c.blueDark, fontWeight: '800' },
+    linkRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: spacing.sm + 2 },
+    linkTxt: { fontSize: ty.body, color: c.ink, fontWeight: '600' },
+    chev: { fontSize: ty.h2, color: c.trace, fontWeight: '700' },
+    rowDivider: { height: 1, backgroundColor: c.line },
     credit: { fontSize: ty.tiny, color: c.mute, lineHeight: 16 },
     resetBtn: {
       marginTop: spacing.md, borderRadius: radius.md, borderWidth: 1, borderColor: c.line,

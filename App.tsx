@@ -37,12 +37,12 @@ const Tab = createBottomTabNavigator();
 
 type IoniconName = keyof typeof Ionicons.glyphMap;
 const TABS: { name: string; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
-  { name: 'ホーム', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
+  { name: 'Home', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
   // 短文タブは一時非表示(コメントアウト)。再開時に下行を戻す。
-  // { name: '短文', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
-  { name: '長文', component: ReadingScreen, icon: 'book', iconOff: 'book-outline' },
-  { name: '辞書', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
-  { name: '設定', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
+  // { name: 'Short', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
+  { name: 'Reading', component: ReadingScreen, icon: 'book', iconOff: 'book-outline' },
+  { name: 'Dictionary', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
+  { name: 'Settings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
 ];
 
 function MainTabs() {

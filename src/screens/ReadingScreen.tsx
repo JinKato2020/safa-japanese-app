@@ -5,15 +5,17 @@ import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
 import {
-  LEVELS, CATEGORY_LABELS, categoriesForLevel, scriptsFor, questionCount, shuffle,
+  LEVELS, CATEGORY_LABELS_EN, categoriesForLevel, scriptsFor, questionCount, shuffle,
   type Level, type CatCode, type ReadingScript,
 } from '../data/reading';
 import { useReadingProgress } from '../store/readingProgress';
+import { useT, type Strings } from '../i18n';
 
 type Active = { level: Level; cat: CatCode; index: number };
 
 export default function ReadingScreen() {
   const c = useColors();
+  const t = useT();
   const s = useMemo(() => makeStyles(c), [c]);
   const [level, setLevel] = useState<Level>('N5');
   const [active, setActive] = useState<Active | null>(null);
@@ -24,6 +26,7 @@ export default function ReadingScreen() {
       <QuizView
         s={s}
         c={c}
+        t={t}
         level={active.level}
         cat={active.cat}
         script={list[active.index]}
@@ -40,9 +43,9 @@ export default function ReadingScreen() {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.head}>
-        <Text style={s.tab}>長文</Text>
-        <Text style={s.title}>読解</Text>
-        <Text style={s.sub}>JLPT 本番形式の読解問題。レベルを選んで挑戦しよう。</Text>
+        <Text style={s.tab}>{t.readingKicker}</Text>
+        <Text style={s.title}>{t.readingTitle}</Text>
+        <Text style={s.sub}>{t.readingSub}</Text>
       </View>
 
       {/* レベル選択 */}
@@ -63,8 +66,8 @@ export default function ReadingScreen() {
           return (
             <View key={cat} style={s.section}>
               <View style={s.secHead}>
-                <Text style={s.secTitle}>{CATEGORY_LABELS[cat]}</Text>
-                <Text style={s.secCount}>{questionCount(level, cat)}問</Text>
+                <Text style={s.secTitle}>{CATEGORY_LABELS_EN[cat]}</Text>
+                <Text style={s.secCount}>{t.questionsCount(questionCount(level, cat))}</Text>
               </View>
               {scripts.map((sc, i) => (
                 <Pressable key={sc.scriptId} style={s.card} onPress={() => setActive({ level, cat, index: i })}>
@@ -72,8 +75,8 @@ export default function ReadingScreen() {
                   <View style={{ flex: 1 }}>
                     <Text style={s.cardText} numberOfLines={2}>{snippet(sc)}</Text>
                     <Text style={s.cardMeta}>
-                      {sc.items.length > 1 ? `${sc.items.length}問` : '1問'}
-                      {sc.charCount ? ` ・ 本文${sc.charCount}字` : ''}
+                      {sc.items.length > 1 ? t.nQuestions(sc.items.length) : t.oneQuestion}
+                      {sc.charCount ? ` · ${t.passageChars(sc.charCount)}` : ''}
                     </Text>
                   </View>
                   <Text style={s.chev}>›</Text>
@@ -94,9 +97,9 @@ function snippet(sc: ReadingScript): string {
 }
 
 function QuizView({
-  s, c, level, cat, script, hasPrev, hasNext, onPrev, onNext, onClose,
+  s, c, t, level, cat, script, hasPrev, hasNext, onPrev, onNext, onClose,
 }: {
-  s: ReturnType<typeof makeStyles>; c: ThemeColors;
+  s: ReturnType<typeof makeStyles>; c: ThemeColors; t: Strings;
   level: Level; cat: CatCode; script: ReadingScript;
   hasPrev: boolean; hasNext: boolean; onPrev: () => void; onNext: () => void; onClose: () => void;
 }) {
@@ -111,15 +114,15 @@ function QuizView({
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.qHead}>
-        <Pressable onPress={onClose} hitSlop={10} style={s.back}><Text style={s.backTxt}>‹ 一覧</Text></Pressable>
-        <Text style={s.qCrumb}>{level} ・ {CATEGORY_LABELS[cat]}</Text>
+        <Pressable onPress={onClose} hitSlop={10} style={s.back}><Text style={s.backTxt}>{t.list}</Text></Pressable>
+        <Text style={s.qCrumb}>{level} · {CATEGORY_LABELS_EN[cat]}</Text>
         <View style={{ width: 56 }} />
       </View>
 
       <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
         {!!script.passage && (
           <View style={s.passage}>
-            {script.charCount ? <Text style={s.passageMeta}>本文 {script.charCount}字</Text> : null}
+            {script.charCount ? <Text style={s.passageMeta}>{t.passageChars(script.charCount)}</Text> : null}
             <Text style={s.passageTxt}>{script.passage}</Text>
           </View>
         )}
@@ -131,7 +134,7 @@ function QuizView({
           return (
             <View key={it.id} style={s.qBlock}>
               <Text style={s.qText}>
-                {script.items.length > 1 ? `問${qi + 1}　` : ''}{it.question}
+                {script.items.length > 1 ? t.qNo(qi + 1) : ''}{it.question}
               </Text>
               {choices.map((ch) => {
                 const isAns = ch === it.answer;
@@ -151,10 +154,10 @@ function QuizView({
                   </Pressable>
                 );
               })}
-              {answered && !!it.aim && (
+              {answered && !!(it.aimEn || it.aim) && (
                 <View style={s.expl}>
-                  <Text style={s.explLabel}>ねらい</Text>
-                  <Text style={s.explTxt}>{it.aim}</Text>
+                  <Text style={s.explLabel}>{t.focus}</Text>
+                  <Text style={s.explTxt}>{it.aimEn || it.aim}</Text>
                 </View>
               )}
             </View>
@@ -163,10 +166,10 @@ function QuizView({
 
         <View style={s.navRow}>
           <Pressable disabled={!hasPrev} onPress={onPrev} style={[s.navBtn, !hasPrev && s.navBtnOff]}>
-            <Text style={[s.navTxt, !hasPrev && s.navTxtOff]}>‹ 前へ</Text>
+            <Text style={[s.navTxt, !hasPrev && s.navTxtOff]}>{t.prev}</Text>
           </Pressable>
           <Pressable disabled={!hasNext} onPress={onNext} style={[s.navBtn, !hasNext && s.navBtnOff]}>
-            <Text style={[s.navTxt, !hasNext && s.navTxtOff]}>次へ ›</Text>
+            <Text style={[s.navTxt, !hasNext && s.navTxtOff]}>{t.next}</Text>
           </Pressable>
         </View>
         <View style={{ height: spacing.xl }} />

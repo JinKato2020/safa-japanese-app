@@ -11,7 +11,8 @@ export interface ReadingItem {
   choices: string[];
   answer: string; // 正解の選択肢テキスト
   difficulty: string;
-  aim: string; // 出題ねらい(解説に使用)
+  aim: string; // 出題ねらい(日本語・原本)
+  aimEn?: string; // 出題ねらい(英訳・解説表示用)
   figure?: string;
   note?: string;
 }
@@ -34,6 +35,14 @@ const db = raw as unknown as ReadingDB;
 export const LEVELS = db.levels;
 export const CATEGORY_ORDER = db.categoryOrder;
 export const CATEGORY_LABELS = db.categoryLabels;
+
+/** 学習区分の英語ラベル(UI英語化用)。 */
+export const CATEGORY_LABELS_EN: Record<CatCode, string> = {
+  T: 'Comprehension · Short',
+  C: 'Comprehension · Medium',
+  L: 'Comprehension · Long',
+  J: 'Information Retrieval',
+};
 
 /** 指定レベルで問題が存在する学習区分(順序付き)を返す。 */
 export function categoriesForLevel(level: Level): CatCode[] {
