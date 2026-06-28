@@ -63,14 +63,18 @@ jobs:
         run: |
           BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
+          # Android versionCode は Play の旧「聞いて話せる日本語」枠の versionCode(1260/1283)を
+          # 確実に上回る必要があるため build番号 +1000 で発番(以後も単調増加・iOSとは独立)。
+          ANDROID_VERSION_CODE=$((BUILD_NUMBER + 1000))
+          echo "ANDROID_VERSION_CODE=$ANDROID_VERSION_CODE" >> $GITHUB_ENV
           APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
-          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER / versionCode $ANDROID_VERSION_CODE)" >> $GITHUB_STEP_SUMMARY
       - name: Expo prebuild (Android)
         env:
           EXPO_NO_TELEMETRY: '1'
         run: npx expo prebuild --platform android --clean
-      - name: Set versionCode = build number
-        run: sed -i "s/versionCode .*/versionCode $BUILD_NUMBER/" android/app/build.gradle
+      - name: Set versionCode (build番号+1000 = 旧Play枠1260超え)
+        run: sed -i "s/versionCode .*/versionCode $ANDROID_VERSION_CODE/" android/app/build.gradle
       - name: Configure release signing
         env:
           KS_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
