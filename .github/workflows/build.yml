@@ -81,7 +81,7 @@ jobs:
         env:
           EXPO_NO_TELEMETRY: '1'
         run: npx expo prebuild --platform android --clean
-      - name: Set versionCode (build番号+1000 = 旧Play枠1260超え)
+      - name: Set versionCode (= Build番号・旧Play枠1274超え)
         run: sed -i "s/versionCode .*/versionCode $ANDROID_VERSION_CODE/" android/app/build.gradle
       - name: Configure release signing
         env:
