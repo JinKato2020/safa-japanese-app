@@ -9,6 +9,8 @@ import {
   type WeekDay, type CalDay, type BadgeItem,
   useDailyProgress, lastNDays,
 } from '../../safa-shared/JLPT-Listening/design';
+import Ring from '../components/Ring';
+import { useReadingProgress } from '../store/readingProgress';
 
 const WD = ['日', '月', '火', '水', '木', '金', '土'];
 
@@ -26,6 +28,8 @@ export default function HomeScreen() {
   const c = useColors();
   const s = useMemo(() => makeStyles(c), [c]);
   const prog = useDailyProgress('safa-ja:progress');
+  const { coverage } = useReadingProgress();
+  const ringColor: Record<string, string> = { N5: c.green, N4: c.blue, N3: c.purple };
 
   const week: WeekDay[] = useMemo(() => {
     return lastNDays(prog.today, 7).map((d) => ({
@@ -67,6 +71,24 @@ export default function HomeScreen() {
             学習した日は自動で記録されます。連続記録をのばして、バッジを集めましょう。
           </Text>
         </View>
+
+        {/* レベル別カバー率(読解) */}
+        <Card style={s.block}>
+          <Text style={s.cardHead}>レベル別カバー率（読解）</Text>
+          <View style={s.ringRow}>
+            {coverage.map((cv) => (
+              <View key={cv.level} style={s.ringItem}>
+                <Ring
+                  ratio={cv.ratio}
+                  color={ringColor[cv.level]}
+                  centerTop={`${Math.round(cv.ratio * 100)}%`}
+                  centerBottom={cv.level}
+                />
+                <Text style={s.ringMeta}>{cv.done}/{cv.total}問</Text>
+              </View>
+            ))}
+          </View>
+        </Card>
 
         {/* 継続カード */}
         <Card style={s.block}>
@@ -117,4 +139,7 @@ const makeStyles = (c: ThemeColors) =>
     },
     subHead: { fontSize: ty.tiny, fontWeight: '700', color: c.mute, letterSpacing: 0.5 },
     divider: { height: 1, backgroundColor: c.line },
+    ringRow: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' },
+    ringItem: { alignItems: 'center', gap: spacing.xs },
+    ringMeta: { fontSize: ty.tiny, color: c.mute, fontWeight: '700' },
   });

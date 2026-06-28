@@ -48,6 +48,17 @@ export function questionCount(level: Level, cat: CatCode): number {
   return scriptsFor(level, cat).reduce((n, s) => n + s.items.length, 0);
 }
 
+/** そのレベルの全問数(全学習区分の合計)。カバー率の分母に使う。 */
+export function totalForLevel(level: Level): number {
+  return categoriesForLevel(level).reduce((n, c) => n + questionCount(level, c), 0);
+}
+
+/** 問題ID(例 N5-D-T-001)からレベルを取り出す。未知なら null。 */
+export function levelOf(id: string): Level | null {
+  const lv = id.split('-')[0] as Level;
+  return LEVELS.includes(lv) ? lv : null;
+}
+
 /** Fisher-Yates シャッフル(新配列を返す)。 */
 export function shuffle<T>(arr: T[]): T[] {
   const a = arr.slice();

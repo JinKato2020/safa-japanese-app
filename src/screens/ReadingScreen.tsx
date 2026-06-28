@@ -8,6 +8,7 @@ import {
   LEVELS, CATEGORY_LABELS, categoriesForLevel, scriptsFor, questionCount, shuffle,
   type Level, type CatCode, type ReadingScript,
 } from '../data/reading';
+import { useReadingProgress } from '../store/readingProgress';
 
 type Active = { level: Level; cat: CatCode; index: number };
 
@@ -105,6 +106,7 @@ function QuizView({
     [script.scriptId],
   );
   const [picked, setPicked] = useState<Record<string, string>>({});
+  const { markAnswered } = useReadingProgress();
 
   return (
     <SafeAreaView style={s.c} edges={['top']}>
@@ -140,7 +142,7 @@ function QuizView({
                   <Pressable
                     key={ch}
                     disabled={answered}
-                    onPress={() => setPicked((p) => ({ ...p, [it.id]: ch }))}
+                    onPress={() => { setPicked((p) => ({ ...p, [it.id]: ch })); markAnswered(it.id); }}
                     style={[s.choice, fill]}
                   >
                     <Text style={[s.choiceTxt, tt]}>{ch}</Text>

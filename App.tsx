@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useColors, useScheme } from './src/theme';
 import { AppProvider, useSettings } from './src/store/settings';
+import { ReadingProgressProvider } from './src/store/readingProgress';
 import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
 import HomeScreen from './src/screens/HomeScreen';
 import DictScreen from './src/screens/DictScreen';
@@ -102,10 +103,12 @@ export default function App() {
   return (
     <ErrorBoundary>
       <AppProvider>
-        <SafeAreaProvider>
-          <Root />
-          <StatusBar style="auto" />
-        </SafeAreaProvider>
+        <ReadingProgressProvider>
+          <SafeAreaProvider>
+            <Root />
+            <StatusBar style="auto" />
+          </SafeAreaProvider>
+        </ReadingProgressProvider>
       </AppProvider>
     </ErrorBoundary>
   );
