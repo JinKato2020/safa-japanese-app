@@ -11,7 +11,7 @@ import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
 import HomeScreen from './src/screens/HomeScreen';
 import DictScreen from './src/screens/DictScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-import { ShortReadingScreen } from './src/screens/PlaceholderScreen';
+// import { ShortReadingScreen } from './src/screens/PlaceholderScreen'; // 短文タブは一時非表示
 import ReadingScreen from './src/screens/ReadingScreen';
 
 // 本番(Release)はエラー画面(赤box)が出ず白画面になるため、起動時例外を画面に表示する保険。
@@ -37,7 +37,8 @@ const Tab = createBottomTabNavigator();
 type IoniconName = keyof typeof Ionicons.glyphMap;
 const TABS: { name: string; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
   { name: 'ホーム', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
-  { name: '短文', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
+  // 短文タブは一時非表示(コメントアウト)。再開時に下行を戻す。
+  // { name: '短文', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
   { name: '長文', component: ReadingScreen, icon: 'book', iconOff: 'book-outline' },
   { name: '辞書', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
   { name: '設定', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
