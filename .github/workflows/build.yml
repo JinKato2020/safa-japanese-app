@@ -62,14 +62,14 @@ jobs:
         run: npm ci || npm install
       - name: Calculate build number
         run: |
-          BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
+          # Build番号 = Android versionCode で統一(ユーザー方針)。Play既存枠(versionCode 1274)を
+          # 超える必要があるため 1285+commit数 で発番(このリビジョンで 1300 起点・以後+1)。iOS/Androidで同一値。
+          BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD)))
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
-          # Android versionCode は Play の旧「聞いて話せる日本語」枠(versionCode 1260/1283)を
-          # 上回る必要がある。1300 を起点に1ビルドごと+1で発番(build番号1012を1300とする)。
-          ANDROID_VERSION_CODE=$((BUILD_NUMBER + 288))
+          ANDROID_VERSION_CODE=$BUILD_NUMBER
           echo "ANDROID_VERSION_CODE=$ANDROID_VERSION_CODE" >> $GITHUB_ENV
           APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
-          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER / versionCode $ANDROID_VERSION_CODE)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🤖 聞いて話せる日本語 v$APP_VERSION (Android build $BUILD_NUMBER = versionCode $ANDROID_VERSION_CODE)" >> $GITHUB_STEP_SUMMARY
       - name: Expo prebuild (Android)
         env:
           EXPO_NO_TELEMETRY: '1'
@@ -162,7 +162,8 @@ jobs:
         run: npm ci || npm install
       - name: Calculate build number
         run: |
-          BUILD_NUMBER=$((1000 + $(git rev-list --count HEAD)))
+          # Build番号は iOS/Android 同一(=Android versionCode)。1285+commit数(このリビジョンで1300起点)。
+          BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD)))
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
           APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
           echo "## 🍎 聞いて話せる日本語 v$APP_VERSION (iOS build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
