@@ -1,5 +1,6 @@
 name: safa-japanese-app (build iOS + Android)
-run-name: "safa-japanese-app — build ${{ github.event.inputs.platform || 'all' }} (${{ github.event.head_commit.message || github.ref_name }})"
+# Build名の先頭に versionCode(=Build番号) を出す(全実行で識別しやすく)。番号は version_code 入力で渡す。
+run-name: "🔢${{ github.event.inputs.version_code || 'auto' }} ｜ safa-japanese-app build ${{ github.event.inputs.platform || 'all' }} (${{ github.event.head_commit.message || github.ref_name }})"
 
 # =============================================================================
 # 聞いて話せる日本語 (com.safa.japanese) — iOS と Android を「1回の起動で同時ビルド」。
@@ -29,6 +30,11 @@ on:
         default: 'false'
         type: choice
         options: ['false', 'true']
+      version_code:
+        description: 'versionCode/Build番号(空=1285+commitで自動)。Build名の先頭にも表示。'
+        required: false
+        default: ''
+        type: string
 
 permissions:
   contents: read
@@ -62,9 +68,10 @@ jobs:
         run: npm ci || npm install
       - name: Calculate build number
         run: |
-          # Build番号 = Android versionCode で統一(ユーザー方針)。Play既存枠(versionCode 1274)を
-          # 超える必要があるため 1285+commit数 で発番(このリビジョンで 1300 起点・以後+1)。iOS/Androidで同一値。
-          BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD)))
+          # Build番号 = Android versionCode で統一(ユーザー方針)。手動入力(version_code)優先、無ければ
+          # 1285+commit数 で自動発番(このリビジョンで 1300 起点・以後+1)。iOS/Androidで同一値。
+          VC_IN="${{ github.event.inputs.version_code }}"
+          if [ -n "$VC_IN" ]; then BUILD_NUMBER="$VC_IN"; else BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD))); fi
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
           ANDROID_VERSION_CODE=$BUILD_NUMBER
           echo "ANDROID_VERSION_CODE=$ANDROID_VERSION_CODE" >> $GITHUB_ENV
@@ -162,8 +169,9 @@ jobs:
         run: npm ci || npm install
       - name: Calculate build number
         run: |
-          # Build番号は iOS/Android 同一(=Android versionCode)。1285+commit数(このリビジョンで1300起点)。
-          BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD)))
+          # Build番号は iOS/Android 同一(=Android versionCode)。手動入力(version_code)優先、無ければ 1285+commit数。
+          VC_IN="${{ github.event.inputs.version_code }}"
+          if [ -n "$VC_IN" ]; then BUILD_NUMBER="$VC_IN"; else BUILD_NUMBER=$((1285 + $(git rev-list --count HEAD))); fi
           echo "BUILD_NUMBER=$BUILD_NUMBER" >> $GITHUB_ENV
           APP_VERSION=$(node -p "require('./app.json').expo.version" 2>/dev/null || echo "?")
           echo "## 🍎 聞いて話せる日本語 v$APP_VERSION (iOS build $BUILD_NUMBER)" >> $GITHUB_STEP_SUMMARY
