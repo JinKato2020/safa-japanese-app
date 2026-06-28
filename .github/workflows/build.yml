@@ -11,6 +11,7 @@ run-name: "safa-japanese-app — build ${{ github.event.inputs.platform || 'all'
 #  iOS: IOS_DIST_CERT_BASE64/_PASSWORD, IOS_TEAM_ID, IOS_PROVISIONING_PROFILE_BASE64,
 #       APP_STORE_CONNECT_KEY_ID/_ISSUER_ID/_API_KEY_BASE64
 #  Android: ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+#           GOOGLE_PLAY_SERVICE_ACCOUNT_JSON_BASE64 (submit=true で Play内部テストへ自動アップロード)
 # =============================================================================
 
 on:
@@ -110,6 +111,36 @@ jobs:
           name: safa-japanese-android-apk-build-${{ env.BUILD_NUMBER }}
           path: android/app/build/outputs/apk/release/*.apk
           retention-days: 30
+
+      # ---- Play 内部テストへ自動アップロード(submit=true のときのみ) ----
+      - name: Decode Google Play service account JSON
+        if: ${{ github.event.inputs.submit == 'true' }}
+        env:
+          SA_JSON_B64: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON_BASE64 }}
+        run: |
+          if [ -z "$SA_JSON_B64" ]; then echo "::error::GOOGLE_PLAY_SERVICE_ACCOUNT_JSON_BASE64 secret 未設定"; exit 1; fi
+          printf '%s' "$SA_JSON_B64" | base64 --decode > /tmp/sa-raw.json
+          [ -s /tmp/sa-raw.json ] || { echo "::error::decoded SA json empty"; exit 1; }
+          node -e '
+            const fs=require("fs");let c=fs.readFileSync("/tmp/sa-raw.json","utf8");
+            if(c.charCodeAt(0)===0xFEFF)c=c.slice(1);
+            const p=JSON.parse(c.trim());
+            fs.writeFileSync("/tmp/service-account.json",JSON.stringify(p));
+            console.log("SA json OK. client_email:",p.client_email);
+          '
+          echo "SA_JSON_PATH=/tmp/service-account.json" >> $GITHUB_ENV
+      - name: Upload to Google Play (Internal Testing)
+        if: ${{ github.event.inputs.submit == 'true' }}
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: ${{ env.SA_JSON_PATH }}
+          packageName: com.safa.japanese
+          releaseFiles: android/app/build/outputs/bundle/release/*.aab
+          track: internal
+          status: completed
+      - name: Cleanup service account
+        if: always()
+        run: rm -f /tmp/service-account.json /tmp/sa-raw.json
 
   # ---------------------------------------------------------------- iOS
   build-ios:
