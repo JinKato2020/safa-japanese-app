@@ -1,22 +1,31 @@
-// 現在のテーマパレットを返すフック。settings.theme(light/dark/auto)＋端末の配色から解決。
+// 現在のテーマパレットを返すフック。settings.theme で 明暗＋背景(水彩グラデーション)を一括解決。
 import { useColorScheme } from 'react-native';
 import { useSettings } from '../store/settings';
-import { darkColors, lightColors, BACKGROUNDS, type ThemeColors, type BackgroundKey } from './theme';
+import { darkColors, lightColors, isGradientTheme, type ThemeColors } from './theme';
 
-export function useColors(): ThemeColors {
-  const { settings } = useSettings();
-  const sys = useColorScheme(); // 'light' | 'dark' | null
-  const mode = settings.theme === 'auto' ? (sys ?? 'light') : settings.theme;
-  const base = mode === 'dark' ? darkColors : lightColors;
-  // 背景カラーのプリセットを反映(bg/bgSoftのみ上書き。カード=surfaceは白のまま)
-  const bgKey = (settings.background ?? 'default') as BackgroundKey;
-  const bset = (BACKGROUNDS[bgKey] ?? BACKGROUNDS.default)[mode];
-  return { ...base, bg: bset.bg, bgSoft: bset.bgSoft };
-}
-
-/** scheme('light'|'dark') を解決(DesignThemeProvider へ渡す用)。 */
+/** settings.theme から実際の配色モード(light/dark)を解決。 */
 export function useScheme(): 'light' | 'dark' {
   const { settings } = useSettings();
   const sys = useColorScheme();
-  return settings.theme === 'auto' ? (sys ?? 'light') : settings.theme;
+  const t = settings.theme;
+  if (t === 'dark') return 'dark';
+  if (t === 'auto') return sys ?? 'light';
+  return 'light'; // light / sakura / sky / watercolor は明るい配色
+}
+
+export function useColors(): ThemeColors {
+  const { settings } = useSettings();
+  const mode = useScheme();
+  const base = mode === 'dark' ? darkColors : lightColors;
+  // 水彩グラデーション・テーマは画面の地色を透過し、ルートの AppBackground(動的背景)を見せる。
+  // カード(surface=白)はそのまま。入れ子の地(bgSoft)は半透明の白で読みやすさを確保。
+  if (isGradientTheme(settings.theme)) {
+    return { ...base, bg: 'transparent', bgSoft: 'rgba(255,255,255,0.55)' };
+  }
+  return base;
+}
+
+/** 生のテーマキー(AppBackground 用)。 */
+export function useAppTheme(): string {
+  return useSettings().settings.theme;
 }

@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useColors, useScheme } from './src/theme';
+import { useColors, useScheme, AppBackground } from './src/theme';
 import { AppProvider, useSettings } from './src/store/settings';
 import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
 import { useT } from './src/i18n';
@@ -48,8 +48,8 @@ type IoniconName = keyof typeof Ionicons.glyphMap;
 type TabLabelKey = 'tabHome' | 'tabShort' | 'tabLong' | 'tabDict' | 'tabSettings';
 const TABS: { name: string; labelKey: TabLabelKey; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
   { name: 'Home', labelKey: 'tabHome', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
-  { name: 'Short', labelKey: 'tabShort', component: ShortTab, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
-  { name: 'Long', labelKey: 'tabLong', component: LongTab, icon: 'book', iconOff: 'book-outline' },
+  { name: 'Short', labelKey: 'tabShort', component: ShortTab, icon: 'chatbubble', iconOff: 'chatbubble-outline' },
+  { name: 'Long', labelKey: 'tabLong', component: LongTab, icon: 'headset', iconOff: 'headset-outline' },
   { name: 'Dictionary', labelKey: 'tabDict', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
   { name: 'Settings', labelKey: 'tabSettings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
 ];
@@ -93,19 +93,22 @@ function Root() {
     colors: { ...DefaultTheme.colors, background: c.bg, card: c.surface, text: c.ink, border: c.line, primary: c.blue },
   };
 
-  if (!hydrated) {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: c.bg }}>
-        <ActivityIndicator color={c.blue} />
-      </View>
-    );
-  }
+  const baseBg = c.bg === 'transparent' ? '#ffffff' : c.bg;
 
   return (
     <DesignThemeProvider scheme={scheme}>
-      <NavigationContainer theme={navTheme}>
-        <MainTabs />
-      </NavigationContainer>
+      <View style={{ flex: 1, backgroundColor: baseBg }}>
+        <AppBackground />
+        {!hydrated ? (
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <ActivityIndicator color={c.blue} />
+          </View>
+        ) : (
+          <NavigationContainer theme={navTheme}>
+            <MainTabs />
+          </NavigationContainer>
+        )}
+      </View>
     </DesignThemeProvider>
   );
 }

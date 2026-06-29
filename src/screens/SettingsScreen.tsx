@@ -22,16 +22,14 @@ export default function SettingsScreen() {
   const s = useMemo(() => makeStyles(c), [c]);
   const [confirmReset, setConfirmReset] = useState(false);
 
+  // テーマ＝明暗＋背景を一括。auto/標準/桜/空/水彩/ダーク。
   const THEMES: { v: ThemeMode; label: string }[] = [
-    { v: 'light', label: t.themeLight },
-    { v: 'dark', label: t.themeDark },
     { v: 'auto', label: t.themeAuto },
-  ];
-  const BGS: { v: string; label: string }[] = [
-    { v: 'default', label: t.bgDefault },
-    { v: 'sakura', label: t.bgSakura },
-    { v: 'sky', label: t.bgSky },
-    { v: 'watercolor', label: t.bgWatercolor },
+    { v: 'light', label: t.themeDefault },
+    { v: 'sakura', label: t.themeSakura },
+    { v: 'sky', label: t.themeSky },
+    { v: 'watercolor', label: t.themeWatercolor },
+    { v: 'dark', label: t.themeDark },
   ];
 
   const openUrl = async (url: string) => {
@@ -61,26 +59,15 @@ export default function SettingsScreen() {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <ScrollView contentContainerStyle={s.body}>
-        <Text style={s.tab}>{t.settingsKicker}</Text>
         <Text style={s.title}>{t.settingsTitle}</Text>
 
-        {/* テーマ */}
+        {/* テーマ(明暗＋背景を統一) */}
         <View style={s.card}>
           <Text style={s.setLbl}>{t.theme}</Text>
           <View style={s.chipRow}>
             {THEMES.map((th) => (
               <Pressable key={th.v} onPress={() => setSettings({ theme: th.v })} style={[s.chip, settings.theme === th.v && s.chipOn]}>
                 <Text style={[s.chipTxt, settings.theme === th.v && s.chipTxtOn]}>{th.label}</Text>
-              </Pressable>
-            ))}
-          </View>
-
-          {/* 背景カラー */}
-          <Text style={s.setLbl}>{t.background}</Text>
-          <View style={s.chipRow}>
-            {BGS.map((b) => (
-              <Pressable key={b.v} onPress={() => setSettings({ background: b.v })} style={[s.chip, settings.background === b.v && s.chipOn]}>
-                <Text style={[s.chipTxt, settings.background === b.v && s.chipTxtOn]}>{b.label}</Text>
               </Pressable>
             ))}
           </View>

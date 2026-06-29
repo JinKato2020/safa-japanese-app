@@ -62,7 +62,6 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <ScrollView contentContainerStyle={s.body}>
-        <Text style={s.tab}>{t.homeKicker}</Text>
         <Text style={s.title}>{t.appName}</Text>
 
         {/* あいさつ / コンセプト */}

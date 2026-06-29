@@ -83,13 +83,43 @@ export const darkColors: ThemeColors = {
 /** 既定パレット(ライト)。実行時の切替は useColors を使う。 */
 export const colors = lightColors;
 
-/** 背景カラーのプリセット(アイコン/フィーチャーグラフィックの水彩トーン)。設定で選択。 */
-export type BackgroundKey = 'default' | 'sakura' | 'sky' | 'watercolor';
-export const BACKGROUNDS: Record<BackgroundKey, { light: { bg: string; bgSoft: string }; dark: { bg: string; bgSoft: string } }> = {
-  default:    { light: { bg: '#f8fafc', bgSoft: '#f1f5f9' }, dark: { bg: '#0b1220', bgSoft: '#0f1a2e' } },
-  sakura:     { light: { bg: '#fdf2f6', bgSoft: '#f9e6ee' }, dark: { bg: '#180f14', bgSoft: '#21141b' } }, // 桜(ピンク)
-  sky:        { light: { bg: '#eef5ff', bgSoft: '#dfeaff' }, dark: { bg: '#0a1322', bgSoft: '#0f1c30' } }, // 空(ブルー)
-  watercolor: { light: { bg: '#f4f1fb', bgSoft: '#eae6f6' }, dark: { bg: '#120f1c', bgSoft: '#191428' } }, // 水彩(ブルー×ピンク)
+/** 水彩グラデーション・テーマ(アイコン/フィーチャーグラフィックのトーン)。動的に色が移ろい、桜が舞う。 */
+export type GradientTheme = 'sakura' | 'sky' | 'watercolor';
+export const GRADIENT_THEMES: GradientTheme[] = ['sakura', 'sky', 'watercolor'];
+export const isGradientTheme = (t: string): t is GradientTheme => (GRADIENT_THEMES as string[]).includes(t);
+
+export interface GradientSpec {
+  a: string[];      // 基本グラデーション
+  b: string[];      // クロスフェード先(動的変化)
+  petals: string[]; // 舞う花びらの色
+  orbs: string[];   // 淡いボケ玉(奥行き)
+  petalCount: number;
+}
+export const GRADIENTS: Record<GradientTheme, GradientSpec> = {
+  // 桜: やわらかなピンクが移ろい、桜が舞い散る
+  sakura: {
+    a: ['#fff5f8', '#ffe6f0', '#ffd6e6'],
+    b: ['#fef0f6', '#ffdbe8', '#f9c6dd'],
+    petals: ['#ffc2d8', '#ffd5e4', '#ffb3cd', '#ffe0ec'],
+    orbs: ['rgba(255,182,209,0.30)', 'rgba(255,214,229,0.26)', 'rgba(255,160,196,0.20)'],
+    petalCount: 16,
+  },
+  // 空: 澄んだ青空に桜が舞う(日本の春の象徴)
+  sky: {
+    a: ['#eef6ff', '#e0eeff', '#cfe2ff'],
+    b: ['#e8f2ff', '#d6e8ff', '#bfd9fb'],
+    petals: ['#ffd5e4', '#ffe3ee', '#eaf2ff', '#ffffff'],
+    orbs: ['rgba(255,255,255,0.45)', 'rgba(180,210,255,0.28)', 'rgba(255,210,228,0.20)'],
+    petalCount: 11,
+  },
+  // 水彩: 青→藤→桃が画面を横切るように移ろう(最上級のお洒落)
+  watercolor: {
+    a: ['#e9f1ff', '#f1e9ff', '#ffe7f1'],
+    b: ['#ffe7f1', '#efe6ff', '#e3eeff'],
+    petals: ['#ffc6da', '#d9c9ff', '#cfe0ff', '#ffe0ec'],
+    orbs: ['rgba(255,198,218,0.28)', 'rgba(190,180,255,0.26)', 'rgba(170,205,255,0.26)'],
+    petalCount: 14,
+  },
 };
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48 };

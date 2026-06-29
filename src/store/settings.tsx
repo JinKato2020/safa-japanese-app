@@ -3,15 +3,16 @@
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export type ThemeMode = 'light' | 'dark' | 'auto';
+// テーマ＝外観(明暗)と背景カラーを1つに統一。
+//  auto/light/dark = 単色(従来)。sakura/sky/watercolor = 水彩グラデーション＋舞う桜。
+export type ThemeMode = 'auto' | 'light' | 'dark' | 'sakura' | 'sky' | 'watercolor';
 
 export interface Settings {
   theme: ThemeMode;
   language: string; // UI言語(en/ja)
-  background: string; // 背景カラー(default/sakura/sky/watercolor)
 }
 
-const DEFAULT: Settings = { theme: 'auto', language: 'ja', background: 'default' }; // 開発用に日本語UI。公開前に 'en' へ戻す
+const DEFAULT: Settings = { theme: 'sakura', language: 'ja' }; // 開発用に日本語UI＋桜背景。公開前に language を 'en' へ戻す
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {
