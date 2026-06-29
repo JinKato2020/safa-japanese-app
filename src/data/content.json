@@ -27,8 +27,8 @@
         "title": "銀行で口座を作る",
         "form": "対話",
         "level": "N3",
-        "text": "行員（こういん）：いらっしゃいませ。本日（ほんじつ）は どのような ご用件（ようけん）ですか。\nグエン：口座（こうざ）を 作（つく）りたいんですが。\n行員：ありがとうございます。在留（ざいりゅう）カードと、印鑑（いんかん）か サインは ご用意（ようい）できますか。\nグエン：印鑑は ありませんが、サインでも いいですか。\n行員：はい、大丈夫（だいじょうぶ）です。では、こちらの 用紙（ようし）に お名前（なまえ）と ご住所（じゅうしょ）を ご記入（きにゅう）ください。\nグエン：書（か）けました。\n行員：ありがとうございます。10分（ぷん）ほどで お作（つく）りします。",
-        "en": "Teller: Welcome. How may I help you today? / Guen: I'd like to open an account. / Teller: Thank you. Do you have your residence card and a seal (hanko) or signature? / Guen: I don't have a seal—is a signature okay? / Teller: Yes, that's fine. Please fill in your name and address on this form. / Guen: Done. / Teller: Thank you. It'll be ready in about 10 minutes.",
+        "text": "行員（こういん）：いらっしゃいませ。本日（ほんじつ）は どのような ご用件（ようけん）ですか。\nカイ：口座（こうざ）を 作（つく）りたいんですが。\n行員：ありがとうございます。在留（ざいりゅう）カードと、印鑑（いんかん）か サインは ご用意（ようい）できますか。\nカイ：印鑑は ありませんが、サインでも いいですか。\n行員：はい、大丈夫（だいじょうぶ）です。では、こちらの 用紙（ようし）に お名前（なまえ）と ご住所（じゅうしょ）を ご記入（きにゅう）ください。\nカイ：書（か）けました。\n行員：ありがとうございます。10分（ぷん）ほどで お作（つく）りします。",
+        "en": "Teller: Welcome. How may I help you today? / Kai: I'd like to open an account. / Teller: Thank you. Do you have your residence card and a seal (hanko) or signature? / Kai: I don't have a seal—is a signature okay? / Teller: Yes, that's fine. Please fill in your name and address on this form. / Kai: Done. / Teller: Thank you. It'll be ready in about 10 minutes.",
         "key": "口座を 作りたいんですが／印鑑か サイン／ご記入ください",
         "point": "銀行口座の開設を最後まで進める。",
         "note": "多声TTS:行員/客"
@@ -38,8 +38,8 @@
         "title": "スマホを契約する",
         "form": "対話",
         "level": "N3",
-        "text": "店員：ご契約（けいやく）ですね。在留（ざいりゅう）カードと、お支払（しはら）い方法（ほうほう）は 何（なに）に なさいますか。\nラフィ：クレジットカードで お願（ねが）いします。一番（いちばん）安（やす）い プランが いいです。\n店員：では、こちらが 月（つき）2,980円（えん）で、データは 20ギガ 使（つか）えます。\nラフィ：電話（でんわ）も できますか。\n店員：はい、5分（ふん）までの 通話（つうわ）は 無料（むりょう）です。\nラフィ：いいですね。それに します。",
-        "en": "Clerk: Signing up, right? Your residence card, and how will you pay? / Rafi: By credit card, please. I'd like the cheapest plan. / Clerk: Then this one is 2,980 yen a month with 20 GB of data. / Rafi: Can I make calls too? / Clerk: Yes, calls up to 5 minutes are free. / Rafi: Nice. I'll take it.",
+        "text": "店員：ご契約（けいやく）ですね。在留（ざいりゅう）カードと、お支払（しはら）い方法（ほうほう）は 何（なに）に なさいますか。\nカイ：クレジットカードで お願（ねが）いします。一番（いちばん）安（やす）い プランが いいです。\n店員：では、こちらが 月（つき）2,980円（えん）で、データは 20ギガ 使（つか）えます。\nカイ：電話（でんわ）も できますか。\n店員：はい、5分（ふん）までの 通話（つうわ）は 無料（むりょう）です。\nカイ：いいですね。それに します。",
+        "en": "Clerk: Signing up, right? Your residence card, and how will you pay? / Kai: By credit card, please. I'd like the cheapest plan. / Clerk: Then this one is 2,980 yen a month with 20 GB of data. / Kai: Can I make calls too? / Clerk: Yes, calls up to 5 minutes are free. / Kai: Nice. I'll take it.",
         "key": "お支払い方法は／一番 安い プラン／〜できますか",
         "point": "スマホ契約のプランを選ぶ。",
         "note": "多声TTS:店員/客"
@@ -54,8 +54,8 @@
         "title": "市役所で転入届を出す",
         "form": "対話",
         "level": "N3",
-        "text": "職員（しょくいん）：こんにちは。ご用件（ようけん）は 何（なん）でしょうか。\nラフィ：先月（せんげつ）引（ひ）っ越（こ）してきたので、転入（てんにゅう）の 手続（てつづ）きを したいです。\n職員：かしこまりました。前（まえ）に 住（す）んでいた 市（し）で「転出届（てんしゅつとどけ）」は もらいましたか。\nラフィ：はい、これです。\n職員：ありがとうございます。在留（ざいりゅう）カードも お預（あず）かりします。…はい、住所（じゅうしょ）を 変更（へんこう）しました。国民健康保険（こくみんけんこうほけん）も 一緒（いっしょ）に できますが、いかがですか。\nラフィ：はい、お願（ねが）いします。",
-        "en": "Clerk: Hello, how can I help? / Rafi: I moved last month, so I'd like to do the moving-in procedure. / Clerk: Certainly. Did you get a 'moving-out certificate' from your previous city? / Rafi: Yes, here it is. / Clerk: Thank you. I'll take your residence card too. ...Done, your address is updated. We can also do national health insurance now—would you like that? / Rafi: Yes, please.",
+        "text": "職員（しょくいん）：こんにちは。ご用件（ようけん）は 何（なん）でしょうか。\nカイ：先月（せんげつ）引（ひ）っ越（こ）してきたので、転入（てんにゅう）の 手続（てつづ）きを したいです。\n職員：かしこまりました。前（まえ）に 住（す）んでいた 市（し）で「転出届（てんしゅつとどけ）」は もらいましたか。\nカイ：はい、これです。\n職員：ありがとうございます。在留（ざいりゅう）カードも お預（あず）かりします。…はい、住所（じゅうしょ）を 変更（へんこう）しました。国民健康保険（こくみんけんこうほけん）も 一緒（いっしょ）に できますが、いかがですか。\nカイ：はい、お願（ねが）いします。",
+        "en": "Clerk: Hello, how can I help? / Kai: I moved last month, so I'd like to do the moving-in procedure. / Clerk: Certainly. Did you get a 'moving-out certificate' from your previous city? / Kai: Yes, here it is. / Clerk: Thank you. I'll take your residence card too. ...Done, your address is updated. We can also do national health insurance now—would you like that? / Kai: Yes, please.",
         "key": "転入の 手続き／転出届／一緒に できます",
         "point": "転入届＋保険をまとめて手続き。",
         "note": "多声TTS:職員/来庁者"
@@ -76,8 +76,8 @@
         "title": "不動産屋で部屋を借りる",
         "form": "対話",
         "level": "N3",
-        "text": "店員：いらっしゃいませ。お部屋（へや）を お探（さが）しですか。\nリン：はい。駅（えき）から 近くて、家賃（やちん）は 6万円（まんえん）まで が いいです。\n店員：ペットは 飼（か）われますか。\nリン：いいえ、飼いません。\n店員：では、こちらは いかがですか。駅から 歩（ある）いて 5分（ふん）、家賃 5万8千円（まんはっせん）です。\nリン：いいですね。中（なか）を 見（み）られますか。\n店員：はい。今（いま）から ご案内（あんない）できます。",
-        "en": "Agent: Welcome. Looking for a room? / Rin: Yes. Near the station, rent up to 60,000 yen. / Agent: Will you keep pets? / Rin: No. / Agent: Then how about this? 5 min walk from the station, 58,000 yen. / Rin: Nice. Can I see inside? / Agent: Yes, I can show you now.",
+        "text": "店員：いらっしゃいませ。お部屋（へや）を お探（さが）しですか。\nカイ：はい。駅（えき）から 近くて、家賃（やちん）は 6万円（まんえん）まで が いいです。\n店員：ペットは 飼（か）われますか。\nカイ：いいえ、飼いません。\n店員：では、こちらは いかがですか。駅から 歩（ある）いて 5分（ふん）、家賃 5万8千円（まんはっせん）です。\nカイ：いいですね。中（なか）を 見（み）られますか。\n店員：はい。今（いま）から ご案内（あんない）できます。",
+        "en": "Agent: Welcome. Looking for a room? / Kai: Yes. Near the station, rent up to 60,000 yen. / Agent: Will you keep pets? / Kai: No. / Agent: Then how about this? 5 min walk from the station, 58,000 yen. / Kai: Nice. Can I see inside? / Agent: Yes, I can show you now.",
         "key": "お探しですか／家賃は 〜まで／中を 見られますか",
         "point": "部屋探しの条件提示〜内見まで。",
         "note": "多声TTS:店員/客"
@@ -119,8 +119,8 @@
         "title": "駅で乗り換えと遅延を聞く",
         "form": "対話",
         "level": "N3",
-        "text": "リン：すみません、横浜（よこはま）へ 行きたいんですが、どう 行けば いいですか。\n駅員：横浜ですね。3番線（ばんせん）の 電車に 乗（の）って、品川（しながわ）で 乗り換（か）えてください。\nリン：ありがとうございます。あ、電車は 遅（おく）れていますか。\n駅員：はい、事故（じこ）の 影響（えいきょう）で、10分（ぷん）ほど 遅れています。\nリン：急（いそ）いでいるので、ほかの 行き方（かた）は ありますか。\n駅員：バスも ありますが、電車の ほうが 早（はや）いと 思います。",
-        "en": "Rin: Excuse me, I want to go to Yokohama—how do I get there? / Staff: Yokohama? Take the train on track 3 and change at Shinagawa. / Rin: Thanks. Are the trains delayed? / Staff: Yes, about 10 minutes due to an accident. / Rin: I'm in a hurry—is there another way? / Staff: There's a bus, but the train is faster.",
+        "text": "カイ：すみません、横浜（よこはま）へ 行きたいんですが、どう 行けば いいですか。\n駅員：横浜ですね。3番線（ばんせん）の 電車に 乗（の）って、品川（しながわ）で 乗り換（か）えてください。\nカイ：ありがとうございます。あ、電車は 遅（おく）れていますか。\n駅員：はい、事故（じこ）の 影響（えいきょう）で、10分（ぷん）ほど 遅れています。\nカイ：急（いそ）いでいるので、ほかの 行き方（かた）は ありますか。\n駅員：バスも ありますが、電車の ほうが 早（はや）いと 思います。",
+        "en": "Kai: Excuse me, I want to go to Yokohama—how do I get there? / Staff: Yokohama? Take the train on track 3 and change at Shinagawa. / Kai: Thanks. Are the trains delayed? / Staff: Yes, about 10 minutes due to an accident. / Kai: I'm in a hurry—is there another way? / Staff: There's a bus, but the train is faster.",
         "key": "どう 行けば いいですか／〜で 乗り換えて／ほかの 行き方は",
         "point": "経路案内＋遅延時の代替を聞く。",
         "note": "多声TTS:客/駅員"
@@ -130,8 +130,8 @@
         "title": "道に迷って交番で聞く",
         "form": "対話",
         "level": "N4",
-        "text": "リン：すみません、道（みち）に 迷（まよ）って しまって…。この 住所（じゅうしょ）に 行きたいんです。\n警官（けいかん）：どれどれ。ああ、ここですね。この 道を まっすぐ 行って、二（ふた）つ目（め）の 信号（しんごう）を 左（ひだり）です。\nリン：二つ目の 信号を 左ですね。\n警官：はい。そこから 歩（ある）いて 3分（ぷん）くらいです。\nリン：ありがとうございます。助（たす）かりました。",
-        "en": "Rin: Excuse me, I'm lost... I want to go to this address. / Officer: Let me see. Ah, here. Go straight on this road and turn left at the second light. / Rin: Left at the second light. / Officer: Yes. About a 3-minute walk from there. / Rin: Thank you, that helps.",
+        "text": "カイ：すみません、道（みち）に 迷（まよ）って しまって…。この 住所（じゅうしょ）に 行きたいんです。\n警官（けいかん）：どれどれ。ああ、ここですね。この 道を まっすぐ 行って、二（ふた）つ目（め）の 信号（しんごう）を 左（ひだり）です。\nカイ：二つ目の 信号を 左ですね。\n警官：はい。そこから 歩（ある）いて 3分（ぷん）くらいです。\nカイ：ありがとうございます。助（たす）かりました。",
+        "en": "Kai: Excuse me, I'm lost... I want to go to this address. / Officer: Let me see. Ah, here. Go straight on this road and turn left at the second light. / Kai: Left at the second light. / Officer: Yes. About a 3-minute walk from there. / Kai: Thank you, that helps.",
         "key": "道に 迷って／まっすぐ 行って／〜を 左",
         "point": "交番で道を尋ねてたどり着く。",
         "note": "多声TTS:客/警官"
@@ -202,12 +202,12 @@
        {
         "id": "S-014",
         "title": "ふわふわ",
-        "form": "一人称",
-        "level": "N5",
-        "text": "きょうの ことばは「ふわふわ」です。やわらかくて、かるい ものの ことです。たとえば、「この パンは ふわふわです」。くもや、ねこの けも ふわふわ。さわると きもちが いいですね。",
-        "en": "Today's word is 'fuwafuwa.' It means something soft and light. For example, 'This bread is fuwafuwa.' Clouds and a cat's fur are fuwafuwa too. They feel nice to touch.",
-        "key": "ふわふわ(=soft & fluffy)／やわらかい／さわると きもちがいい",
-        "point": "オノマトペ「ふわふわ」の意味と使い方。",
+        "form": "解説",
+        "level": "N4",
+        "text": "今日（きょう）の ことばは「ふわふわ」です。やわらかくて 軽（かる）い ようすを 表（あらわ）します。たとえば、焼（や）きたての パンは「ふわふわ」、空（そら）に うかぶ 雲（くも）も「ふわふわ」、猫（ねこ）の 毛（け）も「ふわふわ」です。物（もの）だけでなく、気持（きも）ちにも 使（つか）えます。うれしくて 心（こころ）が 軽い ときは「気持ちが ふわふわする」と 言（い）います。日本語（にほんご）には こんな 音（おと）の 言葉（オノマトペ）が たくさん あって、使うと 表現（ひょうげん）が ぐっと 生（い）き生（い）きします。みなさんも 今日 ひとつ 使ってみませんか。",
+        "en": "Today's word is 'fuwafuwa.' It describes something soft and light. For example, freshly baked bread is 'fuwafuwa,' clouds floating in the sky are 'fuwafuwa,' and a cat's fur is 'fuwafuwa.' It works for feelings too, not just objects. When you're happy and your heart feels light, you say 'my heart feels fuwafuwa.' Japanese has many of these sound-words (onomatopoeia), and using them makes your expression much more vivid. Why not try using one today?",
+        "key": "ふわふわ(=soft & light)／気持ちが ふわふわする／オノマトペ",
+        "point": "擬音語の意味と、物・気持ち両方への使い方。",
         "note": "1話者・解説"
        }
       ]
@@ -241,6 +241,59 @@
         "key": "〜から 来た 言葉／意味が 違う／和製英語",
         "point": "和製英語の落とし穴。",
         "note": "1話者・解説"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "category": "文化と本音",
+    "subthemes": [
+     {
+      "sub": "本音講座",
+      "items": [
+       {
+        "id": "S-017",
+        "title": "「大丈夫です」の正体",
+        "form": "解説",
+        "level": "N3",
+        "text": "日本語（にほんご）の「大丈夫（だいじょうぶ）です」は、便利（べんり）ですが、少（すこ）し ふくざつです。「コーヒー、いかがですか」「あ、大丈夫です」。これは「いりません」という 意味（いみ）です。でも、「明日（あした）、来（こ）られますか」「大丈夫です」なら「行（い）けます」という 意味。同（おな）じ 言葉（ことば）でも、場面（ばめん）で 意味が 変（か）わります。困（こま）ったら、相手（あいて）の 顔（かお）を 見（み）て 確認（かくにん）しましょう。",
+        "en": "Japanese 'daijoubu desu' is handy but a bit complex. 'Would you like coffee?' 'Oh, daijoubu desu.' Here it means 'No thanks.' But 'Can you come tomorrow?' 'Daijoubu desu' means 'I can go.' The same words change meaning by situation. If unsure, check the other person's face.",
+        "key": "大丈夫です(=No thanks / OK)／場面で 意味が 変わる",
+        "point": "多義的な「大丈夫」を読み解く。",
+        "note": "1話者・解説"
+       }
+      ]
+     },
+     {
+      "sub": "あるある",
+      "items": [
+       {
+        "id": "S-018",
+        "title": "日本の電車は静か",
+        "form": "読み物",
+        "level": "N4",
+        "text": "日本（にほん）の 電車（でんしゃ）に 乗（の）ると、おどろくことが あります。とても 静（しず）かなのです。みんな スマホを 見（み）たり、寝（ね）たり して、ほとんど 話（はな）しません。電話（でんわ）も マナーモードです。最初（さいしょ）は さびしく 感（かん）じましたが、今（いま）は その 静かさが 心地（ここち）よいです。みなさんの 国（くに）の 電車は どうですか。",
+        "en": "When you ride a train in Japan, something may surprise you: it's very quiet. Everyone looks at their phone or sleeps, and hardly anyone talks. Phones are on silent mode. At first I felt it was lonely, but now I find that quietness pleasant. What are trains like in your country?",
+        "key": "〜と、〜／ほとんど 話しません／心地よい",
+        "point": "文化比較の読み物。",
+        "note": "1話者・朗読"
+       }
+      ]
+     },
+     {
+      "sub": "食べもの",
+      "items": [
+       {
+        "id": "S-019",
+        "title": "ラーメンを食べよう",
+        "form": "読み物",
+        "level": "N4",
+        "text": "日本（にほん）に 来（き）たら、ぜひ ラーメンを 食（た）べてみてください。ラーメンには いろいろな 種類（しゅるい）が あります。しょうゆ、塩（しお）、みそ、とんこつ…。お店（みせ）に よって 味（あじ）が ちがいます。注文（ちゅうもん）の とき、「麺（めん）の かたさ」を 選（えら）べる 店（みせ）も あります。かたいのが 好（す）きなら「かため」と 言（い）いましょう。あなたの 好（す）きな ラーメンは どれですか。",
+        "en": "When you come to Japan, definitely try ramen. There are many kinds: soy sauce, salt, miso, tonkotsu... The taste differs by shop. When ordering, some shops let you choose 'noodle firmness.' If you like it firm, say 'katame.' Which ramen is your favorite?",
+        "key": "ぜひ 〜てみてください／〜によって／〜と 言いましょう",
+        "point": "紹介＋注文の実用。",
+        "note": "1話者・朗読"
        }
       ]
      }
@@ -332,11 +385,11 @@
       "items": [
        {
         "id": "L-007",
-        "title": "ベトナムから来たグエンさん",
+        "title": "ゲストのカイさん",
         "form": "対話",
         "level": "N4",
-        "text": "司会（しかい）：今日（きょう）の ゲストは、ベトナムから 来（き）た グエンさんです。日本（にほん）に 来て どのくらいですか。\nグエン：2年（ねん）です。\n司会：日本で 一番（いちばん）好（す）きな ものは？\nグエン：温泉（おんせん）です。とても 気持（きも）ちが いいです。\n司会：これから 何（なに）を したいですか。\nグエン：日本語（にほんご）を もっと 上手（じょうず）に なりたいです。\n司会：いいですね！ がんばってください。",
-        "en": "Host: Today's guest is Guen from Vietnam. How long have you been in Japan? / Guen: Two years. / Host: What's your favorite thing in Japan? / Guen: Hot springs. They feel so good. / Host: What do you want to do from now on? / Guen: I want to get better at Japanese. / Host: Nice! Keep it up.",
+        "text": "司会（しかい）：今日（きょう）の ゲストは、日本（にほん）で 勉強（べんきょう）している カイさんです。日本に 来て どのくらいですか。\nカイ：2年（ねん）です。\n司会：日本で 一番（いちばん）好（す）きな ものは？\nカイ：温泉（おんせん）です。とても 気持（きも）ちが いいです。\n司会：これから 何（なに）を したいですか。\nカイ：日本語（にほんご）を もっと 上手（じょうず）に なりたいです。\n司会：いいですね！ がんばってください。",
+        "en": "Host: Today's guest is Kai, who is studying in Japan. How long have you been in Japan? / Kai: Two years. / Host: What's your favorite thing in Japan? / Kai: Hot springs. They feel so good. / Host: What do you want to do from now on? / Kai: I want to get better at Japanese. / Host: Nice! Keep it up.",
         "key": "どのくらいですか／一番 好きな ものは？／がんばってください",
         "point": "インタビューの定番質問。",
         "note": "多声TTS:司会/ゲスト"
@@ -421,6 +474,28 @@
         "key": "ちょっと 休憩／実は／〜は 何ですか？",
         "point": "カイの語りかけ・気軽な小ネタ（休憩室）。",
         "note": "1話者・カイ"
+       },
+       {
+        "id": "L-014",
+        "title": "友だちができた",
+        "form": "一人称",
+        "level": "N4",
+        "text": "日本（にほん）に 来（き）て すぐは、友（とも）だちが いなくて さびしかった。でも、日本語（にほんご）の 教室（きょうしつ）で となりに 座（すわ）った 人（ひと）が、やさしく 話（はな）しかけて くれた。「いっしょに お昼（ひる）、食（た）べない？」その 一言（ひとこと）が とても うれしかった。今（いま）では、休（やす）みの 日（ひ）に いっしょに 出（で）かける 仲（なか）だ。勇気（ゆうき）を 出（だ）して よかった。",
+        "en": "Right after I came to Japan, I had no friends and felt lonely. But in Japanese class, the person who sat next to me kindly spoke to me: 'Want to have lunch together?' That one phrase made me so happy. Now we're close enough to go out on days off. I'm glad I found the courage.",
+        "key": "さびしかった／話しかけて くれた／勇気を 出して よかった",
+        "point": "友だち作りの体験と気持ち（日常）。",
+        "note": "1話者・カイ"
+       },
+       {
+        "id": "L-015",
+        "title": "お祭りに行く",
+        "form": "一人称",
+        "level": "N4",
+        "text": "夏（なつ）の 夜（よる）、はじめて 日本（にほん）の お祭（まつ）りに 行（い）った。たくさんの 人（ひと）が ゆかたを 着（き）ていて、とても きれいだった。屋台（やたい）で たこ焼（や）きと かき氷（ごおり）を 買（か）って 食（た）べた。最後（さいご）に 花火（はなび）が 上（あ）がった。大（おお）きな 音（おと）と 光（ひかり）に、胸（むね）が どきどきした。日本の 夏（なつ）は、わすれられない 思（おも）い出（で）に なった。",
+        "en": "On a summer night, I went to a Japanese festival for the first time. Many people wore yukata and looked beautiful. At the stalls I bought and ate takoyaki and shaved ice. At the end, fireworks went up. The loud sound and light made my heart race. Japan's summer became an unforgettable memory.",
+        "key": "はじめて／〜を 買って 食べた／わすれられない 思い出",
+        "point": "お祭りの描写＋感動（旅行・季節）。",
+        "note": "1話者・カイ"
        }
       ]
      },
@@ -428,7 +503,7 @@
       "sub": "昔話",
       "items": [
        {
-        "id": "L-014",
+        "id": "L-016",
         "title": "桃太郎",
         "form": "物語",
         "level": "N4",
@@ -444,7 +519,7 @@
       "sub": "日本語ミステリー",
       "items": [
        {
-        "id": "L-015",
+        "id": "L-017",
         "title": "消えた駅弁の謎 第1話：駅で事件発生",
         "form": "物語",
         "level": "N4",
@@ -455,7 +530,7 @@
         "note": "1話者・語り(緊張感)"
        },
        {
-        "id": "L-016",
+        "id": "L-018",
         "title": "消えた駅弁の謎 第2話：証言を聞く",
         "form": "対話",
         "level": "N4",
@@ -466,7 +541,7 @@
         "note": "多声TTS:刑事/証人たち"
        },
        {
-        "id": "L-017",
+        "id": "L-019",
         "title": "消えた駅弁の謎 第3話：容疑者登場",
         "form": "対話",
         "level": "N3",
@@ -477,7 +552,7 @@
         "note": "多声TTS:刑事/容疑者"
        },
        {
-        "id": "L-018",
+        "id": "L-020",
         "title": "消えた駅弁の謎 第4話：真犯人は？",
         "form": "物語",
         "level": "N3",
@@ -493,7 +568,7 @@
       "sub": "怖い話",
       "items": [
        {
-        "id": "L-019",
+        "id": "L-021",
         "title": "真夜中の水の音",
         "form": "物語",
         "level": "N3",
@@ -509,7 +584,7 @@
       "sub": "ドキュメンタリー",
       "items": [
        {
-        "id": "L-020",
+        "id": "L-022",
         "title": "カップラーメンの誕生",
         "form": "ドキュメンタリー",
         "level": "N3",
@@ -518,59 +593,17 @@
         "key": "あきらめなかった／ひらめいた／世界を 変えた",
         "point": "困難→挑戦→転機→成功 の物語の流れを聞く。",
         "note": "1話者・ナレーション(語り)"
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "category": "文化と本音",
-    "subthemes": [
-     {
-      "sub": "本音講座",
-      "items": [
-       {
-        "id": "L-021",
-        "title": "「大丈夫です」の正体",
-        "form": "解説",
-        "level": "N3",
-        "text": "日本語（にほんご）の「大丈夫（だいじょうぶ）です」は、便利（べんり）ですが、少（すこ）し ふくざつです。「コーヒー、いかがですか」「あ、大丈夫です」。これは「いりません」という 意味（いみ）です。でも、「明日（あした）、来（こ）られますか」「大丈夫です」なら「行（い）けます」という 意味。同（おな）じ 言葉（ことば）でも、場面（ばめん）で 意味が 変（か）わります。困（こま）ったら、相手（あいて）の 顔（かお）を 見（み）て 確認（かくにん）しましょう。",
-        "en": "Japanese 'daijoubu desu' is handy but a bit complex. 'Would you like coffee?' 'Oh, daijoubu desu.' Here it means 'No thanks.' But 'Can you come tomorrow?' 'Daijoubu desu' means 'I can go.' The same words change meaning by situation. If unsure, check the other person's face.",
-        "key": "大丈夫です(=No thanks / OK)／場面で 意味が 変わる",
-        "point": "多義的な「大丈夫」を読み解く。",
-        "note": "1話者・解説"
-       }
-      ]
-     },
-     {
-      "sub": "あるある",
-      "items": [
-       {
-        "id": "L-022",
-        "title": "日本の電車は静か",
-        "form": "読み物",
-        "level": "N4",
-        "text": "日本（にほん）の 電車（でんしゃ）に 乗（の）ると、おどろくことが あります。とても 静（しず）かなのです。みんな スマホを 見（み）たり、寝（ね）たり して、ほとんど 話（はな）しません。電話（でんわ）も マナーモードです。最初（さいしょ）は さびしく 感（かん）じましたが、今（いま）は その 静かさが 心地（ここち）よいです。みなさんの 国（くに）の 電車は どうですか。",
-        "en": "When you ride a train in Japan, something may surprise you: it's very quiet. Everyone looks at their phone or sleeps, and hardly anyone talks. Phones are on silent mode. At first I felt it was lonely, but now I find that quietness pleasant. What are trains like in your country?",
-        "key": "〜と、〜／ほとんど 話しません／心地よい",
-        "point": "文化比較の読み物。",
-        "note": "1話者・朗読"
-       }
-      ]
-     },
-     {
-      "sub": "食べもの",
-      "items": [
+       },
        {
         "id": "L-023",
-        "title": "ラーメンを食べよう",
-        "form": "読み物",
-        "level": "N4",
-        "text": "日本（にほん）に 来（き）たら、ぜひ ラーメンを 食（た）べてみてください。ラーメンには いろいろな 種類（しゅるい）が あります。しょうゆ、塩（しお）、みそ、とんこつ…。お店（みせ）に よって 味（あじ）が ちがいます。注文（ちゅうもん）の とき、「麺（めん）の かたさ」を 選（えら）べる 店（みせ）も あります。かたいのが 好（す）きなら「かため」と 言（い）いましょう。あなたの 好（す）きな ラーメンは どれですか。",
-        "en": "When you come to Japan, definitely try ramen. There are many kinds: soy sauce, salt, miso, tonkotsu... The taste differs by shop. When ordering, some shops let you choose 'noodle firmness.' If you like it firm, say 'katame.' Which ramen is your favorite?",
-        "key": "ぜひ 〜てみてください／〜によって／〜と 言いましょう",
-        "point": "紹介＋注文の実用。",
-        "note": "1話者・朗読"
+        "title": "はやぶさの帰還",
+        "form": "ドキュメンタリー",
+        "level": "N3",
+        "text": "「はやぶさ」という 小（ちい）さな 宇宙船（うちゅうせん）の 話（はなし）です。はやぶさは、地球（ちきゅう）から 遠（とお）い 小惑星（しょうわくせい）まで 行（い）き、石（いし）を 取（と）って 帰（かえ）る という 世界（せかい）で はじめての ミッションに 挑（いど）みました。\n旅（たび）の 途中（とちゅう）、機械（きかい）が 何度（なんど）も こわれ、通信（つうしん）も 切（き）れました。「もう だめか」と 多（おお）くの 人（ひと）が 思（おも）いました。でも、研究者（けんきゅうしゃ）たちは あきらめませんでした。\n7年（ねん）、60億（おく）キロの 旅（たび）の すえ、はやぶさは 地球に 戻（もど）りました。最後（さいご）は 自分（じぶん）は 燃（も）えながら、石（いし）の 入（はい）った カプセルだけを 送（おく）り届（とど）けたのです。その 姿（すがた）に、世界中（せかいじゅう）が 涙（なみだ）しました。",
+        "en": "This is the story of a small spacecraft called 'Hayabusa.' It took on the world's first mission to travel to a distant asteroid, collect rocks, and return. During the journey, its machines broke down again and again, and communication was lost. 'It's over,' many thought. But the researchers never gave up. After seven years and 6 billion kilometers, Hayabusa returned to Earth. At the end, it burned up itself while delivering only the capsule with the rocks. The whole world was moved to tears by that sight.",
+        "key": "挑みました／あきらめませんでした／世界中が 涙した",
+        "point": "困難→不屈→感動の帰還を聞く。",
+        "note": "1話者・ナレーション(語り)"
        }
       ]
      }
