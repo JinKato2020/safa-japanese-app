@@ -1,226 +1,155 @@
-// 「桜水彩」アプリ背景 — 和モダンの高級デザイン。
-//  ① 和紙のベースグラデ ② 水彩のにじみ(SVGラジアルを重ねる layered washes・ゆっくり呼吸/漂う)
-//  ③ 金粉のきらめき(twinkle) ④ notch入りSVGの桜の花びらが少数・ゆったり舞う。
-// settings.theme==='sakura' のときだけ表示。ルート最背面に absolute 配置・pointerEvents='none'。
-import { useEffect, useMemo, useRef } from 'react';
-import { Animated, Dimensions, Easing, StyleSheet, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Defs, Ellipse, LinearGradient as SvgLG, Path, RadialGradient, Stop } from 'react-native-svg';
-import { SAKURA_BASE, isGradientTheme } from './theme';
+// 「桜水彩」アプリ背景 — Skia(GPU)版。
+//  ① 流れる水彩をフラグメントシェーダーで描画(色が生きて移ろう)
+//  ② 桜の花びらが自然に舞う(連続回転＋3D反転=scaleX＋ゆらぎ＋ドリフト・個体差)
+//  ③ やわらかな金の光(ボケ)がほのかに明滅。
+// settings.theme==='sakura' のときだけ表示。ルート最背面・操作は透過。Web は非対応のため null。
+import { useMemo } from 'react';
+import { Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { BlurMask, Canvas, Circle, Fill, Group, LinearGradient, Path, Shader, Skia, vec } from '@shopify/react-native-skia';
+import { useDerivedValue, useFrameCallback, useSharedValue, type SharedValue } from 'react-native-reanimated';
+import { isGradientTheme } from './theme';
 import { useAppTheme } from './useColors';
 
-const { width: W, height: H } = Dimensions.get('window');
-type Tri = readonly [string, string, ...string[]];
-
-// 桜の花びら(notch=先端の切れ込みを持つ・narrow base→wide top)。viewBox 0 0 32 36。
-const PETAL_PATH =
-  'M16 34 C 9 30, 3 22, 5 12 C 6.5 7.5, 11.5 6.5, 14.5 10.5 L 16 12.5 L 17.5 10.5 C 20.5 6.5, 25.5 7.5, 27 12 C 29 22, 23 30, 16 34 Z';
-
-// 水彩のにじみ(layered washes)。色は和の上品なトーン(桜・藤・杏・藍のひそやか)。
-const BLOBS = [
-  { xf: 0.14, yf: 0.10, r: 210, color: '#f3a9c2', op: 0.55, dx: 26, dy: 16, sc: 0.10, dur: 19000, ph: 0 },
-  { xf: 0.88, yf: 0.15, r: 240, color: '#c9b3e6', op: 0.48, dx: -30, dy: 20, sc: 0.12, dur: 23000, ph: 1 }, // 藤
-  { xf: 0.74, yf: 0.43, r: 190, color: '#f6cda0', op: 0.34, dx: 22, dy: -16, sc: 0.10, dur: 27000, ph: 2 }, // 杏(温かみ)
-  { xf: 0.18, yf: 0.50, r: 225, color: '#ec8fb0', op: 0.50, dx: 28, dy: 18, sc: 0.11, dur: 21000, ph: 1 },
-  { xf: 0.58, yf: 0.80, r: 270, color: '#a9bce0', op: 0.34, dx: -24, dy: -18, sc: 0.12, dur: 30000, ph: 0 }, // 藍(奥行き)
-  { xf: 0.42, yf: 0.30, r: 160, color: '#ffdbe5', op: 0.55, dx: 16, dy: 14, sc: 0.09, dur: 25000, ph: 2 }, // ハイライト
-];
-
-interface BlobC { xf: number; yf: number; r: number; color: string; op: number; dx: number; dy: number; sc: number; dur: number; ph: number }
-function Blob({ b, i }: { b: BlobC; i: number }) {
-  const t = useRef(new Animated.Value(0)).current;
-  useEffect(() => {
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(t, { toValue: 1, duration: b.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-        Animated.timing(t, { toValue: 0, duration: b.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-      ]),
-    );
-    const start = Animated.sequence([Animated.delay(b.ph * 2200), loop]);
-    start.start();
-    return () => start.stop();
-  }, [t, b.dur, b.ph]);
-  const translateX = t.interpolate({ inputRange: [0, 1], outputRange: [0, b.dx] });
-  const translateY = t.interpolate({ inputRange: [0, 1], outputRange: [0, b.dy] });
-  const scale = t.interpolate({ inputRange: [0, 1], outputRange: [1, 1 + b.sc] });
-  const opacity = t.interpolate({ inputRange: [0, 1], outputRange: [0.82, 1] });
-  const size = b.r * 2;
-  return (
-    <Animated.View
-      style={{ position: 'absolute', left: b.xf * W - b.r, top: b.yf * H - b.r, width: size, height: size, opacity, transform: [{ translateX }, { translateY }, { scale }] }}
-    >
-      <Svg width={size} height={size}>
-        <Defs>
-          <RadialGradient id={`b${i}`} cx="50%" cy="50%" r="50%">
-            <Stop offset="0%" stopColor={b.color} stopOpacity={b.op} />
-            <Stop offset="55%" stopColor={b.color} stopOpacity={b.op * 0.34} />
-            <Stop offset="100%" stopColor={b.color} stopOpacity={0} />
-          </RadialGradient>
-        </Defs>
-        <Ellipse cx={b.r} cy={b.r} rx={b.r} ry={b.r} fill={`url(#b${i})`} />
-      </Svg>
-    </Animated.View>
-  );
+// 流れる水彩(fbmノイズで桜・藤・藍・金をやわらかく混ぜる)
+const SKSL = `
+uniform float u_time;
+uniform float2 u_resolution;
+float hash(float2 p){ p = fract(p * float2(123.34, 345.45)); p += dot(p, p + 34.345); return fract(p.x * p.y); }
+float noise(float2 p){
+  float2 i = floor(p); float2 f = fract(p);
+  float a = hash(i); float b = hash(i + float2(1.0,0.0));
+  float c = hash(i + float2(0.0,1.0)); float d = hash(i + float2(1.0,1.0));
+  float2 u = f * f * (3.0 - 2.0 * f);
+  return mix(mix(a,b,u.x), mix(c,d,u.x), u.y);
 }
+float fbm(float2 p){ float v=0.0; float a=0.5; for(int i=0;i<5;i++){ v+=a*noise(p); p=p*2.0; a=a*0.5; } return v; }
+half4 main(float2 fragCoord){
+  float2 uv = fragCoord / u_resolution;
+  float t = u_time * 0.03;
+  float2 q = uv * 2.2; q = q + float2(t, t*0.6);
+  float n1 = fbm(q + fbm(q*1.5 - t));
+  float n2 = fbm(q*0.8 + float2(5.2,1.3) + t*0.7);
+  half3 cream  = half3(0.984,0.965,0.957);
+  half3 sakura = half3(0.965,0.792,0.851);
+  half3 plum   = half3(0.835,0.741,0.906);
+  half3 indigo = half3(0.745,0.804,0.918);
+  half3 col = cream;
+  col = mix(col, sakura, smoothstep(0.25,0.85, n1));
+  col = mix(col, plum,   smoothstep(0.45,0.95, n2) * 0.7);
+  col = mix(col, indigo, smoothstep(0.55,1.0, n1*n2) * 0.5);
+  col = col + (1.0 - uv.y) * 0.04;
+  float g = fbm(uv*8.0 - t*2.0);
+  float spark = smoothstep(0.93,1.0, g);
+  col = mix(col, half3(0.93,0.80,0.45), spark * 0.45);
+  col = mix(col, half3(1.0), 0.16);
+  return half4(col, 1.0);
+}`;
 
-interface FleckC { x: number; y: number; size: number; min: number; max: number; dur: number; delay: number; halo: boolean }
-function Fleck({ f }: { f: FleckC }) {
-  const t = useRef(new Animated.Value(0)).current;
-  useEffect(() => {
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(t, { toValue: 1, duration: f.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-        Animated.timing(t, { toValue: 0, duration: f.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-      ]),
-    );
-    const s = Animated.sequence([Animated.delay(f.delay), loop]);
-    s.start();
-    return () => s.stop();
-  }, [t, f.dur, f.delay]);
-  const opacity = t.interpolate({ inputRange: [0, 1], outputRange: [f.min, f.max] });
-  const scale = t.interpolate({ inputRange: [0, 1], outputRange: [0.7, 1] });
-  return (
-    <>
-      {f.halo && (
-        <Animated.View style={{ position: 'absolute', left: f.x - f.size * 1.6, top: f.y - f.size * 1.6, width: f.size * 4.2, height: f.size * 4.2, borderRadius: f.size * 2.1, backgroundColor: '#e7c879', opacity: opacity.interpolate({ inputRange: [0, 1], outputRange: [0, 0.16] }) }} />
-      )}
-      <Animated.View style={{ position: 'absolute', left: f.x, top: f.y, width: f.size, height: f.size, borderRadius: f.size / 2, backgroundColor: '#d8b15c', opacity, transform: [{ scale }] }} />
-    </>
-  );
-}
+// 中心(0,0)の桜の花びら(先端の切れ込み付き)
+const PETAL_D = 'M 0 -13 C 8 -8 9 2 5 9 L 0 5 L -5 9 C -9 2 -8 -8 0 -13 Z';
 
-// 金箔(きんぱく)フレーク — 角のある不定形ポリゴンに金のグラデ。和モダンの上質感。
-interface LeafC { x: number; y: number; size: number; rot: number; min: number; max: number; dur: number; delay: number; pts: string; i: number }
-function GoldLeaf({ g }: { g: LeafC }) {
-  const t = useRef(new Animated.Value(0)).current;
-  useEffect(() => {
-    const loop = Animated.loop(
-      Animated.sequence([
-        Animated.timing(t, { toValue: 1, duration: g.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-        Animated.timing(t, { toValue: 0, duration: g.dur, easing: Easing.inOut(Easing.ease), useNativeDriver: true }),
-      ]),
-    );
-    const s = Animated.sequence([Animated.delay(g.delay), loop]);
-    s.start();
-    return () => s.stop();
-  }, [t, g.dur, g.delay]);
-  const opacity = t.interpolate({ inputRange: [0, 1], outputRange: [g.min, g.max] });
-  return (
-    <Animated.View style={{ position: 'absolute', left: g.x, top: g.y, width: g.size, height: g.size, opacity, transform: [{ rotate: `${g.rot}deg` }] }}>
-      <Svg width={g.size} height={g.size} viewBox="0 0 10 10">
-        <Defs>
-          <SvgLG id={`g${g.i}`} x1="0" y1="0" x2="1" y2="1">
-            <Stop offset="0" stopColor="#f7e6a4" />
-            <Stop offset="0.5" stopColor="#dcb866" />
-            <Stop offset="1" stopColor="#bd9540" />
-          </SvgLG>
-        </Defs>
-        <Path d={g.pts} fill={`url(#g${g.i})`} />
-      </Svg>
-    </Animated.View>
-  );
-}
+interface PetalP { i: number; x: number; scale: number; cycle: number; delay: number; swayA: number; swayF: number; drift: number; rotS: number; flipF: number; maxOp: number }
 
-interface PetalC { startX: number; size: number; duration: number; delay: number; sway: number; rot: number; dir: number; maxOp: number; i: number }
-function Petal({ p }: { p: PetalC }) {
-  const t = useRef(new Animated.Value(0)).current;
-  useEffect(() => {
-    const seq = Animated.sequence([
-      Animated.delay(p.delay),
-      Animated.loop(Animated.timing(t, { toValue: 1, duration: p.duration, easing: Easing.linear, useNativeDriver: true })),
-    ]);
-    seq.start();
-    return () => seq.stop();
-  }, [t, p.duration, p.delay]);
-  const translateY = t.interpolate({ inputRange: [0, 1], outputRange: [-44, H + 44] });
-  const translateX = t.interpolate({
-    inputRange: [0, 0.25, 0.5, 0.75, 1],
-    outputRange: [p.startX, p.startX + p.sway, p.startX, p.startX - p.sway, p.startX],
+function Petal({ clock, p, height, path }: { clock: SharedValue<number>; p: PetalP; height: number; path: ReturnType<typeof Skia.Path.MakeFromSVGString> }) {
+  const transform = useDerivedValue(() => {
+    'worklet';
+    const t = clock.value / 1000;
+    const k = ((t + p.delay) % p.cycle) / p.cycle; // 0..1(落下進行)
+    const y = -60 + k * (height + 120);
+    const x = p.x + Math.sin(t * p.swayF + p.i) * p.swayA + (k - 0.5) * p.drift;
+    const rot = t * p.rotS + p.i;                       // 連続回転(tumble)
+    const flip = 0.18 + 0.82 * (0.5 + 0.5 * Math.sin(t * p.flipF + p.i)); // 3D反転(scaleX)
+    return [{ translateX: x }, { translateY: y }, { rotate: rot }, { scaleX: p.scale * flip }, { scaleY: p.scale }];
   });
-  const rotate = t.interpolate({
-    inputRange: [0, 0.5, 1],
-    outputRange: [`${-p.rot}deg`, `${p.rot * p.dir}deg`, `${-p.rot}deg`],
+  const opacity = useDerivedValue(() => {
+    'worklet';
+    const t = clock.value / 1000;
+    const k = ((t + p.delay) % p.cycle) / p.cycle;
+    const fade = Math.min(k / 0.12, (1 - k) / 0.12);
+    return p.maxOp * Math.max(0, Math.min(1, fade));
   });
-  const opacity = t.interpolate({ inputRange: [0, 0.1, 0.85, 1], outputRange: [0, p.maxOp, p.maxOp, 0] });
-  const w = p.size;
-  const h = p.size * 1.12;
   return (
-    <Animated.View style={{ position: 'absolute', left: 0, top: 0, width: w, height: h, opacity, transform: [{ translateY }, { translateX }, { rotate }] }}>
-      <Svg width={w} height={h} viewBox="0 0 32 36">
-        <Defs>
-          <SvgLG id={`p${p.i}`} x1="0" y1="0" x2="0.3" y2="1">
-            <Stop offset="0" stopColor="#ffe7ee" />
-            <Stop offset="1" stopColor="#f2aac8" />
-          </SvgLG>
-        </Defs>
-        <Path d={PETAL_PATH} fill={`url(#p${p.i})`} stroke="#e892b4" strokeOpacity={0.22} strokeWidth={0.6} />
-      </Svg>
-    </Animated.View>
+    <Group transform={transform} opacity={opacity}>
+      <Path path={path!}>
+        <LinearGradient start={vec(0, -13)} end={vec(2, 9)} colors={['#ffe9ef', '#f4a9c9']} />
+      </Path>
+    </Group>
+  );
+}
+
+interface BokehP { x: number; y: number; r: number; blur: number; color: string; f: number; min: number; max: number; ph: number }
+function Bokeh({ clock, b }: { clock: SharedValue<number>; b: BokehP }) {
+  const opacity = useDerivedValue(() => {
+    'worklet';
+    const t = clock.value / 1000;
+    return b.min + (b.max - b.min) * (0.5 + 0.5 * Math.sin(t * b.f + b.ph));
+  });
+  const cx = useDerivedValue(() => {
+    'worklet';
+    return b.x + Math.sin(clock.value / 1000 * b.f * 0.6 + b.ph) * 16;
+  });
+  return (
+    <Group opacity={opacity}>
+      <Circle cx={cx} cy={b.y} r={b.r} color={b.color}>
+        <BlurMask blur={b.blur} style="normal" />
+      </Circle>
+    </Group>
   );
 }
 
 export default function AppBackground() {
   const theme = useAppTheme();
+  const { width, height } = useWindowDimensions();
+  const clock = useSharedValue(0);
+  useFrameCallback((f) => {
+    'worklet';
+    clock.value = f.timeSinceFirstFrame ?? 0;
+  });
 
-  const petals = useMemo<PetalC[]>(() => {
-    if (!isGradientTheme(theme)) return [];
+  const effect = useMemo(() => Skia.RuntimeEffect.Make(SKSL), []);
+  const path = useMemo(() => Skia.Path.MakeFromSVGString(PETAL_D), []);
+  const uniforms = useDerivedValue(() => ({ u_time: clock.value / 1000, u_resolution: [width, height] }));
+
+  const petals = useMemo<PetalP[]>(() => {
     const r = (n: number) => Math.random() * n;
-    return Array.from({ length: 7 }, (_, i) => {
-      const big = i < 2; // 前景の大きめ花びら(やわらかく半透明)で奥行きを出す
+    return Array.from({ length: 9 }, (_, i) => {
+      const big = i < 2;
       return {
         i,
-        startX: r(W),
-        size: big ? 34 + r(14) : 15 + r(11),
-        duration: big ? 20000 + r(8000) : 14000 + r(8000),
-        delay: r(12000),
-        sway: 22 + r(40),
-        rot: 12 + r(16),
-        dir: Math.random() > 0.5 ? 1 : -1,
-        maxOp: big ? 0.5 + r(0.12) : 0.85 + r(0.1),
+        x: r(width),
+        scale: big ? 1.5 + r(0.6) : 0.7 + r(0.7),
+        cycle: big ? 16 + r(8) : 11 + r(7),
+        delay: r(14),
+        swayA: 18 + r(40),
+        swayF: 0.4 + r(0.5),
+        drift: (Math.random() - 0.5) * 120,
+        rotS: (Math.random() > 0.5 ? 1 : -1) * (0.5 + r(0.9)),
+        flipF: 0.6 + r(0.9),
+        maxOp: big ? 0.55 + r(0.12) : 0.82 + r(0.12),
       };
     });
-  }, [theme]);
+  }, [width]);
 
-  const flecks = useMemo<FleckC[]>(() => {
-    if (!isGradientTheme(theme)) return [];
+  const bokeh = useMemo<BokehP[]>(() => {
     const r = (n: number) => Math.random() * n;
-    return Array.from({ length: 9 }, () => {
-      const size = 1.6 + r(2.2);
-      return { x: r(W), y: r(H), size, min: 0.08 + r(0.1), max: 0.4 + r(0.2), dur: 2400 + r(3200), delay: r(4000), halo: size > 3.2 };
-    });
-  }, [theme]);
-
-  const leaves = useMemo<LeafC[]>(() => {
-    if (!isGradientTheme(theme)) return [];
-    const r = (n: number) => Math.random() * n;
-    const j = () => (Math.random() - 0.5) * 2.4;
-    return Array.from({ length: 9 }, (_, i) => ({
-      i,
-      x: r(W),
-      y: r(H),
-      size: 6 + r(11),
-      rot: r(360),
-      min: 0.16 + r(0.12),
-      max: 0.5 + r(0.28),
-      dur: 2600 + r(3200),
-      delay: r(4200),
-      pts: `M${1 + j()} ${1.4 + j()} L${9 + j()} ${2 + j()} L${8.4 + j()} ${9 + j()} L${1.4 + j()} ${8.2 + j()} Z`,
+    const cols = ['rgba(255,228,178,0.9)', 'rgba(255,255,255,0.9)', 'rgba(244,196,214,0.9)'];
+    return Array.from({ length: 4 }, (_, i) => ({
+      x: r(width), y: r(height), r: 26 + r(40), blur: 30 + r(30),
+      color: cols[i % cols.length], f: 0.25 + r(0.3), min: 0.05 + r(0.06), max: 0.18 + r(0.14), ph: r(6),
     }));
-  }, [theme]);
+  }, [width, height]);
 
-  if (!isGradientTheme(theme)) return null;
+  if (Platform.OS === 'web' || !isGradientTheme(theme) || !effect || !path) return null;
 
   return (
     <View pointerEvents="none" style={StyleSheet.absoluteFill}>
-      <LinearGradient colors={SAKURA_BASE as unknown as Tri} start={{ x: 0.1, y: 0 }} end={{ x: 0.9, y: 1 }} style={StyleSheet.absoluteFill} />
-      {/* 水彩のにじみ(奥) */}
-      {BLOBS.map((b, i) => <Blob key={i} b={b} i={i} />)}
-      {/* 金粉のきらめき(細) */}
-      {flecks.map((f, i) => <Fleck key={i} f={f} />)}
-      {/* 金箔フレーク */}
-      {leaves.map((g) => <GoldLeaf key={g.i} g={g} />)}
-      {/* 舞う桜(少数・ゆったり・前景は大きく半透明) */}
-      {petals.map((p) => <Petal key={p.i} p={p} />)}
+      <Canvas style={{ flex: 1 }}>
+        <Fill>
+          <Shader source={effect} uniforms={uniforms} />
+        </Fill>
+        {bokeh.map((b, i) => <Bokeh key={`b${i}`} clock={clock} b={b} />)}
+        {petals.map((p) => <Petal key={p.i} clock={clock} p={p} height={height} path={path} />)}
+      </Canvas>
     </View>
   );
 }
