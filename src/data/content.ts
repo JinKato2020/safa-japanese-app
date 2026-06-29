@@ -34,7 +34,7 @@ export const CATEGORY_LABEL_EN: Record<string, string> = {
   '使えるひとこと': 'Useful Phrases',
   'ことば遊び': 'Word Fun',
   // 長文
-  '日本語シャワー': 'Japanese Shower',
+  'ラジオトーク': 'Radio Talk',
   '物語': 'Stories',
   '文化と本音': 'Culture & Real Talk',
 };
@@ -53,14 +53,15 @@ export const SUBTHEME_LABEL_EN: Record<string, string> = {
   '今日の擬音語': 'Onomatopoeia',
   'ことわざ・慣用句': 'Sayings & Idioms',
   'カタカナ語': 'Katakana Words',
-  // 日本語シャワー
-  '朝のニュース': 'Morning News',
-  'ラジオ風トーク': 'Radio Talk',
-  '今日の天気': 'Weather',
+  // ラジオトーク
+  'ニュース': 'News',
+  'お便り相談室': 'Listener Mail',
+  'ゲストインタビュー': 'Guest Interview',
+  '2人のフリートーク': 'Free Talk',
   // 物語
-  'カイの日記': "Kai's Diary",
-  'こわい話': 'Scary Stories',
+  'カイのストーリー': "Kai's Story",
   '昔話': 'Folk Tales',
+  '怖い話': 'Scary Stories',
   // 文化と本音
   '本音講座': 'Real Talk',
   'あるある': 'Japan Quirks',
@@ -75,6 +76,7 @@ export const FORM_LABEL_EN: Record<string, string> = {
   'トーク': 'Talk',
   '解説': 'Explainer',
   '物語': 'Story',
+  '読み物': 'Reading',
 };
 
 export const catLabel = (c: string) => CATEGORY_LABEL_EN[c] ?? c;
