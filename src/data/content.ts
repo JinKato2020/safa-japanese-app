@@ -1,45 +1,41 @@
 // 短文/長文タブのコンテンツ（精聴・精読／問題なし）。正本= ../../コンテンツ.xlsx → conv_content.py → content.json。
-// 構造: タブ(短文/長文) ＞ カテゴリー ＞ サブテーマ ＞ items。UIは英語。
+// ツリー構造: タブ ＞ カテゴリー ＞ サブテーマ ＞ (区分) ＞ items。UIは英語ラベル。
 import raw from './content.json';
 
 export interface ContentItem {
-  id: string;
-  title: string;   // タイトル(日本語)
-  form: string;    // 対話/一人称/ニュース/天気予報/トーク/解説/物語
+  id: string;      // 例 L-S-K-J-001（タブ-カテゴリー-サブテーマ-区分-連番）
+  title: string;
+  form: string;
   level: string;   // N5/N4/N3（アプリ非表示）
-  text: string;    // 本文(精聴・精読の本体・ふりがな付)
-  en: string;      // 英訳
-  key: string;     // キー表現
-  point: string;   // ポイント(実用/学習)
-  note: string;    // 備考(音声)
+  text: string;
+  en: string;
+  key: string;
+  point: string;
+  note: string;
 }
-export interface SubTheme { sub: string; items: ContentItem[] }
-export interface Category { category: string; subthemes: SubTheme[] }
+export interface ContentNode {
+  name: string;              // 日本語のキー名（ラベルは label() で英語化）
+  children?: ContentNode[];  // 入れ子（カテゴリー/サブテーマ/区分）
+  items?: ContentItem[];     // 末端の本文リスト
+}
 
-interface ContentDB {
-  tabs: string[];
-  data: Record<string, Category[]>;
-}
-const db = raw as unknown as ContentDB;
+interface DB { tabs: string[]; data: Record<string, ContentNode[]> }
+const db = raw as unknown as DB;
 
 export const TABS = db.tabs;
-
-export function categoriesFor(tab: string): Category[] {
+export function nodesFor(tab: string): ContentNode[] {
   return db.data[tab] ?? [];
 }
 
-export const CATEGORY_LABEL_EN: Record<string, string> = {
-  // 短文
+// 階層名（カテゴリー/サブテーマ/区分）の英語ラベル。未登録は日本語名をそのまま。
+export const LABEL_EN: Record<string, string> = {
+  // カテゴリー
   '生活力': 'Life Skills',
   '使えるひとこと': 'Useful Phrases',
   'ことば遊び': 'Word Fun',
-  // 長文
+  '文化と本音': 'Culture & Real Talk',
   'ラジオトーク': 'Radio Talk',
   '物語': 'Stories',
-  '文化と本音': 'Culture & Real Talk',
-};
-
-export const SUBTHEME_LABEL_EN: Record<string, string> = {
   // 生活力
   '買い物・お金': 'Shopping & Money',
   '手続き': 'Procedures',
@@ -53,21 +49,26 @@ export const SUBTHEME_LABEL_EN: Record<string, string> = {
   '今日の擬音語': 'Onomatopoeia',
   'ことわざ・慣用句': 'Sayings & Idioms',
   'カタカナ語': 'Katakana Words',
+  // 文化と本音
+  '本音講座': 'Real Talk',
+  'あるある': 'Japan Quirks',
+  '食べもの': 'Food',
   // ラジオトーク
   'ニュース': 'News',
   'お便り相談室': 'Listener Mail',
   'ゲストインタビュー': 'Guest Interview',
   '2人のフリートーク': 'Free Talk',
   // 物語
-  'カイのストーリー': "Kai's Story",
+  'カイの物語': "Kai's Story",
   '昔話': 'Folk Tales',
   '日本語ミステリー': 'Japanese Mystery',
   '怖い話': 'Scary Stories',
   'ドキュメンタリー': 'Documentary',
-  // 文化と本音
-  '本音講座': 'Real Talk',
-  'あるある': 'Japan Quirks',
-  '食べもの': 'Food',
+  // カイの物語 4区分
+  '日本生活スタート': 'Life in Japan: Start',
+  '日本一人旅': 'Solo Trip',
+  'カイの日常': "Kai's Daily Life",
+  'カイの休憩室': "Kai's Break Room",
 };
 
 export const FORM_LABEL_EN: Record<string, string> = {
@@ -82,6 +83,5 @@ export const FORM_LABEL_EN: Record<string, string> = {
   'ドキュメンタリー': 'Documentary',
 };
 
-export const catLabel = (c: string) => CATEGORY_LABEL_EN[c] ?? c;
-export const subLabel = (s: string) => SUBTHEME_LABEL_EN[s] ?? s;
+export const label = (n: string) => LABEL_EN[n] ?? n;
 export const formLabel = (f: string) => FORM_LABEL_EN[f] ?? f;

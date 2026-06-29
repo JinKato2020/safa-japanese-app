@@ -1,11 +1,11 @@
-// 短文/長文タブ共通の精聴・精読画面(問題形式なし)。カテゴリー ＞ サブテーマ ＞ タイトル ＞ 本文。
-// ヒアリングがメインだが日本語本文も表示。依存追加を避け本コンポーネント内 state で list ⇄ detail を切替。
+// 短文/長文タブ共通画面。アコーディオン（JLPT風プルダウン・各階層で開けるのは1つ＝別を開くと前は自動で閉じる）。
+// 階層: カテゴリー ＞ サブテーマ ＞ (区分) ＞ タイトル → タップで本文（精聴/精読・問題なし）。
 import { useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
 import { useT, type Strings } from '../i18n';
-import { categoriesFor, catLabel, subLabel, formLabel, type ContentItem } from '../data/content';
+import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
   tab: string; kicker: string; title: string; sub: string;
@@ -13,15 +13,52 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
   const c = useColors();
   const t = useT();
   const s = useMemo(() => makeStyles(c), [c]);
-  const cats = categoriesFor(tab);
-  const [catIdx, setCatIdx] = useState(0);
+  const [openPath, setOpenPath] = useState<string[]>([]);
   const [active, setActive] = useState<ContentItem | null>(null);
 
-  if (active) {
-    return <Detail s={s} t={t} item={active} onClose={() => setActive(null)} />;
-  }
+  if (active) return <Detail s={s} t={t} item={active} onClose={() => setActive(null)} />;
 
-  const cat = cats[catIdx];
+  // 各階層で開けるのは1つ。別を開くと同階層と配下を閉じる。
+  const toggle = (level: number, name: string) =>
+    setOpenPath((prev) => (prev[level] === name ? prev.slice(0, level) : [...prev.slice(0, level), name]));
+
+  const renderNodes = (nodes: ContentNode[], level: number): React.ReactNode =>
+    nodes.map((node) => {
+      const open = openPath[level] === node.name;
+      return (
+        <View key={node.name}>
+          <Pressable
+            onPress={() => toggle(level, node.name)}
+            style={[s.row, { paddingLeft: spacing.md + level * spacing.md }, level === 0 && s.rowCat, open && s.rowOpen]}
+          >
+            <Text style={[s.rowTxt, level === 0 && s.rowCatTxt, open && s.rowTxtOpen]} numberOfLines={2}>
+              {label(node.name)}
+            </Text>
+            <Text style={[s.caret, open && s.caretOpen]}>{open ? '－' : '＋'}</Text>
+          </Pressable>
+
+          {open && node.children ? renderNodes(node.children, level + 1) : null}
+
+          {open && node.items
+            ? node.items.map((it) => (
+                <Pressable
+                  key={it.id}
+                  onPress={() => setActive(it)}
+                  style={[s.item, { paddingLeft: spacing.md + (level + 1) * spacing.md }]}
+                >
+                  <Text style={s.itemEmoji}>{emojiFor(it.form)}</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={s.itemTitle}>{it.title}</Text>
+                    <Text style={s.itemMeta}>{formLabel(it.form)}</Text>
+                  </View>
+                  <Text style={s.itemChev}>›</Text>
+                </Pressable>
+              ))
+            : null}
+        </View>
+      );
+    });
+
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.head}>
@@ -29,42 +66,8 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
         <Text style={s.title}>{title}</Text>
         <Text style={s.sub}>{sub}</Text>
       </View>
-
-      {/* カテゴリー選択 */}
-      <View style={s.catRow}>
-        {cats.map((k, i) => {
-          const on = i === catIdx;
-          return (
-            <Pressable key={k.category} onPress={() => setCatIdx(i)} style={[s.catBtn, on && s.catBtnOn]}>
-              <Text style={[s.catTxt, on && s.catTxtOn]} numberOfLines={2}>{catLabel(k.category)}</Text>
-            </Pressable>
-          );
-        })}
-      </View>
-
       <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
-        {!cat || cat.subthemes.length === 0 ? (
-          <View style={s.empty}>
-            <Text style={s.emptyEmoji}>🌸</Text>
-            <Text style={s.emptyTxt}>{t.comingSoon}</Text>
-          </View>
-        ) : (
-          cat.subthemes.map((st) => (
-            <View key={st.sub} style={s.section}>
-              <Text style={s.secTitle}>{subLabel(st.sub)}</Text>
-              {st.items.map((it) => (
-                <Pressable key={it.id} style={s.card} onPress={() => setActive(it)}>
-                  <Text style={s.cardEmoji}>{emojiFor(it.form)}</Text>
-                  <View style={{ flex: 1 }}>
-                    <Text style={s.cardTitle}>{it.title}</Text>
-                    <Text style={s.cardMeta}>{formLabel(it.form)}</Text>
-                  </View>
-                  <Text style={s.chev}>›</Text>
-                </Pressable>
-              ))}
-            </View>
-          ))
-        )}
+        {renderNodes(nodesFor(tab), 0)}
         <View style={{ height: spacing.xl }} />
       </ScrollView>
     </SafeAreaView>
@@ -80,6 +83,7 @@ function emojiFor(form: string): string {
     case 'トーク': return '🎙️';
     case '解説': return '💡';
     case '物語': return '📕';
+    case 'ドキュメンタリー': return '🎬';
     default: return '🔊';
   }
 }
@@ -94,38 +98,21 @@ function Detail({ s, t, item, onClose }: {
         <Text style={s.qCrumb} numberOfLines={1}>{formLabel(item.form)}</Text>
         <View style={{ width: 56 }} />
       </View>
-
-      <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
+      <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>
         <Text style={s.dTitle}>{item.title}</Text>
-
-        {/* 音声(メイン)プレースホルダ ※TTS生成は今後 */}
         <View style={s.audio}>
           <Text style={s.audioIcon}>🔊</Text>
           <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
         </View>
-
-        {/* 本文(日本語・精読/精聴の本体) */}
-        <View style={s.bodyCard}>
-          <Text style={s.bodyTxt}>{item.text}</Text>
-        </View>
-
+        <View style={s.bodyCard}><Text style={s.bodyTxt}>{item.text}</Text></View>
         {!!item.en && (
-          <View style={s.block}>
-            <Text style={s.blockLabel}>{t.translationLabel}</Text>
-            <Text style={s.enTxt}>{item.en}</Text>
-          </View>
+          <View style={s.block}><Text style={s.blockLabel}>{t.translationLabel}</Text><Text style={s.enTxt}>{item.en}</Text></View>
         )}
         {!!item.key && (
-          <View style={s.block}>
-            <Text style={s.blockLabel}>{t.keyPhrasesLabel}</Text>
-            <Text style={s.keyTxt}>{item.key}</Text>
-          </View>
+          <View style={s.block}><Text style={s.blockLabel}>{t.keyPhrasesLabel}</Text><Text style={s.keyTxt}>{item.key}</Text></View>
         )}
         {!!item.point && (
-          <View style={[s.block, s.useful]}>
-            <Text style={s.usefulLabel}>{t.pointLabel}</Text>
-            <Text style={s.usefulTxt}>{item.point}</Text>
-          </View>
+          <View style={[s.block, s.useful]}><Text style={s.usefulLabel}>{t.pointLabel}</Text><Text style={s.usefulTxt}>{item.point}</Text></View>
         )}
         <View style={{ height: spacing.xl }} />
       </ScrollView>
@@ -140,33 +127,33 @@ const makeStyles = (c: ThemeColors) =>
     tab: { fontSize: ty.small, fontWeight: '700', letterSpacing: 1, color: c.mute },
     title: { fontSize: ty.h1, fontWeight: '800', color: c.ink, marginTop: spacing.xs },
     sub: { fontSize: ty.small, color: c.mute, marginTop: spacing.xs, lineHeight: 18 },
-
-    catRow: { flexDirection: 'row', gap: spacing.sm, paddingHorizontal: spacing.lg, paddingVertical: spacing.sm },
-    catBtn: {
-      flex: 1, alignItems: 'center', justifyContent: 'center', minHeight: 44, paddingVertical: spacing.xs, paddingHorizontal: spacing.xs,
-      borderRadius: radius.md, backgroundColor: c.surface, borderWidth: 1, borderColor: c.line,
-    },
-    catBtnOn: { backgroundColor: c.blue, borderColor: c.blue },
-    catTxt: { fontSize: ty.tiny, fontWeight: '800', color: c.ink2, textAlign: 'center' },
-    catTxtOn: { color: '#fff' },
-
     scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },
-    section: { marginTop: spacing.md },
-    secTitle: { fontSize: ty.h2, fontWeight: '800', color: c.ink, marginBottom: spacing.sm },
-    card: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      backgroundColor: c.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: c.line,
-      padding: spacing.md, marginBottom: spacing.sm,
+
+    row: {
+      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      backgroundColor: c.surface, borderRadius: radius.md, borderWidth: 1, borderColor: c.line,
+      paddingVertical: spacing.md, paddingRight: spacing.md, marginBottom: spacing.sm,
     },
-    cardEmoji: { fontSize: 22 },
-    cardTitle: { fontSize: ty.body, fontWeight: '800', color: c.ink },
-    cardMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 2 },
-    chev: { fontSize: 22, color: c.trace, fontWeight: '700' },
+    rowCat: { backgroundColor: c.surface, borderColor: c.line },
+    rowOpen: { borderColor: c.blue, backgroundColor: c.blueLight },
+    rowTxt: { flex: 1, fontSize: ty.body, fontWeight: '700', color: c.ink2 },
+    rowCatTxt: { fontSize: ty.h2, fontWeight: '800', color: c.ink },
+    rowTxtOpen: { color: c.blueDark },
+    caret: { fontSize: ty.body, fontWeight: '800', color: c.faint, marginLeft: spacing.sm },
+    caretOpen: { color: c.blue },
 
-    empty: { alignItems: 'center', justifyContent: 'center', paddingVertical: spacing.xxl, gap: spacing.sm },
-    emptyEmoji: { fontSize: 40 },
-    emptyTxt: { fontSize: ty.body, color: c.mute, fontWeight: '700' },
+    item: {
+      flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
+      backgroundColor: c.bgSoft, borderRadius: radius.md, paddingVertical: spacing.sm + 2, paddingRight: spacing.md,
+      marginBottom: spacing.xs,
+    },
+    itemEmoji: { fontSize: 18 },
+    itemTitle: { fontSize: ty.small, fontWeight: '700', color: c.ink },
+    itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 1 },
+    itemChev: { fontSize: 20, color: c.trace, fontWeight: '700' },
 
+    // detail
+    scroll2: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },
     qHead: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
       paddingHorizontal: spacing.md, paddingTop: spacing.sm, paddingBottom: spacing.sm,
