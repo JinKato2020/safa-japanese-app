@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
 import { useT, type Strings } from '../i18n';
+import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
@@ -12,11 +13,12 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
 }) {
   const c = useColors();
   const t = useT();
+  const lang = useSettings().settings.language;
   const s = useMemo(() => makeStyles(c), [c]);
   const [openPath, setOpenPath] = useState<string[]>([]);
   const [active, setActive] = useState<ContentItem | null>(null);
 
-  if (active) return <Detail s={s} t={t} item={active} onClose={() => setActive(null)} />;
+  if (active) return <Detail s={s} t={t} lang={lang} item={active} onClose={() => setActive(null)} />;
 
   // 各階層で開けるのは1つ。別を開くと同階層と配下を閉じる。
   const toggle = (level: number, name: string) =>
@@ -37,7 +39,7 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
           >
             <Text style={[s.caret, open && s.caretOpen]}>{open ? '▾' : '▸'}</Text>
             <Text style={[s.rowTxt, level === 0 && s.rowCatTxt, open && s.rowTxtOpen]} numberOfLines={2}>
-              {label(node.name)}
+              {label(node.name, lang)}
             </Text>
           </Pressable>
 
@@ -53,7 +55,7 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
                   <Text style={s.itemEmoji}>{emojiFor(it.form)}</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={s.itemTitle}>{it.title}</Text>
-                    <Text style={s.itemMeta}>{formLabel(it.form)}</Text>
+                    <Text style={s.itemMeta}>{formLabel(it.form, lang)}</Text>
                   </View>
                   <Text style={s.itemChev}>›</Text>
                 </Pressable>
@@ -92,14 +94,14 @@ function emojiFor(form: string): string {
   }
 }
 
-function Detail({ s, t, item, onClose }: {
-  s: ReturnType<typeof makeStyles>; t: Strings; item: ContentItem; onClose: () => void;
+function Detail({ s, t, lang, item, onClose }: {
+  s: ReturnType<typeof makeStyles>; t: Strings; lang: string; item: ContentItem; onClose: () => void;
 }) {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.qHead}>
         <Pressable onPress={onClose} hitSlop={10} style={s.back}><Text style={s.backTxt}>{t.list}</Text></Pressable>
-        <Text style={s.qCrumb} numberOfLines={1}>{formLabel(item.form)}</Text>
+        <Text style={s.qCrumb} numberOfLines={1}>{formLabel(item.form, lang)}</Text>
         <View style={{ width: 56 }} />
       </View>
       <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>

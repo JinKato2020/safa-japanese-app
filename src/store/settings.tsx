@@ -10,7 +10,7 @@ export interface Settings {
   language: string; // UI言語(現在は 'en' のみ)
 }
 
-const DEFAULT: Settings = { theme: 'auto', language: 'en' };
+const DEFAULT: Settings = { theme: 'auto', language: 'ja' }; // 開発用に日本語UI。公開前に 'en' へ戻す
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {

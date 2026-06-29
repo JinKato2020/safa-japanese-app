@@ -45,16 +45,18 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | 
 const Tab = createBottomTabNavigator();
 
 type IoniconName = keyof typeof Ionicons.glyphMap;
-const TABS: { name: string; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
-  { name: 'Home', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
-  { name: 'Short', component: ShortTab, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
-  { name: 'Long', component: LongTab, icon: 'book', iconOff: 'book-outline' },
-  { name: 'Dictionary', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
-  { name: 'Settings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
+type TabLabelKey = 'tabHome' | 'tabShort' | 'tabLong' | 'tabDict' | 'tabSettings';
+const TABS: { name: string; labelKey: TabLabelKey; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
+  { name: 'Home', labelKey: 'tabHome', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
+  { name: 'Short', labelKey: 'tabShort', component: ShortTab, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
+  { name: 'Long', labelKey: 'tabLong', component: LongTab, icon: 'book', iconOff: 'book-outline' },
+  { name: 'Dictionary', labelKey: 'tabDict', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
+  { name: 'Settings', labelKey: 'tabSettings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
 ];
 
 function MainTabs() {
   const c = useColors();
+  const t = useT();
   return (
     <Tab.Navigator
       screenOptions={{
@@ -70,6 +72,7 @@ function MainTabs() {
           name={tab.name}
           component={tab.component}
           options={{
+            tabBarLabel: t[tab.labelKey],
             tabBarIcon: ({ color, size, focused }) => (
               <Ionicons name={focused ? tab.icon : tab.iconOff} size={size ?? 24} color={color} />
             ),

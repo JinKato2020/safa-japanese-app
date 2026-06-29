@@ -82,5 +82,6 @@ export const FORM_LABEL_EN: Record<string, string> = {
   'ドキュメンタリー': 'Documentary',
 };
 
-export const label = (n: string) => LABEL_EN[n] ?? n;
-export const formLabel = (f: string) => FORM_LABEL_EN[f] ?? f;
+// lang==='ja' は日本語名(キー)をそのまま表示。それ以外は英語ラベル。
+export const label = (n: string, lang = 'en') => (lang === 'ja' ? n : LABEL_EN[n] ?? n);
+export const formLabel = (f: string, lang = 'en') => (lang === 'ja' ? f : FORM_LABEL_EN[f] ?? f);

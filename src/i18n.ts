@@ -5,12 +5,14 @@ import { useSettings } from './store/settings';
 export interface LangOption { code: string; label: string }
 export const LANGUAGES: LangOption[] = [
   { code: 'en', label: 'English' },
-  // 追加予定: { code: 'ja', label: '日本語' } など
+  { code: 'ja', label: '日本語' }, // 開発用(公開前に既定をenへ戻す)
 ];
 
 const en = {
   // タブ
   tabHome: 'Home',
+  tabShort: 'Short',
+  tabLong: 'Long',
   tabReading: 'Reading',
   tabDict: 'Dictionary',
   tabSettings: 'Settings',
@@ -106,7 +108,47 @@ const en = {
 
 export type Strings = typeof en;
 
-const TABLE: Record<string, Strings> = { en };
+const ja: Strings = {
+  tabHome: 'ホーム', tabShort: '短文', tabLong: '長文', tabReading: '読解', tabDict: '辞書', tabSettings: '設定',
+  appName: '聞いて話せる日本語',
+  homeKicker: 'ホーム',
+  heroTitle: '毎日、こつこつ続けよう。',
+  heroBody: '学習した日は自動で記録されます。連続記録をのばして、バッジを集めましょう。',
+  coverageTitle: 'レベル別カバー率（読解）',
+  recordTitle: '学習の記録',
+  statStreak: '連続(日)', statLongest: '最長(日)', statTotal: '累計(日)',
+  thisWeek: '今週', last5weeks: 'この5週間',
+  badgesTitle: '連続学習バッジ', badgeEarned: '獲得済み',
+  badgeHint: (n: number) => `${n}日連続で獲得`,
+  badge3: '3日連続', badge7: '1週間', badge14: '2週間', badge30: '1ヶ月', badge60: '2ヶ月', badge100: '100日',
+  qShort: (n: number) => `${n}問`,
+  shortKicker: '短文', shortTitle: '短文', shortSub: '生活で使う短い日本語を、聞いて読む。',
+  longKicker: '長文', longTitle: '長文', longSub: '長めのリスニングと物語を楽しむ。',
+  comingSoon: '準備中', audioComingSoon: '音声は準備中',
+  translationLabel: '翻訳', keyPhrasesLabel: 'キー表現', pointLabel: 'ポイント', usefulForLabel: '役立つ場面',
+  readingKicker: '読解', readingTitle: '読解', readingSub: 'JLPT形式の読解問題。レベルを選んで始めよう。',
+  questionsCount: (n: number) => `${n}問`,
+  oneQuestion: '1問', nQuestions: (n: number) => `${n}問`,
+  chars: (n: number) => `本文 ${n}字`, passageChars: (n: number) => `${n}字`,
+  list: '‹ 一覧', qNo: (n: number) => `問${n}　`, focus: 'ねらい', prev: '‹ 前へ', next: '次へ ›',
+  dictKicker: '辞書', dictWord: '単語', dictKanji: '漢字', all: 'すべて',
+  searchPlaceholder: '語・読み・意味で検索',
+  resultsCount: (n: number) => `${n}件`, noResults: '該当なし',
+  dictError: '辞書を取得できませんでした（オフラインの可能性）。\n通信できる状態でもう一度開いてください。',
+  dictLoading: '辞書を読み込み中…（初回のみ通信）',
+  onLabel: '音', kunLabel: '訓',
+  gradeLabel: (n: number | string) => `小${n}`, strokesLabel: (n: number | string) => `${n}画`,
+  settingsKicker: '設定', settingsTitle: '設定',
+  theme: 'テーマ', themeLight: 'ライト', themeDark: 'ダーク', themeAuto: '自動',
+  language: '言語', legal: '情報・規約', privacy: 'プライバシーポリシー', terms: '利用規約', rate: 'このアプリを評価',
+  privacyUrl: 'https://safa-lang.com/ja/privacy/',
+  termsUrl: 'https://safa-lang.com/ja/terms/',
+  openError: 'リンクを開けませんでした。',
+  dictSourceLabel: '辞書データの出典',
+  resetIdle: 'データを初期化', resetArm: 'もう一度押すと初期化',
+};
+
+const TABLE: Record<string, Strings> = { en, ja };
 
 export function strings(lang: string): Strings {
   return TABLE[lang] ?? en;
