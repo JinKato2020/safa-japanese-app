@@ -83,6 +83,15 @@ export const darkColors: ThemeColors = {
 /** 既定パレット(ライト)。実行時の切替は useColors を使う。 */
 export const colors = lightColors;
 
+/** 背景カラーのプリセット(アイコン/フィーチャーグラフィックの水彩トーン)。設定で選択。 */
+export type BackgroundKey = 'default' | 'sakura' | 'sky' | 'watercolor';
+export const BACKGROUNDS: Record<BackgroundKey, { light: { bg: string; bgSoft: string }; dark: { bg: string; bgSoft: string } }> = {
+  default:    { light: { bg: '#f8fafc', bgSoft: '#f1f5f9' }, dark: { bg: '#0b1220', bgSoft: '#0f1a2e' } },
+  sakura:     { light: { bg: '#fdf2f6', bgSoft: '#f9e6ee' }, dark: { bg: '#180f14', bgSoft: '#21141b' } }, // 桜(ピンク)
+  sky:        { light: { bg: '#eef5ff', bgSoft: '#dfeaff' }, dark: { bg: '#0a1322', bgSoft: '#0f1c30' } }, // 空(ブルー)
+  watercolor: { light: { bg: '#f4f1fb', bgSoft: '#eae6f6' }, dark: { bg: '#120f1c', bgSoft: '#191428' } }, // 水彩(ブルー×ピンク)
+};
+
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48 };
 export const radius = { sm: 6, md: 10, lg: 16, xl: 20, pill: 999 };
 export const type = { hero: 54, h1: 24, h2: 18, body: 14, small: 12, tiny: 10 };

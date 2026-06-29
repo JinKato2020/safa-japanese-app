@@ -27,6 +27,12 @@ export default function SettingsScreen() {
     { v: 'dark', label: t.themeDark },
     { v: 'auto', label: t.themeAuto },
   ];
+  const BGS: { v: string; label: string }[] = [
+    { v: 'default', label: t.bgDefault },
+    { v: 'sakura', label: t.bgSakura },
+    { v: 'sky', label: t.bgSky },
+    { v: 'watercolor', label: t.bgWatercolor },
+  ];
 
   const openUrl = async (url: string) => {
     try {
@@ -69,7 +75,17 @@ export default function SettingsScreen() {
             ))}
           </View>
 
-          {/* 言語選択(現在は英語のみ) */}
+          {/* 背景カラー */}
+          <Text style={s.setLbl}>{t.background}</Text>
+          <View style={s.chipRow}>
+            {BGS.map((b) => (
+              <Pressable key={b.v} onPress={() => setSettings({ background: b.v })} style={[s.chip, settings.background === b.v && s.chipOn]}>
+                <Text style={[s.chipTxt, settings.background === b.v && s.chipTxtOn]}>{b.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+
+          {/* 言語選択 */}
           <Text style={s.setLbl}>{t.language}</Text>
           <View style={s.chipRow}>
             {LANGUAGES.map((lg) => (

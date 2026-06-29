@@ -7,10 +7,11 @@ export type ThemeMode = 'light' | 'dark' | 'auto';
 
 export interface Settings {
   theme: ThemeMode;
-  language: string; // UI言語(現在は 'en' のみ)
+  language: string; // UI言語(en/ja)
+  background: string; // 背景カラー(default/sakura/sky/watercolor)
 }
 
-const DEFAULT: Settings = { theme: 'auto', language: 'ja' }; // 開発用に日本語UI。公開前に 'en' へ戻す
+const DEFAULT: Settings = { theme: 'auto', language: 'ja', background: 'default' }; // 開発用に日本語UI。公開前に 'en' へ戻す
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {
