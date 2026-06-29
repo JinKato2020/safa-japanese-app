@@ -491,6 +491,39 @@
       "key": "〜も 〜から 落ちる／つまり／〜ことが ある",
       "point": "失敗は誰にでも。",
       "note": "1話者・朗読"
+     },
+     {
+      "id": "S-Z-003",
+      "title": "石の上にも三年",
+      "form": "読み物",
+      "level": "N3",
+      "text": "『石（いし）の 上（うえ）にも 三年（さんねん）』は、がんばりを 教（おし）える ことわざです。冷（つめ）たい 石（いし）の 上（うえ）でも、三年（さんねん）すわり 続（つづ）ければ、あたたかく なる。つまり、つらい ことでも、あきらめずに 続（つづ）ければ、いつか 実（みの）る、という 意味（いみ）です。日本語（にほんご）の 勉強（べんきょう）も 同（おな）じ。すぐに 結果（けっか）が 出（で）なくても、毎日（まいにち） 少（すこ）しずつ 続（つづ）ければ、きっと 上手（じょうず）に なります。",
+      "en": "'Even on a stone, three years' is a proverb that teaches perseverance. Even on a cold stone, if you keep sitting for three years, it grows warm. In other words, even hard things, if you keep at them without giving up, will eventually bear fruit. Studying Japanese is the same. Even if results don't come right away, if you keep going a little each day, you'll surely improve.",
+      "key": "〜ば／つまり／〜ても",
+      "point": "継続は力なり。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-Z-004",
+      "title": "花より団子",
+      "form": "読み物",
+      "level": "N4",
+      "text": "『花（はな）より 団子（だんご）』は、おもしろい ことわざです。きれいな 桜（さくら）の 花（はな）を 見（み）る より、おいしい 団子（だんご）を 食（た）べる ほうが いい。つまり、見（み）た目（め）の 美（うつく）しさ より、役（やく）に 立（た）つ ものや 実（じつ）の ある ものを 選（えら）ぶ、という 意味（いみ）です。お花見（はなみ）で、景色（けしき）より お弁当（べんとう）に 夢中（むちゅう）な 人（ひと）を 見（み）たら、『花より団子だね』と 言（い）えます。",
+      "en": "'Dumplings over flowers' is a fun proverb. Rather than viewing the beautiful cherry blossoms, eating tasty dumplings is better. In other words, it means choosing what's useful or substantial over mere appearance. If at a cherry-blossom party you see someone more absorbed in their bento than the scenery, you can say 'dumplings over flowers.'",
+      "key": "〜より 〜ほうが／つまり／〜に 夢中",
+      "point": "実利を取るたとえ。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-Z-005",
+      "title": "七転び八起き",
+      "form": "読み物",
+      "level": "N3",
+      "text": "『七転（ななころ）び 八起（やお）き』は、何度（なんど） 失敗（しっぱい）しても 立（た）ち上（あ）がる 強（つよ）さを 表（あらわ）す ことわざです。七回（ななかい） ころんでも、八回（はちかい） 起（お）き上（あ）がる。人生（じんせい）には うまく いかない ことも 多（おお）いけれど、そのたびに 起（お）き上（あ）がれば いい、という 前向（まえむ）きな 言葉（ことば）です。だるまの 人形（にんぎょう）は、この 心（こころ）を 表（あらわ）しています。",
+      "en": "'Fall seven times, get up eight' is a proverb expressing the strength to rise no matter how many times you fail. Even if you fall seven times, you get up eight. Life has many things that don't go well, but it's a positive saying that you can just get up each time. The daruma doll embodies this spirit.",
+      "key": "何度〜ても／そのたびに／〜ば いい",
+      "point": "不屈の精神。",
+      "note": "1話者・朗読"
      }
     ]
    },
@@ -508,6 +541,50 @@
       "key": "〜から 来た 言葉／意味が 違う／和製英語",
       "point": "和製英語の落とし穴。",
       "note": "1話者・解説"
+     },
+     {
+      "id": "S-K-002",
+      "title": "マンションとアパート",
+      "form": "解説",
+      "level": "N4",
+      "text": "日本（にほん）で「マンション」と 言（い）うと、鉄筋（てっきん）の りっぱな 集合住宅（しゅうごうじゅうたく）の ことです。英語（えいご）の「mansion」（大（おお）きな 屋敷（やしき））とは 意味（いみ）が ちがいます。木造（もくぞう）や 小（ちい）さめの 建物（たてもの）は「アパート」と 呼（よ）びます。部屋（へや）を 探（さが）す とき、この ちがいを 知（し）っておくと 便利（べんり）です。",
+      "en": "In Japan, 'mansion' means a fine reinforced-concrete apartment building. It differs from the English 'mansion' (a large estate). Wooden or smaller buildings are called 'apato.' When looking for a place, it's handy to know this difference.",
+      "key": "〜と 言うと／〜とは ちがう／〜ておくと 便利",
+      "point": "和製英語の落とし穴。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-K-003",
+      "title": "バイキングは食べ放題",
+      "form": "解説",
+      "level": "N4",
+      "text": "レストランで「バイキング」と 言（い）えば、好（す）きな だけ 食（た）べられる「食（た）べ放題（ほうだい）」の ことです。これは 日本（にほん）で 生（う）まれた 言（い）い方（かた）で、英語（えいご）では「buffet（ビュッフェ）」と 言（い）います。ホテルの 朝食（ちょうしょく）で よく 見（み）ます。料理（りょうり）を 取（と）りすぎて、おなかが ぱんぱんに なる 人（ひと）も います。",
+      "en": "At a restaurant, 'baikingu' (Viking) means an all-you-can-eat 'buffet.' This expression was born in Japan; in English it's 'buffet.' You often see it at hotel breakfasts. Some people take too much food and end up stuffed.",
+      "key": "〜と 言えば／〜放題／取りすぎる",
+      "point": "和製英語バイキング。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-K-004",
+      "title": "コンセントとプラグ",
+      "form": "解説",
+      "level": "N4",
+      "text": "電気（でんき）の さしこみ口（ぐち）を、日本（にほん）では「コンセント」と 言（い）います。でも 英語（えいご）では「outlet」や「socket」。「consent」は 英語（えいご）で「同意（どうい）」の 意味（いみ）なので、まったく ちがいます。さしこむ 方（ほう）は「プラグ」。海外（かいがい）の 製品（せいひん）を 使（つか）う ときは、形（かたち）が 合（あ）うか 確（たし）かめましょう。",
+      "en": "In Japan, an electrical socket is called 'konsento.' But in English it's 'outlet' or 'socket.' 'Consent' in English means agreement, so it's completely different. The part you plug in is the 'plug.' When using overseas products, check whether the shape fits.",
+      "key": "〜では 〜と 言う／〜とは ちがう／確かめましょう",
+      "point": "意味が全然違う和製英語。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-K-005",
+      "title": "「サービス」はただ？",
+      "form": "解説",
+      "level": "N3",
+      "text": "日本（にほん）の お店（みせ）で「これ、サービスです」と 言（い）われたら、「無料（むりょう）」「おまけ」の 意味（いみ）です。英語（えいご）の「service」（仕事・接客）とは 少（すこ）し ちがう 使（つか）い方（かた）です。ほかにも「アフターサービス」（修理（しゅうり）などの 対応（たいおう））など、日本（にほん）ならではの 使（つか）い方（かた）が あります。「サービスしますよ」と 言（い）われたら、少（すこ）し お得（とく）な サインです。",
+      "en": "If a Japanese shop says 'this is service,' it means 'free' or 'a freebie.' It's a slightly different usage from the English 'service' (work/hospitality). There are also Japan-specific uses like 'after-service' (handling repairs, etc.). If you hear 'I'll give you a service,' it's a sign of a little bargain.",
+      "key": "〜と 言われたら／〜とは 少し ちがう／〜ならでは",
+      "point": "得する和製英語。",
+      "note": "1話者・朗読"
      }
     ]
    },
@@ -535,6 +612,39 @@
       "en": "When you're hungry, in Japanese you say your stomach is 'peko-peko'—the state of being very hungry. The sound of a growling stomach is 'guu~.' When you've eaten a lot and are full, it's 'pan-pan.' When you're terribly sleepy, you 'uto-uto' (doze off). Expressing feelings and bodily states with sounds is the fun of onomatopoeia.",
       "key": "ぺこぺこ／ぐう／ぱんぱん／うとうと",
       "point": "体調の擬音語。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-O-003",
+      "title": "わくわく・どきどき",
+      "form": "解説",
+      "level": "N4",
+      "text": "楽（たの）しみで 心（こころ）が おどる とき、日本語（にほんご）では『わくわく』します。旅行（りょこう）の 前（まえ）の 夜（よる）は、わくわくして 眠（ねむ）れません。きんちょうや こわさで 胸（むね）が 速（はや）く なる ときは『どきどき』。はじめての 面接（めんせつ）は どきどきします。気持（きも）ちの 高（たか）まりを、音（おと）で 表（あらわ）す ことが できます。",
+      "en": "When your heart dances with anticipation, in Japanese you go 'waku-waku.' The night before a trip, you're so excited you can't sleep. When your chest beats fast from nerves or fear, it's 'doki-doki.' A first interview makes you doki-doki. You can express rising emotions with sound.",
+      "key": "わくわく／どきどき／〜して 〜ない",
+      "point": "感情の擬音語。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-O-004",
+      "title": "ぴかぴか・つるつる",
+      "form": "解説",
+      "level": "N4",
+      "text": "きれいに みがかれて 光（ひか）る ようすは『ぴかぴか』。そうじの あとの 床（ゆか）は ぴかぴかです。表面（ひょうめん）が なめらかで すべる ようすは『つるつる』。うどんを つるつる 食（た）べる、と 言（い）えば、勢（いきお）いよく すする ようすです。同（おな）じ つるつるでも、氷（こおり）は すべって あぶない。手（て）ざわりや 様子（ようす）を 音（おと）で 表（あらわ）します。",
+      "en": "Something polished and shining is 'pika-pika.' The floor after cleaning is pika-pika. A smooth, slippery surface is 'tsuru-tsuru.' 'Eating udon tsuru-tsuru' means slurping it up vigorously. The same tsuru-tsuru, but ice is slippery and dangerous. You express texture and appearance with sound.",
+      "key": "ぴかぴか／つるつる／〜と 言えば",
+      "point": "質感の擬音語。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-O-005",
+      "title": "ざあざあ・しとしと",
+      "form": "解説",
+      "level": "N4",
+      "text": "雨（あめ）の ふり方（かた）も、音（おと）で 言（い）い分（わ）けます。強（つよ）く たくさん ふる ときは『ざあざあ』。しずかに 細（こま）かく ふる ときは『しとしと』。台風（たいふう）の 日（ひ）は ざあざあ、つゆの 季節（きせつ）は しとしと。雷（かみなり）が 鳴（な）る ときは『ごろごろ』。天気（てんき）の 様子（ようす）が、音（おと）だけで 伝（つた）わります。",
+      "en": "Even how rain falls is distinguished by sound. Heavy, abundant rain is 'zaa-zaa.' Quiet, fine rain is 'shito-shito.' A typhoon day is zaa-zaa; the rainy season is shito-shito. When thunder rumbles, it's 'goro-goro.' The weather's mood comes across through sound alone.",
+      "key": "ざあざあ／しとしと／ごろごろ",
+      "point": "天気の擬音語。",
       "note": "1話者・朗読"
      }
     ]
@@ -564,22 +674,44 @@
         "title": "ゴミ出しでこまった",
         "form": "物語",
         "level": "N4",
-        "text": "（ナレーション）引（ひ）っ越（こ）しの 次（つぎ）の 日（ひ）。カイは ゴミぶくろを 持（も）って、こまっていた。\nカイ：あれ？ ゴミは どこに 出（だ）せば いいんだろう…。\n（ナレーション）ちょうど、となりの 人（ひと）が 通（とお）りかかった。\nカイ：あの、すみません。ゴミの 出（だ）し方（かた）が わからなくて…。\nとなりの人：ああ、燃（も）えるゴミは 月曜（げつよう）と 木曜（もくよう）ですよ。朝（あさ）8時（じ）までに、そこの 角（かど）に 出（だ）してね。\nカイ：そうなんですね！ ありがとうございます。助（たす）かりました。\nとなりの人：困（こま）ったら いつでも 聞（き）いてね。\n（ナレーション）カイは ほっとした。「日本（にほん）の 人（ひと）は 親切（しんせつ）だなあ」。",
-        "en": "(Narration) The day after moving. Kai stood there holding a trash bag, troubled. / Kai: Huh? Where am I supposed to put the trash...? / (Narration) Just then, a neighbor passed by. / Kai: Um, excuse me. I don't know how to sort the trash... / Neighbor: Ah, burnable trash is Monday and Thursday. Put it at that corner by 8 a.m. / Kai: Oh, I see! Thank you, that helps. / Neighbor: Ask me anytime you're stuck. / (Narration) Kai felt relieved. 'Japanese people are so kind.'",
+        "text": "（ナレーション）引（ひ）っ越（こ）しの 次（つぎ）の 日（ひ）。カイは ゴミぶくろを 持（も）って、こまっていた。\nカイ：あれ？ ゴミは どこに 出（だ）せば いいんだろう…。\n（ナレーション）ちょうど、近所（きんじょ）の 田中（たなか）さんが 通（とお）りかかった。世話（せわ）ずきな、この あたりの 大家（おおや）さんだ。\nカイ：あの、すみません。ゴミの 出（だ）し方（かた）が わからなくて…。\n田中さん：ああ、燃（も）えるゴミは 月曜（げつよう）と 木曜（もくよう）ですよ。朝（あさ）8時（じ）までに、そこの 角（かど）に 出（だ）してね。\nカイ：そうなんですね！ ありがとうございます。助（たす）かりました。\n田中さん：困（こま）ったら いつでも 聞（き）いてね。\n（ナレーション）カイは ほっとした。「田中（たなか）さん、親切（しんせつ）だなあ。心強（こころづよ）いな」。",
+        "en": "(Narration) The day after moving. Kai stood there holding a trash bag, troubled. / Kai: Huh? Where am I supposed to put the trash...? / (Narration) Just then, Tanaka-san, the caring landlady of the area, passed by. / Kai: Um, excuse me. I don't know how to sort the trash... / Tanaka: Ah, burnable trash is Monday and Thursday. Put it at that corner by 8 a.m. / Kai: Oh, I see! Thank you, that helps. / Tanaka: Ask me anytime you're stuck. / (Narration) Kai felt relieved. 'Tanaka-san is so kind. That's reassuring.'",
         "key": "〜ばいいんだろう／そうなんですね／〜てね",
-        "point": "近所での会話＋気づき。会話表現「あれ?/〜なんですね/〜てね」。",
-        "note": "多声TTS:ナレーター/カイ/近所の人"
+        "point": "近所のメンター田中さん デビュー。会話表現「あれ?/〜なんですね/〜てね」。",
+        "note": "多声TTS:ナレーター/カイ/田中さん"
        },
        {
         "id": "L-K-L-003",
         "title": "はじめての友だち（ミナ）",
         "form": "物語",
         "level": "N4",
-        "text": "（ナレーション）日本（にほん）に 来（き）た ばかりの ころ、カイは 友（とも）だちが いなくて さびしかった。ある日（ひ）、日本語（にほんご）の 教室（きょうしつ）で、となりの 席（せき）の 人（ひと）が 話（はな）しかけてきた。\nミナ：あ、その ペン、いいね。どこで 買（か）ったの？\nカイ：えっ、これ？ 駅前（えきまえ）の お店（みせ）です。\nミナ：へえ。わたし、ミナ。同（おな）じ クラスだね。よかったら いっしょに お昼（ひる）、食（た）べない？\nカイ：いいんですか？ うれしいです！\n（ナレーション）はじめての 友（とも）だち、ミナ。その 一言（ひとこと）が、とても うれしかった。\nカイ：（心の声）勇気（ゆうき）を 出（だ）して よかった…！\n（ナレーション）この 日（ひ）から、ミナは カイの 大切（たいせつ）な 友（とも）だちに なった。",
-        "en": "(Narration) Just after coming to Japan, Kai had no friends and felt lonely. One day, in Japanese class, the person next to him struck up a conversation. / Mina: Oh, that pen's nice. Where'd you buy it? / Kai: Huh, this? At the shop in front of the station. / Mina: Huh. I'm Mina. We're in the same class. If you'd like, want to have lunch together? / Kai: Really? I'd love to! / (Narration) His first friend, Mina. That one phrase made him so happy. / Kai: (inner voice) I'm so glad I found the courage...! / (Narration) From this day, Mina became Kai's dear friend.",
+        "text": "（ナレーション）学校（がっこう）が 始（はじ）まって 数日（すうじつ）。まだ クラスに なれない カイに、同（おな）じ クラスの ミナが 話（はな）しかけてきた。\nミナ：あ、その ペン、いいね。どこで 買（か）ったの？\nカイ：えっ、これ？ 駅前（えきまえ）の お店（みせ）です。\nミナ：へえ。ねえ、よかったら いっしょに お昼（ひる）、食（た）べない？\nカイ：いいんですか？ うれしいです！\n（ナレーション）その 一言（ひとこと）が、とても うれしかった。\nカイ：（心の声）勇気（ゆうき）を 出（だ）して よかった…！\n（ナレーション）この 日（ひ）から、ミナは カイの いちばんの 友（とも）だちに なった。",
+        "en": "(Narration) A few days after school started. To Kai, who still hadn't settled into class, Mina—a classmate—struck up a conversation. / Mina: Oh, that pen's nice. Where'd you buy it? / Kai: Huh, this? At the shop in front of the station. / Mina: Huh. Hey, if you'd like, want to have lunch together? / Kai: Really? I'd love to! / (Narration) That one phrase made him so happy. / Kai: (inner voice) I'm so glad I found the courage...! / (Narration) From this day, Mina became Kai's best friend.",
         "key": "どこで 買ったの？／いっしょに 〜ない？／よかったら",
-        "point": "相棒ミナとの出会い。会話表現「えっ/へえ/ねえ」。誘いの「〜ない?」。",
+        "point": "相棒ミナと仲よくなる回。会話表現「えっ/へえ/ねえ」。誘いの「〜ない?」。",
         "note": "多声TTS:ナレーター/カイ/ミナ"
+       },
+       {
+        "id": "L-K-L-004",
+        "title": "バイトを始める",
+        "form": "物語",
+        "level": "N4",
+        "text": "（ナレーション）カイは、駅前（えきまえ）の カフェで バイトを 始（はじ）めた。初日（しょにち）、同（おな）じ シフトの 男（おとこ）の 子（こ）が 声（こえ）を かけてきた。\nケンタ：あ、新（あたら）しい 人（ひと）？ おれ、ケンタ。よろしく！\nカイ：カイです。よろしく お願（ねが）いします。\nケンタ：かたいなあ（笑）。タメで いいよ。わからない こと あったら、何（なん）でも 聞（き）いて。\nカイ：ありがとう。じゃあ…レジ、まだ ちょっと こわくて。\nケンタ：だいじょうぶ だいじょうぶ。最初（さいしょ）は みんな そう。おれが ついてる から！\n（ナレーション）ケンタの 明（あか）るさに、カイの きんちょうは すっと ほどけた。「日本人（にほんじん）の 友（とも）だち、第一号（だいいちごう）だ」。",
+        "en": "(Narration) Kai started a part-time job at a cafe by the station. On day one, a guy on the same shift spoke to him. / Kenta: Oh, the new person? I'm Kenta. Nice to meet you! / Kai: I'm Kai. Pleased to meet you. / Kenta: So formal, ha. You can be casual with me. If there's anything you don't get, just ask. / Kai: Thanks. Then... the register still scares me a bit. / Kenta: It's fine, it's fine. Everyone's like that at first. I've got your back! / (Narration) Kenta's brightness loosened Kai's nerves at once. 'My first Japanese friend.'",
+        "key": "タメで いい／〜たら 聞いて／ついてる",
+        "point": "日本人の友ケンタ デビュー。くだけた会話表現。",
+        "note": "多声TTS:ナレーター/カイ/ケンタ"
+       },
+       {
+        "id": "L-K-L-005",
+        "title": "日本語学校の初日",
+        "form": "物語",
+        "level": "N4",
+        "text": "（ナレーション）日本語（にほんご）学校（がっこう）の 初日（しょにち）。教室（きょうしつ）に 入（はい）ると、先生（せんせい）が にっこり わらった。\nさくら先生：みなさん、はじめまして。担任（たんにん）の さくらです。今日（きょう）から いっしょに がんばりましょう。\nカイ：（心の声）やさしそうな 先生（せんせい）で よかった…。\nさくら先生：では、となりの 人（ひと）と あいさつを して みましょう。\nミナ：はじめまして、ミナです。\nカイ：カイです。よろしく お願（ねが）いします。\n（ナレーション）さくら先生（せんせい）の ていねいな 日本語（にほんご）と、ミナの 笑顔（えがお）。カイの 新（あたら）しい 毎日（まいにち）は、ここから 始（はじ）まった。",
+        "en": "(Narration) The first day at Japanese language school. When Kai entered the classroom, the teacher smiled warmly. / Sakura-sensei: Everyone, nice to meet you. I'm Sakura, your homeroom teacher. Let's do our best together starting today. / Kai: (inner voice) I'm glad the teacher seems kind... / Sakura-sensei: Now, let's greet the person next to you. / Mina: Nice to meet you, I'm Mina. / Kai: I'm Kai. Pleased to meet you. / (Narration) Sakura-sensei's polite Japanese and Mina's smile. Kai's new daily life began right here.",
+        "key": "はじめまして／〜ましょう／よろしく お願いします",
+        "point": "さくら先生 デビュー＋ミナと同級。ていねい語の手本。",
+        "note": "多声TTS:ナレーター/さくら先生/カイ/ミナ"
        }
       ]
      },
@@ -754,11 +886,11 @@
         "title": "週末どうだった？",
         "form": "対話",
         "level": "N4",
-        "text": "A：週末（しゅうまつ）、どうだった？\nB：友（とも）だちと 海（うみ）に 行（い）ったよ。すごく きれいだった！\nA：いいなあ。私（わたし）は 一日中（いちにちじゅう）、家（いえ）で ドラマを 見（み）てた。\nB：それも いいよね。何（なに）の ドラマ？\nA：日本（にほん）の 恋愛（れんあい）ドラマ。じつは 日本語の 勉強（べんきょう）にも なるんだ。\nB：へえ、いいね！",
-        "en": "A: How was your weekend? / B: I went to the beach with friends. It was so beautiful! / A: Nice. I watched dramas at home all day. / B: That's good too. What drama? / A: A Japanese romance drama. Actually it's good Japanese study too. / B: Oh, nice!",
+        "text": "ケンタ：週末（しゅうまつ）、どうだった？\nカイ：友（とも）だちの ミナと 海（うみ）に 行（い）ったよ。すごく きれいだった！\nケンタ：いいなあ。おれは 一日中（いちにちじゅう）、家（いえ）で ドラマを 見（み）てた。\nカイ：それも いいね。何（なに）の ドラマ？\nケンタ：日本（にほん）の 恋愛（れんあい）ドラマ。じつは 日本語の 勉強（べんきょう）にも なるんだぜ。\nカイ：へえ、いいね！",
+        "en": "Kenta: How was your weekend? / Kai: I went to the beach with my friend Mina. It was so beautiful! / Kenta: Nice. I watched dramas at home all day. / Kai: That's good too. What drama? / Kenta: A Japanese romance drama. Actually it's good Japanese study too. / Kai: Oh, nice!",
         "key": "どうだった?／〜に 行ったよ／勉強にも なる",
-        "point": "友だち同士の自然な雑談。",
-        "note": "多声TTS:友人2人"
+        "point": "相棒ケンタとカイのゆるい雑談(再登場)。",
+        "note": "多声TTS:ケンタ/カイ"
        }
       ]
      }
