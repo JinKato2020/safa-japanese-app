@@ -504,6 +504,22 @@
         "note": "1話者・低めの声"
        }
       ]
+     },
+     {
+      "sub": "ドキュメンタリー",
+      "items": [
+       {
+        "id": "L-020",
+        "title": "カップラーメンの誕生",
+        "form": "ドキュメンタリー",
+        "level": "N3",
+        "text": "戦後（せんご）の 日本（にほん）。食（た）べ物（もの）が 少（すく）なく、人々（ひとびと）は 困（こま）っていた。一人（ひとり）の 男（おとこ）、安藤（あんどう）さんは 考（かんが）えた。「お湯（ゆ）を 入（い）れるだけで 食べられる めんを 作（つく）れないか」。\n毎日（まいにち）、朝（あさ）から 夜（よる）まで 研究（けんきゅう）した。何度（なんど）も 失敗（しっぱい）した。でも、あきらめなかった。ある日（ひ）、妻（つま）が 作る 天（てん）ぷらを 見（み）て、ひらめいた。「油（あぶら）で あげれば、めんが かわく！」\nこうして、世界（せかい）で はじめての インスタントラーメンが 生（う）まれた。今（いま）では、世界中（せかいじゅう）で 一年（いちねん）に 1000億（おく）食（しょく）も 食べられている。小（ちい）さな ひらめきが、世界を 変（か）えたのだ。",
+        "en": "Postwar Japan. Food was scarce and people were struggling. One man, Mr. Ando, thought: 'Couldn't I make noodles you can eat just by adding hot water?' Every day, from morning to night, he researched. He failed many times. But he never gave up. One day, watching his wife make tempura, it hit him: 'If you fry them in oil, the noodles dry out!' Thus the world's first instant ramen was born. Today, 100 billion servings are eaten worldwide each year. A small spark of insight changed the world.",
+        "key": "あきらめなかった／ひらめいた／世界を 変えた",
+        "point": "困難→挑戦→転機→成功 の物語の流れを聞く。",
+        "note": "1話者・ナレーション(語り)"
+       }
+      ]
      }
     ]
    },
@@ -514,7 +530,7 @@
       "sub": "本音講座",
       "items": [
        {
-        "id": "L-020",
+        "id": "L-021",
         "title": "「大丈夫です」の正体",
         "form": "解説",
         "level": "N3",
@@ -530,7 +546,7 @@
       "sub": "あるある",
       "items": [
        {
-        "id": "L-021",
+        "id": "L-022",
         "title": "日本の電車は静か",
         "form": "読み物",
         "level": "N4",
@@ -546,7 +562,7 @@
       "sub": "食べもの",
       "items": [
        {
-        "id": "L-022",
+        "id": "L-023",
         "title": "ラーメンを食べよう",
         "form": "読み物",
         "level": "N4",

@@ -63,6 +63,7 @@ export const SUBTHEME_LABEL_EN: Record<string, string> = {
   '昔話': 'Folk Tales',
   '日本語ミステリー': 'Japanese Mystery',
   '怖い話': 'Scary Stories',
+  'ドキュメンタリー': 'Documentary',
   // 文化と本音
   '本音講座': 'Real Talk',
   'あるある': 'Japan Quirks',
@@ -78,6 +79,7 @@ export const FORM_LABEL_EN: Record<string, string> = {
   '解説': 'Explainer',
   '物語': 'Story',
   '読み物': 'Reading',
+  'ドキュメンタリー': 'Documentary',
 };
 
 export const catLabel = (c: string) => CATEGORY_LABEL_EN[c] ?? c;
