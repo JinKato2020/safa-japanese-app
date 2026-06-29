@@ -36,7 +36,9 @@ export const LABEL_EN: Record<string, string> = {
   '日本と世界の違い': 'Japan vs the World',
   '使える一言': 'Useful Phrases',
   'グルメ': 'Food & Gourmet',
-  '言葉遊び': 'Word Fun',
+  'ことわざ': 'Proverbs',
+  'カタカナ語': 'Katakana Words',
+  '擬音語': 'Onomatopoeia',
   // カテゴリー(長文)
   'カイの物語': "Kai's Story",
   'ラジオトーク': 'Radio Talk',
@@ -52,10 +54,6 @@ export const LABEL_EN: Record<string, string> = {
   '依頼・許可・断り': 'Requests & Refusals',
   'お礼・謝罪': 'Thanks & Apologies',
   '気持ち・相づち': 'Reactions & Feelings',
-  // ことば遊び
-  '今日の擬音語': 'Onomatopoeia',
-  'ことわざ・慣用句': 'Sayings & Idioms',
-  'カタカナ語': 'Katakana Words',
   // ラジオトーク
   'ニュース': 'News',
   'お便り相談室': 'Listener Mail',
