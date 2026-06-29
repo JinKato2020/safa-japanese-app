@@ -61,6 +61,7 @@ export const SUBTHEME_LABEL_EN: Record<string, string> = {
   // 物語
   'カイのストーリー': "Kai's Story",
   '昔話': 'Folk Tales',
+  '日本語ミステリー': 'Japanese Mystery',
   '怖い話': 'Scary Stories',
   // 文化と本音
   '本音講座': 'Real Talk',

@@ -441,10 +441,59 @@
       ]
      },
      {
-      "sub": "怖い話",
+      "sub": "日本語ミステリー",
       "items": [
        {
         "id": "L-015",
+        "title": "消えた駅弁の謎 第1話：駅で事件発生",
+        "form": "物語",
+        "level": "N4",
+        "text": "東京駅（とうきょうえき）の 有名（ゆうめい）な 駅弁屋（えきべんや）で 事件（じけん）が 起（お）きた。朝（あさ）、店（みせ）を 開（あ）けると、一番（いちばん）人気（にんき）の「うみの幸（さち）弁当（べんとう）」が 10個（こ）、消（き）えていたのだ。店長（てんちょう）は あわてて 駅員（えきいん）の 田中（たなか）さんに 相談（そうだん）した。「鍵（かぎ）は かかっていたのに、どうして…？」田中さんは 考（かんが）えた。これは ただの どろぼうでは ないかもしれない。",
+        "en": "An incident occurred at a famous ekiben (station bento) shop in Tokyo Station. In the morning, when they opened, 10 of the most popular 'Sea Bounty Bento' had vanished. The flustered manager consulted station attendant Tanaka. 'The door was locked, so how...?' Tanaka thought. This might not be an ordinary thief.",
+        "key": "事件が 起きた／消えていた／〜かもしれない",
+        "point": "事件の発端を読む（密室の謎）。",
+        "note": "1話者・語り(緊張感)"
+       },
+       {
+        "id": "L-016",
+        "title": "消えた駅弁の謎 第2話：証言を聞く",
+        "form": "対話",
+        "level": "N4",
+        "text": "田中（たなか）さんは、店（みせ）の 近（ちか）くに いた 人（ひと）たちに 話（はなし）を 聞（き）いた。掃除（そうじ）の おばさん：「朝（あさ）5時（じ）ごろ、白（しろ）い 服（ふく）の 人を 見（み）ました」。となりの コーヒー店（てん）の 店員（てんいん）：「変（へん）な 音（おと）が しました」。でも、防犯（ぼうはん）カメラには だれも 映（うつ）っていない。田中さんは 首（くび）を かしげた。「おかしいな…」",
+        "en": "Tanaka asked people who had been near the shop. Cleaning lady: 'Around 5 a.m., I saw someone in white clothes.' The neighboring coffee-shop clerk: 'There was a strange sound.' But the security camera showed no one. Tanaka tilted his head. 'Strange...'",
+        "key": "話を 聞いた／〜を 見ました／だれも 映っていない",
+        "point": "証言の聞き取りと矛盾を読む。",
+        "note": "多声TTS:刑事/証人たち"
+       },
+       {
+        "id": "L-017",
+        "title": "消えた駅弁の謎 第3話：容疑者登場",
+        "form": "対話",
+        "level": "N3",
+        "text": "次（つぎ）の 日（ひ）、田中（たなか）さんは 白（しろ）い 服（ふく）の 男（おとこ）を 見（み）つけた。男は 駅（えき）の 清掃員（せいそういん）だった。「あの 朝（あさ）、何（なに）を していましたか」。男：「私（わたし）は ただ、ゴミを 集（あつ）めていただけです」。でも、男の カバンから、弁当（べんとう）の 包（つつ）み紙（がみ）が 落（お）ちた。田中さんの 目（め）が 光（ひか）った。「これは…？」",
+        "en": "The next day, Tanaka found the man in white—a station cleaner. 'What were you doing that morning?' Man: 'I was just collecting trash.' But a bento wrapper fell from his bag. Tanaka's eyes flashed. 'What's this...?'",
+        "key": "容疑者／〜ていただけです／目が 光った",
+        "point": "容疑者への質問と証拠を読む。",
+        "note": "多声TTS:刑事/容疑者"
+       },
+       {
+        "id": "L-018",
+        "title": "消えた駅弁の謎 第4話：真犯人は？",
+        "form": "物語",
+        "level": "N3",
+        "text": "田中（たなか）さんは 包（つつ）み紙（がみ）を よく 見（み）た。男（おとこ）：「それは 私（わたし）が 拾（ひろ）った ゴミです。本当（ほんとう）です！」実（じつ）は、犯人（はんにん）は 人（ひと）では なかった。防犯（ぼうはん）カメラを もう一度（いちど）見（み）ると、屋根（やね）の すきまから、大（おお）きな カラスが 弁当（べんとう）を 運（はこ）んでいた！みんな 大笑（おおわら）い。「鍵（かぎ）の 謎（なぞ）は、小（ちい）さな 窓（まど）だったのか」。事件（じけん）は 無事（ぶじ）解決（かいけつ）した。",
+        "en": "Tanaka looked closely at the wrapper. Man: 'That's trash I picked up. It's true!' In fact, the culprit wasn't a person. Watching the camera again—through a gap in the roof, a big crow was carrying the bento! Everyone burst out laughing. 'So the locked-room mystery was a small window.' The case was happily solved.",
+        "key": "よく 見た／実は／無事 解決した",
+        "point": "真相・どんでん返しを読む。",
+        "note": "多声TTS:刑事/容疑者"
+       }
+      ]
+     },
+     {
+      "sub": "怖い話",
+      "items": [
+       {
+        "id": "L-019",
         "title": "真夜中の水の音",
         "form": "物語",
         "level": "N3",
@@ -465,7 +514,7 @@
       "sub": "本音講座",
       "items": [
        {
-        "id": "L-016",
+        "id": "L-020",
         "title": "「大丈夫です」の正体",
         "form": "解説",
         "level": "N3",
@@ -481,7 +530,7 @@
       "sub": "あるある",
       "items": [
        {
-        "id": "L-017",
+        "id": "L-021",
         "title": "日本の電車は静か",
         "form": "読み物",
         "level": "N4",
@@ -497,7 +546,7 @@
       "sub": "食べもの",
       "items": [
        {
-        "id": "L-018",
+        "id": "L-022",
         "title": "ラーメンを食べよう",
         "form": "読み物",
         "level": "N4",
