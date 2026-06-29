@@ -7,13 +7,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useColors, useScheme } from './src/theme';
 import { AppProvider, useSettings } from './src/store/settings';
-import { ReadingProgressProvider } from './src/store/readingProgress';
 import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
 import HomeScreen from './src/screens/HomeScreen';
 import DictScreen from './src/screens/DictScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-// import { ShortReadingScreen } from './src/screens/PlaceholderScreen'; // 短文タブは一時非表示
-import ReadingScreen from './src/screens/ReadingScreen';
+import ShortScreen from './src/screens/ShortScreen';
+import { LongReadingScreen } from './src/screens/PlaceholderScreen';
 
 // 本番(Release)はエラー画面(赤box)が出ず白画面になるため、起動時例外を画面に表示する保険。
 class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -38,9 +37,8 @@ const Tab = createBottomTabNavigator();
 type IoniconName = keyof typeof Ionicons.glyphMap;
 const TABS: { name: string; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
   { name: 'Home', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
-  // 短文タブは一時非表示(コメントアウト)。再開時に下行を戻す。
-  // { name: 'Short', component: ShortReadingScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
-  { name: 'Reading', component: ReadingScreen, icon: 'book', iconOff: 'book-outline' },
+  { name: 'Short', component: ShortScreen, icon: 'chatbox-ellipses', iconOff: 'chatbox-ellipses-outline' },
+  { name: 'Long', component: LongReadingScreen, icon: 'book', iconOff: 'book-outline' },
   { name: 'Dictionary', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
   { name: 'Settings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
 ];
@@ -103,12 +101,10 @@ export default function App() {
   return (
     <ErrorBoundary>
       <AppProvider>
-        <ReadingProgressProvider>
-          <SafeAreaProvider>
-            <Root />
-            <StatusBar style="auto" />
-          </SafeAreaProvider>
-        </ReadingProgressProvider>
+        <SafeAreaProvider>
+          <Root />
+          <StatusBar style="auto" />
+        </SafeAreaProvider>
       </AppProvider>
     </ErrorBoundary>
   );

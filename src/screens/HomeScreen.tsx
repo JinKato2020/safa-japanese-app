@@ -9,8 +9,6 @@ import {
   type WeekDay, type CalDay, type BadgeItem,
   useDailyProgress, lastNDays,
 } from '../../safa-shared/JLPT-Listening/design';
-import Ring from '../components/Ring';
-import { useReadingProgress } from '../store/readingProgress';
 import { useT } from '../i18n';
 
 const WD = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -30,8 +28,6 @@ export default function HomeScreen() {
   const t = useT();
   const s = useMemo(() => makeStyles(c), [c]);
   const prog = useDailyProgress('safa-ja:progress');
-  const { coverage } = useReadingProgress();
-  const ringColor: Record<string, string> = { N5: c.green, N4: c.blue, N3: c.purple };
   const badgeLabel: Record<string, string> = {
     d3: t.badge3, d7: t.badge7, d14: t.badge14, d30: t.badge30, d60: t.badge60, d100: t.badge100,
   };
@@ -74,24 +70,6 @@ export default function HomeScreen() {
           <Text style={s.heroTitle}>{t.heroTitle}</Text>
           <Text style={s.heroBody}>{t.heroBody}</Text>
         </View>
-
-        {/* レベル別カバー率(読解) */}
-        <Card style={s.block}>
-          <Text style={s.cardHead}>{t.coverageTitle}</Text>
-          <View style={s.ringRow}>
-            {coverage.map((cv) => (
-              <View key={cv.level} style={s.ringItem}>
-                <Ring
-                  ratio={cv.ratio}
-                  color={ringColor[cv.level]}
-                  centerTop={`${Math.round(cv.ratio * 100)}%`}
-                  centerBottom={cv.level}
-                />
-                <Text style={s.ringMeta}>{cv.done} / {cv.total}</Text>
-              </View>
-            ))}
-          </View>
-        </Card>
 
         {/* 継続カード */}
         <Card style={s.block}>
@@ -142,7 +120,4 @@ const makeStyles = (c: ThemeColors) =>
     },
     subHead: { fontSize: ty.tiny, fontWeight: '700', color: c.mute, letterSpacing: 0.5 },
     divider: { height: 1, backgroundColor: c.line },
-    ringRow: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' },
-    ringItem: { alignItems: 'center', gap: spacing.xs },
-    ringMeta: { fontSize: ty.tiny, color: c.mute, fontWeight: '700' },
   });

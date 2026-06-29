@@ -1,4 +1,4 @@
-// 短文/長文タブの仮画面(準備中)。中身(聴解コンテンツ)は今後実装。
+// 長文タブの仮画面(準備中)。中身(多読・多聴)は今後実装。
 import { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -15,19 +15,15 @@ function Placeholder({ tab, emoji, title, desc }: { tab: string; emoji: string; 
       </View>
       <View style={s.center}>
         <Text style={s.emoji}>{emoji}</Text>
-        <Text style={s.h}>準備中</Text>
+        <Text style={s.h}>Coming soon</Text>
         <Text style={s.p}>{desc}</Text>
       </View>
     </SafeAreaView>
   );
 }
 
-export function ShortReadingScreen() {
-  return <Placeholder tab="短文" emoji="💬" title="短文リスニング" desc="短い文を聞いて理解する練習を準備しています。" />;
-}
-
 export function LongReadingScreen() {
-  return <Placeholder tab="長文" emoji="📖" title="長文リスニング" desc="まとまった文章を聞いて理解する練習を準備しています。" />;
+  return <Placeholder tab="LONG" emoji="📖" title="Extensive Reading & Listening" desc="Longer stories and listening (1 / 3 / 10 min) are on the way." />;
 }
 
 const makeStyles = (c: ThemeColors) =>

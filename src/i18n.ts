@@ -40,6 +40,16 @@ const en = {
   badge100: '100 days',
   qShort: (n: number) => `${n} Q`,
 
+  // 短文(精聴・精読)
+  shortKicker: 'SHORT',
+  shortTitle: 'Short Lessons',
+  shortSub: 'Listen and read short, real-life Japanese.',
+  comingSoon: 'Coming soon',
+  audioComingSoon: 'Audio coming soon',
+  translationLabel: 'Translation',
+  keyPhrasesLabel: 'Key phrases',
+  usefulForLabel: 'Useful for',
+
   // 読解
   readingKicker: 'READING',
   readingTitle: 'Reading',
