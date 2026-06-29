@@ -1,608 +1,409 @@
 {
- "categoryOrder": [
-  "生活力向上",
-  "日本文化",
-  "1分リスニング"
+ "tabs": [
+  "短文",
+  "長文"
  ],
  "data": {
-  "生活力向上": [
+  "短文": [
    {
-    "group": "買い物・店",
-    "items": [
+    "category": "生活力",
+    "subthemes": [
      {
-      "id": "L-001",
-      "title": "レジで袋を聞かれる",
-      "form": "対話",
-      "level": "N5",
-      "text": "店員（てんいん）：いらっしゃいませ。ふくろは いりますか。\nリン：あ、だいじょうぶです。バッグが あります。\n店員：かしこまりました。500円（えん）です。\nリン：カードで おねがいします。",
-      "en": "Clerk: Welcome. Do you need a bag? / Rin: Oh, I'm fine, I have a bag. / Clerk: Certainly. 500 yen. / Rin: By card, please.",
-      "key": "〜は いりますか／だいじょうぶです(=不要)／カードで おねがいします",
-      "practical": "レジで袋の要不要と支払いを即答。",
-      "note": "多声TTS:店員/客"
+      "sub": "買い物・お金",
+      "items": [
+       {
+        "id": "S-001",
+        "title": "スーパーで会計する",
+        "form": "対話",
+        "level": "N4",
+        "text": "店員：いらっしゃいませ。ポイントカードは お持（も）ちですか。\n客：いいえ、持っていません。\n店員：では、お作（つく）りしましょうか。無料（むりょう）です。\n客：あ、けっこうです。急（いそ）いでいるので。\n店員：かしこまりました。お会計（かいけい）は 1,250円（えん）です。袋（ふくろ）は ご利用（りよう）ですか。\n客：はい、一枚（いちまい）ください。\n店員：5円に なります。合計（ごうけい）1,255円です。\n客：カードで お願（ねが）いします。",
+        "en": "Clerk: Welcome. Do you have a point card? / Customer: No, I don't. / Clerk: Shall I make one? It's free. / Customer: No thanks, I'm in a hurry. / Clerk: Certainly. That's 1,250 yen. Would you like a bag? / Customer: Yes, one please. / Clerk: That's 5 yen, 1,255 yen total. / Customer: By card, please.",
+        "key": "ポイントカードは お持ちですか／けっこうです(=丁寧な断り)／袋は ご利用ですか／カードで",
+        "point": "スーパーのレジ一連(ポイント/袋/支払い)を切り抜ける。",
+        "note": "多声TTS:店員/客"
+       },
+       {
+        "id": "S-002",
+        "title": "銀行で口座を作る",
+        "form": "対話",
+        "level": "N3",
+        "text": "行員（こういん）：いらっしゃいませ。本日（ほんじつ）は どのような ご用件（ようけん）ですか。\nグエン：口座（こうざ）を 作（つく）りたいんですが。\n行員：ありがとうございます。在留（ざいりゅう）カードと、印鑑（いんかん）か サインは ご用意（ようい）できますか。\nグエン：印鑑は ありませんが、サインでも いいですか。\n行員：はい、大丈夫（だいじょうぶ）です。では、こちらの 用紙（ようし）に お名前（なまえ）と ご住所（じゅうしょ）を ご記入（きにゅう）ください。\nグエン：書（か）けました。\n行員：ありがとうございます。10分（ぷん）ほどで お作（つく）りします。",
+        "en": "Teller: Welcome. How may I help you today? / Guen: I'd like to open an account. / Teller: Thank you. Do you have your residence card and a seal (hanko) or signature? / Guen: I don't have a seal—is a signature okay? / Teller: Yes, that's fine. Please fill in your name and address on this form. / Guen: Done. / Teller: Thank you. It'll be ready in about 10 minutes.",
+        "key": "口座を 作りたいんですが／印鑑か サイン／ご記入ください",
+        "point": "銀行口座の開設を最後まで進める。",
+        "note": "多声TTS:行員/客"
+       },
+       {
+        "id": "S-010",
+        "title": "スマホを契約する",
+        "form": "対話",
+        "level": "N3",
+        "text": "店員：ご契約（けいやく）ですね。在留（ざいりゅう）カードと、お支払（しはら）い方法（ほうほう）は 何（なに）に なさいますか。\nラフィ：クレジットカードで お願（ねが）いします。一番（いちばん）安（やす）い プランが いいです。\n店員：では、こちらが 月（つき）2,980円（えん）で、データは 20ギガ 使（つか）えます。\nラフィ：電話（でんわ）も できますか。\n店員：はい、5分（ふん）までの 通話（つうわ）は 無料（むりょう）です。\nラフィ：いいですね。それに します。",
+        "en": "Clerk: Signing up, right? Your residence card, and how will you pay? / Rafi: By credit card, please. I'd like the cheapest plan. / Clerk: Then this one is 2,980 yen a month with 20 GB of data. / Rafi: Can I make calls too? / Clerk: Yes, calls up to 5 minutes are free. / Rafi: Nice. I'll take it.",
+        "key": "お支払い方法は／一番 安い プラン／〜できますか",
+        "point": "スマホ契約のプランを選ぶ。",
+        "note": "多声TTS:店員/客"
+       }
+      ]
      },
      {
-      "id": "L-002",
-      "title": "試着とサイズ交換",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：すみません、このシャツ、サイズを 交換（こうかん）できますか。\n店員：はい。レシートは お持（も）ちですか。\n客：はい。Mサイズを Lサイズに したいです。\n店員：かしこまりました。少々（しょうしょう）お待（ま）ちください。",
-      "en": "Customer: Can I exchange this shirt for another size? / Clerk: Yes. Do you have the receipt? / Customer: Yes. M to L, please. / Clerk: Certainly, one moment.",
-      "key": "交換できますか／レシートは お持ちですか／MをLに",
-      "practical": "服のサイズ交換・返品を頼む。",
-      "note": "多声TTS:客/店員"
+      "sub": "手続き",
+      "items": [
+       {
+        "id": "S-003",
+        "title": "市役所で転入届を出す",
+        "form": "対話",
+        "level": "N3",
+        "text": "職員（しょくいん）：こんにちは。ご用件（ようけん）は 何（なん）でしょうか。\nラフィ：先月（せんげつ）引（ひ）っ越（こ）してきたので、転入（てんにゅう）の 手続（てつづ）きを したいです。\n職員：かしこまりました。前（まえ）に 住（す）んでいた 市（し）で「転出届（てんしゅつとどけ）」は もらいましたか。\nラフィ：はい、これです。\n職員：ありがとうございます。在留（ざいりゅう）カードも お預（あず）かりします。…はい、住所（じゅうしょ）を 変更（へんこう）しました。国民健康保険（こくみんけんこうほけん）も 一緒（いっしょ）に できますが、いかがですか。\nラフィ：はい、お願（ねが）いします。",
+        "en": "Clerk: Hello, how can I help? / Rafi: I moved last month, so I'd like to do the moving-in procedure. / Clerk: Certainly. Did you get a 'moving-out certificate' from your previous city? / Rafi: Yes, here it is. / Clerk: Thank you. I'll take your residence card too. ...Done, your address is updated. We can also do national health insurance now—would you like that? / Rafi: Yes, please.",
+        "key": "転入の 手続き／転出届／一緒に できます",
+        "point": "転入届＋保険をまとめて手続き。",
+        "note": "多声TTS:職員/来庁者"
+       },
+       {
+        "id": "S-004",
+        "title": "病院で受付から診察まで",
+        "form": "対話",
+        "level": "N4",
+        "text": "受付（うけつけ）：こんにちは。今日（きょう）は どうされましたか。\nカイ：きのうから お腹（なか）が 痛（いた）くて…。初（はじ）めてです。\n受付：では、保険証（ほけんしょう）と、この 問診票（もんしんひょう）を お願（ねが）いします。…はい、あちらで お待ちください。\n医者：カイさんですね。どこが 痛みますか。\nカイ：おへその 下（した）あたりが、ずっと 痛いです。\n医者：いつから ですか。熱（ねつ）は ありますか。\nカイ：ゆうべから です。熱は ありません。\n医者：わかりました。少（すこ）し お腹を 見せてください。",
+        "en": "Reception: Hello, what's the matter today? / Kai: My stomach has hurt since yesterday... It's my first visit. / Reception: Then your insurance card and this form, please. ...Please wait over there. / Doctor: Kai, right? Where does it hurt? / Kai: Below my navel, it hurts constantly. / Doctor: Since when? Any fever? / Kai: Since last night. No fever. / Doctor: I see. Let me see your stomach.",
+        "key": "どうされましたか／問診票／どこが 痛みますか／いつから",
+        "point": "受付→問診→診察の流れを通す。",
+        "note": "多声TTS:受付/医者/患者"
+       },
+       {
+        "id": "S-005",
+        "title": "不動産屋で部屋を借りる",
+        "form": "対話",
+        "level": "N3",
+        "text": "店員：いらっしゃいませ。お部屋（へや）を お探（さが）しですか。\nリン：はい。駅（えき）から 近くて、家賃（やちん）は 6万円（まんえん）まで が いいです。\n店員：ペットは 飼（か）われますか。\nリン：いいえ、飼いません。\n店員：では、こちらは いかがですか。駅から 歩（ある）いて 5分（ふん）、家賃 5万8千円（まんはっせん）です。\nリン：いいですね。中（なか）を 見（み）られますか。\n店員：はい。今（いま）から ご案内（あんない）できます。",
+        "en": "Agent: Welcome. Looking for a room? / Rin: Yes. Near the station, rent up to 60,000 yen. / Agent: Will you keep pets? / Rin: No. / Agent: Then how about this? 5 min walk from the station, 58,000 yen. / Rin: Nice. Can I see inside? / Agent: Yes, I can show you now.",
+        "key": "お探しですか／家賃は 〜まで／中を 見られますか",
+        "point": "部屋探しの条件提示〜内見まで。",
+        "note": "多声TTS:店員/客"
+       }
+      ]
      },
      {
-      "id": "L-003",
-      "title": "値段とセールを聞く",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：すみません、これは セール中（ちゅう）ですか。\n店員：はい、その 棚（たな）の 商品（しょうひん）は 全部（ぜんぶ）20%（パーセント）引（び）きです。\n客：じゃあ、これ ください。\n店員：ありがとうございます。レジは あちらです。",
-      "en": "Customer: Excuse me, is this on sale? / Clerk: Yes, everything on that shelf is 20% off. / Customer: Then I'll take this. / Clerk: Thank you. The register is over there.",
-      "key": "セール中ですか／20%引き／レジは あちらです",
-      "practical": "値段・割引を確認して買う。",
-      "note": "多声TTS:客/店員"
+      "sub": "しごと・学校",
+      "items": [
+       {
+        "id": "S-006",
+        "title": "アルバイトの面接を受ける",
+        "form": "対話",
+        "level": "N3",
+        "text": "店長：では、面接（めんせつ）を 始（はじ）めます。週（しゅう）に 何日（なんにち）くらい 働（はたら）けますか。\nカイ：平日（へいじつ）の 夕方（ゆうがた）と 週末（しゅうまつ）です。週に 4日（よっか）くらい できます。\n店長：日本語（にほんご）は 大丈夫（だいじょうぶ）ですか。\nカイ：はい、お客（きゃく）さんとの 簡単（かんたん）な 会話（かいわ）は できます。\n店長：いつから 働けますか。\nカイ：来週（らいしゅう）から 大丈夫です。\n店長：わかりました。では、また 連絡（れんらく）します。",
+        "en": "Manager: Let's begin the interview. How many days a week can you work? / Kai: Weekday evenings and weekends. About 4 days a week. / Manager: Is your Japanese okay? / Kai: Yes, I can have simple conversations with customers. / Manager: When can you start? / Kai: From next week. / Manager: Got it. We'll contact you.",
+        "key": "週に 何日／いつから 働けますか／また 連絡します",
+        "point": "バイト面接の定番質問に答える。",
+        "note": "多声TTS:店長/応募者"
+       },
+       {
+        "id": "S-007",
+        "title": "上司に報告・相談する",
+        "form": "対話",
+        "level": "N3",
+        "text": "カイ：課長（かちょう）、今（いま）、少（すこ）し よろしいでしょうか。\n課長：はい、どうぞ。\nカイ：実（じつ）は、お客（きゃく）さまから クレームの お電話（でんわ）が ありまして…。\n課長：そうですか。どんな 内容（ないよう）でしたか。\nカイ：商品（しょうひん）が 届（とど）かない、と。すぐに 確認（かくにん）して、明日（あした）までに ご連絡（れんらく）すると お伝（つた）えしました。\n課長：いい 対応（たいおう）です。私（わたし）からも 確認しておきます。",
+        "en": "Kai: Section chief, do you have a moment? / Chief: Yes, go ahead. / Kai: Actually, a customer called with a complaint... / Chief: I see. What was it about? / Kai: That the product hasn't arrived. I said I'd check and contact them by tomorrow. / Chief: Good handling. I'll check on my side too.",
+        "key": "少し よろしいでしょうか／実は／〜と お伝えしました",
+        "point": "トラブルを上司に報連相する。",
+        "note": "多声TTS:部下/上司"
+       }
+      ]
+     },
+     {
+      "sub": "移動",
+      "items": [
+       {
+        "id": "S-008",
+        "title": "駅で乗り換えと遅延を聞く",
+        "form": "対話",
+        "level": "N3",
+        "text": "リン：すみません、横浜（よこはま）へ 行きたいんですが、どう 行けば いいですか。\n駅員：横浜ですね。3番線（ばんせん）の 電車に 乗（の）って、品川（しながわ）で 乗り換（か）えてください。\nリン：ありがとうございます。あ、電車は 遅（おく）れていますか。\n駅員：はい、事故（じこ）の 影響（えいきょう）で、10分（ぷん）ほど 遅れています。\nリン：急（いそ）いでいるので、ほかの 行き方（かた）は ありますか。\n駅員：バスも ありますが、電車の ほうが 早（はや）いと 思います。",
+        "en": "Rin: Excuse me, I want to go to Yokohama—how do I get there? / Staff: Yokohama? Take the train on track 3 and change at Shinagawa. / Rin: Thanks. Are the trains delayed? / Staff: Yes, about 10 minutes due to an accident. / Rin: I'm in a hurry—is there another way? / Staff: There's a bus, but the train is faster.",
+        "key": "どう 行けば いいですか／〜で 乗り換えて／ほかの 行き方は",
+        "point": "経路案内＋遅延時の代替を聞く。",
+        "note": "多声TTS:客/駅員"
+       },
+       {
+        "id": "S-009",
+        "title": "道に迷って交番で聞く",
+        "form": "対話",
+        "level": "N4",
+        "text": "リン：すみません、道（みち）に 迷（まよ）って しまって…。この 住所（じゅうしょ）に 行きたいんです。\n警官（けいかん）：どれどれ。ああ、ここですね。この 道を まっすぐ 行って、二（ふた）つ目（め）の 信号（しんごう）を 左（ひだり）です。\nリン：二つ目の 信号を 左ですね。\n警官：はい。そこから 歩（ある）いて 3分（ぷん）くらいです。\nリン：ありがとうございます。助（たす）かりました。",
+        "en": "Rin: Excuse me, I'm lost... I want to go to this address. / Officer: Let me see. Ah, here. Go straight on this road and turn left at the second light. / Rin: Left at the second light. / Officer: Yes. About a 3-minute walk from there. / Rin: Thank you, that helps.",
+        "key": "道に 迷って／まっすぐ 行って／〜を 左",
+        "point": "交番で道を尋ねてたどり着く。",
+        "note": "多声TTS:客/警官"
+       }
+      ]
      }
     ]
    },
    {
-    "group": "飲食店",
-    "items": [
+    "category": "使えるひとこと",
+    "subthemes": [
      {
-      "id": "L-004",
-      "title": "カフェで注文する",
-      "form": "一人称",
-      "level": "N5",
-      "text": "きょう カフェに 来（き）ました。わたしは コーヒーが すきです。だから、ホットコーヒーを ひとつ たのみました。ケーキも たべたかったですが、おなかが いっぱいなので やめました。",
-      "en": "Today I went to a cafe. I love coffee, so I ordered a hot coffee. I wanted cake too, but I was full and gave up.",
-      "key": "〜が すきです／〜を たのみました／やめました",
-      "practical": "カフェで好み・注文を伝える。",
-      "note": "1話者・朗読"
+      "sub": "依頼・許可・断り",
+      "items": [
+       {
+        "id": "S-011",
+        "title": "ていねいにお願いする",
+        "form": "対話",
+        "level": "N4",
+        "text": "A：すみません、ちょっと お願（ねが）いが あるんですが。\nB：はい、何（なん）でしょう。\nA：この 書類（しょるい）、コピーして いただけますか。\nB：いいですよ。何枚（なんまい）ですか。\nA：3枚（まい）、お願いします。\nB：はい、わかりました。",
+        "en": "A: Excuse me, I have a small favor. / B: Sure, what is it? / A: Could you copy this document for me? / B: Sure. How many? / A: Three, please. / B: Okay, got it.",
+        "key": "お願いが あるんですが／〜ていただけますか／いいですよ",
+        "point": "丁寧に頼み、引き受ける。",
+        "note": "多声TTS:A/B"
+       }
+      ]
      },
      {
-      "id": "L-005",
-      "title": "レストランで注文する",
-      "form": "対話",
-      "level": "N4",
-      "text": "店員：ご注文（ちゅうもん）は お決（き）まりですか。\n客：はい。Aランチを ひとつ、お願（ねが）いします。\n店員：お飲（の）み物（もの）は いかがですか。\n客：コーヒーを 食後（しょくご）に お願いします。",
-      "en": "Waiter: Are you ready to order? / Customer: Yes. One Lunch Set A, please. / Waiter: Would you like a drink? / Customer: Coffee after the meal, please.",
-      "key": "ご注文は お決まりですか／〜を お願いします／食後に",
-      "practical": "レストランで注文・ドリンクを頼む。",
-      "note": "多声TTS:店員/客"
+      "sub": "お礼・謝罪",
+      "items": [
+       {
+        "id": "S-012",
+        "title": "お礼と謝罪のひとこと",
+        "form": "一人称",
+        "level": "N4",
+        "text": "きのう、先輩（せんぱい）に 仕事（しごと）を 教（おし）えて もらった。とても 助（たす）かったので、「ありがとうございました。とても 勉強（べんきょう）に なりました」と お礼（れい）を 言（い）った。失敗（しっぱい）した ときは、「申（もう）し訳（わけ）ありません」と すぐに 謝（あやま）る。日本（にほん）では お礼と 謝罪（しゃざい）が とても 大切（たいせつ）だ。",
+        "en": "Yesterday a senior colleague taught me the work. It really helped, so I said, 'Thank you very much. I learned a lot.' When I make a mistake, I apologize right away with 'I'm very sorry.' In Japan, thanks and apologies are very important.",
+        "key": "勉強に なりました／申し訳ありません／すぐに 謝る",
+        "point": "お礼と謝罪の定番フレーズ。",
+        "note": "1話者・朗読"
+       }
+      ]
      },
      {
-      "id": "L-006",
-      "title": "席を予約する",
-      "form": "対話",
-      "level": "N3",
-      "text": "店員：お電話（でんわ）ありがとうございます。\n客：あの、土曜日（どようび）の 夜（よる）7時（じ）に、4人（よにん）で 予約（よやく）したいんですが。\n店員：かしこまりました。お名前（なまえ）と お電話番号（ばんごう）を お願（ねが）いします。\n客：田中（たなか）です。番号は…。",
-      "en": "Staff: Thank you for calling. / Customer: I'd like to reserve for 4 people, Saturday at 7 p.m. / Staff: Certainly. Your name and phone number, please. / Customer: Tanaka. My number is...",
-      "key": "〜時に 〜人で 予約したい／お名前と 電話番号／かしこまりました",
-      "practical": "電話でレストランを予約する。",
-      "note": "多声TTS:店員/客・電話"
+      "sub": "気持ち・相づち",
+      "items": [
+       {
+        "id": "S-013",
+        "title": "あいづちで会話を続ける",
+        "form": "対話",
+        "level": "N5",
+        "text": "A：きのう、はじめて すしを 食（た）べました。\nB：へえ、そうなんですか。\nA：とても おいしかったです！\nB：いいですね！\nA：Bさんも すきですか。\nB：はい、だいすきです。",
+        "en": "A: Yesterday I ate sushi for the first time. / B: Oh, really? / A: It was so delicious! / B: Nice! / A: Do you like it too, B? / B: Yes, I love it.",
+        "key": "そうなんですか／いいですね／だいすきです",
+        "point": "相づちで会話を続ける。",
+        "note": "多声TTS:A/B"
+       }
+      ]
      }
     ]
    },
    {
-    "group": "コンビニ",
-    "items": [
+    "category": "ことば遊び",
+    "subthemes": [
      {
-      "id": "L-007",
-      "title": "荷物の発送",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：すみません、これを 送（おく）りたいんですが。\n店員：はい。お届（とど）け先（さき）の 住所（じゅうしょ）を こちらに 書（か）いてください。北海道（ほっかいどう）まで だと、あさって 着（つ）きます。\n客：じゃあ、お願（ねが）いします。",
-      "en": "Customer: Excuse me, I'd like to send this. / Clerk: Sure. Please write the recipient's address here. To Hokkaido, it arrives the day after tomorrow. / Customer: Okay, please.",
-      "key": "送りたいんですが／お届け先の 住所／あさって 着きます",
-      "practical": "コンビニから宅配便を送る。",
-      "note": "多声TTS:客/店員"
+      "sub": "今日の擬音語",
+      "items": [
+       {
+        "id": "S-014",
+        "title": "ふわふわ",
+        "form": "一人称",
+        "level": "N5",
+        "text": "きょうの ことばは「ふわふわ」です。やわらかくて、かるい ものの ことです。たとえば、「この パンは ふわふわです」。くもや、ねこの けも ふわふわ。さわると きもちが いいですね。",
+        "en": "Today's word is 'fuwafuwa.' It means something soft and light. For example, 'This bread is fuwafuwa.' Clouds and a cat's fur are fuwafuwa too. They feel nice to touch.",
+        "key": "ふわふわ(=soft & fluffy)／やわらかい／さわると きもちがいい",
+        "point": "オノマトペ「ふわふわ」の意味と使い方。",
+        "note": "1話者・解説"
+       }
+      ]
      },
      {
-      "id": "L-008",
-      "title": "公共料金の支払い",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：すみません、この 電気代（でんきだい）を 払（はら）いたいんですが。\n店員：はい、お預（あず）かりします。8,500円（えん）ですね。\n客：はい、ちょうど あります。\n店員：ありがとうございます。控（ひか）えを お返（かえ）しします。",
-      "en": "Customer: I'd like to pay this electricity bill. / Clerk: Sure, I'll take it. 8,500 yen. / Customer: Yes, exact change. / Clerk: Thank you. Here's your receipt.",
-      "key": "〜を 払いたいんですが／お預かりします／控えを お返しします",
-      "practical": "コンビニで電気・ガス・水道代を払う。",
-      "note": "多声TTS:客/店員"
+      "sub": "ことわざ・慣用句",
+      "items": [
+       {
+        "id": "S-015",
+        "title": "猫の手も借りたい",
+        "form": "一人称",
+        "level": "N3",
+        "text": "「猫（ねこ）の 手（て）も 借（か）りたい」という 言葉（ことば）が あります。とても 忙（いそが）しくて、誰（だれ）の 助（たす）けでも ほしい、という 意味（いみ）です。猫は 手伝（てつだ）って くれませんが、それでも 借りたい くらい 忙しい、ということです。年末（ねんまつ）は みんな 猫の手も 借りたいほど 忙しいです。",
+        "en": "There's a saying, 'I'd even borrow a cat's paw.' It means you're so busy you'd want anyone's help. A cat won't actually help, but you're so busy you'd even want to borrow its paw. At year-end, everyone is that busy.",
+        "key": "猫の手も 借りたい(=so busy)／〜くらい／〜という 意味",
+        "point": "慣用句の意味と由来。",
+        "note": "1話者・解説"
+       }
+      ]
      },
      {
-      "id": "L-009",
-      "title": "ATMの利用",
-      "form": "一人称",
-      "level": "N5",
-      "text": "おかねが すこし たりなく なりました。だから、コンビニの ATMで おかねを おろしました。1（いち）まん円（えん）です。あんしょうばんごうを いれて、ボタンを おしました。すぐに おかねが でました。べんりです。",
-      "en": "I was a little short on money, so I withdrew cash at a convenience-store ATM. 10,000 yen. I entered my PIN and pressed the button. The money came out right away. So convenient.",
-      "key": "おかねを おろす／あんしょうばんごう／べんりです",
-      "practical": "コンビニATMで出金する。",
-      "note": "1話者・朗読"
-     },
-     {
-      "id": "L-010",
-      "title": "コピー機を使う",
-      "form": "一人称",
-      "level": "N5",
-      "text": "コンビニの コピーきを つかいました。さいしょに おかねを いれます。10えんで 1まい コピーできます。わたしは しょるいを 3まい コピーしました。かんたんでした。",
-      "en": "I used the copy machine at the convenience store. First you put in money. One copy is 10 yen. I copied 3 documents. It was easy.",
-      "key": "コピーきを つかう／おかねを いれる／〜まい コピーする",
-      "practical": "コンビニのコピー機を使う。",
-      "note": "1話者・朗読"
-     },
-     {
-      "id": "L-011",
-      "title": "宅配便の受け取り",
-      "form": "対話",
-      "level": "N4",
-      "text": "配達員（はいたついん）：こんにちは。お荷物（にもつ）です。ここに サインを お願（ねが）いします。\nラフィ：はい。これで いいですか。\n配達員：はい、ありがとうございます。失礼（しつれい）します。",
-      "en": "Delivery: Hello, here's your package. Please sign here. / Rafi: Sure. Is this okay? / Delivery: Yes, thank you. Excuse me.",
-      "key": "お荷物です／サインを お願いします／これで いいですか",
-      "practical": "宅配便を受け取る・サインする。",
-      "note": "多声TTS:配達員/受取人"
-     }
-    ]
-   },
-   {
-    "group": "駅・電車",
-    "items": [
-     {
-      "id": "L-012",
-      "title": "切符を買う",
-      "form": "一人称",
-      "level": "N5",
-      "text": "えきで きっぷを かいました。きかいに おかねを いれて、いきたい えきの ボタンを おします。200えんでした。おつりも でました。かんたんです。",
-      "en": "I bought a ticket at the station. You put money into the machine and press the button for the station you want. It was 200 yen. The change came out too. It's easy.",
-      "key": "きっぷを かう／ボタンを おす／おつりが でる",
-      "practical": "券売機で切符を買う。",
-      "note": "1話者・朗読"
-     },
-     {
-      "id": "L-013",
-      "title": "乗り換えを聞く",
-      "form": "対話",
-      "level": "N4",
-      "text": "リン：すみません、新宿（しんじゅく）へ 行きたいんですが…。\n駅員（えきいん）：新宿ですね。次（つぎ）の 電車（でんしゃ）に 乗（の）って、四（よっ）つ目（め）の 駅で 乗（の）り換（か）えてください。\nリン：四つ目の 駅ですね。ありがとうございます。",
-      "en": "Rin: Excuse me, I want to go to Shinjuku... / Staff: Shinjuku, right? Take the next train and change at the fourth stop. / Rin: The fourth stop. Thank you.",
-      "key": "〜へ 行きたいんですが／四つ目の 駅で 乗り換えて",
-      "practical": "経路・乗り換えを駅で尋ねる。",
-      "note": "多声TTS:客/駅員"
-     },
-     {
-      "id": "L-014",
-      "title": "電車が遅れている",
-      "form": "一人称",
-      "level": "N3",
-      "text": "ホームで電車（でんしゃ）を待（ま）っていたら、アナウンスが流（なが）れた。「事故（じこ）のため、電車が約（やく）15分（ふん）遅（おく）れています」と言（い）っている。10時（じ）の約束（やくそく）に間（ま）に合（あ）うか心配（しんぱい）になって、相手（あいて）に「少（すこ）し遅（おく）れます」とメッセージを送（おく）った。",
-      "en": "While waiting on the platform, an announcement said, 'Due to an accident, trains are delayed about 15 minutes.' I got worried about my 10 o'clock appointment, so I texted, 'I'll be a little late.'",
-      "key": "〜のため／遅れています／間に合うか 心配",
-      "practical": "遅延時に相手へ連絡する。",
-      "note": "1話者＋車内放送風"
-     },
-     {
-      "id": "L-015",
-      "title": "忘れ物をした",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：すみません、電車の 中（なか）に かばんを 忘（わす）れて しまいました。\n駅員：何色（なにいろ）の かばんですか。どの 電車ですか。\n客：黒（くろ）い かばんで、さっきの 各駅（かくえき）停車（ていしゃ）です。\n駅員：わかりました。調（しら）べます。",
-      "en": "Customer: I left my bag on the train. / Staff: What color? Which train? / Customer: A black bag, on the local train just now. / Staff: All right, we'll check.",
-      "key": "忘れて しまいました／何色ですか／調べます",
-      "practical": "電車内の忘れ物を駅で届け出る。",
-      "note": "多声TTS:客/駅員"
-     }
-    ]
-   },
-   {
-    "group": "銀行",
-    "items": [
-     {
-      "id": "L-016",
-      "title": "口座を作る",
-      "form": "対話",
-      "level": "N3",
-      "text": "行員（こういん）：本日（ほんじつ）は どのような ご用件（ようけん）でしょうか。\nグエン：口座（こうざ）を 作（つく）りたいんですが。\n行員：かしこまりました。在留（ざいりゅう）カードと 印鑑（いんかん）は お持（も）ちですか。\nグエン：はい、両方（りょうほう）あります。",
-      "en": "Teller: How may I help you today? / Guen: I'd like to open an account. / Teller: Certainly. Do you have your residence card and a personal seal (hanko)? / Guen: Yes, both.",
-      "key": "口座を 作りたいんですが／在留カードと 印鑑／お持ちですか",
-      "practical": "銀行口座を開設する。",
-      "note": "多声TTS:行員/客"
-     },
-     {
-      "id": "L-017",
-      "title": "お金を振り込む",
-      "form": "一人称",
-      "level": "N3",
-      "text": "家賃（やちん）を 払（はら）うために、銀行（ぎんこう）で お金（かね）を 振（ふ）り込（こ）んだ。ATMで 相手（あいて）の 口座番号（こうざばんごう）を 入力（にゅうりょく）する。手数料（てすうりょう）が 少（すこ）し かかった。間違（まちが）えないように 何度（なんど）も 確認（かくにん）した。",
-      "en": "To pay my rent, I transferred money at the bank. At the ATM you enter the other person's account number. There was a small fee. To avoid mistakes, I checked many times.",
-      "key": "振り込む／口座番号を 入力／手数料が かかる",
-      "practical": "家賃などをATMで振り込む。",
-      "note": "1話者・朗読"
-     }
-    ]
-   },
-   {
-    "group": "郵便局",
-    "items": [
-     {
-      "id": "L-018",
-      "title": "手紙や荷物を送る",
-      "form": "対話",
-      "level": "N4",
-      "text": "客：これを 送（おく）りたいんですが、いくらですか。\n局員（きょくいん）：手紙（てがみ）ですね。84円（えん）です。\n客：では、切手（きって）も 5枚（まい）ください。\n局員：はい、合計（ごうけい）504円です。",
-      "en": "Customer: I'd like to send this; how much is it? / Clerk: A letter, right? 84 yen. / Customer: Then five stamps too, please. / Clerk: Sure, 504 yen total.",
-      "key": "〜を 送りたいんですが／いくらですか／切手を 〜枚",
-      "practical": "郵便局で手紙・切手を出す。",
-      "note": "多声TTS:客/局員"
-     }
-    ]
-   },
-   {
-    "group": "市役所",
-    "items": [
-     {
-      "id": "L-019",
-      "title": "転入届",
-      "form": "対話",
-      "level": "N3",
-      "text": "職員（しょくいん）：こんにちは。ご用件（ようけん）は 何（なん）でしょうか。\nラフィ：先月（せんげつ）、引（ひ）っ越（こ）してきたので、住所（じゅうしょ）を 変（か）えたいです。\n職員：転入届（てんにゅうとどけ）ですね。本人確認（ほんにんかくにん）が できるものと、前（まえ）の 市（し）の 書類（しょるい）は お持ちですか。\nラフィ：はい、両方（りょうほう）持ってきました。",
-      "en": "Clerk: Hello, how can I help you? / Rafi: I moved here last month, so I'd like to change my address. / Clerk: A moving-in notification. Do you have ID and documents from your previous city? / Rafi: Yes, both.",
-      "key": "住所を 変えたい／転入届／〜は お持ちですか",
-      "practical": "引っ越し後の住所変更手続き。",
-      "note": "多声TTS:職員/来庁者"
-     },
-     {
-      "id": "L-020",
-      "title": "マイナンバーカード",
-      "form": "対話",
-      "level": "N3",
-      "text": "職員：マイナンバーカードの 受（う）け取（と）りですね。予約番号（よやくばんごう）と 本人確認（ほんにんかくにん）の 書類（しょるい）を お願（ねが）いします。\nグエン：はい、これです。\n職員：では、暗証番号（あんしょうばんごう）を こちらで 登録（とうろく）してください。\nグエン：わかりました。",
-      "en": "Clerk: Picking up your My Number card. Your reservation number and ID, please. / Guen: Here you are. / Clerk: Now please set your PIN here. / Guen: Understood.",
-      "key": "受け取り／本人確認の 書類／暗証番号を 登録",
-      "practical": "マイナンバーカードの受け取り。",
-      "note": "多声TTS:職員/来庁者"
-     },
-     {
-      "id": "L-021",
-      "title": "国民健康保険",
-      "form": "対話",
-      "level": "N3",
-      "text": "ラフィ：国民健康保険（こくみんけんこうほけん）に 入（はい）りたいんですが。\n職員：お仕事（しごと）の 保険（ほけん）は ありますか。\nラフィ：いいえ、ありません。\n職員：では、こちらで 手続（てつづ）きします。在留（ざいりゅう）カードを お願いします。",
-      "en": "Rafi: I'd like to enroll in national health insurance. / Clerk: Do you have insurance from your job? / Rafi: No. / Clerk: Then we'll process it here. Your residence card, please.",
-      "key": "〜に 入りたいんですが／保険は ありますか／手続きします",
-      "practical": "国民健康保険の加入手続き。",
-      "note": "多声TTS:来庁者/職員"
-     },
-     {
-      "id": "L-022",
-      "title": "年金の手続き",
-      "form": "対話",
-      "level": "N3",
-      "text": "職員：国民年金（こくみんねんきん）の 手続きですね。20歳（さい）以上（いじょう）の 方（かた）は 加入（かにゅう）が 必要（ひつよう）です。\nカイ：学生（がくせい）でも 払（はら）うんですか。\n職員：はい。ただ、学生は 支払（しはら）いを あとに できる 制度（せいど）も あります。\nカイ：そうなんですね。",
-      "en": "Clerk: National pension procedure. People 20 and over must enroll. / Kai: Do students pay too? / Clerk: Yes, but students can postpone payment. / Kai: I see.",
-      "key": "加入が 必要です／〜でも 払うんですか／〜制度も あります",
-      "practical": "国民年金の加入・学生納付特例。",
-      "note": "多声TTS:職員/来庁者"
-     },
-     {
-      "id": "L-023",
-      "title": "子どもの学校",
-      "form": "対話",
-      "level": "N4",
-      "text": "母：子（こ）どもを 小学校（しょうがっこう）に 入（い）れたいんですが。\n職員：はい。お子（こ）さんの 年齢（ねんれい）と ご住所（じゅうしょ）を 確認（かくにん）します。近（ちか）くの 学校を ご案内（あんない）します。\n母：よろしくお願（ねが）いします。",
-      "en": "Mother: I'd like to enroll my child in elementary school. / Clerk: Sure, I'll check your child's age and address and guide you to a nearby school. / Mother: Thank you.",
-      "key": "〜に 入れたいんですが／確認します／ご案内します",
-      "practical": "子どもの小学校入学手続き。",
-      "note": "多声TTS:保護者/職員"
-     }
-    ]
-   },
-   {
-    "group": "病院",
-    "items": [
-     {
-      "id": "L-024",
-      "title": "症状の説明",
-      "form": "対話",
-      "level": "N4",
-      "text": "医者（いしゃ）：どうしましたか。\nカイ：きのうから 熱（ねつ）が あって、のども 痛（いた）いです。\n医者：いつから 熱が ありますか。\nカイ：ゆうべから です。38度（ど）でした。",
-      "en": "Doctor: What's wrong? / Kai: Since yesterday I've had a fever and my throat hurts. / Doctor: Since when? / Kai: Since last night. It was 38 degrees.",
-      "key": "熱が あります／のどが 痛いです／いつから〜",
-      "practical": "症状を医者に伝える。",
-      "note": "多声TTS:医者/患者"
-     },
-     {
-      "id": "L-025",
-      "title": "薬局での会話",
-      "form": "対話",
-      "level": "N3",
-      "text": "薬剤師（やくざいし）：こちらの お薬（くすり）は 一日（いちにち）三回（さんかい）、食後（しょくご）に 飲（の）んでください。\nリン：食後ですね。眠（ねむ）く なりますか。\n薬剤師：はい、少（すこ）し 眠く なることが あります。運転（うんてん）は 気（き）を つけてください。\nリン：わかりました。",
-      "en": "Pharmacist: Take this three times a day, after meals. / Rin: After meals. Does it make you sleepy? / Pharmacist: Yes, a bit. Be careful driving. / Rin: Understood.",
-      "key": "食後に 飲んでください／眠く なりますか／気を つけて",
-      "practical": "薬局で服用方法・注意を確認。",
-      "note": "多声TTS:薬剤師/客"
-     },
-     {
-      "id": "L-026",
-      "title": "救急車を呼ぶ",
-      "form": "対話",
-      "level": "N4",
-      "text": "通信員（つうしんいん）：119番（ばん）です。火事（かじ）ですか、救急（きゅうきゅう）ですか。\nカイ：救急です！ 友（とも）だちが 急（きゅう）に 倒（たお）れました。\n通信員：場所（ばしょ）は どこですか。\nカイ：駅前（えきまえ）の 公園（こうえん）です。",
-      "en": "Operator: This is 119. Fire or medical emergency? / Kai: Emergency! My friend suddenly collapsed. / Operator: Where are you? / Kai: At the park in front of the station.",
-      "key": "火事ですか、救急ですか／急に 倒れました／場所は どこですか",
-      "practical": "119番で救急車を呼ぶ（命を守る）。",
-      "note": "多声TTS:通信員/通報者・緊急"
-     },
-     {
-      "id": "L-027",
-      "title": "健康診断",
-      "form": "一人称",
-      "level": "N3",
-      "text": "今日（きょう）は 会社（かいしゃ）の 健康診断（けんこうしんだん）だ。朝（あさ）ごはんは 食（た）べないように 言（い）われた。身長（しんちょう）と 体重（たいじゅう）を 測（はか）り、血液（けつえき）も 調（しら）べた。結果（けっか）は 二週間後（にしゅうかんご）に 届（とど）くそうだ。",
-      "en": "Today is my company health checkup. I was told not to eat breakfast. They measured my height and weight and tested my blood. Results arrive in two weeks.",
-      "key": "〜ないように 言われた／測る／結果は 〜に 届く",
-      "practical": "健康診断の流れ。",
-      "note": "1話者・朗読"
-     }
-    ]
-   },
-   {
-    "group": "スマホ・通信",
-    "items": [
-     {
-      "id": "L-028",
-      "title": "スマホを契約する",
-      "form": "対話",
-      "level": "N3",
-      "text": "店員：ご契約（けいやく）には 在留（ざいりゅう）カードと 銀行（ぎんこう）の 口座（こうざ）か クレジットカードが 必要（ひつよう）です。\nラフィ：はい、あります。一番（いちばん）安（やす）い プランは どれですか。\n店員：こちらが 月（つき）3,000円（えん）で おすすめです。\nラフィ：では、それで お願（ねが）いします。",
-      "en": "Clerk: To sign up you need your residence card and a bank account or credit card. / Rafi: Yes, I have them. Which is the cheapest plan? / Clerk: This one at 3,000 yen a month is recommended. / Rafi: Then that one, please.",
-      "key": "ご契約には 〜が 必要です／一番 安い プラン／月〜円",
-      "practical": "スマホ・SIMを契約する。",
-      "note": "多声TTS:店員/客"
-     }
-    ]
-   },
-   {
-    "group": "住宅",
-    "items": [
-     {
-      "id": "L-029",
-      "title": "不動産屋で部屋探し",
-      "form": "対話",
-      "level": "N3",
-      "text": "リン：駅（えき）から 近（ちか）い アパートを 探（さが）しているんですが。\n店員：ご予算（よさん）は どのくらいですか。\nリン：家賃（やちん）は 6万円（まんえん）まで が いいです。\n店員：では、いくつか お部屋（へや）を ご紹介（しょうかい）しますね。",
-      "en": "Rin: I'm looking for an apartment near the station. / Agent: What's your budget? / Rin: Rent up to 60,000 yen. / Agent: Then let me introduce a few rooms.",
-      "key": "〜を 探しているんですが／ご予算は／〜まで が いい",
-      "practical": "不動産屋で部屋探しの条件を伝える。",
-      "note": "多声TTS:客/店員"
-     },
-     {
-      "id": "L-030",
-      "title": "ゴミ出しのルール",
-      "form": "一人称",
-      "level": "N4",
-      "text": "わたしの 住（す）んでいる ところでは、ゴミを 出（だ）す 日（ひ）が 決（き）まっている。燃（も）えるゴミは 月曜日（げつようび）と 木曜日（もくようび）、ペットボトルは 水曜日（すいようび）だ。朝（あさ）8時（じ）までに 出さないと いけない。最初（さいしょ）は まちがえたが、今（いま）は 慣（な）れた。",
-      "en": "Where I live, trash days are fixed. Burnable trash is Monday and Thursday; PET bottles Wednesday. You must put it out by 8 a.m. At first I made mistakes, but now I'm used to it.",
-      "key": "〜が 決まっている／〜までに／慣れた",
-      "practical": "ゴミ出しの曜日・時間ルール。",
-      "note": "1話者・朗読"
-     },
-     {
-      "id": "L-031",
-      "title": "騒音トラブル",
-      "form": "対話",
-      "level": "N3",
-      "text": "住人（じゅうにん）：すみません、ちょっと ご相談（そうだん）が…。\n管理人（かんりにん）：はい、どうされましたか。\n住人：夜（よる）、隣（となり）の 部屋（へや）の 音（おと）が 大（おお）きくて、なかなか 眠（ねむ）れないんです。\n管理人：それは お困（こま）りですね。一度（いちど）、隣の方（かた）に お話（はなし）してみます。",
-      "en": "Resident: Excuse me, I have something to discuss... / Manager: Yes? / Resident: At night the next room is loud and I can't sleep. / Manager: That's difficult. I'll talk to your neighbor.",
-      "key": "ご相談が／音が 大きくて／眠れない",
-      "practical": "騒音トラブルを管理人に相談。",
-      "note": "多声TTS:住人/管理人"
-     },
-     {
-      "id": "L-032",
-      "title": "引っ越しの日",
-      "form": "一人称",
-      "level": "N4",
-      "text": "きょうは 引（ひ）っ越（こ）しの 日（ひ）だ。朝（あさ）から 荷物（にもつ）を トラックに 運（はこ）んだ。新（あたら）しい 部屋（へや）は 前（まえ）より 広（ひろ）い。となりの 人（ひと）に「これから よろしく お願（ねが）いします」と あいさつを した。",
-      "en": "Today is moving day. From the morning I carried things to the truck. The new room is bigger than before. I greeted my neighbor: 'I look forward to getting along.'",
-      "key": "引っ越しの 日／〜より 広い／これから よろしく お願いします",
-      "practical": "引っ越しと近所へのあいさつ。",
-      "note": "1話者・朗読"
-     }
-    ]
-   },
-   {
-    "group": "仕事",
-    "items": [
-     {
-      "id": "L-033",
-      "title": "遅刻の連絡",
-      "form": "対話",
-      "level": "N4",
-      "text": "カイ：もしもし、店長、おはようございます。カイです。\n店長：あ、カイさん。どうしましたか。\nカイ：すみません、電車が 止（と）まっていて、10分（ぷん）ほど 遅（おく）れそうです。\n店長：わかりました。気（き）を つけて 来てください。",
-      "en": "Kai: Hello, manager, good morning. It's Kai. / Manager: Oh, Kai. What's up? / Kai: Sorry, the train stopped, I'll be about 10 minutes late. / Manager: Got it. Take care.",
-      "key": "電車が 止まっていて／遅れそうです／気をつけて",
-      "practical": "遅刻・欠勤の電話連絡。",
-      "note": "多声TTS:従業員/店長・電話"
-     },
-     {
-      "id": "L-034",
-      "title": "シフトの変更",
-      "form": "対話",
-      "level": "N3",
-      "text": "カイ：店長、すみません。来週（らいしゅう）の 金曜日（きんようび）、休（やす）ませて いただけませんか。\n店長：金曜ね。理由（りゆう）を 聞（き）いても いい？\nカイ：大学（だいがく）の 試験（しけん）が あるんです。\n店長：わかった。じゃあ、代（か）わりに 土曜（どよう）に 入（はい）れる？\nカイ：はい、大丈夫（だいじょうぶ）です。",
-      "en": "Kai: Manager, could I take next Friday off? / Manager: Friday? Can I ask why? / Kai: I have a university exam. / Manager: Got it. Can you work Saturday instead? / Kai: Yes, that's fine.",
-      "key": "休ませて いただけませんか／理由を 聞いても いい？／代わりに 〜",
-      "practical": "シフトの変更・交代をお願いする。",
-      "note": "多声TTS:従業員/店長"
-     },
-     {
-      "id": "L-035",
-      "title": "敬語のきほん",
-      "form": "一人称",
-      "level": "N3",
-      "text": "日本語（にほんご）で 一番（いちばん）難（むずか）しいのは 敬語（けいご）だ。友（とも）だちには「ありがとう」でいいが、お客（きゃく）さんや 上司（じょうし）には「ありがとうございます」と 言（い）う。「見（み）る」も、相手（あいて）を 立（た）てる ときは「ご覧（らん）になる」だ。最初（さいしょ）は 大変（たいへん）だったが、使（つか）うほど 慣（な）れてきた。",
-      "en": "The hardest thing in Japanese is keigo. With friends 'arigatou' is fine, but to customers and bosses you say 'arigatou gozaimasu.' For 'to see,' honoring the other person it's 'goran ni naru.' Hard at first, but I'm getting used to it.",
-      "key": "〜には 〜と 言う／ご覧になる(尊敬)／使うほど 慣れる",
-      "practical": "敬語の使い分けの基本。",
-      "note": "1話者・朗読"
-     },
-     {
-      "id": "L-036",
-      "title": "上司への報告",
-      "form": "対話",
-      "level": "N3",
-      "text": "カイ：課長（かちょう）、少（すこ）し よろしいでしょうか。先日（せんじつ）の 件（けん）の ご報告（ほうこく）です。\n課長：はい、どうぞ。\nカイ：おかげさまで、無事（ぶじ）に 終（お）わりました。資料（しりょう）は メールで お送（おく）りしました。\n課長：ありがとう。助（たす）かりました。",
-      "en": "Kai: Section chief, do you have a moment? A report on the other day's matter. / Chief: Yes, go ahead. / Kai: Thanks to you, it finished smoothly. I've emailed the documents. / Chief: Thank you, that helps.",
-      "key": "少し よろしいでしょうか／ご報告です／お送りしました",
-      "practical": "上司へ丁寧に報告する。",
-      "note": "多声TTS:部下/上司"
-     }
-    ]
-   },
-   {
-    "group": "学校・日本語",
-    "items": [
-     {
-      "id": "L-037",
-      "title": "先生に質問する",
-      "form": "対話",
-      "level": "N4",
-      "text": "学生（がくせい）：先生（せんせい）、すみません。今（いま）、質問（しつもん）しても いいですか。\n先生：はい、どうぞ。\n学生：この 言葉（ことば）の 意味（いみ）が わかりません。\n先生：ああ、これは「とても 便利（べんり）」という 意味（いみ）ですよ。",
-      "en": "Student: Teacher, may I ask a question now? / Teacher: Yes, go ahead. / Student: I don't understand this word. / Teacher: Ah, it means 'very convenient.'",
-      "key": "質問しても いいですか／意味が わかりません／〜という 意味",
-      "practical": "授業で先生に質問する。",
-      "note": "多声TTS:学生/先生"
-     },
-     {
-      "id": "L-038",
-      "title": "欠席の連絡",
-      "form": "一人称",
-      "level": "N4",
-      "text": "今日（きょう）は 風邪（かぜ）を ひいて、学校（がっこう）を 休（やす）むことに した。先生（せんせい）に メールで「熱（ねつ）が あるので、今日は 休みます。すみません」と 連絡（れんらく）した。早（はや）く 元気（げんき）に なりたい。",
-      "en": "Today I caught a cold and decided to stay home from school. I emailed my teacher: 'I have a fever, so I'll be absent today. Sorry.' I want to get well soon.",
-      "key": "〜ことに した／休みます／連絡した",
-      "practical": "学校・職場へ欠席を連絡する。",
-      "note": "1話者・朗読"
-     }
-    ]
-   },
-   {
-    "group": "美容院",
-    "items": [
-     {
-      "id": "L-039",
-      "title": "髪を切る",
-      "form": "対話",
-      "level": "N4",
-      "text": "美容師（びようし）：今日（きょう）は どうしますか。\nリン：少（すこ）し 短（みじか）く して、軽（かる）く したいです。\n美容師：前髪（まえがみ）は どうしますか。\nリン：前髪は そのままで お願（ねが）いします。",
-      "en": "Stylist: What would you like today? / Rin: A bit shorter and lighter, please. / Stylist: What about your bangs? / Rin: Please leave the bangs as they are.",
-      "key": "短く して／軽く したい／前髪は そのまま",
-      "practical": "美容院で希望の髪型を伝える。",
-      "note": "多声TTS:美容師/客"
-     }
-    ]
-   },
-   {
-    "group": "人づきあい",
-    "items": [
-     {
-      "id": "L-040",
-      "title": "友だちを誘う",
-      "form": "対話",
-      "level": "N5",
-      "text": "ミナ：あした、ひまですか。\nリン：はい、ひまです。\nミナ：じゃあ、いっしょに えいがを 見（み）ませんか。\nリン：いいですね！ 行（い）きましょう。",
-      "en": "Mina: Are you free tomorrow? / Rin: Yes, I'm free. / Mina: Then shall we watch a movie together? / Rin: Sounds good! Let's go.",
-      "key": "ひまですか／〜ませんか(誘い)／行きましょう",
-      "practical": "友だちを遊びに誘う。",
-      "note": "多声TTS:友人2人"
-     },
-     {
-      "id": "L-041",
-      "title": "お礼と謝罪",
-      "form": "一人称",
-      "level": "N4",
-      "text": "きのう、友（とも）だちが 引（ひ）っ越（こ）しを 手伝（てつだ）ってくれた。とても 助（たす）かったので、「本当（ほんとう）に ありがとう」と お礼（れい）を 言（い）った。お礼に お昼（ひる）ご飯（はん）を ごちそうした。今度（こんど）は わたしが 手伝（てつだ）いたい。",
-      "en": "Yesterday a friend helped me move. It was a big help, so I said, 'Thank you so much.' As thanks, I treated them to lunch. Next time I want to help them.",
-      "key": "手伝ってくれた／助かった／お礼を 言う",
-      "practical": "感謝を伝え、お返しをする。",
-      "note": "1話者・朗読"
-     }
-    ]
-   },
-   {
-    "group": "道案内",
-    "items": [
-     {
-      "id": "L-042",
-      "title": "道を聞く",
-      "form": "対話",
-      "level": "N5",
-      "text": "リン：すみません、ゆうびんきょくは どこですか。\n人（ひと）：ゆうびんきょくは、まっすぐ 行（い）って、ふたつめの かどを 右（みぎ）です。\nリン：まっすぐ 行って、右ですね。ありがとうございます。\n人：いいえ。",
-      "en": "Rin: Excuse me, where is the post office? / Person: Go straight, then turn right at the second corner. / Rin: Go straight, then right. Thank you. / Person: You're welcome.",
-      "key": "〜は どこですか／まっすぐ 行って／〜を 右",
-      "practical": "道を尋ねる・道案内を理解する。",
-      "note": "多声TTS:客/通行人"
+      "sub": "カタカナ語",
+      "items": [
+       {
+        "id": "S-016",
+        "title": "和製英語に気をつけて",
+        "form": "一人称",
+        "level": "N4",
+        "text": "日本語（にほんご）には、英語（えいご）から 来（き）た 言葉（ことば）が たくさん あります。でも、意味（いみ）が 少（すこ）し 違（ちが）う ものも あります。たとえば「マンション」は、英語の 大（おお）きな 家（いえ）では なく、アパートのような 建物（たてもの）の ことです。「サラリーマン」も 和製英語（わせいえいご）で、会社員（かいしゃいん）の ことです。",
+        "en": "Japanese has many words from English, but some have slightly different meanings. For example, 'manshon' isn't a big mansion; it's an apartment-like building. 'Sarariiman' is also Japanese-made English, meaning a company employee.",
+        "key": "〜から 来た 言葉／意味が 違う／和製英語",
+        "point": "和製英語の落とし穴。",
+        "note": "1話者・解説"
+       }
+      ]
      }
     ]
    }
   ],
-  "日本文化": [],
-  "1分リスニング": [
+  "長文": [
    {
-    "group": "1分リスニング",
-    "items": [
+    "category": "日本語シャワー",
+    "subthemes": [
      {
-      "id": "H-001",
-      "title": "朝のニュース",
-      "form": "ニュース",
-      "level": "N3",
-      "text": "おはようございます。けさの ニュースです。きのう、東京（とうきょう）で 大（おお）きな お祭（まつ）りが ありました。たくさんの 人（ひと）が 集（あつ）まり、花火（はなび）も 上（あ）がりました。今日（きょう）も いい 天気（てんき）が 続（つづ）きそうです。では、よい 一日（いちにち）を。",
-      "en": "Good morning. Here's this morning's news. Yesterday there was a big festival in Tokyo. Many people gathered, and there were fireworks. Good weather should continue today as well. Have a great day.",
-      "key": "けさの ニュースです／たくさんの 人が 集まり／〜そうです",
-      "practical": "ニュースの聞き始め・話題のつかみ方。",
-      "note": "1話者・アナウンサー調"
+      "sub": "朝のニュース",
+      "items": [
+       {
+        "id": "L-001",
+        "title": "桜が満開",
+        "form": "ニュース",
+        "level": "N3",
+        "text": "おはようございます。今朝（けさ）の ニュースです。昨日（きのう）、東京（とうきょう）の 公園（こうえん）で 桜（さくら）が 満開（まんかい）に なりました。週末（しゅうまつ）は たくさんの 家族（かぞく）連（づ）れで にぎわいそうです。天気（てんき）も よく、お花見（はなみ）に ぴったりの 一日（いちにち）に なるでしょう。一方（いっぽう）、来週（らいしゅう）からは 少（すこ）し 寒（さむ）く なるという 予報（よほう）も 出（で）ています。体調（たいちょう）に 気（き）を つけて お過（す）ごしください。では、今日（きょう）も よい 一日を。",
+        "en": "Good morning. Here's this morning's news. Yesterday, the cherry blossoms reached full bloom in a Tokyo park. This weekend it should be crowded with families. The weather is good too—a perfect day for hanami. On the other hand, it's forecast to get a bit colder from next week. Please take care of your health. Have a good day.",
+        "key": "今朝の ニュース／満開／〜そうです／一方",
+        "point": "ニュースの流れと話題転換「一方」。",
+        "note": "1話者・アナウンサー調"
+       }
+      ]
      },
      {
-      "id": "H-002",
-      "title": "今日の天気",
-      "form": "天気予報",
-      "level": "N4",
-      "text": "天気予報（てんきよほう）です。今日（きょう）は 朝（あさ）から 晴（は）れますが、午後（ごご）から 雨（あめ）が 降（ふ）るでしょう。出（で）かける ときは かさを 持（も）って いってください。気温（きおん）は 25度（ど）、少（すこ）し 暑（あつ）く なりそうです。",
-      "en": "Here's the weather. Today it'll be sunny from the morning, but rain is likely from the afternoon. Please take an umbrella when you go out. The temperature will be 25 degrees—a bit hot.",
-      "key": "晴れます／雨が 降るでしょう／かさを 持って いって",
-      "practical": "天気予報の聞き取り。",
-      "note": "1話者・予報士調"
+      "sub": "ラジオ風トーク",
+      "items": [
+       {
+        "id": "L-002",
+        "title": "続かない人へ",
+        "form": "トーク",
+        "level": "N3",
+        "text": "こんばんは、パーソナリティの ユウキです。今日（きょう）も 一日（いちにち）お疲（つか）れさまでした。さて、リスナーの みなさんから お便（たよ）りを いただきました。「最近（さいきん）、日本語（にほんご）の 勉強（べんきょう）が 続（つづ）かなくて 困（こま）っています」。わかります〜。でも、大丈夫（だいじょうぶ）。毎日（まいにち）5分（ふん）でも いいんです。好（す）きな ドラマや 歌（うた）で 楽（たの）しく 続（つづ）けましょう。それでは、今夜（こんや）の 一曲（いっきょく）です。",
+        "en": "Good evening, this is your host, Yuki. Thanks for your hard work today. Now, a message from a listener: 'Lately I can't keep up my Japanese study and I'm troubled.' I understand! But it's okay. Even 5 minutes a day is fine. Keep it up enjoyably with dramas or songs you like. Now, tonight's song.",
+        "key": "お疲れさまでした／お便り／〜ましょう",
+        "point": "ラジオの語り口・呼びかけ。",
+        "note": "1話者・パーソナリティ調"
+       }
+      ]
      },
      {
-      "id": "H-003",
-      "title": "電車のアナウンス",
-      "form": "アナウンス",
-      "level": "N4",
-      "text": "まもなく、3番線（ばんせん）に 電車（でんしゃ）が まいります。危（あぶ）ないですから、黄色（きいろ）い 線（せん）の 内側（うちがわ）まで お下（さ）がりください。次（つぎ）は 新宿（しんじゅく）、新宿に 止（と）まります。お出口（でぐち）は 右側（みぎがわ）です。",
-      "en": "A train will soon arrive on track 3. It's dangerous, so please step back behind the yellow line. The next stop is Shinjuku. The exit is on the right side.",
-      "key": "まもなく〜が まいります／お下がりください／お出口は 右側",
-      "practical": "駅・車内アナウンスの定型。",
-      "note": "1話者・構内放送調"
+      "sub": "今日の天気",
+      "items": [
+       {
+        "id": "L-003",
+        "title": "全国の天気",
+        "form": "天気予報",
+        "level": "N4",
+        "text": "全国（ぜんこく）の 天気（てんき）です。今日（きょう）は 西日本（にしにほん）で 晴（は）れますが、東日本（ひがしにほん）は 午後（ごご）から 雲（くも）が 多（おお）く なるでしょう。夜（よる）には 雨（あめ）が 降（ふ）る 所（ところ）も あります。傘（かさ）を 持（も）って 出（で）かけると 安心（あんしん）です。気温（きおん）は 各地（かくち）で 20度（ど）前後（ぜんご）、過（す）ごしやすい 一日（いちにち）に なりそうです。",
+        "en": "Here's the nationwide weather. Today it's sunny in western Japan, but in eastern Japan clouds will increase from the afternoon. Some areas may see rain at night. It's safer to take an umbrella. Temperatures will be around 20 degrees—a comfortable day.",
+        "key": "晴れます／雲が 多く なる／傘を 持って",
+        "point": "全国天気の聞き取り（地域差）。",
+        "note": "1話者・予報士調"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "category": "物語",
+    "subthemes": [
+     {
+      "sub": "カイの日記",
+      "items": [
+       {
+        "id": "L-004",
+        "title": "はじめての美容院",
+        "form": "一人称",
+        "level": "N4",
+        "text": "今日（きょう）は はじめて 一人（ひとり）で 美容院（びよういん）に 行（い）った。日本語（にほんご）で 髪型（かみがた）を 説明（せつめい）するのは ドキドキした。「少（すこ）し 短（みじか）く してください」と 言（い）ったら、思（おも）ったより ずいぶん 短く なって しまった。でも、美容師（びようし）さんが 「似合（にあ）っていますよ」と 言ってくれたので、うれしかった。次（つぎ）は もっと くわしく 伝（つた）えられるように なりたい。",
+        "en": "Today I went to a hair salon alone for the first time. Explaining my hairstyle in Japanese was nerve-racking. When I said 'a little shorter, please,' it came out much shorter than I expected. But the stylist said 'It suits you,' so I was happy. Next time I want to explain in more detail.",
+        "key": "はじめて 一人で／〜てしまった／似合っています",
+        "point": "体験＋気持ちの流れを読む。",
+        "note": "1話者・カイ"
+       }
+      ]
      },
      {
-      "id": "H-004",
-      "title": "コンビニ店員の会話",
-      "form": "対話",
-      "level": "N4",
-      "text": "店員：いらっしゃいませ。お弁当（べんとう）は 温（あたた）めますか。\n客：はい、お願（ねが）いします。\n店員：お箸（はし）は お付（つ）けしますか。\n客：はい。あ、袋（ふくろ）も ください。\n店員：かしこまりました。合計（ごうけい）650円（えん）です。",
-      "en": "Clerk: Welcome. Shall I heat up your bento? / Customer: Yes, please. / Clerk: Would you like chopsticks? / Customer: Yes. Oh, a bag too. / Clerk: Certainly. 650 yen total.",
-      "key": "温めますか／お箸は お付けしますか／合計〜円です",
-      "practical": "コンビニ会計の定番やり取り。",
-      "note": "多声TTS:店員/客"
+      "sub": "こわい話",
+      "items": [
+       {
+        "id": "L-005",
+        "title": "真夜中の水の音",
+        "form": "物語",
+        "level": "N3",
+        "text": "夜中（よなか）、トイレに 起（お）きた。家（いえ）には 私（わたし）一人（ひとり）の はずだった。でも、台所（だいどころ）から 水（みず）の 音（おと）が 聞（き）こえる。だれかが 蛇口（じゃぐち）を 使（つか）っている…？こわごわ のぞくと、誰（だれ）も いない。ただ、コップに 水が いっぱい 入（はい）っていた。私（わたし）は 飲（の）んでいない。あの 水は、だれが…。",
+        "en": "In the middle of the night, I got up for the toilet. I should have been alone in the house. But I heard the sound of water from the kitchen. Was someone using the faucet...? Fearfully I peeked in—no one. Just a glass full of water. I hadn't poured it. Who filled that glass...?",
+        "key": "〜のはず／聞こえる／だれも いない",
+        "point": "怪談の“間”と落ちを味わう。",
+        "note": "1話者・低めの声"
+       }
+      ]
      },
      {
-      "id": "H-005",
-      "title": "子どもの会話",
-      "form": "対話",
-      "level": "N5",
-      "text": "ゆうき：ねえ、きょう こうえんで あそぼうよ。\nみな：いいね！ なにで あそぶ？\nゆうき：ブランコと すべりだい！\nみな：わたし、おにごっこも したい。\nゆうき：いいよ。いっぱい あそぼう！",
-      "en": "Yuki: Hey, let's play at the park today. / Mina: Sounds good! What should we play? / Yuki: Swings and the slide! / Mina: I want to play tag too. / Yuki: Okay. Let's play a lot!",
-      "key": "あそぼうよ／なにで あそぶ？／〜も したい",
-      "practical": "子どもの自然な口語・誘いの表現。",
-      "note": "多声TTS:子ども2人"
+      "sub": "昔話",
+      "items": [
+       {
+        "id": "L-006",
+        "title": "桃太郎",
+        "form": "物語",
+        "level": "N4",
+        "text": "むかしむかし、ある ところに、おじいさんと おばあさんが いました。ある日（ひ）、川（かわ）から 大（おお）きな 桃（もも）が 流（なが）れて きました。おばあさんが 桃を 切（き）ると、中（なか）から 元気（げんき）な 男（おとこ）の子（こ）が 生（う）まれました。名前（なまえ）を 桃太郎（ももたろう）と つけました。桃太郎は 大（おお）きく なって、鬼（おに）を 退治（たいじ）しに 行くことに しました。",
+        "en": "Long ago, in a certain place, lived an old man and an old woman. One day, a big peach came floating down the river. When the old woman cut it open, a healthy boy was born from inside. They named him Momotaro. Momotaro grew up and decided to go defeat the ogres.",
+        "key": "むかしむかし／〜と いいました／〜ことに した",
+        "point": "昔話の定型表現に親しむ。",
+        "note": "1話者・語り"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "category": "文化と本音",
+    "subthemes": [
+     {
+      "sub": "本音講座",
+      "items": [
+       {
+        "id": "L-007",
+        "title": "「大丈夫です」の正体",
+        "form": "解説",
+        "level": "N3",
+        "text": "日本語（にほんご）の「大丈夫（だいじょうぶ）です」は、便利（べんり）ですが、少（すこ）し ふくざつです。「コーヒー、いかがですか」「あ、大丈夫です」。これは「いりません」という 意味（いみ）です。でも、「明日（あした）、来（こ）られますか」「大丈夫です」なら「行（い）けます」という 意味。同（おな）じ 言葉（ことば）でも、場面（ばめん）で 意味が 変（か）わります。困（こま）ったら、相手（あいて）の 顔（かお）を 見（み）て 確認（かくにん）しましょう。",
+        "en": "Japanese 'daijoubu desu' is handy but a bit complex. 'Would you like coffee?' 'Oh, daijoubu desu.' Here it means 'No thanks.' But 'Can you come tomorrow?' 'Daijoubu desu' means 'I can go.' The same words change meaning by situation. If unsure, check the other person's face.",
+        "key": "大丈夫です(=No thanks / OK)／場面で 意味が 変わる",
+        "point": "多義的な「大丈夫」を読み解く。",
+        "note": "1話者・解説"
+       }
+      ]
+     },
+     {
+      "sub": "あるある",
+      "items": [
+       {
+        "id": "L-008",
+        "title": "日本の電車は静か",
+        "form": "読み物",
+        "level": "N4",
+        "text": "日本（にほん）の 電車（でんしゃ）に 乗（の）ると、おどろくことが あります。とても 静（しず）かなのです。みんな スマホを 見（み）たり、寝（ね）たり して、ほとんど 話（はな）しません。電話（でんわ）も マナーモードです。最初（さいしょ）は さびしく 感（かん）じましたが、今（いま）は その 静かさが 心地（ここち）よいです。みなさんの 国（くに）の 電車は どうですか。",
+        "en": "When you ride a train in Japan, something may surprise you: it's very quiet. Everyone looks at their phone or sleeps, and hardly anyone talks. Phones are on silent mode. At first I felt it was lonely, but now I find that quietness pleasant. What are trains like in your country?",
+        "key": "〜と、〜／ほとんど 話しません／心地よい",
+        "point": "文化比較の読み物。",
+        "note": "1話者・朗読"
+       }
+      ]
+     },
+     {
+      "sub": "食べもの",
+      "items": [
+       {
+        "id": "L-009",
+        "title": "ラーメンを食べよう",
+        "form": "読み物",
+        "level": "N4",
+        "text": "日本（にほん）に 来（き）たら、ぜひ ラーメンを 食（た）べてみてください。ラーメンには いろいろな 種類（しゅるい）が あります。しょうゆ、塩（しお）、みそ、とんこつ…。お店（みせ）に よって 味（あじ）が ちがいます。注文（ちゅうもん）の とき、「麺（めん）の かたさ」を 選（えら）べる 店（みせ）も あります。かたいのが 好（す）きなら「かため」と 言（い）いましょう。あなたの 好（す）きな ラーメンは どれですか。",
+        "en": "When you come to Japan, definitely try ramen. There are many kinds: soy sauce, salt, miso, tonkotsu... The taste differs by shop. When ordering, some shops let you choose 'noodle firmness.' If you like it firm, say 'katame.' Which ramen is your favorite?",
+        "key": "ぜひ 〜てみてください／〜によって／〜と 言いましょう",
+        "point": "紹介＋注文の実用。",
+        "note": "1話者・朗読"
+       }
+      ]
      }
     ]
    }
