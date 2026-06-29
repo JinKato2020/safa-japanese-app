@@ -29,13 +29,20 @@ export function nodesFor(tab: string): ContentNode[] {
 
 // 階層名（カテゴリー/サブテーマ/区分）の英語ラベル。未登録は日本語名をそのまま。
 export const LABEL_EN: Record<string, string> = {
-  // カテゴリー
+  // カテゴリー(短文)
   '生活力': 'Life Skills',
-  '使えるひとこと': 'Useful Phrases',
-  'ことば遊び': 'Word Fun',
-  '文化と本音': 'Culture & Real Talk',
+  '文化': 'Culture',
+  '本音講座': 'Real Talk',
+  '日本と世界の違い': 'Japan vs the World',
+  '使える一言': 'Useful Phrases',
+  'グルメ': 'Food & Gourmet',
+  '言葉遊び': 'Word Fun',
+  // カテゴリー(長文)
+  'カイの物語': "Kai's Story",
   'ラジオトーク': 'Radio Talk',
-  '物語': 'Stories',
+  'ミステリー': 'Mystery',
+  'ドキュメンタリー': 'Documentary',
+  '昔話': 'Folk Tales',
   // 生活力
   '買い物・お金': 'Shopping & Money',
   '手続き': 'Procedures',
@@ -49,20 +56,11 @@ export const LABEL_EN: Record<string, string> = {
   '今日の擬音語': 'Onomatopoeia',
   'ことわざ・慣用句': 'Sayings & Idioms',
   'カタカナ語': 'Katakana Words',
-  // 文化と本音
-  '本音講座': 'Real Talk',
-  'あるある': 'Japan Quirks',
-  '食べもの': 'Food',
   // ラジオトーク
   'ニュース': 'News',
   'お便り相談室': 'Listener Mail',
   'ゲストインタビュー': 'Guest Interview',
   '2人のフリートーク': 'Free Talk',
-  // 物語
-  'カイの物語': "Kai's Story",
-  '昔話': 'Folk Tales',
-  'ミステリー': 'Mystery',
-  'ドキュメンタリー': 'Documentary',
   // カイの物語 4区分
   '日本生活スタート': 'Life in Japan: Start',
   '日本一人旅': 'Solo Trip',

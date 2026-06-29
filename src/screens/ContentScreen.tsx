@@ -68,7 +68,6 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.head}>
-        <Text style={s.tab}>{kicker}</Text>
         <Text style={s.title}>{title}</Text>
         <Text style={s.sub}>{sub}</Text>
       </View>

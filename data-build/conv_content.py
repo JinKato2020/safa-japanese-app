@@ -7,7 +7,16 @@ SRC=r"C:/Users/jwpsa/Documents/desktop/claude/safa-japanese-app/コンテンツ.
 OUT=r"C:/Users/jwpsa/Documents/desktop/claude/safa-japanese-app/src/data/content.json"
 
 TABCODE={"短文":"S","長文":"L"}
-CATCODE={"生活力":"L","使えるひとこと":"P","ことば遊び":"W","文化と本音":"C","ラジオトーク":"R","物語":"S"}
+CATCODE={
+ # 短文
+ "生活力":"L","文化":"C","本音講座":"H","日本と世界の違い":"D","使える一言":"P","グルメ":"G","言葉遊び":"W",
+ # 長文
+ "カイの物語":"K","ラジオトーク":"R","ミステリー":"Y","ドキュメンタリー":"D","昔話":"M",
+}
+ORDER={
+ "短文":["生活力","文化","本音講座","日本と世界の違い","使える一言","グルメ","言葉遊び"],
+ "長文":["カイの物語","ラジオトーク","ミステリー","ドキュメンタリー","昔話"],
+}
 SEGCODE={
  "買い物・お金":"B","手続き":"T","しごと・学校":"W","移動":"M",
  "依頼・許可・断り":"R","お礼・謝罪":"O","気持ち・相づち":"A",
@@ -36,8 +45,9 @@ def add(tab):
     for r in rows[1:]:
         if not r[col["ID"]]: continue
         cat=str(r[col["カテゴリー"]]).strip()
-        subraw=str(r[col["サブテーマ"]]).strip()
-        segs=[s for s in subraw.split("/") if s]   # サブテーマ(/区分)
+        _sv=r[col["サブテーマ"]]
+        subraw="" if _sv is None else str(_sv).strip()   # 空/None は サブテーマ無し(カテゴリー直下)
+        segs=[s for s in subraw.split("/") if s and s!="None"]
         path=[cat]+segs
         # ツリーを掘る
         node=child(data[tab], cat)
@@ -70,6 +80,10 @@ def prune(n):
         if not n["children"]: del n["children"]
 for t in TABS:
     for c in data[t]: prune(c)
+
+# カテゴリーを指定順に並べ替え
+for t in TABS:
+    data[t].sort(key=lambda n: ORDER[t].index(n["name"]) if n["name"] in ORDER[t] else 999)
 
 out={"tabs":TABS,"data":data}
 os.makedirs(os.path.dirname(OUT),exist_ok=True)
