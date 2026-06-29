@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // テーマ＝外観(明暗)と背景を1つに統一。
 //  auto/light/dark = 単色。sakura = 「桜水彩」(水彩のにじみ＋金粉＋舞う桜の高級背景)。
-export type ThemeMode = 'auto' | 'light' | 'dark' | 'sakura';
+export type ThemeMode = 'auto' | 'light' | 'dark' | 'sakura' | 'sakura2';
 
 export interface Settings {
   theme: ThemeMode;

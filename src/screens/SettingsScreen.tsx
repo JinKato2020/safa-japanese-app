@@ -27,6 +27,7 @@ export default function SettingsScreen() {
     { v: 'auto', label: t.themeAuto },
     { v: 'light', label: t.themeDefault },
     { v: 'sakura', label: t.themeSakura },
+    { v: 'sakura2', label: t.themeSakura2 },
     { v: 'dark', label: t.themeDark },
   ];
 

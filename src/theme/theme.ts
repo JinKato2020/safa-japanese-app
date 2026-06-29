@@ -84,9 +84,9 @@ export const darkColors: ThemeColors = {
 export const colors = lightColors;
 
 /** 「桜水彩」テーマ。水彩のにじみ(layered washes)＋金粉＋舞う桜の和モダン高級背景(単一デザイン)。 */
-export type GradientTheme = 'sakura';
-export const GRADIENT_THEMES: GradientTheme[] = ['sakura'];
-export const isGradientTheme = (t: string): t is GradientTheme => t === 'sakura';
+export type GradientTheme = 'sakura' | 'sakura2';
+export const GRADIENT_THEMES: GradientTheme[] = ['sakura', 'sakura2'];
+export const isGradientTheme = (t: string): t is GradientTheme => t === 'sakura' || t === 'sakura2';
 
 /** ベースの和紙グラデーション(温かい生成り→淡桜→ほのかな藤)。にじみ/金粉/花びらは AppBackground が重ねる。 */
 export const SAKURA_BASE = ['#fbf7f5', '#f7ecf0', '#f2e1ea', '#edd9ea'];

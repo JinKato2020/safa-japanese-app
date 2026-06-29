@@ -105,13 +105,14 @@ export default function AppBackground() {
   const petalPath = useMemo(() => Skia.Path.MakeFromSVGString(PETAL_D), []);
   const uniforms = useDerivedValue(() => ({ u_time: clock.value / 1000, u_resolution: [width, height] }));
 
+  const petalScale = theme === 'sakura2' ? 0.58 : 1; // ②は桜を小さく
   const petals = useMemo<PetalP[]>(() => {
     const r = (n: number) => Math.random() * n;
     return Array.from({ length: 7 }, (_, i) => {
       const big = i < 2;
       return {
         i, x: r(width),
-        scale: big ? 1.7 + r(0.7) : 0.8 + r(0.8),
+        scale: (big ? 1.7 + r(0.7) : 0.8 + r(0.8)) * petalScale,
         cycle: big ? 18 + r(8) : 12 + r(7),
         delay: r(16), swA: 16 + r(40),
         swF1: 0.35 + r(0.4), swF2: 0.9 + r(0.7),
@@ -123,7 +124,7 @@ export default function AppBackground() {
         ph: r(Math.PI * 2),
       };
     });
-  }, [width]);
+  }, [width, petalScale]);
 
   if (Platform.OS === 'web' || !isGradientTheme(theme) || !effect || !petalPath) return null;
 
