@@ -444,24 +444,24 @@
          {
           "id": "L-S-K-L-001",
           "title": "空港に着いた",
-          "form": "一人称",
+          "form": "物語",
           "level": "N5",
-          "text": "日本（にほん）に 着（つ）いた。空港（くうこう）は とても 大（おお）きい。入国（にゅうこく）の 列（れつ）は 長（なが）かったけれど、係（かか）りの 人（ひと）は やさしかった。「ようこそ」と 言（い）ってくれた。荷物（にもつ）を 受（う）け取（と）って、電車（でんしゃ）の 駅（えき）を さがす。さあ、新（あたら）しい 生活（せいかつ）の はじまりだ。",
-          "en": "I arrived in Japan. The airport is huge. The immigration line was long, but the staff were kind. They said 'Welcome.' I picked up my luggage and looked for the train station. Now, my new life begins.",
-          "key": "〜に 着いた／〜けれど／はじまりだ",
-          "point": "到着〜移動の体験＋気持ち。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）長（なが）い フライトの あと、カイは ついに 日本（にほん）に 着（つ）いた。空港（くうこう）は 人（ひと）で いっぱいだ。\n審査官（しんさかん）：パスポートを お願（ねが）いします。日本（にほん）には 何（なん）の ために 来（き）ましたか。\nカイ：えっと、留学（りゅうがく）です。日本語（にほんご）の 学校（がっこう）に 通（かよ）うんです。\n審査官：どのくらい いますか。\nカイ：1年（ねん）の 予定（よてい）です。\n審査官：はい、どうぞ。日本での 生活（せいかつ）、がんばってください。\nカイ：ありがとうございます！\n（ナレーション）スタンプを もらって、カイは 大（おお）きく 息（いき）を ついた。「やっと 来た…。これから 新（あたら）しい 毎日（まいにち）が 始（はじ）まるんだ」。",
+          "en": "(Narration) After the long flight, Kai finally arrived in Japan. The airport is packed. / Officer: Passport, please. What did you come to Japan for? / Kai: Um, to study. I'll attend a Japanese language school. / Officer: How long will you stay? / Kai: About a year. / Officer: All right, go ahead. Good luck with your life in Japan. / Kai: Thank you! / (Narration) After getting the stamp, Kai let out a big breath. 'I'm finally here... A new daily life starts now.'",
+          "key": "えっと／〜んです／がんばってください",
+          "point": "入国の会話＋心情。会話表現「えっと/〜んです/〜んだ」。",
+          "note": "多声TTS:ナレーター/審査官/カイ"
          },
          {
           "id": "L-S-K-L-002",
-          "title": "はじめての一人暮らし",
-          "form": "一人称",
+          "title": "ゴミ出しでこまった",
+          "form": "物語",
           "level": "N4",
-          "text": "今日（きょう）から 一人暮（ひとりぐ）らしだ。部屋（へや）は 小（ちい）さいけれど、自分（じぶん）だけの 場所（ばしょ）だ。でも、困（こま）ったことが ある。ゴミの 出（だ）し方（かた）が わからない。となりの 人（ひと）に 聞（き）いたら、ていねいに 教（おし）えてくれた。日本（にほん）の 人は 親切（しんせつ）だなと 思（おも）った。",
-          "en": "From today I live alone. The room is small, but it's my own place. But there's a problem—I don't know how to sort the trash. When I asked my neighbor, they kindly explained. I thought, Japanese people are so kind.",
-          "key": "一人暮らし／〜けれど／教えてくれた",
-          "point": "生活立ち上げの戸惑いと人の温かさ。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）引（ひ）っ越（こ）しの 次（つぎ）の 日（ひ）。カイは ゴミぶくろを 持（も）って、こまっていた。\nカイ：あれ？ ゴミは どこに 出（だ）せば いいんだろう…。\n（ナレーション）ちょうど、となりの 人（ひと）が 通（とお）りかかった。\nカイ：あの、すみません。ゴミの 出（だ）し方（かた）が わからなくて…。\nとなりの人：ああ、燃（も）えるゴミは 月曜（げつよう）と 木曜（もくよう）ですよ。朝（あさ）8時（じ）までに、そこの 角（かど）に 出（だ）してね。\nカイ：そうなんですね！ ありがとうございます。助（たす）かりました。\nとなりの人：困（こま）ったら いつでも 聞（き）いてね。\n（ナレーション）カイは ほっとした。「日本（にほん）の 人（ひと）は 親切（しんせつ）だなあ」。",
+          "en": "(Narration) The day after moving. Kai stood there holding a trash bag, troubled. / Kai: Huh? Where am I supposed to put the trash...? / (Narration) Just then, a neighbor passed by. / Kai: Um, excuse me. I don't know how to sort the trash... / Neighbor: Ah, burnable trash is Monday and Thursday. Put it at that corner by 8 a.m. / Kai: Oh, I see! Thank you, that helps. / Neighbor: Ask me anytime you're stuck. / (Narration) Kai felt relieved. 'Japanese people are so kind.'",
+          "key": "〜ばいいんだろう／そうなんですね／〜てね",
+          "point": "近所での会話＋気づき。会話表現「あれ?/〜なんですね/〜てね」。",
+          "note": "多声TTS:ナレーター/カイ/近所の人"
          }
         ]
        },
@@ -472,24 +472,24 @@
          {
           "id": "L-S-K-J-001",
           "title": "京都へ行く",
-          "form": "一人称",
+          "form": "物語",
           "level": "N4",
-          "text": "連休（れんきゅう）に、はじめて 京都（きょうと）へ 行（い）った。古（ふる）い お寺（てら）が たくさん あって、とても 美（うつく）しかった。着物（きもの）を 着（き）て 歩（ある）いている 人も いた。お昼（ひる）に 食（た）べた 抹茶（まっちゃ）の アイスは、わすれられない 味（あじ）だった。また 行きたい。",
-          "en": "On the holidays, I went to Kyoto for the first time. There were many old temples, and they were very beautiful. Some people walked around in kimono. The matcha ice cream I had for lunch was an unforgettable taste. I want to go again.",
-          "key": "はじめて 〜へ 行った／〜も いた／また 行きたい",
-          "point": "旅行の描写＋感想。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）連休（れんきゅう）、カイは はじめて 一人（ひとり）で 京都（きょうと）へ 来た。古（ふる）い お寺（てら）が 美（うつく）しい。\nカイ：わあ、きれい…。あの、すみません、写真（しゃしん）を 撮（と）って もらえますか。\n通行人（つうこうにん）：いいですよ。はい、チーズ！\nカイ：ありがとうございます！\n（ナレーション）お昼（ひる）に、小（ちい）さな お店（みせ）に 入（はい）った。\n店員：いらっしゃい。何（なに）に しますか。\nカイ：抹茶（まっちゃ）の アイス、ください。\n店員：はいよ。京都（きょうと）は どう？\nカイ：最高（さいこう）です！ また 来（き）たいなあ。\n（ナレーション）わすれられない 一日（いちにち）に なった。",
+          "en": "(Narration) On the holidays, Kai came to Kyoto alone for the first time. The old temples are beautiful. / Kai: Wow, beautiful... Um, excuse me, could you take a photo? / Passerby: Sure. Okay, cheese! / Kai: Thank you! / (Narration) For lunch, he went into a small shop. / Clerk: Welcome. What'll you have? / Kai: Matcha ice cream, please. / Clerk: Coming up. How's Kyoto? / Kai: It's the best! I want to come again. / (Narration) It became an unforgettable day.",
+          "key": "撮って もらえますか／また 来たいなあ／〜はどう?",
+          "point": "旅先の会話。会話表現「わあ/はいよ/〜なあ」。",
+          "note": "多声TTS:ナレーター/カイ/通行人/店員"
          },
          {
           "id": "L-S-K-J-002",
           "title": "お祭りに行く",
-          "form": "一人称",
+          "form": "物語",
           "level": "N4",
-          "text": "夏（なつ）の 夜（よる）、はじめて 日本（にほん）の お祭（まつ）りに 行（い）った。たくさんの 人（ひと）が ゆかたを 着（き）ていて、とても きれいだった。屋台（やたい）で たこ焼（や）きと かき氷（ごおり）を 買（か）って 食（た）べた。最後（さいご）に 花火（はなび）が 上（あ）がった。大（おお）きな 音（おと）と 光（ひかり）に、胸（むね）が どきどきした。日本の 夏（なつ）は、わすれられない 思（おも）い出（で）に なった。",
-          "en": "On a summer night, I went to a Japanese festival for the first time. Many people wore yukata and looked beautiful. At the stalls I bought and ate takoyaki and shaved ice. At the end, fireworks went up. The loud sound and light made my heart race. Japan's summer became an unforgettable memory.",
-          "key": "はじめて／〜を 買って 食べた／わすれられない 思い出",
-          "point": "お祭りの描写＋感動（旅行・季節）。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）夏（なつ）の 夜（よる）。カイは 友（とも）だちの ミナと お祭（まつ）りに 来た。\nミナ：カイ、ゆかた 似合（にあ）ってる！\nカイ：本当（ほんとう）？ えへへ、はじめて 着（き）たんだ。\nミナ：屋台（やたい）、行（い）こうよ。たこ焼（や）き 食（た）べたい！\nカイ：いいね。あ、かき氷（ごおり）も！\n（ナレーション）二人（ふたり）が 食（た）べながら 歩（ある）いていると、空（そら）に 大（おお）きな 花火（はなび）が 上（あ）がった。\nカイ：わあ…！ きれいだね。\nミナ：うん。来（き）て よかったね。\n（ナレーション）大（おお）きな 音（おと）と 光（ひかり）。カイの 胸（むね）は どきどきしていた。",
+          "en": "(Narration) A summer night. Kai came to a festival with his friend Mina. / Mina: Kai, the yukata looks good on you! / Kai: Really? Hehe, it's my first time wearing one. / Mina: Let's go to the stalls. I want takoyaki! / Kai: Nice. Oh, shaved ice too! / (Narration) As the two walked while eating, big fireworks rose into the sky. / Kai: Wow...! It's beautiful. / Mina: Yeah. I'm glad we came. / (Narration) The loud sound and light. Kai's heart was racing.",
+          "key": "似合ってる／〜たんだ／来て よかったね",
+          "point": "友だちとの祭り会話。会話表現「えへへ/〜よ/〜だね」。",
+          "note": "多声TTS:ナレーター/カイ/ミナ"
          }
         ]
        },
@@ -500,24 +500,24 @@
          {
           "id": "L-S-K-D-001",
           "title": "はじめての美容院",
-          "form": "一人称",
+          "form": "物語",
           "level": "N4",
-          "text": "今日（きょう）は はじめて 一人（ひとり）で 美容院（びよういん）に 行（い）った。日本語（にほんご）で 髪型（かみがた）を 説明（せつめい）するのは ドキドキした。「少（すこ）し 短（みじか）く してください」と 言（い）ったら、思（おも）ったより ずいぶん 短く なって しまった。でも、美容師（びようし）さんが 「似合（にあ）っていますよ」と 言ってくれたので、うれしかった。次（つぎ）は もっと くわしく 伝（つた）えられるように なりたい。",
-          "en": "Today I went to a hair salon alone for the first time. Explaining my hairstyle in Japanese was nerve-racking. When I said 'a little shorter, please,' it came out much shorter than I expected. But the stylist said 'It suits you,' so I was happy. Next time I want to explain in more detail.",
-          "key": "はじめて 一人で／〜てしまった／似合っています",
-          "point": "体験＋気持ちの流れ（日常）。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）カイは はじめて 一人（ひとり）で 美容院（びよういん）に 来た。日本語（にほんご）で 髪型（かみがた）を 言（い）うのは ドキドキする。\n美容師（びようし）：今日（きょう）は どうしますか。\nカイ：えっと、少（すこ）し 短（みじか）く して、軽（かる）く したいんです。\n美容師：前髪（まえがみ）は どうしましょう？\nカイ：前髪は そのままで お願（ねが）いします。\n（ナレーション）はさみの 音（おと）が ひびく。終（お）わって 鏡（かがみ）を 見（み）ると…思（おも）ったより ずいぶん 短（みじか）い！\nカイ：（心の声）うわ、短く なりすぎたかな…。\n美容師：うん、似合（にあ）っていますよ。\nカイ：あ、ありがとうございます！\n（ナレーション）少（すこ）し 短すぎたけれど、カイは なんだか うれしかった。",
+          "en": "(Narration) Kai came to a hair salon alone for the first time. Saying his hairstyle in Japanese is nerve-racking. / Stylist: What would you like today? / Kai: Um, a bit shorter and lighter, please. / Stylist: What about your bangs? / Kai: Please leave the bangs as they are. / (Narration) The scissors snip away. When it was done and he looked in the mirror... it was much shorter than he expected! / Kai: (inner voice) Whoa, maybe too short... / Stylist: Yeah, it suits you. / Kai: Oh, thank you! / (Narration) A little too short, but Kai felt somehow happy.",
+          "key": "〜したいんです／どうしましょう／似合っています",
+          "point": "美容院の会話＋心の声。会話表現「えっと/うわ/なんだか」。",
+          "note": "多声TTS:ナレーター/カイ/美容師"
          },
          {
           "id": "L-S-K-D-002",
           "title": "友だちができた",
-          "form": "一人称",
+          "form": "物語",
           "level": "N4",
-          "text": "日本（にほん）に 来（き）て すぐは、友（とも）だちが いなくて さびしかった。でも、日本語（にほんご）の 教室（きょうしつ）で となりに 座（すわ）った 人（ひと）が、やさしく 話（はな）しかけて くれた。「いっしょに お昼（ひる）、食（た）べない？」その 一言（ひとこと）が とても うれしかった。今（いま）では、休（やす）みの 日（ひ）に いっしょに 出（で）かける 仲（なか）だ。勇気（ゆうき）を 出（だ）して よかった。",
-          "en": "Right after I came to Japan, I had no friends and felt lonely. But in Japanese class, the person who sat next to me kindly spoke to me: 'Want to have lunch together?' That one phrase made me so happy. Now we're close enough to go out on days off. I'm glad I found the courage.",
-          "key": "さびしかった／話しかけて くれた／勇気を 出して よかった",
-          "point": "友だち作りの体験と気持ち（日常）。",
-          "note": "1話者・カイ"
+          "text": "（ナレーション）日本（にほん）に 来（き）た ばかりの ころ、カイは 友（とも）だちが いなくて さびしかった。ある日（ひ）、日本語（にほんご）の 教室（きょうしつ）で…\nクラスメート：あ、その ペン、いいね。どこで 買（か）ったの？\nカイ：えっ、これ？ 駅前（えきまえ）の お店（みせ）です。\nクラスメート：へえ。ねえ、よかったら いっしょに お昼（ひる）、食（た）べない？\nカイ：いいんですか？ うれしいです！\n（ナレーション）その 一言（ひとこと）が、とても うれしかった。\nカイ：（心の声）勇気（ゆうき）を 出（だ）して よかった…！\n（ナレーション）今（いま）では、休（やす）みの 日（ひ）に いっしょに 出（で）かける 仲（なか）だ。",
+          "en": "(Narration) Just after coming to Japan, Kai had no friends and felt lonely. One day, in Japanese class... / Classmate: Oh, that pen's nice. Where'd you buy it? / Kai: Huh, this? At the shop in front of the station. / Classmate: Huh. Hey, if you'd like, want to have lunch together? / Kai: Really? I'd love to! / (Narration) That one phrase made him so happy. / Kai: (inner voice) I'm so glad I found the courage...! / (Narration) Now they're close enough to go out together on days off.",
+          "key": "どこで 買ったの？／いっしょに 〜ない？／よかったら",
+          "point": "友だち作りの会話。会話表現「えっ/へえ/ねえ」。誘いの「〜ない?」。",
+          "note": "多声TTS:ナレーター/カイ/クラスメート"
          }
         ]
        },
@@ -527,14 +527,14 @@
         "items": [
          {
           "id": "L-S-K-R-001",
-          "title": "カイのつぶやき：好きな食べ物",
-          "form": "一人称",
+          "title": "好きな食べ物の話",
+          "form": "物語",
           "level": "N4",
-          "text": "ちょっと 休憩（きゅうけい）。みなさん、こんにちは、カイです。今日（きょう）は ぼくの 好（す）きな 食（た）べ物（もの）の 話（はなし）。実（じつ）は、ぼくは おにぎりが 大好（だいす）きです。コンビニの おにぎりも おいしいけれど、自分（じぶん）で 作（つく）るのも 楽（たの）しいです。みなさんの 好きな 日本（にほん）の 食べ物は 何（なん）ですか？",
-          "en": "A little break. Hi everyone, it's Kai. Today, a chat about my favorite food. Actually, I love onigiri (rice balls). Convenience-store onigiri are tasty, but making them myself is fun too. What's your favorite Japanese food?",
-          "key": "ちょっと 休憩／実は／〜は 何ですか？",
-          "point": "カイの語りかけ・気軽な小ネタ（休憩室）。",
-          "note": "1話者・カイ"
+          "text": "カイ：みなさん、こんにちは、カイです。ちょっと 休憩（きゅうけい）の 時間（じかん）。今日（きょう）は ぼくの 好（す）きな 食（た）べ物（もの）の 話（はなし）。\n（ナレーション）実（じつ）は カイ、おにぎりが 大好物（だいこうぶつ）。\nカイ：コンビニの おにぎりも おいしいけど、自分（じぶん）で 作（つく）るのも 楽（たの）しいんだよね。この前（まえ）、友（とも）だちに 作（つく）ってあげたら「うまっ！」って 言（い）われて、うれしくて さ。\n（ナレーション）カイは 照（て）れながら 笑（わら）った。\nカイ：みなさんの 好（す）きな 日本（にほん）の 食べ物は 何（なん）ですか？ また 教（おし）えてね。じゃあ、また！",
+          "en": "Kai: Hi everyone, it's Kai. A little break time. Today, a talk about my favorite food. / (Narration) Actually, Kai loves onigiri. / Kai: Convenience-store onigiri are tasty, but making them yourself is fun too, you know. The other day I made some for a friend and they said 'Yum!'—it made me really happy. / (Narration) Kai laughed bashfully. / Kai: What's your favorite Japanese food? Let me know sometime. See you!",
+          "key": "〜んだよね／うまっ／〜てね",
+          "point": "カイの語りかけ＋ひとり言。くだけた会話表現「〜だよね/うまっ/さ」。",
+          "note": "多声TTS:カイ/ナレーター"
          }
         ]
        }
@@ -549,16 +549,16 @@
         "title": "桃太郎",
         "form": "物語",
         "level": "N4",
-        "text": "むかしむかし、ある ところに、おじいさんと おばあさんが いました。ある日（ひ）、川（かわ）から 大（おお）きな 桃（もも）が 流（なが）れて きました。おばあさんが 桃を 切（き）ると、中（なか）から 元気（げんき）な 男（おとこ）の子（こ）が 生（う）まれました。名前（なまえ）を 桃太郎（ももたろう）と つけました。桃太郎は 大（おお）きく なって、鬼（おに）を 退治（たいじ）しに 行くことに しました。",
-        "en": "Long ago, in a certain place, lived an old man and an old woman. One day, a big peach came floating down the river. When the old woman cut it open, a healthy boy was born from inside. They named him Momotaro. Momotaro grew up and decided to go defeat the ogres.",
-        "key": "むかしむかし／〜と いいました／〜ことに した",
-        "point": "昔話の定型表現に親しむ。",
-        "note": "1話者・語り"
+        "text": "（ナレーション）むかしむかし、ある ところに、おじいさんと おばあさんが いました。ある日（ひ）、川（かわ）から 大（おお）きな 桃（もも）が どんぶらこ、どんぶらこ、と 流（なが）れて きました。\nおばあさん：おや、なんて 大（おお）きな 桃（もも）だろう！ 家（いえ）に 持（も）って 帰（かえ）りましょう。\n（ナレーション）家（いえ）で 桃（もも）を 切（き）ろうとすると…パカッ！ 中（なか）から 元気（げんき）な 男（おとこ）の子（こ）が 生（う）まれました。\nおじいさん：おお、元気（げんき）な 子（こ）だ！ 名前（なまえ）は 桃太郎（ももたろう）に しよう。\n（ナレーション）大（おお）きく なった 桃太郎（ももたろう）は、ある日（ひ） 言（い）いました。\n桃太郎：おじいさん、おばあさん。鬼（おに）を 退治（たいじ）しに 行（い）ってきます！",
+        "en": "(Narration) Long ago, an old man and an old woman lived in a certain place. One day, a big peach came floating down the river, donburako, donburako. / Old woman: Oh my, what a big peach! Let's take it home. / (Narration) When they tried to cut the peach at home... crack! A healthy boy was born from inside. / Old man: Oh, a lively boy! Let's name him Momotaro. / (Narration) When Momotaro grew up, one day he said: / Momotaro: Grandpa, Grandma. I'm going off to defeat the ogres!",
+        "key": "なんて 〜だろう／〜ましょう／〜てきます",
+        "point": "昔話の会話＋擬音(どんぶらこ/パカッ)。",
+        "note": "多声TTS:ナレーター/おばあさん/おじいさん/桃太郎"
        }
       ]
      },
      {
-      "name": "日本語ミステリー",
+      "name": "ミステリー",
       "children": [],
       "items": [
        {
@@ -566,61 +566,44 @@
         "title": "消えた駅弁の謎 第1話：駅で事件発生",
         "form": "物語",
         "level": "N4",
-        "text": "東京駅（とうきょうえき）の 有名（ゆうめい）な 駅弁屋（えきべんや）で 事件（じけん）が 起（お）きた。朝（あさ）、店（みせ）を 開（あ）けると、一番（いちばん）人気（にんき）の「うみの幸（さち）弁当（べんとう）」が 10個（こ）、消（き）えていたのだ。店長（てんちょう）は あわてて 駅員（えきいん）の 田中（たなか）さんに 相談（そうだん）した。「鍵（かぎ）は かかっていたのに、どうして…？」田中さんは 考（かんが）えた。これは ただの どろぼうでは ないかもしれない。",
-        "en": "An incident occurred at a famous ekiben (station bento) shop in Tokyo Station. In the morning, when they opened, 10 of the most popular 'Sea Bounty Bento' had vanished. The flustered manager consulted station attendant Tanaka. 'The door was locked, so how...?' Tanaka thought. This might not be an ordinary thief.",
-        "key": "事件が 起きた／消えていた／〜かもしれない",
-        "point": "事件の発端を読む（密室の謎）。",
-        "note": "1話者・語り(緊張感)"
+        "text": "（ナレーション）東京駅（とうきょうえき）の 有名（ゆうめい）な 駅弁屋（えきべんや）で 事件（じけん）が 起（お）きた。\n店長（てんちょう）：たいへんだ！ 一番（いちばん）人気（にんき）の「うみの幸（さち）弁当（べんとう）」が、10個（こ）も 消（き）えてる！\n駅員（えきいん）の田中（たなか）：鍵（かぎ）は かかっていたんですよね？\n店長：はい、朝（あさ）まで しっかり…。\n田中：おかしいな。鍵（かぎ）が かかっていたのに、どうやって…？\n（ナレーション）田中（たなか）さんは 考（かんが）えた。これは ただの どろぼうでは ないかもしれない。",
+        "en": "(Narration) An incident occurred at a famous ekiben shop in Tokyo Station. / Manager: This is terrible! Ten of our most popular 'Sea Bounty Bento' have vanished! / Tanaka (staff): The door was locked, right? / Manager: Yes, firmly until morning... / Tanaka: Strange. The door was locked, so how...? / (Narration) Tanaka thought. This might not be an ordinary thief.",
+        "key": "たいへんだ／〜んですよね／どうやって…?",
+        "point": "事件の発端を会話で（密室の謎）。",
+        "note": "多声TTS:ナレーター/店長/田中"
        },
        {
         "id": "L-S-Y-002",
         "title": "消えた駅弁の謎 第2話：証言を聞く",
         "form": "対話",
         "level": "N4",
-        "text": "田中（たなか）さんは、店（みせ）の 近（ちか）くに いた 人（ひと）たちに 話（はなし）を 聞（き）いた。掃除（そうじ）の おばさん：「朝（あさ）5時（じ）ごろ、白（しろ）い 服（ふく）の 人を 見（み）ました」。となりの コーヒー店（てん）の 店員（てんいん）：「変（へん）な 音（おと）が しました」。でも、防犯（ぼうはん）カメラには だれも 映（うつ）っていない。田中さんは 首（くび）を かしげた。「おかしいな…」",
-        "en": "Tanaka asked people who had been near the shop. Cleaning lady: 'Around 5 a.m., I saw someone in white clothes.' The neighboring coffee-shop clerk: 'There was a strange sound.' But the security camera showed no one. Tanaka tilted his head. 'Strange...'",
-        "key": "話を 聞いた／〜を 見ました／だれも 映っていない",
-        "point": "証言の聞き取りと矛盾を読む。",
-        "note": "多声TTS:刑事/証人たち"
+        "text": "田中（たなか）：すみません、今朝（けさ）、何（なに）か 見（み）ませんでしたか。\n掃除（そうじ）の人：5時（じ）ごろ、白（しろ）い 服（ふく）の 人（ひと）を 見（み）ましたよ。\n田中：白い 服…。ありがとうございます。\nコーヒー店（てん）の人：そういえば、変（へん）な 音（おと）が しましたね。バサバサっと。\n田中：バサバサ？\n（ナレーション）でも、防犯（ぼうはん）カメラには だれも 映（うつ）っていない。\n田中：（首（くび）を かしげて）うーん、おかしいなあ…。",
+        "en": "Tanaka: Excuse me, did you see anything this morning? / Cleaner: Around 5, I saw someone in white clothes. / Tanaka: White clothes... Thank you. / Coffee-shop worker: Come to think of it, there was a strange sound. A flapping sound. / Tanaka: Flapping? / (Narration) But the security camera showed no one. / Tanaka: (tilting his head) Hmm, that's strange...",
+        "key": "見ませんでしたか／そういえば／うーん",
+        "point": "証言の会話と矛盾。会話表現「そういえば/うーん」。",
+        "note": "多声TTS:田中/証人たち/ナレーター"
        },
        {
         "id": "L-S-Y-003",
         "title": "消えた駅弁の謎 第3話：容疑者登場",
         "form": "対話",
         "level": "N3",
-        "text": "次（つぎ）の 日（ひ）、田中（たなか）さんは 白（しろ）い 服（ふく）の 男（おとこ）を 見（み）つけた。男は 駅（えき）の 清掃員（せいそういん）だった。「あの 朝（あさ）、何（なに）を していましたか」。男：「私（わたし）は ただ、ゴミを 集（あつ）めていただけです」。でも、男の カバンから、弁当（べんとう）の 包（つつ）み紙（がみ）が 落（お）ちた。田中さんの 目（め）が 光（ひか）った。「これは…？」",
-        "en": "The next day, Tanaka found the man in white—a station cleaner. 'What were you doing that morning?' Man: 'I was just collecting trash.' But a bento wrapper fell from his bag. Tanaka's eyes flashed. 'What's this...?'",
-        "key": "容疑者／〜ていただけです／目が 光った",
-        "point": "容疑者への質問と証拠を読む。",
-        "note": "多声TTS:刑事/容疑者"
+        "text": "（ナレーション）次（つぎ）の 日（ひ）、田中（たなか）さんは 白（しろ）い 服（ふく）の 男（おとこ）を 見（み）つけた。駅（えき）の 清掃員（せいそういん）だ。\n田中：あの 朝（あさ）、何（なに）を していましたか。\n清掃員：私（わたし）は ただ、ゴミを 集（あつ）めていただけですよ。\n（ナレーション）そのとき、男（おとこ）の カバンから 弁当（べんとう）の 包（つつ）み紙（がみ）が ひらり、と 落（お）ちた。\n田中：（目（め）を 光（ひか）らせて）…これは？\n清掃員：えっ、いや、これは…！",
+        "en": "(Narration) The next day, Tanaka found the man in white—a station cleaner. / Tanaka: What were you doing that morning? / Cleaner: I was just collecting trash. / (Narration) Just then, a bento wrapper fluttered out of the man's bag. / Tanaka: (eyes flashing) ...What's this? / Cleaner: Huh, no, this is...!",
+        "key": "〜だけですよ／これは？／えっ、いや",
+        "point": "容疑者への会話と証拠。会話表現「〜だけですよ/えっ、いや」。",
+        "note": "多声TTS:ナレーター/田中/清掃員"
        },
        {
         "id": "L-S-Y-004",
         "title": "消えた駅弁の謎 第4話：真犯人は？",
         "form": "物語",
         "level": "N3",
-        "text": "田中（たなか）さんは 包（つつ）み紙（がみ）を よく 見（み）た。男（おとこ）：「それは 私（わたし）が 拾（ひろ）った ゴミです。本当（ほんとう）です！」実（じつ）は、犯人（はんにん）は 人（ひと）では なかった。防犯（ぼうはん）カメラを もう一度（いちど）見（み）ると、屋根（やね）の すきまから、大（おお）きな カラスが 弁当（べんとう）を 運（はこ）んでいた！みんな 大笑（おおわら）い。「鍵（かぎ）の 謎（なぞ）は、小（ちい）さな 窓（まど）だったのか」。事件（じけん）は 無事（ぶじ）解決（かいけつ）した。",
-        "en": "Tanaka looked closely at the wrapper. Man: 'That's trash I picked up. It's true!' In fact, the culprit wasn't a person. Watching the camera again—through a gap in the roof, a big crow was carrying the bento! Everyone burst out laughing. 'So the locked-room mystery was a small window.' The case was happily solved.",
-        "key": "よく 見た／実は／無事 解決した",
-        "point": "真相・どんでん返しを読む。",
-        "note": "多声TTS:刑事/容疑者"
-       }
-      ]
-     },
-     {
-      "name": "怖い話",
-      "children": [],
-      "items": [
-       {
-        "id": "L-S-H-001",
-        "title": "真夜中の水の音",
-        "form": "物語",
-        "level": "N3",
-        "text": "夜中（よなか）、トイレに 起（お）きた。家（いえ）には 私（わたし）一人（ひとり）の はずだった。でも、台所（だいどころ）から 水（みず）の 音（おと）が 聞（き）こえる。だれかが 蛇口（じゃぐち）を 使（つか）っている…？こわごわ のぞくと、誰（だれ）も いない。ただ、コップに 水が いっぱい 入（はい）っていた。私（わたし）は 飲（の）んでいない。あの 水は、だれが…。",
-        "en": "In the middle of the night, I got up for the toilet. I should have been alone in the house. But I heard the sound of water from the kitchen. Was someone using the faucet...? Fearfully I peeked in—no one. Just a glass full of water. I hadn't poured it. Who filled that glass...?",
-        "key": "〜のはず／聞こえる／だれも いない",
-        "point": "怪談の“間”と落ちを味わう。",
-        "note": "1話者・低めの声"
+        "text": "清掃員：それは、私（わたし）が 拾（ひろ）った ゴミです。本当（ほんとう）です！\n（ナレーション）田中（たなか）さんは 防犯（ぼうはん）カメラを もう一度（いちど）見（み）た。すると、屋根（やね）の すきまから…\n田中：あっ！ 見（み）て ください。大（おお）きな カラスが、弁当（べんとう）を 運（はこ）んでる！\n店長：えーっ！ 犯人（はんにん）は カラス だったの！？\n（ナレーション）みんな 大笑（おおわら）い。鍵（かぎ）の 謎（なぞ）は、屋根（やね）の 小（ちい）さな 窓（まど）だったのだ。\n田中：はは、事件（じけん）は 無事（ぶじ）解決（かいけつ）、ですね。",
+        "en": "Cleaner: That's trash I picked up. It's true! / (Narration) Tanaka watched the security camera again. Then, through a gap in the roof... / Tanaka: Ah! Look! A big crow is carrying the bento! / Manager: Whaaat! The culprit was a crow?! / (Narration) Everyone burst out laughing. The mystery of the lock was a small window in the roof. / Tanaka: Haha, case closed.",
+        "key": "見て ください／〜だったの!?／無事 解決",
+        "point": "真相を会話で。会話表現「あっ/えーっ/はは」。",
+        "note": "多声TTS:ナレーター/田中/清掃員/店長"
        }
       ]
      },
@@ -633,22 +616,22 @@
         "title": "カップラーメンの誕生",
         "form": "ドキュメンタリー",
         "level": "N3",
-        "text": "戦後（せんご）の 日本（にほん）。食（た）べ物（もの）が 少（すく）なく、人々（ひとびと）は 困（こま）っていた。一人（ひとり）の 男（おとこ）、安藤（あんどう）さんは 考（かんが）えた。「お湯（ゆ）を 入（い）れるだけで 食べられる めんを 作（つく）れないか」。\n毎日（まいにち）、朝（あさ）から 夜（よる）まで 研究（けんきゅう）した。何度（なんど）も 失敗（しっぱい）した。でも、あきらめなかった。ある日（ひ）、妻（つま）が 作る 天（てん）ぷらを 見（み）て、ひらめいた。「油（あぶら）で あげれば、めんが かわく！」\nこうして、世界（せかい）で はじめての インスタントラーメンが 生（う）まれた。今（いま）では、世界中（せかいじゅう）で 一年（いちねん）に 1000億（おく）食（しょく）も 食べられている。小（ちい）さな ひらめきが、世界を 変（か）えたのだ。",
-        "en": "Postwar Japan. Food was scarce and people were struggling. One man, Mr. Ando, thought: 'Couldn't I make noodles you can eat just by adding hot water?' Every day, from morning to night, he researched. He failed many times. But he never gave up. One day, watching his wife make tempura, it hit him: 'If you fry them in oil, the noodles dry out!' Thus the world's first instant ramen was born. Today, 100 billion servings are eaten worldwide each year. A small spark of insight changed the world.",
-        "key": "あきらめなかった／ひらめいた／世界を 変えた",
-        "point": "困難→挑戦→転機→成功 の物語の流れを聞く。",
-        "note": "1話者・ナレーション(語り)"
+        "text": "（ナレーション）戦後（せんご）の 日本（にほん）。町（まち）には 食（た）べ物（もの）を 求（もと）める 人々（ひとびと）の 長（なが）い 行列（ぎょうれつ）が あった。それを 見（み）て、一人（ひとり）の 男（おとこ）、安藤（あんどう）さんは 強（つよ）く 思（おも）った。\n安藤：お湯（ゆ）を 入（い）れるだけで すぐ 食（た）べられる めんが あれば、みんなが 助（たす）かるはずだ。\n（ナレーション）その日（ひ）から、小（ちい）さな 小屋（こや）に こもる 毎日（まいにち）が 始（はじ）まった。\n妻（つま）：あなた、また 徹夜（てつや）ですか。体（からだ）を こわしますよ。\n安藤：あと 少（すこ）しなんだ。あきらめるわけには いかない。\n（ナレーション）失敗（しっぱい）は 数（かぞ）えきれない。めんが すぐ 悪（わる）くなって しまう。ある日（ひ）、妻（つま）が 作（つく）る 天（てん）ぷらを 見（み）て——\n安藤：そうか！ 油（あぶら）で あげれば、水分（すいぶん）が とんで、めんが かわく！\n（ナレーション）こうして、世界（せかい）で はじめての インスタントラーメンが 生（う）まれた。今（いま）では 世界中（せかいじゅう）で 一年（いちねん）に 1000億（おく）食（しょく）。小（ちい）さな ひらめきが、本当（ほんとう）に 世界（せかい）を 変（か）えたのだ。",
+        "en": "(Narration) Postwar Japan. In the towns were long lines of people seeking food. Seeing that, one man, Mr. Ando, thought strongly: / Ando: If there were noodles you could eat right away just by adding hot water, it would help everyone. / (Narration) From that day, days of shutting himself in a small shed began. / Wife: Dear, an all-nighter again? You'll ruin your health. / Ando: Just a little more. I can't give up. / (Narration) The failures were countless—the noodles spoiled quickly. One day, watching his wife make tempura— / Ando: That's it! If you fry them in oil, the water evaporates and the noodles dry! / (Narration) Thus the world's first instant ramen was born. Today, 100 billion servings a year worldwide. A small spark truly changed the world.",
+        "key": "〜はずだ／あきらめるわけには いかない／そうか！",
+        "point": "困難→不屈→ひらめき→成功。会話で臨場感。",
+        "note": "多声TTS:ナレーター/安藤/妻"
        },
        {
         "id": "L-S-D-002",
         "title": "はやぶさの帰還",
         "form": "ドキュメンタリー",
         "level": "N3",
-        "text": "「はやぶさ」という 小（ちい）さな 宇宙船（うちゅうせん）の 話（はなし）です。はやぶさは、地球（ちきゅう）から 遠（とお）い 小惑星（しょうわくせい）まで 行（い）き、石（いし）を 取（と）って 帰（かえ）る という 世界（せかい）で はじめての ミッションに 挑（いど）みました。\n旅（たび）の 途中（とちゅう）、機械（きかい）が 何度（なんど）も こわれ、通信（つうしん）も 切（き）れました。「もう だめか」と 多（おお）くの 人（ひと）が 思（おも）いました。でも、研究者（けんきゅうしゃ）たちは あきらめませんでした。\n7年（ねん）、60億（おく）キロの 旅（たび）の すえ、はやぶさは 地球に 戻（もど）りました。最後（さいご）は 自分（じぶん）は 燃（も）えながら、石（いし）の 入（はい）った カプセルだけを 送（おく）り届（とど）けたのです。その 姿（すがた）に、世界中（せかいじゅう）が 涙（なみだ）しました。",
-        "en": "This is the story of a small spacecraft called 'Hayabusa.' It took on the world's first mission to travel to a distant asteroid, collect rocks, and return. During the journey, its machines broke down again and again, and communication was lost. 'It's over,' many thought. But the researchers never gave up. After seven years and 6 billion kilometers, Hayabusa returned to Earth. At the end, it burned up itself while delivering only the capsule with the rocks. The whole world was moved to tears by that sight.",
-        "key": "挑みました／あきらめませんでした／世界中が 涙した",
-        "point": "困難→不屈→感動の帰還を聞く。",
-        "note": "1話者・ナレーション(語り)"
+        "text": "（ナレーション）小（ちい）さな 宇宙船（うちゅうせん）「はやぶさ」は、地球（ちきゅう）から 3億（おく）キロ 離（はな）れた 小惑星（しょうわくせい）を 目指（めざ）した。星（ほし）の 石（いし）を 取（と）って 帰（かえ）る——だれも 成功（せいこう）した ことの ない 挑戦（ちょうせん）だった。\n（ナレーション）しかし、旅（たび）は 苦難（くなん）の 連続（れんぞく）。エンジンは こわれ、ついに 通信（つうしん）も 切（き）れた。\n研究者（けんきゅうしゃ）A：信号（しんごう）が…ありません。はやぶさが、いません。\n研究者B：あきらめるな。きっと どこかで 生（い）きている。呼（よ）び続（つづ）けよう。\n（ナレーション）管制室（かんせいしつ）の 人々（ひとびと）は、来（く）る日（ひ）も 来る日も 信号（しんごう）を 送（おく）り続（つづ）けた。そして 7週間後（しゅうかんご）——\n研究者A：…返事（へんじ）が、来（き）ました！ はやぶさ、生（い）きてます！\n（ナレーション）7年（ねん）、60億（おく）キロの 旅（たび）の すえ、はやぶさは 帰（かえ）ってきた。最後（さいご）は 自分（じぶん）の 体（からだ）を 燃（も）やしながら、石（いし）の カプセルだけを そっと 送（おく）り届（とど）けた。その 光（ひかり）に、世界中（せかいじゅう）が 涙（なみだ）した。",
+        "en": "(Narration) The small spacecraft 'Hayabusa' aimed for an asteroid 300 million km from Earth. To collect rocks from a star and return—a challenge no one had ever succeeded at. / (Narration) But the journey was one hardship after another. The engines broke, and finally communication was lost. / Researcher A: There's... no signal. Hayabusa is gone. / Researcher B: Don't give up. It's surely alive somewhere. Let's keep calling. / (Narration) The control room kept sending signals day after day. Then, seven weeks later— / Researcher A: ...A reply came! Hayabusa is alive! / (Narration) After seven years and 6 billion km, Hayabusa came home. At the end, burning up its own body, it gently delivered only the capsule of rocks. The whole world wept at that light.",
+        "key": "あきらめるな／返事が 来ました／〜のすえ",
+        "point": "苦難→不屈→奇跡の帰還。管制室の会話で手に汗。",
+        "note": "多声TTS:ナレーター/研究者A/研究者B"
        }
       ]
      }

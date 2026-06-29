@@ -29,12 +29,16 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
         <View key={node.name}>
           <Pressable
             onPress={() => toggle(level, node.name)}
-            style={[s.row, { paddingLeft: spacing.md + level * spacing.md }, level === 0 && s.rowCat, open && s.rowOpen]}
+            style={[
+              s.row, { marginLeft: level * spacing.md },
+              level === 0 ? s.rowCat : s.rowNest,
+              open && s.rowOpen,
+            ]}
           >
+            <Text style={[s.caret, open && s.caretOpen]}>{open ? '▾' : '▸'}</Text>
             <Text style={[s.rowTxt, level === 0 && s.rowCatTxt, open && s.rowTxtOpen]} numberOfLines={2}>
               {label(node.name)}
             </Text>
-            <Text style={[s.caret, open && s.caretOpen]}>{open ? '－' : '＋'}</Text>
           </Pressable>
 
           {open && node.children ? renderNodes(node.children, level + 1) : null}
@@ -44,7 +48,7 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
                 <Pressable
                   key={it.id}
                   onPress={() => setActive(it)}
-                  style={[s.item, { paddingLeft: spacing.md + (level + 1) * spacing.md }]}
+                  style={[s.item, { marginLeft: (level + 1) * spacing.md }]}
                 >
                   <Text style={s.itemEmoji}>{emojiFor(it.form)}</Text>
                   <View style={{ flex: 1 }}>
@@ -130,16 +134,17 @@ const makeStyles = (c: ThemeColors) =>
     scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },
 
     row: {
-      flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+      flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
       backgroundColor: c.surface, borderRadius: radius.md, borderWidth: 1, borderColor: c.line,
-      paddingVertical: spacing.md, paddingRight: spacing.md, marginBottom: spacing.sm,
+      paddingVertical: spacing.md, paddingHorizontal: spacing.md, marginBottom: spacing.sm,
     },
     rowCat: { backgroundColor: c.surface, borderColor: c.line },
-    rowOpen: { borderColor: c.blue, backgroundColor: c.blueLight },
+    rowNest: { backgroundColor: c.bgSoft, borderColor: c.line, borderLeftWidth: 3, borderLeftColor: c.trace, paddingVertical: spacing.sm + 2 },
+    rowOpen: { borderColor: c.blue, borderLeftColor: c.blue, backgroundColor: c.blueLight },
     rowTxt: { flex: 1, fontSize: ty.body, fontWeight: '700', color: c.ink2 },
     rowCatTxt: { fontSize: ty.h2, fontWeight: '800', color: c.ink },
     rowTxtOpen: { color: c.blueDark },
-    caret: { fontSize: ty.body, fontWeight: '800', color: c.faint, marginLeft: spacing.sm },
+    caret: { fontSize: ty.small, fontWeight: '800', color: c.faint, width: 14, textAlign: 'center' },
     caretOpen: { color: c.blue },
 
     item: {

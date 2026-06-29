@@ -61,8 +61,7 @@ export const LABEL_EN: Record<string, string> = {
   // 物語
   'カイの物語': "Kai's Story",
   '昔話': 'Folk Tales',
-  '日本語ミステリー': 'Japanese Mystery',
-  '怖い話': 'Scary Stories',
+  'ミステリー': 'Mystery',
   'ドキュメンタリー': 'Documentary',
   // カイの物語 4区分
   '日本生活スタート': 'Life in Japan: Start',
