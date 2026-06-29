@@ -7,7 +7,7 @@ import { spacing, radius, type as ty, useColors, type ThemeColors } from '../the
 import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
-import { Ruby } from '../components/Ruby';
+import { StoryBody } from '../components/StoryBody';
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
   tab: string; kicker: string; title: string; sub: string;
@@ -111,7 +111,7 @@ function Detail({ s, t, lang, item, onClose }: {
           <Text style={s.audioIcon}>🔊</Text>
           <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
         </View>
-        <View style={s.bodyCard}><Ruby text={item.text} size={19} color={c.ink} rubyColor={c.mute} /></View>
+        <View style={s.bodyCard}><StoryBody text={item.text} c={c} size={19} /></View>
         {!!item.en && (
           <View style={s.block}><Text style={s.blockLabel}>{t.translationLabel}</Text><Text style={s.enTxt}>{item.en}</Text></View>
         )}
