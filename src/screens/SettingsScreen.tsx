@@ -22,13 +22,11 @@ export default function SettingsScreen() {
   const s = useMemo(() => makeStyles(c), [c]);
   const [confirmReset, setConfirmReset] = useState(false);
 
-  // テーマ＝明暗＋背景を一括。auto/標準/桜/空/水彩/ダーク。
+  // テーマ＝明暗＋背景を一括。自動/標準/桜水彩/ダーク。
   const THEMES: { v: ThemeMode; label: string }[] = [
     { v: 'auto', label: t.themeAuto },
     { v: 'light', label: t.themeDefault },
     { v: 'sakura', label: t.themeSakura },
-    { v: 'sky', label: t.themeSky },
-    { v: 'watercolor', label: t.themeWatercolor },
     { v: 'dark', label: t.themeDark },
   ];
 

@@ -83,44 +83,13 @@ export const darkColors: ThemeColors = {
 /** 既定パレット(ライト)。実行時の切替は useColors を使う。 */
 export const colors = lightColors;
 
-/** 水彩グラデーション・テーマ(アイコン/フィーチャーグラフィックのトーン)。動的に色が移ろい、桜が舞う。 */
-export type GradientTheme = 'sakura' | 'sky' | 'watercolor';
-export const GRADIENT_THEMES: GradientTheme[] = ['sakura', 'sky', 'watercolor'];
-export const isGradientTheme = (t: string): t is GradientTheme => (GRADIENT_THEMES as string[]).includes(t);
+/** 「桜水彩」テーマ。水彩のにじみ(layered washes)＋金粉＋舞う桜の和モダン高級背景(単一デザイン)。 */
+export type GradientTheme = 'sakura';
+export const GRADIENT_THEMES: GradientTheme[] = ['sakura'];
+export const isGradientTheme = (t: string): t is GradientTheme => t === 'sakura';
 
-export interface GradientSpec {
-  a: string[];      // 基本グラデーション
-  b: string[];      // クロスフェード先(動的変化)
-  petals: string[]; // 舞う花びらの色
-  orbs: string[];   // 淡いボケ玉(奥行き)
-  petalCount: number;
-}
-export const GRADIENTS: Record<GradientTheme, GradientSpec> = {
-  // 桜: やわらかなピンクが移ろい、桜が舞い散る
-  sakura: {
-    a: ['#fff5f8', '#ffe6f0', '#ffd6e6'],
-    b: ['#fef0f6', '#ffdbe8', '#f9c6dd'],
-    petals: ['#ffc2d8', '#ffd5e4', '#ffb3cd', '#ffe0ec'],
-    orbs: ['rgba(255,182,209,0.30)', 'rgba(255,214,229,0.26)', 'rgba(255,160,196,0.20)'],
-    petalCount: 16,
-  },
-  // 空: 澄んだ青空に桜が舞う(日本の春の象徴)
-  sky: {
-    a: ['#eef6ff', '#e0eeff', '#cfe2ff'],
-    b: ['#e8f2ff', '#d6e8ff', '#bfd9fb'],
-    petals: ['#ffd5e4', '#ffe3ee', '#eaf2ff', '#ffffff'],
-    orbs: ['rgba(255,255,255,0.45)', 'rgba(180,210,255,0.28)', 'rgba(255,210,228,0.20)'],
-    petalCount: 11,
-  },
-  // 水彩: 青→藤→桃が画面を横切るように移ろう(最上級のお洒落)
-  watercolor: {
-    a: ['#e9f1ff', '#f1e9ff', '#ffe7f1'],
-    b: ['#ffe7f1', '#efe6ff', '#e3eeff'],
-    petals: ['#ffc6da', '#d9c9ff', '#cfe0ff', '#ffe0ec'],
-    orbs: ['rgba(255,198,218,0.28)', 'rgba(190,180,255,0.26)', 'rgba(170,205,255,0.26)'],
-    petalCount: 14,
-  },
-};
+/** ベースの和紙グラデーション(温かい生成り→淡桜→ほのかな藤)。にじみ/金粉/花びらは AppBackground が重ねる。 */
+export const SAKURA_BASE = ['#fbf7f5', '#f7ecf0', '#f2e1ea', '#edd9ea'];
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48 };
 export const radius = { sm: 6, md: 10, lg: 16, xl: 20, pill: 999 };
