@@ -158,6 +158,50 @@
       "key": "〜と いえば／〜たり 〜たり／散ってしまう",
       "point": "お花見の文化。",
       "note": "1話者・朗読"
+     },
+     {
+      "id": "S-C-002",
+      "title": "温泉に入る前に",
+      "form": "解説",
+      "level": "N4",
+      "text": "日本（にほん）の 温泉（おんせん）には、楽（たの）しむための ルールが あります。まず、湯（ゆ）に 入（はい）る 前（まえ）に、体（からだ）を きれいに 洗（あら）います。そして、タオルは 湯（ゆ）の 中（なか）に 入（い）れません。頭（あたま）の 上（うえ）に のせる 人（ひと）も います。大（おお）きな 声（こえ）で さわがず、ゆっくり 温（あたた）まりましょう。マナーを 守（まも）れば、誰（だれ）でも 気持（きも）ちよく 過（す）ごせます。",
+      "en": "Japanese hot springs have rules for everyone's enjoyment. First, wash your body well before getting in. Don't put your towel in the water; some people rest it on their head. Don't be loud—relax and warm up slowly. If you follow the manners, everyone can have a pleasant time.",
+      "key": "〜てから／〜ません／〜ば",
+      "point": "温泉の基本マナー。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-C-003",
+      "title": "お正月の過ごし方",
+      "form": "読み物",
+      "level": "N4",
+      "text": "日本（にほん）の お正月（しょうがつ）は、一年（いちねん）で いちばん 大切（たいせつ）な 行事（ぎょうじ）です。大（おお）みそかの 夜（よる）には「年越（としこ）しそば」を 食（た）べ、元日（がんじつ）には 神社（じんじゃ）へ「初詣（はつもうで）」に 行（い）きます。家族（かぞく）で「おせち料理（りょうり）」を 食（た）べ、子（こ）どもは「お年玉（としだま）」を もらって 喜（よろこ）びます。『あけまして おめでとうございます』と あいさつを して、新（あたら）しい 年（とし）を 祝（いわ）います。",
+      "en": "New Year is the most important event of the year in Japan. On New Year's Eve people eat 'toshikoshi soba,' and on New Year's Day they visit a shrine for 'hatsumode.' Families eat 'osechi' dishes, and children are delighted to receive 'otoshidama' (money gifts). People greet each other with 'Happy New Year' and celebrate the new year.",
+      "key": "〜には／初詣／あけまして おめでとうございます",
+      "point": "正月の主な習慣。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-C-004",
+      "title": "「いただきます」の心",
+      "form": "解説",
+      "level": "N3",
+      "text": "日本人（にほんじん）は 食事（しょくじ）の 前（まえ）に『いただきます』、後（あと）に『ごちそうさまでした』と 言（い）います。これは ただの あいさつでは ありません。野菜（やさい）や 肉（にく）など、食（た）べ物（もの）の「命（いのち）」と、料理（りょうり）を 作（つく）ってくれた 人（ひと）への 感謝（かんしゃ）の 言葉（ことば）です。だから、たとえ 一人（ひとり）で 食（た）べる ときでも、小（ちい）さな 声（こえ）で 言（い）う 人（ひと）が 多（おお）いのです。",
+      "en": "Before eating, Japanese people say 'itadakimasu,' and after, 'gochisosama deshita.' These aren't just greetings. They are words of gratitude for the 'life' of the food—vegetables, meat—and for the person who cooked it. That's why many people say them quietly even when eating alone.",
+      "key": "ただの〜では ない／〜てくれた／たとえ〜ても",
+      "point": "食前後のあいさつの意味。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-C-005",
+      "title": "花火大会の夜",
+      "form": "読み物",
+      "level": "N4",
+      "text": "夏（なつ）の 日本（にほん）と いえば、花火大会（はなびたいかい）です。人々（ひとびと）は「浴衣（ゆかた）」を 着（き）て、屋台（やたい）で やきそばや かき氷（ごおり）を 買（か）います。空（そら）に 大（おお）きな 花火（はなび）が 上（あ）がると、みんな『たまや〜！』と 声（こえ）を あげます。ドンという 音（おと）と、夜空（よぞら）に 広（ひろ）がる 光（ひかり）は、夏（なつ）の いちばんの 思（おも）い出（で）に なります。",
+      "en": "Speaking of summer in Japan, it's fireworks festivals. People wear 'yukata' and buy yakisoba and shaved ice from food stalls. When big fireworks rise into the sky, everyone shouts 'Tamaya!' The booming sound and the light spreading across the night sky become the best memory of summer.",
+      "key": "〜と いえば／〜を 着て／〜が 上がる",
+      "point": "夏祭り・花火の風景。",
+      "note": "1話者・朗読"
      }
     ]
    },
@@ -175,6 +219,50 @@
       "key": "大丈夫です(=No thanks / OK)／場面で 意味が 変わる",
       "point": "多義的な「大丈夫」を読み解く。",
       "note": "1話者・解説"
+     },
+     {
+      "id": "S-H-002",
+      "title": "「行けたら行く」の意味",
+      "form": "解説",
+      "level": "N3",
+      "text": "友（とも）だちを 誘（さそ）った とき、『行（い）けたら 行（い）くね』と 言（い）われたら、どう 思（おも）いますか。実（じつ）は これ、多（おお）くの 場合（ばあい）「たぶん 行（い）かない」という 意味（いみ）です。日本人（にほんじん）は、はっきり「行（い）かない」と 言（い）うと 相手（あいて）を がっかりさせる と 考（かんが）えます。だから、やわらかい 断（ことわ）り方（かた）として よく 使（つか）われます。本気（ほんき）の ときは『絶対（ぜったい）行（い）く！』と 言（い）いますよ。",
+      "en": "When you invite a friend and they say 'I'll come if I can,' what do you think? Actually, this often means 'probably not.' Japanese people feel that clearly saying 'I won't come' disappoints the other person, so it's used as a gentle refusal. When they really mean it, they'll say 'I'm definitely coming!'",
+      "key": "〜たら／〜という 意味／断り方",
+      "point": "やわらかい社交辞令。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-H-003",
+      "title": "「検討します」の正体",
+      "form": "解説",
+      "level": "N3",
+      "text": "仕事（しごと）の 場面（ばめん）で『検討（けんとう）します』『前向（まえむ）きに 考（かんが）えます』と 言（い）われたら、注意（ちゅうい）が 必要（ひつよう）です。本当（ほんとう）に 考（かんが）える ことも ありますが、やんわりと「今回（こんかい）は むずかしい」と 伝（つた）えている ことも 多（おお）いのです。日本（にほん）の ビジネスでは、はっきり 断（ことわ）らずに 相手（あいて）の メンツを 守（まも）る 言（い）い方（かた）が 好（この）まれます。",
+      "en": "In business, be careful if you hear 'We'll consider it' or 'We'll think about it positively.' Sometimes they really will, but often it gently means 'this time is difficult.' In Japanese business, ways of speaking that protect the other person's face without refusing outright are preferred.",
+      "key": "検討します／やんわり／〜ことも 多い",
+      "point": "ビジネスの建前。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-H-004",
+      "title": "ほめられた時の返事",
+      "form": "対話",
+      "level": "N3",
+      "text": "田中（たなか）：日本語（にほんご）、お上手（じょうず）ですね！\nカイ：いいえ、まだまだです。\n田中：そんな ことないですよ。発音（はつおん）も きれいだし。\nカイ：ありがとうございます。でも、もっと 勉強（べんきょう）しないと。\n——日本（にほん）では、ほめられた とき すぐに「ありがとう」と 受（う）け取（と）るより、『いいえ、まだまだです』と 謙遜（けんそん）する ことが 多（おお）いです。",
+      "en": "Tanaka: Your Japanese is so good! / Kai: No, I still have a long way to go. / Tanaka: That's not true—your pronunciation is clear too. / Kai: Thank you. But I need to study more. — In Japan, rather than immediately accepting praise with 'thank you,' people often respond modestly with 'No, not yet.'",
+      "key": "まだまだです／そんな ことない／謙遜",
+      "point": "謙遜の受け答え。",
+      "note": "多声TTS:2名"
+     },
+     {
+      "id": "S-H-005",
+      "title": "「すみません」の七変化",
+      "form": "解説",
+      "level": "N3",
+      "text": "『すみません』は、日本語（にほんご）で いちばん 便利（べんり）な 言葉（ことば）かもしれません。あやまる とき(=ごめんなさい)、お礼（れい）を 言（い）う とき(=ありがとう)、人（ひと）を 呼（よ）ぶ とき(=ちょっと いいですか)、どれにも 使（つか）えます。たとえば 電車（でんしゃ）で 席（せき）を ゆずって もらったら『すみません』。これは「ありがとう」の 意味（いみ）です。場面（ばめん）で 意味（いみ）が 変（か）わる、ふしぎな 言葉（ことば）です。",
+      "en": "'Sumimasen' may be the most useful word in Japanese. You can use it to apologize (sorry), to thank (thank you), and to get attention (excuse me). For example, if someone gives up their seat for you on the train, you say 'sumimasen'—here it means 'thank you.' It's a curious word whose meaning changes with the situation.",
+      "key": "すみません／〜たら／場面で 変わる",
+      "point": "万能語すみません。",
+      "note": "1話者・朗読"
      }
     ]
    },
@@ -191,6 +279,50 @@
       "en": "When you ride a train in Japan, something may surprise you: it's very quiet. Everyone looks at their phone or sleeps, and hardly anyone talks. Phones are on silent mode. At first I felt it was lonely, but now I find that quietness pleasant. What are trains like in your country?",
       "key": "〜と、〜／ほとんど 話しません／心地よい",
       "point": "文化比較の読み物。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-D-002",
+      "title": "チップがない国",
+      "form": "解説",
+      "level": "N4",
+      "text": "海外（かいがい）の レストランでは、料理（りょうり）の 代金（だいきん）の ほかに「チップ」を 払（はら）う 国（くに）が 多（おお）いです。でも、日本（にほん）には チップの 習慣（しゅうかん）が ありません。サービス料（りょう）は、最初（さいしょ）から 値段（ねだん）に 入（はい）っています。お店（みせ）の 人（ひと）は、チップを もらわなくても、とても ていねいに サービスして くれます。むしろ チップを 渡（わた）すと、相手（あいて）が 困（こま）って しまう ことも あります。",
+      "en": "In restaurants abroad, many countries pay a 'tip' on top of the bill. But Japan has no tipping custom. The service charge is included in the price from the start. Staff serve very politely even without a tip. In fact, offering a tip can sometimes confuse them.",
+      "key": "〜の ほかに／〜が ない／むしろ",
+      "point": "チップ文化なし。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-D-003",
+      "title": "玄関で靴を脱ぐ",
+      "form": "解説",
+      "level": "N4",
+      "text": "日本（にほん）の 家（いえ）に 入（はい）る とき、必（かなら）ず 玄関（げんかん）で 靴（くつ）を 脱（ぬ）ぎます。これは、外（そと）の よごれを 家（いえ）の 中（なか）に 入（い）れない ためです。脱（ぬ）いだ 靴（くつ）は、つま先（さき）を 外（そと）の ほうへ 向（む）けて そろえると、きれいに 見（み）えます。学校（がっこう）や 病院（びょういん）、和室（わしつ）の お店（みせ）でも 靴（くつ）を 脱（ぬ）ぐ ことが あります。スリッパに はきかえる ことも 多（おお）いです。",
+      "en": "When entering a home in Japan, you always take off your shoes at the entrance. This is to keep outside dirt out of the house. If you line up your shoes with the toes pointing outward, it looks neat. Schools, hospitals, and tatami-room restaurants may also require removing shoes, and often you change into slippers.",
+      "key": "〜とき／〜ために／〜と …に 見える",
+      "point": "靴を脱ぐ文化。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-D-004",
+      "title": "まだ多い現金文化",
+      "form": "解説",
+      "level": "N3",
+      "text": "世界（せかい）では カードや スマホ決済（けっさい）が 進（すす）んでいますが、日本（にほん）は 今（いま）でも「現金（げんきん）」を よく 使（つか）います。小（ちい）さな お店（みせ）や 古（ふる）い 食堂（しょくどう）では、カードが 使（つか）えない ことも あります。だから、少（すこ）し 現金（げんきん）を 持（も）って 歩（ある）くと 安心（あんしん）です。最近（さいきん）は キャッシュレスも 増（ふ）えて きましたが、地域（ちいき）に よって 差（さ）が あります。",
+      "en": "While the world moves toward cards and smartphone payments, Japan still uses cash a lot. Small shops and old eateries sometimes don't accept cards. So it's reassuring to carry a little cash. Cashless payment has been increasing recently, but it varies by region.",
+      "key": "〜でも／〜ことも ある／〜によって",
+      "point": "現金がまだ強い。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-D-005",
+      "title": "きれいに並ぶ国",
+      "form": "解説",
+      "level": "N4",
+      "text": "駅（えき）や バス停（てい）、お店（みせ）の レジで、日本人（にほんじん）は 自然（しぜん）に 一列（いちれつ）に 並（なら）びます。電車（でんしゃ）を 待（ま）つ ときも、床（ゆか）の 印（しるし）に 沿（そ）って きれいに 並（なら）びます。割（わ）り込（こ）む 人（ひと）は ほとんど いません。みんなが 順番（じゅんばん）を 守（まも）るので、混（こ）んでいても 意外（いがい）と スムーズです。この「並（なら）ぶ 文化（ぶんか）」に 驚（おどろ）く 外国人（がいこくじん）も 多（おお）いです。",
+      "en": "At stations, bus stops, and store registers, Japanese people naturally line up in a single file. Even when waiting for a train, they line up neatly along the marks on the floor. Almost no one cuts in. Because everyone keeps their turn, it's surprisingly smooth even when crowded. Many foreigners are amazed by this 'queuing culture.'",
+      "key": "自然に／〜に 沿って／意外と",
+      "point": "整然と並ぶ。",
       "note": "1話者・朗読"
      }
     ]
@@ -212,6 +344,17 @@
         "key": "お願いが あるんですが／〜ていただけますか／いいですよ",
         "point": "丁寧に頼み、引き受ける。",
         "note": "多声TTS:A/B"
+       },
+       {
+        "id": "S-P-R-002",
+        "title": "やんわり断る",
+        "form": "対話",
+        "level": "N3",
+        "text": "同僚（どうりょう）：今日（きょう）、飲（の）みに 行（い）きませんか。\nカイ：ありがとうございます。でも、今日（きょう）は ちょっと…。\n同僚：あ、用事（ようじ）ですか。\nカイ：ええ、また 今度（こんど） ぜひ お願（ねが）いします。\n——『ちょっと…』と 言葉（ことば）を にごすと、はっきり 言（い）わなくても「行（い）けない」と 伝（つた）わります。『また 今度（こんど）』で 次（つぎ）への 気持（きも）ちも 残（のこ）せます。",
+        "en": "Colleague: Want to go for a drink today? / Kai: Thank you. But today is a little... / Colleague: Oh, you have plans? / Kai: Yes—let's definitely do it another time. — By trailing off with 'chotto...,' you convey 'I can't' without saying it directly. 'Another time' leaves the door open for next time.",
+        "key": "ちょっと…／また 今度／ぜひ",
+        "point": "角を立てない断り。",
+        "note": "多声TTS:2名"
        }
       ]
      },
@@ -246,6 +389,17 @@
         "key": "そうなんですか／いいですね／だいすきです",
         "point": "相づちで会話を続ける。",
         "note": "多声TTS:A/B"
+       },
+       {
+        "id": "S-P-A-002",
+        "title": "共感・はげます",
+        "form": "対話",
+        "level": "N4",
+        "text": "友（とも）だち：最近（さいきん）、仕事（しごと）が 忙（いそが）しくて…。\nカイ：そっか、大変（たいへん）だね。\n友（とも）だち：うん、毎日（まいにち） 残業（ざんぎょう）なんだ。\nカイ：無理（むり）しないでね。体（からだ）に 気（き）を つけて。\n——『大変（たいへん）だね』『無理（むり）しないで』は、相手（あいて）の 気持（きも）ちに 寄（よ）り添（そ）う ひとことです。アドバイスより、まず 共感（きょうかん）が 大切（たいせつ）な ことも あります。",
+        "en": "Friend: Work has been so busy lately... / Kai: I see, that's tough. / Friend: Yeah, overtime every day. / Kai: Don't push yourself. Take care of yourself. — 'That's tough' and 'don't push yourself' are phrases that show empathy. Sometimes empathy matters more than advice.",
+        "key": "大変だね／無理しないで／気を つけて",
+        "point": "共感のひとこと。",
+        "note": "多声TTS:2名"
        }
       ]
      }
@@ -264,6 +418,50 @@
       "en": "When you come to Japan, definitely try ramen. There are many kinds: soy sauce, salt, miso, tonkotsu... The taste differs by shop. When ordering, some shops let you choose 'noodle firmness.' If you like it firm, say 'katame.' Which ramen is your favorite?",
       "key": "ぜひ 〜てみてください／〜によって／〜と 言いましょう",
       "point": "紹介＋注文の実用。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-G-002",
+      "title": "お寿司の食べ方",
+      "form": "解説",
+      "level": "N4",
+      "text": "お寿司（すし）は、はしでも 手（て）でも 食（た）べて いいです。しょうゆは、ネタ(=魚（さかな）)の ほうに 少（すこ）し つけます。ごはんに つけると、ごはんが くずれて しまうからです。わさびが 苦手（にがて）な 人（ひと）は、『さび抜（ぬ）きで』と たのめます。回転（かいてん）寿司（ずし）では、好（す）きな お皿（さら）を 取（と）り、最後（さいご）に お皿（さら）の 数（かず）で 計算（けいさん）します。",
+      "en": "You may eat sushi with chopsticks or your hands. Dip a little soy sauce on the topping (the fish) side; if you dip the rice, it falls apart. If you don't like wasabi, you can ask for 'sabi-nuki' (without wasabi). At conveyor-belt sushi, you take the plates you like and pay at the end by the number of plates.",
+      "key": "〜ても いい／〜から／さび抜きで",
+      "point": "寿司の作法。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-G-003",
+      "title": "居酒屋で注文する",
+      "form": "対話",
+      "level": "N4",
+      "text": "店員（てんいん）：ご注文（ちゅうもん）は お決（き）まりですか。\nカイ：とりあえず、生（なま）ビールを 二（ふた）つ ください。\n店員：はい、生（なま） 二（ふた）つ。お料理（りょうり）は？\nカイ：からあげと、枝豆（えだまめ）を お願（ねが）いします。\n店員：かしこまりました。\n——居酒屋（いざかや）では『とりあえず 生（なま）！』が 定番（ていばん）。飲（の）み物（もの）を 先（さき）に たのんで、料理（りょうり）は あとから 少（すこ）しずつ 注文（ちゅうもん）します。",
+      "en": "Staff: Are you ready to order? / Kai: For now, two draft beers, please. / Staff: Sure, two drafts. And food? / Kai: Fried chicken and edamame, please. / Staff: Certainly. — At izakaya, 'a draft for now!' is the classic move. You order drinks first and add dishes little by little.",
+      "key": "とりあえず／〜を ください／お決まりですか",
+      "point": "居酒屋の注文。",
+      "note": "多声TTS:2名"
+     },
+     {
+      "id": "S-G-004",
+      "title": "ラーメンの種類",
+      "form": "読み物",
+      "level": "N4",
+      "text": "日本（にほん）の ラーメンには、たくさんの 種類（しゅるい）が あります。スープで 分（わ）けると、しょうゆ、塩（しお）、みそ、とんこつ などが 有名（ゆうめい）です。地域（ちいき）に よって 味（あじ）も ちがい、北海道（ほっかいどう）の みそラーメン、九州（きゅうしゅう）の とんこつラーメンは とくに 人気（にんき）です。麺（めん）の かたさや 味（あじ）の こさを 選（えら）べる お店（みせ）も 多（おお）く、自分（じぶん）好（ごの）みの 一杯（いっぱい）を 見（み）つけられます。",
+      "en": "Japanese ramen comes in many kinds. By soup, soy sauce, salt, miso, and tonkotsu (pork bone) are famous. Flavors differ by region—Hokkaido's miso ramen and Kyushu's tonkotsu ramen are especially popular. Many shops let you choose noodle firmness and flavor strength, so you can find your own perfect bowl.",
+      "key": "〜で 分けると／〜によって／〜好み",
+      "point": "ラーメンの多様さ。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "S-G-005",
+      "title": "だしと「うま味」",
+      "form": "解説",
+      "level": "N3",
+      "text": "和食（わしょく）の おいしさの 秘密（ひみつ）は「だし」に あります。こんぶや かつおぶしから とる だしには、「うま味（み）」と いう 味（あじ）が あります。これは、あまい・からい・すっぱい・にがい・しょっぱい に つづく「第五（だいご）の 味（あじ）」と 言（い）われ、今（いま）では 世界（せかい）でも『UMAMI』として 知（し）られています。だしが きいた みそ汁（しる）は、シンプルでも 深（ふか）い 味（あじ）が します。",
+      "en": "The secret of washoku's deliciousness is 'dashi' (stock). Dashi made from kombu and bonito flakes has a taste called 'umami.' It's called the 'fifth taste' after sweet, spicy, sour, bitter, and salty, and is now known worldwide as 'UMAMI.' Miso soup with good dashi tastes deep even though it's simple.",
+      "key": "〜に ある／〜と 言われ／〜が きく",
+      "point": "うま味とだし。",
       "note": "1話者・朗読"
      }
     ]
@@ -285,6 +483,17 @@
         "key": "ふわふわ(=soft & light)／気持ちが ふわふわする／オノマトペ",
         "point": "擬音語の意味と、物・気持ち両方への使い方。",
         "note": "1話者・解説"
+       },
+       {
+        "id": "S-W-G-002",
+        "title": "ぺこぺこ・ぐうぐう",
+        "form": "解説",
+        "level": "N4",
+        "text": "おなかが すいた とき、日本語（にほんご）では『おなかが ぺこぺこ』と 言（い）います。とても すいて いる ようすです。おなかが 鳴（な）る 音（おと）は『ぐう〜』。たくさん 食（た）べて おなかが いっぱいに なると『ぱんぱん』。眠（ねむ）くて たまらない ときは『うとうと』します。気持（きも）ちや 体（からだ）の ようすを、音（おと）で 表（あらわ）す のが 擬音語（ぎおんご）の おもしろさです。",
+        "en": "When you're hungry, in Japanese you say your stomach is 'peko-peko'—the state of being very hungry. The sound of a growling stomach is 'guu~.' When you've eaten a lot and are full, it's 'pan-pan.' When you're terribly sleepy, you 'uto-uto' (doze off). Expressing feelings and bodily states with sounds is the fun of onomatopoeia.",
+        "key": "ぺこぺこ／ぐう／ぱんぱん／うとうと",
+        "point": "体調の擬音語。",
+        "note": "1話者・朗読"
        }
       ]
      },
@@ -302,6 +511,17 @@
         "key": "猫の手も 借りたい(=so busy)／〜くらい／〜という 意味",
         "point": "慣用句の意味と由来。",
         "note": "1話者・解説"
+       },
+       {
+        "id": "S-W-P-002",
+        "title": "猿も木から落ちる",
+        "form": "読み物",
+        "level": "N3",
+        "text": "『猿（さる）も 木（き）から 落（お）ちる』は、有名（ゆうめい）な ことわざです。木登（きのぼ）りが 上手（じょうず）な 猿（さる）でも、ときには 木（き）から 落（お）ちる。つまり、どんなに 得意（とくい）な 人（ひと）でも、失敗（しっぱい）する ことが ある、という 意味（いみ）です。にた ことわざに『かっぱの 川流（かわなが）れ』『弘法（こうぼう）も 筆（ふで）の あやまり』が あります。失敗（しっぱい）した 友（とも）だちを なぐさめる ときに 使（つか）えます。",
+        "en": "'Even monkeys fall from trees' is a famous proverb. Even monkeys, who are good climbers, sometimes fall. In other words, even the most skilled person can make mistakes. Similar proverbs are 'even a kappa gets swept down the river' and 'even Kobo makes a slip of the brush.' You can use it to comfort a friend who has failed.",
+        "key": "〜も 〜から 落ちる／つまり／〜ことが ある",
+        "point": "失敗は誰にでも。",
+        "note": "1話者・朗読"
        }
       ]
      },
@@ -596,6 +816,17 @@
       "key": "見て ください／〜だったの!?／無事 解決",
       "point": "真相を会話で。会話表現「あっ/えーっ/はは」。",
       "note": "多声TTS:ナレーター/田中/清掃員/店長"
+     },
+     {
+      "id": "L-Y-005",
+      "title": "消えた最終電車",
+      "form": "物語",
+      "level": "N3",
+      "text": "夜（よる）11時（じ）50分（ぷん）、駅員（えきいん）の 木村（きむら）さんは おかしな ことに 気（き）づいた。\n木村：あれ？ さっきまで ホームに いた 女（おんな）の 人（ひと）、どこへ 行（い）ったんだ…。\n終電（しゅうでん）は まだ 来（き）ていない。改札（かいさつ）も 通（とお）っていない。なのに、ホームには 誰（だれ）も いない。\n木村：かばんだけが、ベンチに 残（のこ）っている…。\n次（つぎ）の 朝（あさ）、かばんの 中（なか）から 一枚（いちまい）の 古（ふる）い 切符（きっぷ）が 見（み）つかった。日付（ひづけ）は——30年（ねん）前（まえ）だった。\n（つづく）",
+      "en": "11:50 p.m. Station attendant Kimura noticed something strange. Kimura: Huh? The woman who was on the platform just now—where did she go...? The last train hasn't come yet. She didn't pass the gate. And yet, no one is on the platform. Kimura: Only a bag is left on the bench... The next morning, an old ticket was found inside the bag. The date was—30 years ago. (To be continued)",
+      "key": "〜に 気づいた／なのに／〜だった",
+      "point": "続きが気になる導入。",
+      "note": "多声TTS:ナレーション/駅員"
      }
     ]
    },
@@ -624,6 +855,39 @@
       "key": "あきらめるな／返事が 来ました／〜のすえ",
       "point": "苦難→不屈→奇跡の帰還。管制室の会話で手に汗。",
       "note": "多声TTS:ナレーター/研究者A/研究者B"
+     },
+     {
+      "id": "L-D-003",
+      "title": "黒部ダムをつくった男たち",
+      "form": "ドキュメンタリー",
+      "level": "N3",
+      "text": "昭和（しょうわ）の 時代（じだい）、富山（とやま）の 山（やま）おくに、巨大（きょだい）な ダムを つくる 計画（けいかく）が あった。黒部（くろべ）ダムである。けわしい 山（やま）、冷（つめ）たい 水（みず）、そして 固（かた）い 岩（いわ）。工事（こうじ）は 想像（そうぞう）を こえる 困難（こんなん）の 連続（れんぞく）だった。とくに トンネルを ほる 作業（さぎょう）では、地下水（ちかすい）が ふき出（だ）し、何度（なんど）も 工事（こうじ）が 止（と）まった。それでも 作業員（さぎょういん）たちは あきらめなかった。7年（ねん）の 月日（つきひ）と、のべ 1000万人（まんにん）の 力（ちから）で、ダムは ついに 完成（かんせい）した。今（いま）も 黒部（くろべ）の 水（みず）は、人々（ひとびと）の 暮（く）らしを ささえている。",
+      "en": "In the Showa era, there was a plan to build a huge dam deep in the mountains of Toyama: the Kurobe Dam. Steep mountains, cold water, and hard rock—construction was a series of difficulties beyond imagination. Especially when digging the tunnel, groundwater gushed out and work stopped many times. Still, the workers never gave up. With seven years and the effort of ten million people in total, the dam was finally completed. Even now, Kurobe's water supports people's lives.",
+      "key": "〜を こえる／何度も／それでも",
+      "point": "困難に挑む実話。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "L-D-004",
+      "title": "新幹線――夢の超特急",
+      "form": "ドキュメンタリー",
+      "level": "N3",
+      "text": "1964年（ねん）、東京（とうきょう）と 大阪（おおさか）を むすぶ「新幹線（しんかんせん）」が 走（はし）り はじめた。当時（とうじ）、時速（じそく）200キロを こえる 電車（でんしゃ）は、世界（せかい）の どこにも なかった。『そんな スピードは あぶない』と 多（おお）くの 人（ひと）が 反対（はんたい）した。技術者（ぎじゅつしゃ）たちは、空気（くうき）の 力（ちから）や 線路（せんろ）の カーブを 何度（なんど）も 計算（けいさん）し、安全（あんぜん）の ために 知恵（ちえ）を しぼった。開業（かいぎょう）の 日（ひ）、新幹線（しんかんせん）は 一度（いちど）の 事故（じこ）も なく 走（はし）りきった。夢（ゆめ）の 超特急（ちょうとっきゅう）は、日本（にほん）の 誇（ほこ）りに なった。",
+      "en": "In 1964, the Shinkansen connecting Tokyo and Osaka began running. At the time, no train anywhere in the world exceeded 200 km/h. 'Such speed is dangerous,' many people opposed. Engineers calculated air resistance and track curves again and again, racking their brains for safety. On opening day, the Shinkansen ran the whole way without a single accident. The dream super-express became a source of pride for Japan.",
+      "key": "〜を こえる／〜の ために／〜きった",
+      "point": "世界初の高速鉄道。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "L-D-005",
+      "title": "青い光をもとめて",
+      "form": "ドキュメンタリー",
+      "level": "N3",
+      "text": "赤（あか）と 緑（みどり）の 光（ひかり）は できても、「青（あお）い 光（ひかり）」を 出（だ）す LEDだけは、だれにも 作（つく）れなかった。『20世紀（せいき）中（じゅう）には 無理（むり）だ』とも 言（い）われた。日本（にほん）の ある 研究者（けんきゅうしゃ）は、小（ちい）さな 会社（かいしゃ）で、たった 一人（ひとり）、何千回（なんぜんかい）も 実験（じっけん）を くりかえした。失敗（しっぱい）、また 失敗（しっぱい）。それでも 手（て）を 止（と）めなかった。ついに 青（あお）い 光（ひかり）が ともった 瞬間（しゅんかん）、世界（せかい）の 明（あ）かりは 変（か）わった。白（しろ）い LEDが 生（う）まれ、街（まち）も 家（いえ）も 明（あか）るく なった。その 功績（こうせき）は、のちに ノーベル賞（しょう）に かがやいた。",
+      "en": "Red and green light were possible, but a blue-light LED was something no one could make. 'It's impossible within the 20th century,' they said. One Japanese researcher, alone at a small company, repeated experiments thousands of times. Failure, and failure again. Still he never stopped. The moment blue light finally lit up, the world's lighting changed. White LEDs were born, brightening streets and homes. The achievement later shone with a Nobel Prize.",
+      "key": "〜だけは／くりかえした／〜瞬間",
+      "point": "青色LEDの挑戦。",
+      "note": "1話者・朗読"
      }
     ]
    },
@@ -641,6 +905,50 @@
       "key": "なんて 〜だろう／〜ましょう／〜てきます",
       "point": "昔話の会話＋擬音(どんぶらこ/パカッ)。",
       "note": "多声TTS:ナレーター/おばあさん/おじいさん/桃太郎"
+     },
+     {
+      "id": "L-M-002",
+      "title": "浦島太郎",
+      "form": "物語",
+      "level": "N4",
+      "text": "むかしむかし、浦島太郎（うらしまたろう）という 若者（わかもの）が いました。ある 日（ひ）、いじめられている 亀（かめ）を 助（たす）けて あげました。お礼（れい）に、亀（かめ）は 太郎（たろう）を 海（うみ）の 中（なか）の「竜宮城（りゅうぐうじょう）」へ つれて 行（い）きました。そこは 美（うつく）しい おとめ「乙姫（おとひめ）」が すむ、ゆめのような 場所（ばしょ）でした。楽（たの）しい 日々（ひび）を すごし、太郎（たろう）が 家（いえ）に 帰（かえ）ると——村（むら）は すっかり 変（か）わって いました。なんと、何百年（なんびゃくねん）もの 時（とき）が すぎて いたのです。",
+      "en": "Long ago, there was a young man named Urashima Taro. One day, he rescued a turtle that was being bullied. In return, the turtle took Taro to the 'Dragon Palace' beneath the sea. It was a dreamlike place where the beautiful maiden 'Otohime' lived. After spending happy days there, Taro returned home—but the village had completely changed. Astonishingly, hundreds of years had passed.",
+      "key": "〜て あげる／〜のような／なんと",
+      "point": "助けた恩と時の流れ。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "L-M-003",
+      "title": "かぐや姫",
+      "form": "物語",
+      "level": "N4",
+      "text": "むかし、竹（たけ）を とって 暮（く）らす おじいさんが いました。ある 日（ひ）、光（ひか）る 竹（たけ）の 中（なか）から、小（ちい）さな 女（おんな）の 子（こ）が 生（う）まれました。「かぐや姫（ひめ）」と 名（な）づけられた その 子（こ）は、月（つき）のように 美（うつく）しく 育（そだ）ちました。やがて、たくさんの 男（おとこ）たちが 結婚（けっこん）を もうし込（こ）みましたが、姫（ひめ）は 首（くび）を たてに ふりません。実（じつ）は、かぐや姫（ひめ）は 月（つき）の 世界（せかい）から 来（き）た 人（ひと）でした。満月（まんげつ）の 夜（よる）、姫（ひめ）は 月（つき）へ 帰（かえ）って いきました。",
+      "en": "Long ago, there was an old man who made his living cutting bamboo. One day, a tiny girl was born from a glowing stalk of bamboo. Named 'Kaguya-hime,' she grew as beautiful as the moon. In time, many men proposed marriage, but the princess would not nod yes. In fact, Kaguya-hime was a person from the world of the moon. On the night of the full moon, she returned to the moon.",
+      "key": "〜の中から／〜のように／やがて",
+      "point": "竹から生まれた姫。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "L-M-004",
+      "title": "鶴の恩返し",
+      "form": "物語",
+      "level": "N3",
+      "text": "さむい 冬（ふゆ）の 日（ひ）、ある 男（おとこ）が、わなに かかった 鶴（つる）を 助（たす）けました。その 夜（よる）、美（うつく）しい 女（おんな）の 人（ひと）が 家（いえ）を たずねて きて、男（おとこ）の 妻（つま）に なりました。妻（つま）は『けっして 見（み）ないで ください』と 言（い）って、部屋（へや）で 布（ぬの）を おりました。その 布（ぬの）は とても 高（たか）く 売（う）れました。ある 日（ひ）、男（おとこ）が こっそり のぞくと——そこには、自分（じぶん）の 羽根（はね）を ぬいて 布（ぬの）を おる 鶴（つる）の 姿（すがた）が ありました。正体（しょうたい）を 知（し）られた 妻（つま）は、空（そら）へ 飛（と）んで 行（い）きました。",
+      "en": "On a cold winter day, a man rescued a crane caught in a trap. That night, a beautiful woman visited his house and became his wife. She said, 'Please never look,' and wove cloth in a room. The cloth sold for a very high price. One day, when the man secretly peeked—there was the crane, plucking its own feathers to weave the cloth. Once her true form was known, the wife flew away into the sky.",
+      "key": "〜を 助ける／けっして〜ないで／〜と …が ある",
+      "point": "約束と恩返し。",
+      "note": "1話者・朗読"
+     },
+     {
+      "id": "L-M-005",
+      "title": "笠地蔵",
+      "form": "物語",
+      "level": "N4",
+      "text": "年（とし）の くれ、まずしい おじいさんが、町（まち）へ 笠（かさ）を 売（う）りに 行（い）きました。でも、一（ひと）つも 売（う）れません。帰（かえ）り道（みち）、雪（ゆき）の 中（なか）に 立（た）つ 六（む）つの お地蔵（じぞう）さまを 見（み）つけました。『さむそうだ』と、おじいさんは 売（う）り物（もの）の 笠（かさ）を お地蔵（じぞう）さまに かぶせて あげました。一（ひと）つ 足（た）りないので、自分（じぶん）の 手（て）ぬぐいを かけました。その 夜（よる）、ふしぎな ことが おきました。朝（あさ）、戸（と）を 開（あ）けると、米（こめ）や もちが 山（やま）のように 置（お）いて あったのです。",
+      "en": "At year's end, a poor old man went to town to sell straw hats. But not one sold. On the way home, he found six Jizo statues standing in the snow. 'They look cold,' he said, and placed the hats he had been selling on the statues. One was short, so he used his own hand towel. That night, something mysterious happened. In the morning, when he opened the door, rice and mochi were piled up like a mountain.",
+      "key": "〜そうだ／〜て あげる／〜のように",
+      "point": "親切が返ってくる話。",
+      "note": "1話者・朗読"
      }
     ]
    }
