@@ -137,6 +137,33 @@
         "note": "多声TTS:客/警官"
        }
       ]
+     },
+     {
+      "name": "暮らしの読みもの",
+      "items": [
+       {
+        "id": "S-L-011",
+        "title": "ゴミ収集カレンダーを読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "日本（にほん）で暮（く）らすとき、まず覚（おぼ）えたいのが「ゴミの出（だ）し方（かた）」です。市（し）から配（くば）られる『ごみ収集（しゅうしゅう）カレンダー』には、曜日（ようび）ごとに出（だ）せるゴミの種類（しゅるい）が書（か）いてあります。\n上（うえ）の表（ひょう）を見（み）てみましょう。「燃（も）えるごみ」は月曜（げつよう）と木曜（もくよう）、ペットボトルやかんなどの「資源（しげん）ごみ」は火曜（かよう）です。「燃（も）えないごみ」は水曜（すいよう）ですが、第2（だいに）・第4（だいよん）の週（しゅう）だけなので注意（ちゅうい）しましょう。\nゴミは朝（あさ）8時（じ）までに、決（き）められた場所（ばしょ）に出（だ）します。ルールを守（まも）らないと回収（かいしゅう）されないこともあるので、表（ひょう）をしっかり読（よ）み取（と）ることが大切（たいせつ）です。",
+        "en": "When you live in Japan, the first thing to learn is how to take out the trash. The 'garbage collection calendar' from the city lists what kind of trash you can put out each day. Look at the table above. 'Burnable trash' is Monday and Thursday; 'recyclables' like PET bottles and cans are Tuesday. 'Non-burnable trash' is Wednesday, but only in the 2nd and 4th weeks, so be careful. Put trash out by 8 a.m. at the designated place. If you don't follow the rules it may not be collected, so reading the table carefully is important.",
+        "key": "燃えるごみ／資源ごみ／第2・第4／〜までに出す",
+        "point": "曜日と種類を正しく読み取る(情報検索の練習)。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-012",
+        "title": "電車の時刻表を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "駅（えき）やバス停（てい）には「時刻表（じこくひょう）」があります。読（よ）み方（かた）を覚（おぼ）えると、待（ま）ち時間（じかん）がぐっと減（へ）ります。\n上（うえ）の表（ひょう）を見（み）てください。左（ひだり）の大（おお）きな数字（すうじ）が「時（じ）」、その右（みぎ）に並（なら）ぶ数字（すうじ）が「分（ふん）」です。たとえば朝（あさ）7時（じ）なら、02分（ふん）、10分（ふん）、18分（ふん）…と電車（でんしゃ）が来（き）ます。\n赤（あか）い数字（すうじ）は「特急（とっきゅう）」で、止（と）まらない駅（えき）があるので注意（ちゅうい）しましょう。また、平日（へいじつ）と土曜（どよう）・日曜（にちよう）では時刻（じこく）がちがいます。今（いま）が何時何分（なんじなんぷん）かを見（み）て、次（つぎ）の電車（でんしゃ）が何分後（なんぷんご）に来（く）るかを読（よ）み取（と）る練習（れんしゅう）をしましょう。",
+        "en": "Stations and bus stops have 'timetables.' Learning to read them greatly reduces waiting time. Look at the table above. The large number on the left is the 'hour,' and the numbers to its right are the 'minutes.' For example at 7 a.m., trains come at :02, :10, :18, and so on. Red numbers are 'limited express,' which skip some stations, so be careful. Also, weekday and weekend times differ. Practice reading the current time and how many minutes until the next train.",
+        "key": "〜行き／平日・土日／特急／次の電車",
+        "point": "時と分を読み取る(情報検索の練習)。",
+        "note": "1話者・朗読"
+       }
+      ]
      }
     ]
    },

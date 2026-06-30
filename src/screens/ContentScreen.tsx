@@ -1,13 +1,14 @@
 // 短文/長文タブ共通画面。アコーディオン（JLPT風プルダウン・各階層で開けるのは1つ＝別を開くと前は自動で閉じる）。
 // 階層: カテゴリー ＞ サブテーマ ＞ (区分) ＞ タイトル → タップで本文（精聴/精読・問題なし）。
 import { lazy, Suspense, useMemo, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, useAppTheme, isGradientTheme, type ThemeColors } from '../theme';
 import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 import { StoryBody } from '../components/StoryBody';
+import { ILLUST } from '../data/illustMap';
 // 音声は詳細を開いた時だけ遅延ロード(起動経路に expo-av/audioMap を載せない)
 const AudioButton = lazy(() => import('../components/AudioButton'));
 
@@ -101,6 +102,8 @@ function Detail({ s, t, lang, item, onClose }: {
   s: ReturnType<typeof makeStyles>; t: Strings; lang: string; item: ContentItem; onClose: () => void;
 }) {
   const c = useColors();
+  const illustSrc = ILLUST[item.id];
+  const illustRatio = illustSrc ? (() => { const a = Image.resolveAssetSource(illustSrc); return a && a.height ? a.width / a.height : 0.74; })() : 0;
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.qHead}>
@@ -110,6 +113,7 @@ function Detail({ s, t, lang, item, onClose }: {
       </View>
       <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>
         <Text style={s.dTitle}>{item.title}</Text>
+        {illustSrc ? <Image source={illustSrc} style={[s.illust, { aspectRatio: illustRatio }]} resizeMode="contain" /> : null}
         <Suspense fallback={<View style={s.audio}><Text style={s.audioIcon}>🔊</Text><Text style={s.audioTxt}>{t.audioComingSoon}</Text></View>}>
           <AudioButton id={item.id} />
         </Suspense>
@@ -182,6 +186,7 @@ const makeStyles = (c: ThemeColors, grad = false) => {
     backTxt: { fontSize: ty.body, fontWeight: '700', color: c.blue },
     qCrumb: { flex: 1, textAlign: 'center', fontSize: ty.small, fontWeight: '700', color: c.mute },
     dTitle: { fontSize: ty.h1, fontWeight: '800', color: c.ink, marginTop: spacing.md, marginBottom: spacing.sm },
+    illust: { width: '100%', borderRadius: radius.lg, marginBottom: spacing.md, backgroundColor: '#ffffff', borderWidth: 1, borderColor: grad ? 'rgba(255,255,255,0.85)' : c.line },
     audio: {
       flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: spacing.sm,
       backgroundColor: c.bgSoft, borderRadius: radius.lg, borderWidth: 1, borderColor: c.line,
