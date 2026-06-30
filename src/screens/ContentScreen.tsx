@@ -40,7 +40,7 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
               open && s.rowOpen,
             ]}
           >
-            <Text style={[s.caret, open && s.caretOpen]}>{open ? '▾' : '▸'}</Text>
+            {level === 0 ? <Text style={[s.caret, open && s.caretOpen]}>{open ? '▾' : '▸'}</Text> : null}
             <Text style={[s.rowTxt, level === 0 && s.rowCatTxt, open && s.rowTxtOpen]} numberOfLines={2}>
               {label(node.name, lang)}
             </Text>

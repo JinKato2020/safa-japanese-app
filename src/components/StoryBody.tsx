@@ -22,20 +22,20 @@ export const StoryBody = memo(function StoryBody({ text, c, size = 19 }: { text:
       {lines.map((line, i) => {
         if (!line.trim()) return <View key={i} style={{ height: size * 0.6 }} />;
 
-        // ナレーション(（ナレーション）ラベルは消して地の文として表示)
+        // ナレーション(（ナレーション）ラベルは消して地の文として表示・縦線なし)
         if (line.startsWith('（ナレーション）')) {
           const content = line.replace(/^（ナレーション）/, '').trim();
           return (
-            <View key={i} style={[s.narr, { borderLeftColor: c.trace }]}>
+            <View key={i} style={s.narr}>
               <Ruby text={content} size={size - 2} color={c.mute} rubyColor={c.faint} />
             </View>
           );
         }
 
-        // 会話(話者：本文)
-        const m = line.match(/^([^：(（]{1,10})：(.*)$/);
-        if (m) {
-          const sp = m[1].trim();
+        // 会話(話者：本文)。話者名のふりがな（漢字（かな）：）も確実に検出する。
+        const m = line.match(/^([^：]{1,16})：(.*)$/);
+        const sp = m ? m[1].replace(/（[^）]*）/g, '').replace(/\([^)]*\)/g, '').trim() : '';
+        if (m && sp && sp.length <= 10 && !/[、。\s]/.test(sp)) {
           let rest = m[2];
           const thought = rest.startsWith('（心の声）');
           rest = rest.replace(/^（心の声）/, '').trim();
@@ -63,7 +63,7 @@ export const StoryBody = memo(function StoryBody({ text, c, size = 19 }: { text:
 });
 
 const s = StyleSheet.create({
-  narr: { marginVertical: spacing.sm, paddingLeft: spacing.md, borderLeftWidth: 2 },
+  narr: { marginVertical: spacing.sm },
   diaRow: { flexDirection: 'row', alignItems: 'flex-start', gap: spacing.sm, marginVertical: spacing.sm },
   spk: { fontSize: 12, fontWeight: '800', paddingHorizontal: 8, paddingVertical: 2, borderWidth: 1, borderRadius: radius.pill },
   thoughtTag: { fontSize: 11, fontWeight: '700', marginBottom: 2 },

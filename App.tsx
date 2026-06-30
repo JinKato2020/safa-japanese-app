@@ -48,7 +48,7 @@ type IoniconName = keyof typeof Ionicons.glyphMap;
 type TabLabelKey = 'tabHome' | 'tabShort' | 'tabLong' | 'tabDict' | 'tabSettings';
 const TABS: { name: string; labelKey: TabLabelKey; component: React.ComponentType; icon: IoniconName; iconOff: IoniconName }[] = [
   { name: 'Home', labelKey: 'tabHome', component: HomeScreen, icon: 'home', iconOff: 'home-outline' },
-  { name: 'Short', labelKey: 'tabShort', component: ShortTab, icon: 'chatbubble', iconOff: 'chatbubble-outline' },
+  { name: 'Short', labelKey: 'tabShort', component: ShortTab, icon: 'chatbubble-outline', iconOff: 'chatbubble-outline' },
   { name: 'Long', labelKey: 'tabLong', component: LongTab, icon: 'headset', iconOff: 'headset-outline' },
   { name: 'Dictionary', labelKey: 'tabDict', component: DictScreen, icon: 'search', iconOff: 'search-outline' },
   { name: 'Settings', labelKey: 'tabSettings', component: SettingsScreen, icon: 'settings', iconOff: 'settings-outline' },
