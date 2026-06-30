@@ -8,6 +8,8 @@ import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 import { StoryBody } from '../components/StoryBody';
+import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
+import { AUDIO } from '../data/audioMap';
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
   tab: string; kicker: string; title: string; sub: string;
@@ -19,7 +21,7 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
   const [openPath, setOpenPath] = useState<string[]>([]);
   const [active, setActive] = useState<ContentItem | null>(null);
 
-  if (active) return <Detail s={s} t={t} lang={lang} item={active} onClose={() => setActive(null)} />;
+  if (active) return <Detail key={active.id} s={s} t={t} lang={lang} item={active} onClose={() => setActive(null)} />;
 
   // 各階層で開けるのは1つ。別を開くと同階層と配下を閉じる。
   const toggle = (level: number, name: string) =>
@@ -98,6 +100,16 @@ function Detail({ s, t, lang, item, onClose }: {
   s: ReturnType<typeof makeStyles>; t: Strings; lang: string; item: ContentItem; onClose: () => void;
 }) {
   const c = useColors();
+  const source = AUDIO[item.id];
+  const player = useAudioPlayer(source);
+  const status = useAudioPlayerStatus(player);
+  const playing = !!status?.playing;
+  const toggleAudio = () => {
+    if (!source) return;
+    if (playing) { player.pause(); return; }
+    if ((status?.currentTime ?? 0) >= (status?.duration ?? 0) - 0.15) player.seekTo(0);
+    player.play();
+  };
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.qHead}>
@@ -107,10 +119,17 @@ function Detail({ s, t, lang, item, onClose }: {
       </View>
       <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>
         <Text style={s.dTitle}>{item.title}</Text>
-        <View style={s.audio}>
-          <Text style={s.audioIcon}>🔊</Text>
-          <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
-        </View>
+        {source ? (
+          <Pressable onPress={toggleAudio} style={[s.audio, playing && s.audioOn]}>
+            <Text style={s.audioIcon}>{playing ? '⏸️' : '▶️'}</Text>
+            <Text style={s.audioTxt}>{playing ? t.audioPlaying : t.audioPlay}</Text>
+          </Pressable>
+        ) : (
+          <View style={s.audio}>
+            <Text style={s.audioIcon}>🔊</Text>
+            <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
+          </View>
+        )}
         <View style={s.bodyCard}><StoryBody text={item.text} c={c} size={19} /></View>
         {!!item.en && (
           <View style={s.block}><Text style={s.blockLabel}>{t.translationLabel}</Text><Text style={s.enTxt}>{item.en}</Text></View>
@@ -176,6 +195,7 @@ const makeStyles = (c: ThemeColors) =>
       backgroundColor: c.bgSoft, borderRadius: radius.lg, borderWidth: 1, borderColor: c.line,
       paddingVertical: spacing.md, marginBottom: spacing.md,
     },
+    audioOn: { backgroundColor: c.blueLight, borderColor: c.blue },
     audioIcon: { fontSize: 22 },
     audioTxt: { fontSize: ty.small, color: c.mute, fontWeight: '700' },
     bodyCard: { backgroundColor: c.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: c.line, padding: spacing.md },

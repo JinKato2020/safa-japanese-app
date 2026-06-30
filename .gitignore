@@ -29,3 +29,8 @@ yarn-debug.*
 yarn-error.*
 リポジトリ構成.pdf
 builds/
+
+# 音声: 連結前マスター(wav・大)とサンプルは除外。配信は <ID>.mp3 のみ
+**/_master/
+音声/_chirp_sample/
+*.wav
