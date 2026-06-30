@@ -1,0 +1,658 @@
+{
+ "S-001": {
+  "newID": "S-L-001",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "買い物・お金",
+  "title": "スーパーで会計する"
+ },
+ "S-002": {
+  "newID": "S-L-002",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "買い物・お金",
+  "title": "銀行で口座を作る"
+ },
+ "S-003": {
+  "newID": "S-L-003",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "手続き",
+  "title": "市役所で転入届を出す"
+ },
+ "S-004": {
+  "newID": "S-L-004",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "手続き",
+  "title": "病院で受付から診察まで"
+ },
+ "S-005": {
+  "newID": "S-L-005",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "手続き",
+  "title": "不動産屋で部屋を借りる"
+ },
+ "S-006": {
+  "newID": "S-L-006",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "しごと・学校",
+  "title": "アルバイトの面接を受ける"
+ },
+ "S-007": {
+  "newID": "S-L-007",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "しごと・学校",
+  "title": "上司に報告・相談する"
+ },
+ "S-008": {
+  "newID": "S-L-008",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "移動",
+  "title": "駅で乗り換えと遅延を聞く"
+ },
+ "S-009": {
+  "newID": "S-L-009",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "移動",
+  "title": "道に迷って交番で聞く"
+ },
+ "S-010": {
+  "newID": "S-L-010",
+  "tab": "短文",
+  "sheet": "生活力",
+  "category": "生活力",
+  "subtheme": "買い物・お金",
+  "title": "スマホを契約する"
+ },
+ "S-020": {
+  "newID": "S-C-001",
+  "tab": "短文",
+  "sheet": "文化",
+  "category": "文化",
+  "subtheme": "",
+  "title": "お花見の楽しみ方"
+ },
+ "S-021": {
+  "newID": "S-C-002",
+  "tab": "短文",
+  "sheet": "文化",
+  "category": "文化",
+  "subtheme": "",
+  "title": "温泉に入る前に"
+ },
+ "S-022": {
+  "newID": "S-C-003",
+  "tab": "短文",
+  "sheet": "文化",
+  "category": "文化",
+  "subtheme": "",
+  "title": "お正月の過ごし方"
+ },
+ "S-023": {
+  "newID": "S-C-004",
+  "tab": "短文",
+  "sheet": "文化",
+  "category": "文化",
+  "subtheme": "",
+  "title": "「いただきます」の心"
+ },
+ "S-024": {
+  "newID": "S-C-005",
+  "tab": "短文",
+  "sheet": "文化",
+  "category": "文化",
+  "subtheme": "",
+  "title": "花火大会の夜"
+ },
+ "S-017": {
+  "newID": "S-H-001",
+  "tab": "短文",
+  "sheet": "本音講座",
+  "category": "本音講座",
+  "subtheme": "",
+  "title": "「大丈夫です」の正体"
+ },
+ "S-025": {
+  "newID": "S-H-002",
+  "tab": "短文",
+  "sheet": "本音講座",
+  "category": "本音講座",
+  "subtheme": "",
+  "title": "「行けたら行く」の意味"
+ },
+ "S-026": {
+  "newID": "S-H-003",
+  "tab": "短文",
+  "sheet": "本音講座",
+  "category": "本音講座",
+  "subtheme": "",
+  "title": "「検討します」の正体"
+ },
+ "S-027": {
+  "newID": "S-H-004",
+  "tab": "短文",
+  "sheet": "本音講座",
+  "category": "本音講座",
+  "subtheme": "",
+  "title": "ほめられた時の返事"
+ },
+ "S-028": {
+  "newID": "S-H-005",
+  "tab": "短文",
+  "sheet": "本音講座",
+  "category": "本音講座",
+  "subtheme": "",
+  "title": "「すみません」の七変化"
+ },
+ "S-018": {
+  "newID": "S-D-001",
+  "tab": "短文",
+  "sheet": "日本と世界の違い",
+  "category": "日本と世界の違い",
+  "subtheme": "",
+  "title": "日本の電車は静か"
+ },
+ "S-029": {
+  "newID": "S-D-002",
+  "tab": "短文",
+  "sheet": "日本と世界の違い",
+  "category": "日本と世界の違い",
+  "subtheme": "",
+  "title": "チップがない国"
+ },
+ "S-030": {
+  "newID": "S-D-003",
+  "tab": "短文",
+  "sheet": "日本と世界の違い",
+  "category": "日本と世界の違い",
+  "subtheme": "",
+  "title": "玄関で靴を脱ぐ"
+ },
+ "S-031": {
+  "newID": "S-D-004",
+  "tab": "短文",
+  "sheet": "日本と世界の違い",
+  "category": "日本と世界の違い",
+  "subtheme": "",
+  "title": "まだ多い現金文化"
+ },
+ "S-032": {
+  "newID": "S-D-005",
+  "tab": "短文",
+  "sheet": "日本と世界の違い",
+  "category": "日本と世界の違い",
+  "subtheme": "",
+  "title": "きれいに並ぶ国"
+ },
+ "S-011": {
+  "newID": "S-U-001",
+  "tab": "短文",
+  "sheet": "使える一言",
+  "category": "使える一言",
+  "subtheme": "依頼・許可・断り",
+  "title": "ていねいにお願いする"
+ },
+ "S-012": {
+  "newID": "S-U-002",
+  "tab": "短文",
+  "sheet": "使える一言",
+  "category": "使える一言",
+  "subtheme": "お礼・謝罪",
+  "title": "お礼と謝罪のひとこと"
+ },
+ "S-013": {
+  "newID": "S-U-003",
+  "tab": "短文",
+  "sheet": "使える一言",
+  "category": "使える一言",
+  "subtheme": "気持ち・相づち",
+  "title": "あいづちで会話を続ける"
+ },
+ "S-033": {
+  "newID": "S-U-004",
+  "tab": "短文",
+  "sheet": "使える一言",
+  "category": "使える一言",
+  "subtheme": "依頼・許可・断り",
+  "title": "やんわり断る"
+ },
+ "S-034": {
+  "newID": "S-U-005",
+  "tab": "短文",
+  "sheet": "使える一言",
+  "category": "使える一言",
+  "subtheme": "気持ち・相づち",
+  "title": "共感・はげます"
+ },
+ "S-019": {
+  "newID": "S-F-001",
+  "tab": "短文",
+  "sheet": "グルメ",
+  "category": "グルメ",
+  "subtheme": "",
+  "title": "ラーメンを食べよう"
+ },
+ "S-035": {
+  "newID": "S-F-002",
+  "tab": "短文",
+  "sheet": "グルメ",
+  "category": "グルメ",
+  "subtheme": "",
+  "title": "お寿司の食べ方"
+ },
+ "S-036": {
+  "newID": "S-F-003",
+  "tab": "短文",
+  "sheet": "グルメ",
+  "category": "グルメ",
+  "subtheme": "",
+  "title": "居酒屋で注文する"
+ },
+ "S-037": {
+  "newID": "S-F-004",
+  "tab": "短文",
+  "sheet": "グルメ",
+  "category": "グルメ",
+  "subtheme": "",
+  "title": "ラーメンの種類"
+ },
+ "S-038": {
+  "newID": "S-F-005",
+  "tab": "短文",
+  "sheet": "グルメ",
+  "category": "グルメ",
+  "subtheme": "",
+  "title": "だしと「うま味」"
+ },
+ "S-015": {
+  "newID": "S-W-001",
+  "tab": "短文",
+  "sheet": "ことわざ",
+  "category": "ことわざ",
+  "subtheme": "",
+  "title": "猫の手も借りたい"
+ },
+ "S-040": {
+  "newID": "S-W-002",
+  "tab": "短文",
+  "sheet": "ことわざ",
+  "category": "ことわざ",
+  "subtheme": "",
+  "title": "猿も木から落ちる"
+ },
+ "S-041": {
+  "newID": "S-W-003",
+  "tab": "短文",
+  "sheet": "ことわざ",
+  "category": "ことわざ",
+  "subtheme": "",
+  "title": "石の上にも三年"
+ },
+ "S-042": {
+  "newID": "S-W-004",
+  "tab": "短文",
+  "sheet": "ことわざ",
+  "category": "ことわざ",
+  "subtheme": "",
+  "title": "花より団子"
+ },
+ "S-043": {
+  "newID": "S-W-005",
+  "tab": "短文",
+  "sheet": "ことわざ",
+  "category": "ことわざ",
+  "subtheme": "",
+  "title": "七転び八起き"
+ },
+ "S-016": {
+  "newID": "S-K-001",
+  "tab": "短文",
+  "sheet": "カタカナ語",
+  "category": "カタカナ語",
+  "subtheme": "",
+  "title": "和製英語に気をつけて"
+ },
+ "S-044": {
+  "newID": "S-K-002",
+  "tab": "短文",
+  "sheet": "カタカナ語",
+  "category": "カタカナ語",
+  "subtheme": "",
+  "title": "マンションとアパート"
+ },
+ "S-045": {
+  "newID": "S-K-003",
+  "tab": "短文",
+  "sheet": "カタカナ語",
+  "category": "カタカナ語",
+  "subtheme": "",
+  "title": "バイキングは食べ放題"
+ },
+ "S-046": {
+  "newID": "S-K-004",
+  "tab": "短文",
+  "sheet": "カタカナ語",
+  "category": "カタカナ語",
+  "subtheme": "",
+  "title": "コンセントとプラグ"
+ },
+ "S-047": {
+  "newID": "S-K-005",
+  "tab": "短文",
+  "sheet": "カタカナ語",
+  "category": "カタカナ語",
+  "subtheme": "",
+  "title": "「サービス」はただ？"
+ },
+ "S-014": {
+  "newID": "S-G-001",
+  "tab": "短文",
+  "sheet": "擬音語",
+  "category": "擬音語",
+  "subtheme": "",
+  "title": "ふわふわ"
+ },
+ "S-039": {
+  "newID": "S-G-002",
+  "tab": "短文",
+  "sheet": "擬音語",
+  "category": "擬音語",
+  "subtheme": "",
+  "title": "ぺこぺこ・ぐうぐう"
+ },
+ "S-048": {
+  "newID": "S-G-003",
+  "tab": "短文",
+  "sheet": "擬音語",
+  "category": "擬音語",
+  "subtheme": "",
+  "title": "わくわく・どきどき"
+ },
+ "S-049": {
+  "newID": "S-G-004",
+  "tab": "短文",
+  "sheet": "擬音語",
+  "category": "擬音語",
+  "subtheme": "",
+  "title": "ぴかぴか・つるつる"
+ },
+ "S-050": {
+  "newID": "S-G-005",
+  "tab": "短文",
+  "sheet": "擬音語",
+  "category": "擬音語",
+  "subtheme": "",
+  "title": "ざあざあ・しとしと"
+ },
+ "L-009": {
+  "newID": "L-K-001",
+  "tab": "長文",
+  "sheet": "日本生活スタート",
+  "category": "カイの物語",
+  "subtheme": "日本生活スタート",
+  "title": "空港に着いた"
+ },
+ "L-010": {
+  "newID": "L-K-002",
+  "tab": "長文",
+  "sheet": "日本生活スタート",
+  "category": "カイの物語",
+  "subtheme": "日本生活スタート",
+  "title": "ゴミ出しでこまった"
+ },
+ "L-014": {
+  "newID": "L-K-003",
+  "tab": "長文",
+  "sheet": "日本生活スタート",
+  "category": "カイの物語",
+  "subtheme": "日本生活スタート",
+  "title": "はじめての友だち（ミナ）"
+ },
+ "L-031": {
+  "newID": "L-K-004",
+  "tab": "長文",
+  "sheet": "日本生活スタート",
+  "category": "カイの物語",
+  "subtheme": "日本生活スタート",
+  "title": "バイトを始める"
+ },
+ "L-032": {
+  "newID": "L-K-005",
+  "tab": "長文",
+  "sheet": "日本生活スタート",
+  "category": "カイの物語",
+  "subtheme": "日本生活スタート",
+  "title": "日本語学校の初日"
+ },
+ "L-011": {
+  "newID": "L-J-001",
+  "tab": "長文",
+  "sheet": "日本一人旅",
+  "category": "カイの物語",
+  "subtheme": "日本一人旅",
+  "title": "京都へ行く"
+ },
+ "L-012": {
+  "newID": "L-J-002",
+  "tab": "長文",
+  "sheet": "日本一人旅",
+  "category": "カイの物語",
+  "subtheme": "日本一人旅",
+  "title": "お祭りに行く"
+ },
+ "L-013": {
+  "newID": "L-L-001",
+  "tab": "長文",
+  "sheet": "カイの日常",
+  "category": "カイの物語",
+  "subtheme": "カイの日常",
+  "title": "はじめての美容院"
+ },
+ "L-015": {
+  "newID": "L-B-001",
+  "tab": "長文",
+  "sheet": "カイの休憩室",
+  "category": "カイの物語",
+  "subtheme": "カイの休憩室",
+  "title": "好きな食べ物の話"
+ },
+ "L-001": {
+  "newID": "L-R-001",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "ニュース",
+  "title": "桜が満開（国内）"
+ },
+ "L-002": {
+  "newID": "L-R-002",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "ニュース",
+  "title": "全国の天気（天気）"
+ },
+ "L-003": {
+  "newID": "L-R-003",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "ニュース",
+  "title": "海外のニュース（国際）"
+ },
+ "L-004": {
+  "newID": "L-R-004",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "ニュース",
+  "title": "サッカーの試合（スポーツ）"
+ },
+ "L-005": {
+  "newID": "L-R-005",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "お便り相談室",
+  "title": "勉強が続かない"
+ },
+ "L-006": {
+  "newID": "L-R-006",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "お便り相談室",
+  "title": "漢字が覚えられない"
+ },
+ "L-007": {
+  "newID": "L-R-007",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "ゲストインタビュー",
+  "title": "ゲストのカイさん"
+ },
+ "L-008": {
+  "newID": "L-R-008",
+  "tab": "長文",
+  "sheet": "ラジオトーク",
+  "category": "ラジオトーク",
+  "subtheme": "2人のフリートーク",
+  "title": "週末どうだった？"
+ },
+ "L-017": {
+  "newID": "L-M-001",
+  "tab": "長文",
+  "sheet": "ミステリー",
+  "category": "ミステリー",
+  "subtheme": "",
+  "title": "消えた駅弁の謎 第1話：駅で事件発生"
+ },
+ "L-018": {
+  "newID": "L-M-002",
+  "tab": "長文",
+  "sheet": "ミステリー",
+  "category": "ミステリー",
+  "subtheme": "",
+  "title": "消えた駅弁の謎 第2話：証言を聞く"
+ },
+ "L-019": {
+  "newID": "L-M-003",
+  "tab": "長文",
+  "sheet": "ミステリー",
+  "category": "ミステリー",
+  "subtheme": "",
+  "title": "消えた駅弁の謎 第3話：容疑者登場"
+ },
+ "L-020": {
+  "newID": "L-M-004",
+  "tab": "長文",
+  "sheet": "ミステリー",
+  "category": "ミステリー",
+  "subtheme": "",
+  "title": "消えた駅弁の謎 第4話：真犯人は？"
+ },
+ "L-023": {
+  "newID": "L-M-005",
+  "tab": "長文",
+  "sheet": "ミステリー",
+  "category": "ミステリー",
+  "subtheme": "",
+  "title": "消えた最終電車"
+ },
+ "L-021": {
+  "newID": "L-D-001",
+  "tab": "長文",
+  "sheet": "ドキュメンタリー",
+  "category": "ドキュメンタリー",
+  "subtheme": "",
+  "title": "カップラーメンの誕生"
+ },
+ "L-022": {
+  "newID": "L-D-002",
+  "tab": "長文",
+  "sheet": "ドキュメンタリー",
+  "category": "ドキュメンタリー",
+  "subtheme": "",
+  "title": "はやぶさの帰還"
+ },
+ "L-024": {
+  "newID": "L-D-003",
+  "tab": "長文",
+  "sheet": "ドキュメンタリー",
+  "category": "ドキュメンタリー",
+  "subtheme": "",
+  "title": "黒部ダムをつくった男たち"
+ },
+ "L-025": {
+  "newID": "L-D-004",
+  "tab": "長文",
+  "sheet": "ドキュメンタリー",
+  "category": "ドキュメンタリー",
+  "subtheme": "",
+  "title": "新幹線――夢の超特急"
+ },
+ "L-026": {
+  "newID": "L-D-005",
+  "tab": "長文",
+  "sheet": "ドキュメンタリー",
+  "category": "ドキュメンタリー",
+  "subtheme": "",
+  "title": "青い光をもとめて"
+ },
+ "L-016": {
+  "newID": "L-T-001",
+  "tab": "長文",
+  "sheet": "昔話",
+  "category": "昔話",
+  "subtheme": "",
+  "title": "桃太郎"
+ },
+ "L-027": {
+  "newID": "L-T-002",
+  "tab": "長文",
+  "sheet": "昔話",
+  "category": "昔話",
+  "subtheme": "",
+  "title": "浦島太郎"
+ },
+ "L-028": {
+  "newID": "L-T-003",
+  "tab": "長文",
+  "sheet": "昔話",
+  "category": "昔話",
+  "subtheme": "",
+  "title": "かぐや姫"
+ },
+ "L-029": {
+  "newID": "L-T-004",
+  "tab": "長文",
+  "sheet": "昔話",
+  "category": "昔話",
+  "subtheme": "",
+  "title": "鶴の恩返し"
+ },
+ "L-030": {
+  "newID": "L-T-005",
+  "tab": "長文",
+  "sheet": "昔話",
+  "category": "昔話",
+  "subtheme": "",
+  "title": "笠地蔵"
+ }
+}

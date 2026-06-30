@@ -5,7 +5,7 @@
 // settings.theme が sakura/sakura2 のときだけ表示。Webは非対応のため null。
 import { useMemo } from 'react';
 import { Platform, StyleSheet, View, useWindowDimensions } from 'react-native';
-import { BlurMask, Canvas, Circle, Fill, Group, LinearGradient, Path, Shader, Skia, vec } from '@shopify/react-native-skia';
+import { BlurMask, Canvas, Fill, Group, LinearGradient, Path, Shader, Skia, vec } from '@shopify/react-native-skia';
 import { useDerivedValue, useFrameCallback, useSharedValue, type SharedValue } from 'react-native-reanimated';
 import { isGradientTheme } from './theme';
 import { useAppTheme } from './useColors';
@@ -45,29 +45,6 @@ half4 main(float2 fragCoord){
 }`;
 
 const PETAL_D = 'M0 -14 C8 -10 9 0 5 8 L0 4 L-5 8 C-9 0 -8 -10 0 -14 Z';
-
-// ---- 砂金(光る金粒) ----
-interface MoteP { x: number; y: number; r: number; dx: number; dy: number; f: number; tw: number; min: number; max: number; ph: number }
-function GoldMote({ clock, m }: { clock: SharedValue<number>; m: MoteP }) {
-  const transform = useDerivedValue(() => {
-    'worklet';
-    const t = clock.value / 1000;
-    return [{ translateX: m.x + Math.sin(t * m.f + m.ph) * m.dx }, { translateY: m.y + Math.cos(t * m.f * 0.8 + m.ph) * m.dy }];
-  });
-  const opacity = useDerivedValue(() => {
-    'worklet';
-    const t = clock.value / 1000;
-    return m.min + (m.max - m.min) * (0.5 + 0.5 * Math.sin(t * m.tw + m.ph));
-  });
-  return (
-    <Group transform={transform} opacity={opacity}>
-      <Circle cx={0} cy={0} r={m.r * 3.4} color="#f3c659">
-        <BlurMask blur={m.r * 2.2} style="normal" />
-      </Circle>
-      <Circle cx={0} cy={0} r={m.r} color="#fff3c6" />
-    </Group>
-  );
-}
 
 // ---- 桜の花びら(しなやか) ----
 interface PetalP { i: number; x: number; scale: number; cycle: number; delay: number; swA: number; swF1: number; swF2: number; drift: number; rotS: number; flipF: number; maxOp: number; blur: number; ph: number }
@@ -112,19 +89,6 @@ export default function AppBackground() {
   const petalPath = useMemo(() => Skia.Path.MakeFromSVGString(PETAL_D), []);
   const uniforms = useDerivedValue(() => ({ u_time: clock.value / 1000, u_resolution: [width, height] }));
 
-  const motes = useMemo<MoteP[]>(() => {
-    const r = (n: number) => Math.random() * n;
-    return Array.from({ length: 26 }, () => {
-      const big = Math.random() > 0.7;
-      const rad = big ? 3 + r(2.5) : 1.4 + r(1.6);
-      return {
-        x: r(width), y: r(height), r: rad,
-        dx: 10 + r(26), dy: 8 + r(18), f: 0.15 + r(0.3), tw: 0.6 + r(1.2),
-        min: 0.12 + r(0.12), max: 0.6 + r(0.35), ph: r(Math.PI * 2),
-      };
-    });
-  }, [width, height]);
-
   const petalScale = theme === 'sakura2' ? 0.58 : 1;
   const petals = useMemo<PetalP[]>(() => {
     const r = (n: number) => Math.random() * n;
@@ -154,7 +118,6 @@ export default function AppBackground() {
         <Fill>
           <Shader source={effect} uniforms={uniforms} />
         </Fill>
-        {motes.map((m, i) => <GoldMote key={`m${i}`} clock={clock} m={m} />)}
         {petals.map((p) => <Petal key={p.i} clock={clock} p={p} height={height} path={petalPath} />)}
       </Canvas>
     </View>
