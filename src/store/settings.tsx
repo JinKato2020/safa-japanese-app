@@ -12,7 +12,7 @@ export interface Settings {
   language: string; // UI言語(en/ja)
 }
 
-const DEFAULT: Settings = { theme: 'sakura', language: 'ja' }; // 開発用に日本語UI＋桜背景。公開前に language を 'en' へ戻す
+const DEFAULT: Settings = { theme: 'sakura', language: 'en' }; // 既定=英語(ストアのプライマリ言語)。設定で日本語に切替可
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {
