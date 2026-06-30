@@ -1,8 +1,5 @@
-// 自動生成: コンテンツID → 音声(require)。assets/audio/<ID>.mp3 (新ID・ASCII)。
+// 自動生成: ID→音声(require)。
 export const AUDIO: Record<string, number> = {
-  'L-D-003': require('../../assets/audio/L-D-003.mp3'),
-  'L-D-004': require('../../assets/audio/L-D-004.mp3'),
-  'L-D-005': require('../../assets/audio/L-D-005.mp3'),
   'L-K-001': require('../../assets/audio/L-K-001.mp3'),
   'L-K-002': require('../../assets/audio/L-K-002.mp3'),
   'L-K-003': require('../../assets/audio/L-K-003.mp3'),
