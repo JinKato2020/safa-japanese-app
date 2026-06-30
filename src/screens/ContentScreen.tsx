@@ -1,6 +1,6 @@
 // 短文/長文タブ共通画面。アコーディオン（JLPT風プルダウン・各階層で開けるのは1つ＝別を開くと前は自動で閉じる）。
 // 階層: カテゴリー ＞ サブテーマ ＞ (区分) ＞ タイトル → タップで本文（精聴/精読・問題なし）。
-import { useMemo, useState } from 'react';
+import { lazy, Suspense, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
@@ -8,6 +8,8 @@ import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 import { StoryBody } from '../components/StoryBody';
+// 音声は詳細を開いた時だけ遅延ロード(起動経路に expo-av/audioMap を載せない)
+const AudioButton = lazy(() => import('../components/AudioButton'));
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
   tab: string; kicker: string; title: string; sub: string;
@@ -107,10 +109,9 @@ function Detail({ s, t, lang, item, onClose }: {
       </View>
       <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>
         <Text style={s.dTitle}>{item.title}</Text>
-        <View style={s.audio}>
-          <Text style={s.audioIcon}>🔊</Text>
-          <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
-        </View>
+        <Suspense fallback={<View style={s.audio}><Text style={s.audioIcon}>🔊</Text><Text style={s.audioTxt}>{t.audioComingSoon}</Text></View>}>
+          <AudioButton id={item.id} />
+        </Suspense>
         <View style={s.bodyCard}><StoryBody text={item.text} c={c} size={19} /></View>
         {!!item.en && (
           <View style={s.block}><Text style={s.blockLabel}>{t.translationLabel}</Text><Text style={s.enTxt}>{item.en}</Text></View>
