@@ -57,7 +57,6 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
                   onPress={() => setActive(it)}
                   style={[s.item, { marginLeft: (level + 1) * spacing.md }]}
                 >
-                  <Text style={s.itemEmoji}>{emojiFor(it.form)}</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={s.itemTitle}>{it.title}</Text>
                     <Text style={s.itemMeta}>{formLabel(it.form, lang)}</Text>
@@ -82,20 +81,6 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
       </ScrollView>
     </SafeAreaView>
   );
-}
-
-function emojiFor(form: string): string {
-  switch (form) {
-    case '対話': return '💬';
-    case '一人称': return '📖';
-    case 'ニュース': return '📰';
-    case '天気予報': return '☀️';
-    case 'トーク': return '🎙️';
-    case '解説': return '💡';
-    case '物語': return '📕';
-    case 'ドキュメンタリー': return '🎬';
-    default: return '🔊';
-  }
 }
 
 function Detail({ s, t, lang, item, onClose }: {
@@ -167,10 +152,9 @@ const makeStyles = (c: ThemeColors, grad = false) => {
 
     item: {
       flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      backgroundColor: itemBg, borderRadius: radius.md, paddingVertical: spacing.sm + 3, paddingLeft: spacing.sm, paddingRight: spacing.md,
+      backgroundColor: itemBg, borderRadius: radius.md, paddingVertical: spacing.sm + 3, paddingLeft: spacing.md, paddingRight: spacing.md,
       marginBottom: spacing.xs, marginLeft: spacing.sm,
     },
-    itemEmoji: { fontSize: 19 },
     itemTitle: { fontSize: ty.body, fontWeight: '700', color: c.ink },
     itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 1 },
     itemChev: { fontSize: 20, color: c.trace, fontWeight: '700' },
