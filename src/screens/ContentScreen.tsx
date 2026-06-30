@@ -3,7 +3,7 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
+import { spacing, radius, type as ty, useColors, useAppTheme, isGradientTheme, type ThemeColors } from '../theme';
 import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
@@ -17,7 +17,8 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
   const c = useColors();
   const t = useT();
   const lang = useSettings().settings.language;
-  const s = useMemo(() => makeStyles(c), [c]);
+  const grad = isGradientTheme(useAppTheme());
+  const s = useMemo(() => makeStyles(c, grad), [c, grad]);
   const [openPath, setOpenPath] = useState<string[]>([]);
   const [active, setActive] = useState<ContentItem | null>(null);
 
@@ -128,36 +129,45 @@ function Detail({ s, t, lang, item, onClose }: {
   );
 }
 
-const makeStyles = (c: ThemeColors) =>
-  StyleSheet.create({
+const makeStyles = (c: ThemeColors, grad = false) => {
+  // 水彩テーマでは半透明フロスト(背景が透ける)。単色テーマでは従来どおり不透明。
+  const card = grad ? 'rgba(255,255,255,0.70)' : c.surface;
+  const nest = grad ? 'rgba(255,255,255,0.48)' : c.bgSoft;
+  const itemBg = grad ? 'rgba(255,255,255,0.56)' : c.bgSoft;
+  const openBg = grad ? 'rgba(225,237,255,0.86)' : c.blueLight;
+  const bord = grad ? 'rgba(255,255,255,0.75)' : c.line;
+  const shadow = grad
+    ? { shadowColor: '#5a4a66', shadowOpacity: 0.14, shadowRadius: 10, shadowOffset: { width: 0, height: 3 }, elevation: 3 }
+    : { shadowColor: '#0f172a', shadowOpacity: 0.05, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 1 };
+  return StyleSheet.create({
     c: { flex: 1, backgroundColor: c.bg },
     head: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm },
     tab: { fontSize: ty.small, fontWeight: '700', letterSpacing: 1, color: c.mute },
-    title: { fontSize: ty.h1, fontWeight: '800', color: c.ink, marginTop: spacing.xs },
+    title: { fontSize: 26, fontWeight: '800', color: c.ink, marginTop: spacing.xs, letterSpacing: 0.3 },
     sub: { fontSize: ty.small, color: c.mute, marginTop: spacing.xs, lineHeight: 18 },
-    scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },
+    scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
 
     row: {
       flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      backgroundColor: c.surface, borderRadius: radius.md, borderWidth: 1, borderColor: c.line,
-      paddingVertical: spacing.md, paddingHorizontal: spacing.md, marginBottom: spacing.sm,
+      borderRadius: radius.lg, borderWidth: 1,
+      paddingVertical: spacing.md, paddingHorizontal: spacing.lg, marginBottom: spacing.sm,
     },
-    rowCat: { backgroundColor: c.surface, borderColor: c.line },
-    rowNest: { backgroundColor: c.bgSoft, borderColor: c.line, borderLeftWidth: 3, borderLeftColor: c.trace, paddingVertical: spacing.sm + 2 },
-    rowOpen: { borderColor: c.blue, borderLeftColor: c.blue, backgroundColor: c.blueLight },
-    rowTxt: { flex: 1, fontSize: ty.body, fontWeight: '700', color: c.ink2 },
-    rowCatTxt: { fontSize: ty.h2, fontWeight: '800', color: c.ink },
+    rowCat: { backgroundColor: card, borderColor: bord, paddingVertical: spacing.md + 2, ...shadow },
+    rowNest: { backgroundColor: nest, borderColor: bord, borderRadius: radius.md, paddingVertical: spacing.sm + 3, marginLeft: spacing.sm },
+    rowOpen: { borderColor: c.blue, backgroundColor: openBg },
+    rowTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.2 },
+    rowCatTxt: { fontSize: ty.h2 + 1, fontWeight: '800', color: c.ink, letterSpacing: 0.4 },
     rowTxtOpen: { color: c.blueDark },
     caret: { fontSize: ty.small, fontWeight: '800', color: c.faint, width: 14, textAlign: 'center' },
     caretOpen: { color: c.blue },
 
     item: {
       flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      backgroundColor: c.bgSoft, borderRadius: radius.md, paddingVertical: spacing.sm + 2, paddingRight: spacing.md,
-      marginBottom: spacing.xs,
+      backgroundColor: itemBg, borderRadius: radius.md, paddingVertical: spacing.sm + 3, paddingLeft: spacing.sm, paddingRight: spacing.md,
+      marginBottom: spacing.xs, marginLeft: spacing.sm,
     },
-    itemEmoji: { fontSize: 18 },
-    itemTitle: { fontSize: ty.small, fontWeight: '700', color: c.ink },
+    itemEmoji: { fontSize: 19 },
+    itemTitle: { fontSize: ty.body, fontWeight: '700', color: c.ink },
     itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 1 },
     itemChev: { fontSize: 20, color: c.trace, fontWeight: '700' },
 
@@ -180,7 +190,7 @@ const makeStyles = (c: ThemeColors) =>
     audioOn: { backgroundColor: c.blueLight, borderColor: c.blue },
     audioIcon: { fontSize: 22 },
     audioTxt: { fontSize: ty.small, color: c.mute, fontWeight: '700' },
-    bodyCard: { backgroundColor: c.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: c.line, padding: spacing.md },
+    bodyCard: { backgroundColor: grad ? 'rgba(255,255,255,0.88)' : c.surface, borderRadius: radius.lg, borderWidth: 1, borderColor: grad ? 'rgba(255,255,255,0.8)' : c.line, padding: spacing.md },
     bodyTxt: { fontSize: ty.body + 3, color: c.ink, lineHeight: 30 },
     block: { marginTop: spacing.md },
     blockLabel: { fontSize: ty.tiny, fontWeight: '800', color: c.mute, letterSpacing: 0.5, marginBottom: spacing.xs },
@@ -190,3 +200,4 @@ const makeStyles = (c: ThemeColors) =>
     usefulLabel: { fontSize: ty.tiny, fontWeight: '800', color: c.blueDark, marginBottom: 2 },
     usefulTxt: { fontSize: ty.small, color: c.ink2, lineHeight: 18 },
   });
+};

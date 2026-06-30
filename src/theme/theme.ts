@@ -84,12 +84,20 @@ export const darkColors: ThemeColors = {
 export const colors = lightColors;
 
 /** 「桜水彩」テーマ。水彩のにじみ(layered washes)＋金粉＋舞う桜の和モダン高級背景(単一デザイン)。 */
-export type GradientTheme = 'sakura' | 'sakura2';
-export const GRADIENT_THEMES: GradientTheme[] = ['sakura', 'sakura2'];
-export const isGradientTheme = (t: string): t is GradientTheme => t === 'sakura' || t === 'sakura2';
+// 水彩テーマ(流れる水彩のみ・花びらや金は無し)。色違いを複数用意。
+export type GradientTheme = 'sakura' | 'sora' | 'midori' | 'fuji' | 'akane';
+export const GRADIENT_THEMES: GradientTheme[] = ['sakura', 'sora', 'midori', 'fuji', 'akane'];
+export const isGradientTheme = (t: string): t is GradientTheme => (GRADIENT_THEMES as string[]).includes(t);
 
-/** ベースの和紙グラデーション(温かい生成り→淡桜→ほのかな藤)。にじみ/金粉/花びらは AppBackground が重ねる。 */
-export const SAKURA_BASE = ['#fbf7f5', '#f7ecf0', '#f2e1ea', '#edd9ea'];
+/** 各テーマのパレット(RGB 0..1)。base=地色＋a1/a2/a3=にじむ差し色。やわらかく明るい(本文の可読性を確保)。 */
+export interface Palette { base: number[]; a1: number[]; a2: number[]; a3: number[] }
+export const PALETTES: Record<GradientTheme, Palette> = {
+  sakura: { base: [0.992, 0.965, 0.973], a1: [0.964, 0.760, 0.840], a2: [0.900, 0.740, 0.900], a3: [0.952, 0.660, 0.780] }, // 桜(ピンク)
+  sora:   { base: [0.950, 0.970, 1.000], a1: [0.720, 0.830, 0.950], a2: [0.760, 0.785, 0.945], a3: [0.660, 0.805, 0.930] }, // 空(青)
+  midori: { base: [0.960, 0.980, 0.952], a1: [0.740, 0.880, 0.760], a2: [0.815, 0.900, 0.720], a3: [0.660, 0.855, 0.785] }, // 新緑(緑)
+  fuji:   { base: [0.975, 0.965, 0.992], a1: [0.840, 0.760, 0.920], a2: [0.900, 0.770, 0.880], a3: [0.760, 0.720, 0.915] }, // 藤(紫)
+  akane:  { base: [0.992, 0.965, 0.950], a1: [0.962, 0.812, 0.660], a2: [0.952, 0.720, 0.650], a3: [0.940, 0.785, 0.600] }, // 茜(橙)
+};
 
 export const spacing = { xs: 4, sm: 8, md: 16, lg: 24, xl: 32, xxl: 48 };
 export const radius = { sm: 6, md: 10, lg: 16, xl: 20, pill: 999 };

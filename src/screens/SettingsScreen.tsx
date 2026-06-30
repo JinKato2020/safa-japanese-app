@@ -27,7 +27,10 @@ export default function SettingsScreen() {
     { v: 'auto', label: t.themeAuto },
     { v: 'light', label: t.themeDefault },
     { v: 'sakura', label: t.themeSakura },
-    { v: 'sakura2', label: t.themeSakura2 },
+    { v: 'sora', label: t.themeSora },
+    { v: 'midori', label: t.themeMidori },
+    { v: 'fuji', label: t.themeFuji },
+    { v: 'akane', label: t.themeAkane },
     { v: 'dark', label: t.themeDark },
   ];
 
