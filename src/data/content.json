@@ -162,6 +162,83 @@
         "key": "〜行き／平日・土日／特急／次の電車",
         "point": "時と分を読み取る(情報検索の練習)。",
         "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-013",
+        "title": "今週の天気予報を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "天気予報（てんきよほう）を見（み）ると、出（で）かける前（まえ）に服（ふく）や傘（かさ）の用意（ようい）ができます。上（うえ）の表（ひょう）を見（み）てみましょう。左（ひだり）に曜日（ようび）、まん中（なか）に天気（てんき）、右（みぎ）に気温（きおん）があります。赤（あか）い数字（すうじ）が「最高（さいこう）気温（きおん）」、青（あお）い数字（すうじ）が「最低（さいてい）気温（きおん）」です。たとえば水曜日（すいようび）は「雨（あめ）」で、最高（さいこう）22度（ど）です。雨（あめ）の日（ひ）は傘（かさ）を持（も）って出（で）かけましょう。土曜日（どようび）と日曜日（にちようび）は晴（は）れて、おでかけ日和（びより）です。天気（てんき）と気温（きおん）を見（み）て、その日（ひ）の予定（よてい）を考（かんが）えてみましょう。",
+        "en": "Checking the weather forecast lets you prepare clothes or an umbrella before going out. Look at the table above: days on the left, weather in the middle, temperature on the right. Red numbers are the 'high,' blue the 'low.' For example, Wednesday is 'rain,' with a high of 22°. On rainy days, take an umbrella. Saturday and Sunday are sunny — great for going out. Look at the weather and temperature to plan your day.",
+        "key": "天気予報／最高気温・最低気温／晴れ・くもり・雨／おでかけ日和",
+        "point": "天気と気温を正しく読み取る(情報検索の練習)。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-014",
+        "title": "食堂のメニューを読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "レストランや食堂（しょくどう）では「メニュー（おしながき）」を見（み）て料理（りょうり）を選（えら）びます。上（うえ）のメニューを見（み）てください。料理（りょうり）の名前（なまえ）の右（みぎ）に、値段（ねだん）が書（か）いてあります。たとえば「ラーメン」は700円（えん）、「カレーライス」は650円（えん）です。「定食（ていしょく）」には、ごはんとみそ汁（しる）、おしんこが付（つ）いています。ごはんを「大盛（おおも）り」にしたいときは、100円（えん）たすだけで多（おお）くなります。お店（みせ）は平日（へいじつ）11時（じ）から21時（じ）まで開（あ）いていて、火曜日（かようび）は休（やす）みです。食（た）べたい料理（りょうり）と、お金（かね）がいくら必要（ひつよう）かを、メニューで確（たし）かめましょう。",
+        "en": "At restaurants and diners, you choose your food from a 'menu.' Look at the menu above: prices are written to the right of each dish's name. For example, 'ramen' is 700 yen and 'curry rice' is 650 yen. A 'set meal (teishoku)' comes with rice, miso soup, and pickles. If you want a 'large' serving of rice, just add 100 yen. The shop is open weekdays 11:00–21:00 and closed on Tuesdays. Use the menu to check the dish you want and how much money you'll need.",
+        "key": "メニュー／定食／大盛り／〜円・火曜定休",
+        "point": "料理名と値段を読み取り、合計を考える。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-015",
+        "title": "病院の受付案内を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "病気（びょうき）やけがのとき、病院（びょういん）の「受付（うけつけ）の案内（あんない）」を読（よ）むと、いつ行（い）けばよいか分（わ）かります。上（うえ）の案内（あんない）を見（み）てください。受付（うけつけ）の時間（じかん）は、午前（ごぜん）9時（じ）から12時（じ）まで、午後（ごご）は14時（じ）から17時（じ）までです。日曜日（にちようび）と祝日（しゅくじつ）、年末年始（ねんまつねんし）は「休診（きゅうしん）」、つまりお休（やす）みです。診（み）てもらえるのは、内科（ないか）・外科（げか）・小児科（しょうにか）・皮（ひ）ふ科（か）です。はじめて行（い）くときは、保険証（ほけんしょう）を持（も）って行（い）きましょう。急（きゅう）な熱（ねつ）のときは、行（い）く前（まえ）に電話（でんわ）をすると安心（あんしん）です。",
+        "en": "When you're sick or hurt, reading a hospital's 'reception guide' tells you when to go. Look at the guide above. Reception hours are 9:00–12:00 in the morning and 14:00–17:00 in the afternoon. Sundays, holidays, and the New Year period are 'closed (kyushin).' The departments are internal medicine, surgery, pediatrics, and dermatology. When you go for the first time, bring your health insurance card. For a sudden fever, it's safer to call before you go.",
+        "key": "受付時間／休診／診療科／保険証",
+        "point": "時間・休みの日・診療科を正しく読む。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-016",
+        "title": "アルバイト募集を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "仕事（しごと）をさがすとき、お店（みせ）の「アルバイト募集（ぼしゅう）」の紙（かみ）を読（よ）みます。上（うえ）の募集（ぼしゅう）を見（み）てください。仕事（しごと）の内容（ないよう）は、カフェのホール、つまり注文（ちゅうもん）を聞（き）いたり、かたづけたりする仕事（しごと）です。時給（じきゅう）は1,100円（えん）からで、夜（よる）おそくは1,375円（えん）になります。勤務（きんむ）は週（しゅう）3日（か）からでよく、夕方（ゆうがた）17時（じ）から22時（じ）までです。高校生（こうこうせい）は応募（おうぼ）できません。日本語（にほんご）は日常（にちじょう）会話（かいわ）ができればよいです。やってみたい人（ひと）は、まず電話（でんわ）をかけましょう。",
+        "en": "When looking for work, you read a shop's 'part-time job ad.' Look at the ad above. The job is cafe floor work — taking orders and clearing tables. The pay starts at 1,100 yen an hour, rising to 1,375 yen late at night. You can work from three days a week, in the evening from 17:00 to 22:00. High school students can't apply. For Japanese, everyday conversation is enough. If you'd like to try, first give them a call.",
+        "key": "アルバイト募集／時給／週3日〜／高校生不可・応募",
+        "point": "時給・時間・条件を読み取って応募を判断する。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-017",
+        "title": "宅配の不在連絡票を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "留守（るす）のときに宅配便（たくはいびん）が来（く）ると、ポストに「不在（ふざい）連絡票（れんらくひょう）」が入（はい）っています。上（うえ）の紙（かみ）を見（み）てください。「お届（とど）けにあがりましたが、ご不在（ふざい）でした」と書（か）いてあります。荷物（にもつ）は営業所（えいぎょうしょ）であずかっています。もう一度（いちど）届（とど）けてほしいときは、「再配達（さいはいたつ）」をたのみます。電話（でんわ）またはインターネットで、いつ届（とど）けてほしいかを伝（つた）えます。電話番号（でんわばんごう）は0120から始（はじ）まり、24時間（じかん）受（う）け付（つ）けています。その日（ひ）のうちに届（とど）けてほしいときは、19時（じ）までに連絡（れんらく）しましょう。",
+        "en": "When a delivery comes while you're out, a 'delivery absence notice' is left in your mailbox. Look at the slip above. It says, 'We came to deliver, but you were out.' Your package is being held at the depot. To have it delivered again, you request 'redelivery.' By phone or online, you tell them when you'd like it delivered. The phone number starts with 0120 and is open 24 hours. To get it the same day, contact them by 19:00.",
+        "key": "不在連絡票／再配達／営業所／24時間",
+        "point": "再配達のたのみ方と受付時間を読み取る。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-018",
+        "title": "スーパーの特売を読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "スーパーでは、入（い）り口（ぐち）やチラシに「特売（とくばい）」のお知（し）らせがあります。特売（とくばい）の日（ひ）は、ふだんより安（やす）く買（か）い物（もの）ができます。上（うえ）のお知（し）らせを見（み）てください。今日（きょう）は、たまご10個（こ）が158円（えん）、牛乳（ぎゅうにゅう）1本（ぽん）が178円（えん）です。とり肉（にく）は100グラムで98円（えん）と、とても安（やす）いです。さらに、午後（ごご）6時（じ）からは、お肉（にく）とお魚（さかな）が2割引（わりび）き、つまり値段（ねだん）の8割（わり）になります。買（か）いたい物（もの）と値段（ねだん）をくらべて、お得（とく）な日（ひ）にまとめて買（か）うと、お金（かね）の節約（せつやく）になります。",
+        "en": "At supermarkets, there are 'sale' notices at the entrance or in flyers. On sale days you can shop more cheaply than usual. Look at the notice above. Today, ten eggs are 158 yen and a carton of milk is 178 yen. Chicken is just 98 yen per 100 grams — very cheap. Also, from 6 p.m., meat and fish are 20% off, meaning 80% of the price. Compare the items you want and their prices; buying together on a good day saves money.",
+        "key": "特売／〜割引き／タイムセール／節約",
+        "point": "値段と割引を読み取り、買い物を計画する。",
+        "note": "1話者・朗読"
+       },
+       {
+        "id": "S-L-019",
+        "title": "お祭りのお知らせを読む",
+        "form": "読み物",
+        "level": "N4",
+        "text": "町（まち）には、お祭（まつ）りやイベントの「お知（し）らせ」がはられます。お知（し）らせを読（よ）むと、いつ・どこで・何（なに）があるかが分（わ）かります。上（うえ）のお知（し）らせを見（み）てください。「みどり公園（こうえん）夏祭（なつまつ）り」は、8月（がつ）10日（とおか）の土曜日（どようび）、夕方（ゆうがた）16時（じ）から21時（じ）まで開（ひら）かれます。場所（ばしょ）はみどり公園（こうえん）で、雨（あめ）のときは中止（ちゅうし）です。屋台（やたい）やゲーム、盆（ぼん）おどりが楽（たの）しめます。夜（よる）8時（じ）からは、公園（こうえん）の北（きた）がわで花火（はなび）が上（あ）がります。入場（にゅうじょう）は無料（むりょう）なので、だれでも自由（じゆう）に行（い）くことができます。",
+        "en": "Around town, 'notices' for festivals and events are posted. Reading them tells you when, where, and what's happening. Look at the notice above. The 'Midori Park Summer Festival' is held on Saturday, August 10, from 16:00 to 21:00. The place is Midori Park, and it's canceled if it rains. You can enjoy food stalls, games, and bon dancing. From 8 p.m., fireworks go up on the north side of the park. Admission is free, so anyone can come.",
+        "key": "お知らせ／日時・場所／屋台・盆おどり／入場無料",
+        "point": "いつ・どこで・何があるかを読み取る。",
+        "note": "1話者・朗読"
        }
       ]
      }

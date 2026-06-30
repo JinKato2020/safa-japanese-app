@@ -2,7 +2,7 @@
   "expo": {
     "name": "聞いて話せる日本語",
     "slug": "safa-japanese-app",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
