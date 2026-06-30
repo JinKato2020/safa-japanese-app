@@ -1,6 +1,6 @@
 // 短文/長文タブ共通画面。アコーディオン（JLPT風プルダウン・各階層で開けるのは1つ＝別を開くと前は自動で閉じる）。
 // 階層: カテゴリー ＞ サブテーマ ＞ (区分) ＞ タイトル → タップで本文（精聴/精読・問題なし）。
-import { useMemo, useState } from 'react';
+import { lazy, Suspense, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { spacing, radius, type as ty, useColors, type ThemeColors } from '../theme';
@@ -8,8 +8,8 @@ import { useT, type Strings } from '../i18n';
 import { useSettings } from '../store/settings';
 import { nodesFor, label, formLabel, type ContentNode, type ContentItem } from '../data/content';
 import { StoryBody } from '../components/StoryBody';
-import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
-import { AUDIO } from '../data/audioMap';
+// 音声は詳細を開いた時だけ遅延ロード(起動経路に expo-audio/audioMap を載せない)
+const AudioButton = lazy(() => import('../components/AudioButton'));
 
 export default function ContentScreen({ tab, kicker, title, sub }: {
   tab: string; kicker: string; title: string; sub: string;
@@ -100,16 +100,6 @@ function Detail({ s, t, lang, item, onClose }: {
   s: ReturnType<typeof makeStyles>; t: Strings; lang: string; item: ContentItem; onClose: () => void;
 }) {
   const c = useColors();
-  const source = AUDIO[item.id];
-  const player = useAudioPlayer(source);
-  const status = useAudioPlayerStatus(player);
-  const playing = !!status?.playing;
-  const toggleAudio = () => {
-    if (!source) return;
-    if (playing) { player.pause(); return; }
-    if ((status?.currentTime ?? 0) >= (status?.duration ?? 0) - 0.15) player.seekTo(0);
-    player.play();
-  };
   return (
     <SafeAreaView style={s.c} edges={['top']}>
       <View style={s.qHead}>
@@ -119,17 +109,9 @@ function Detail({ s, t, lang, item, onClose }: {
       </View>
       <ScrollView contentContainerStyle={s.scroll2} showsVerticalScrollIndicator={false}>
         <Text style={s.dTitle}>{item.title}</Text>
-        {source ? (
-          <Pressable onPress={toggleAudio} style={[s.audio, playing && s.audioOn]}>
-            <Text style={s.audioIcon}>{playing ? '⏸️' : '▶️'}</Text>
-            <Text style={s.audioTxt}>{playing ? t.audioPlaying : t.audioPlay}</Text>
-          </Pressable>
-        ) : (
-          <View style={s.audio}>
-            <Text style={s.audioIcon}>🔊</Text>
-            <Text style={s.audioTxt}>{t.audioComingSoon}</Text>
-          </View>
-        )}
+        <Suspense fallback={<View style={s.audio}><Text style={s.audioIcon}>🔊</Text><Text style={s.audioTxt}>{t.audioComingSoon}</Text></View>}>
+          <AudioButton id={item.id} />
+        </Suspense>
         <View style={s.bodyCard}><StoryBody text={item.text} c={c} size={19} /></View>
         {!!item.en && (
           <View style={s.block}><Text style={s.blockLabel}>{t.translationLabel}</Text><Text style={s.enTxt}>{item.en}</Text></View>

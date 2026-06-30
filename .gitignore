@@ -30,7 +30,6 @@ yarn-error.*
 リポジトリ構成.pdf
 builds/
 
-# 音声: 連結前マスター(wav・大)とサンプルは除外。配信は <ID>.mp3 のみ
-**/_master/
-音声/_chirp_sample/
+# 音声: 日本語階層フォルダ(音声/)はローカル作業用。アプリ配信は assets/audio/(ASCII) を使う
+音声/
 *.wav
