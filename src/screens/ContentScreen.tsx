@@ -51,12 +51,13 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
           {open && node.children ? renderNodes(node.children, level + 1) : null}
 
           {open && node.items
-            ? node.items.map((it) => (
+            ? node.items.map((it, i) => (
                 <Pressable
                   key={it.id}
                   onPress={() => setActive(it)}
                   style={[s.item, { marginLeft: (level + 1) * spacing.md }]}
                 >
+                  <Text style={s.itemIdx}>{i + 1}</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={s.itemTitle}>{it.title}</Text>
                     <Text style={s.itemMeta}>{formLabel(it.form, lang)}</Text>
@@ -120,43 +121,49 @@ function Detail({ s, t, lang, item, onClose }: {
 
 const makeStyles = (c: ThemeColors, grad = false) => {
   // 水彩テーマでは半透明フロスト(背景が透ける)。単色テーマでは従来どおり不透明。
-  const card = grad ? 'rgba(255,255,255,0.70)' : c.surface;
-  const nest = grad ? 'rgba(255,255,255,0.48)' : c.bgSoft;
-  const itemBg = grad ? 'rgba(255,255,255,0.56)' : c.bgSoft;
-  const openBg = grad ? 'rgba(225,237,255,0.86)' : c.blueLight;
-  const bord = grad ? 'rgba(255,255,255,0.75)' : c.line;
-  const shadow = grad
-    ? { shadowColor: '#5a4a66', shadowOpacity: 0.14, shadowRadius: 10, shadowOffset: { width: 0, height: 3 }, elevation: 3 }
-    : { shadowColor: '#0f172a', shadowOpacity: 0.05, shadowRadius: 6, shadowOffset: { width: 0, height: 2 }, elevation: 1 };
+  // 罫線ミニマル(編集的): カテゴリー=半透明の薄カード / サブテーマ=左罫線 / 項目=下罫線区切り。
+  const catBg = grad ? 'rgba(255,255,255,0.52)' : c.surface;
+  const catBord = grad ? 'rgba(255,255,255,0.85)' : c.line;
+  const rule = grad ? 'rgba(74,58,82,0.15)' : c.line;
+  const openBg = grad ? 'rgba(225,237,255,0.72)' : c.blueLight;
   return StyleSheet.create({
     c: { flex: 1, backgroundColor: c.bg },
     head: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm },
     tab: { fontSize: ty.small, fontWeight: '700', letterSpacing: 1, color: c.mute },
-    title: { fontSize: 26, fontWeight: '800', color: c.ink, marginTop: spacing.xs, letterSpacing: 0.3 },
+    title: { fontSize: 26, fontWeight: '700', color: c.ink, marginTop: spacing.xs, letterSpacing: 0.5 },
     sub: { fontSize: ty.small, color: c.mute, marginTop: spacing.xs, lineHeight: 18 },
     scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
 
-    row: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      borderRadius: radius.lg, borderWidth: 1,
-      paddingVertical: spacing.md, paddingHorizontal: spacing.lg, marginBottom: spacing.sm,
+    row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
+    rowCat: {
+      backgroundColor: catBg, borderRadius: 10,
+      borderWidth: StyleSheet.hairlineWidth, borderColor: catBord,
+      paddingVertical: spacing.md + 2, paddingHorizontal: spacing.md,
+      marginTop: spacing.xs, marginBottom: spacing.sm,
     },
-    rowCat: { backgroundColor: card, borderColor: bord, paddingVertical: spacing.md + 2, ...shadow },
-    rowNest: { backgroundColor: nest, borderColor: bord, borderRadius: radius.md, paddingVertical: spacing.sm + 3, marginLeft: spacing.sm },
-    rowOpen: { borderColor: c.blue, backgroundColor: openBg },
-    rowTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.2 },
-    rowCatTxt: { fontSize: ty.h2 + 1, fontWeight: '800', color: c.ink, letterSpacing: 0.4 },
+    rowNest: {
+      backgroundColor: 'transparent',
+      borderLeftWidth: 2, borderLeftColor: c.blue,
+      paddingVertical: spacing.sm + 3, paddingHorizontal: spacing.md,
+      marginLeft: spacing.sm, marginBottom: spacing.xs,
+    },
+    rowOpen: { backgroundColor: openBg, borderColor: c.blue, borderLeftColor: c.blueDark },
+    rowTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.5 },
+    rowCatTxt: { fontSize: ty.h2 + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.8 },
     rowTxtOpen: { color: c.blueDark },
-    caret: { fontSize: ty.small, fontWeight: '800', color: c.faint, width: 14, textAlign: 'center' },
-    caretOpen: { color: c.blue },
+    caret: { fontSize: ty.small, fontWeight: '700', color: c.blue, width: 14, textAlign: 'center' },
+    caretOpen: { color: c.blueDark },
 
     item: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.sm,
-      backgroundColor: itemBg, borderRadius: radius.md, paddingVertical: spacing.sm + 3, paddingLeft: spacing.md, paddingRight: spacing.md,
-      marginBottom: spacing.xs, marginLeft: spacing.sm,
+      flexDirection: 'row', alignItems: 'center', gap: spacing.md,
+      backgroundColor: 'transparent',
+      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: rule,
+      paddingVertical: spacing.md, paddingHorizontal: spacing.xs,
+      marginLeft: spacing.md,
     },
-    itemTitle: { fontSize: ty.body, fontWeight: '700', color: c.ink },
-    itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 1 },
+    itemIdx: { fontSize: ty.small, fontWeight: '700', color: c.blue, width: 20, textAlign: 'center' },
+    itemTitle: { fontSize: ty.body + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.4 },
+    itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 2 },
     itemChev: { fontSize: 20, color: c.trace, fontWeight: '700' },
 
     // detail
