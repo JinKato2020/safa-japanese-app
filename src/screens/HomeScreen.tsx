@@ -64,11 +64,11 @@ export default function HomeScreen() {
       <ScrollView contentContainerStyle={s.body}>
         <Text style={s.title}>{t.appName}</Text>
 
-        {/* あいさつ / コンセプト */}
-        <View style={s.hero}>
+        {/* あいさつ / コンセプト(他カードと同色に統一) */}
+        <Card style={s.hero}>
           <Text style={s.heroTitle}>{t.heroTitle}</Text>
           <Text style={s.heroBody}>{t.heroBody}</Text>
-        </View>
+        </Card>
 
         {/* 継続カード */}
         <Card style={s.block}>
@@ -107,8 +107,8 @@ const makeStyles = (c: ThemeColors) =>
     body: { padding: spacing.lg, gap: spacing.sm },
     tab: { fontSize: ty.small, fontWeight: '700', letterSpacing: 1, color: c.mute },
     title: { fontSize: ty.h1, fontWeight: '800', color: c.ink, marginTop: spacing.xs },
-    hero: { backgroundColor: c.blueLight, borderRadius: radius.lg, padding: spacing.md, marginTop: spacing.sm },
-    heroTitle: { fontSize: ty.h2, fontWeight: '800', color: c.blueDark },
+    hero: { marginTop: spacing.sm },
+    heroTitle: { fontSize: ty.h2, fontWeight: '800', color: c.ink },
     heroBody: { fontSize: ty.small, color: c.ink2, marginTop: spacing.xs, lineHeight: 20 },
     block: { marginTop: spacing.sm, gap: spacing.md },
     cardHead: { fontSize: ty.small, fontWeight: '800', color: c.ink2 },
