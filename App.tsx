@@ -6,7 +6,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useColors, useScheme, AppBackground } from './src/theme';
-import { useAppFonts } from './src/theme/fonts';
+import { useAppFonts, setActiveFont } from './src/theme/fonts';
 import { AppProvider, useSettings } from './src/store/settings';
 import { DesignThemeProvider } from './safa-shared/JLPT-Listening/design';
 import { useT } from './src/i18n';
@@ -94,9 +94,12 @@ function MainTabs() {
 }
 
 function Root() {
-  const { hydrated } = useSettings();
+  const { hydrated, settings } = useSettings();
   const c = useColors();
   const scheme = useScheme();
+
+  // 現在フォントを設定値に同期(このレンダー→配下の全Textが新フォントで描画)。
+  setActiveFont(settings.font);
 
   const navTheme = {
     ...DefaultTheme,

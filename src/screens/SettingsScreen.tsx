@@ -34,6 +34,14 @@ export default function SettingsScreen() {
     { v: 'dark', label: t.themeDark },
   ];
 
+  // フォント選択(全機種同じ見た目・OFL商用可)。
+  const FONTS: { v: string; label: string }[] = [
+    { v: 'maru', label: t.fontMaru },
+    { v: 'mincho', label: t.fontMincho },
+    { v: 'kyokasho', label: t.fontKyokasho },
+    { v: 'system', label: t.fontSystem },
+  ];
+
   const openUrl = async (url: string) => {
     try {
       const ok = await Linking.canOpenURL(url);
@@ -70,6 +78,16 @@ export default function SettingsScreen() {
             {THEMES.map((th) => (
               <Pressable key={th.v} onPress={() => setSettings({ theme: th.v })} style={[s.chip, settings.theme === th.v && s.chipOn]}>
                 <Text style={[s.chipTxt, settings.theme === th.v && s.chipTxtOn]}>{th.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+
+          {/* フォント選択 */}
+          <Text style={s.setLbl}>{t.font}</Text>
+          <View style={s.chipRow}>
+            {FONTS.map((ft) => (
+              <Pressable key={ft.v} onPress={() => setSettings({ font: ft.v })} style={[s.chip, settings.font === ft.v && s.chipOn]}>
+                <Text style={[s.chipTxt, settings.font === ft.v && s.chipTxtOn]}>{ft.label}</Text>
               </Pressable>
             ))}
           </View>

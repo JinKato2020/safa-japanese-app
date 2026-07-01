@@ -10,9 +10,10 @@ export type ThemeMode = 'auto' | 'light' | 'dark' | 'sakura' | 'sora' | 'midori'
 export interface Settings {
   theme: ThemeMode;
   language: string; // UI言語(en/ja)
+  font: string;     // 表示フォント(system/maru/mincho/kyokasho)
 }
 
-const DEFAULT: Settings = { theme: 'sakura', language: 'en' }; // 既定=英語(ストアのプライマリ言語)。設定で日本語に切替可
+const DEFAULT: Settings = { theme: 'sakura', language: 'en', font: 'maru' }; // 既定=英語＋丸ゴシック
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {
