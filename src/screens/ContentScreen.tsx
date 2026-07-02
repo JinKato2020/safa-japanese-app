@@ -32,20 +32,25 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
   const renderNodes = (nodes: ContentNode[], level: number): React.ReactNode =>
     nodes.map((node) => {
       const open = openPath[level] === node.name;
+      const isCat = level === 0;
       return (
         <View key={node.name}>
           <Pressable
             onPress={() => toggle(level, node.name)}
-            style={[
-              s.row, { marginLeft: level * spacing.md },
-              level === 0 ? s.rowCat : s.rowNest,
-              open && s.rowOpen,
+            style={({ pressed }) => [
+              isCat ? s.cat : s.nest,
+              !isCat && { marginLeft: level * spacing.md },
+              open && (isCat ? s.catOpen : s.nestOpen),
+              pressed && s.pressed,
             ]}
           >
-            {level === 0 ? <Text style={[s.caret, open && s.caretOpen]}>{open ? '▾' : '▸'}</Text> : null}
-            <Text style={[s.rowTxt, level === 0 && s.rowCatTxt, open && s.rowTxtOpen]} numberOfLines={2}>
+            {isCat ? <View style={[s.accent, open && s.accentOpen]} /> : <View style={[s.dot, open && s.dotOpen]} />}
+            <Text style={[isCat ? s.catTxt : s.nestTxt, open && s.txtOpen]} numberOfLines={2}>
               {label(node.name, lang)}
             </Text>
+            <View style={[s.chev, open && s.chevOpen]}>
+              <Text style={[s.chevTxt, open && s.chevTxtOpen]}>{open ? '▾' : '▸'}</Text>
+            </View>
           </Pressable>
 
           {open && node.children ? renderNodes(node.children, level + 1) : null}
@@ -55,14 +60,14 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
                 <Pressable
                   key={it.id}
                   onPress={() => setActive(it)}
-                  style={[s.item, { marginLeft: (level + 1) * spacing.md }]}
+                  style={({ pressed }) => [s.item, { marginLeft: (level + 1) * spacing.md }, pressed && s.itemPressed]}
                 >
-                  <Text style={s.itemIdx}>{i + 1}</Text>
+                  <View style={s.badge}><Text style={s.badgeTxt}>{i + 1}</Text></View>
                   <View style={{ flex: 1 }}>
-                    <Text style={s.itemTitle}>{it.title}</Text>
+                    <Text style={s.itemTitle} numberOfLines={2}>{it.title}</Text>
                     <Text style={s.itemMeta}>{formLabel(it.form, lang)}</Text>
                   </View>
-                  <Text style={s.itemChev}>›</Text>
+                  <View style={s.itemChevWrap}><Text style={s.itemChev}>›</Text></View>
                 </Pressable>
               ))
             : null}
@@ -120,12 +125,15 @@ function Detail({ s, t, lang, item, onClose }: {
 }
 
 const makeStyles = (c: ThemeColors, grad = false) => {
-  // 水彩テーマでは半透明フロスト(背景が透ける)。単色テーマでは従来どおり不透明。
-  // 罫線ミニマル(編集的): カテゴリー=半透明の薄カード / サブテーマ=左罫線 / 項目=下罫線区切り。
-  const catBg = grad ? 'rgba(255,255,255,0.52)' : c.surface;
-  const catBord = grad ? 'rgba(255,255,255,0.85)' : c.line;
-  const rule = grad ? 'rgba(74,58,82,0.15)' : c.line;
-  const openBg = grad ? 'rgba(225,237,255,0.72)' : c.blueLight;
+  // 水彩テーマでは半透明フロスト(背景が透ける)。単色テーマでは不透明カード。
+  // 洗練カード: カテゴリー=アクセントバー付き浮きカード / サブテーマ=ドット付き淡カード / 項目=番号バッジ＋シェブロンチップのカード。
+  const catBg = grad ? 'rgba(255,255,255,0.58)' : c.surface;
+  const catBord = grad ? 'rgba(255,255,255,0.9)' : c.line;
+  const nestBg = grad ? 'rgba(255,255,255,0.4)' : c.bgSoft;
+  const itemBg = grad ? 'rgba(255,255,255,0.68)' : c.surface;
+  const chipBg = grad ? 'rgba(255,255,255,0.66)' : c.bgSoft;
+  const openBg = grad ? 'rgba(225,237,255,0.78)' : c.blueLight;
+  const shadow = { shadowColor: '#0f172a', shadowOpacity: grad ? 0.05 : 0.06, shadowRadius: 10, shadowOffset: { width: 0, height: 3 }, elevation: 2 };
   return StyleSheet.create({
     c: { flex: 1, backgroundColor: c.bg },
     head: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm },
@@ -134,37 +142,55 @@ const makeStyles = (c: ThemeColors, grad = false) => {
     sub: { fontSize: ty.small, color: c.mute, marginTop: spacing.xs, lineHeight: 18 },
     scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
 
-    row: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm },
-    rowCat: {
-      backgroundColor: catBg, borderRadius: 10,
-      borderWidth: StyleSheet.hairlineWidth, borderColor: catBord,
-      paddingVertical: spacing.md + 2, paddingHorizontal: spacing.md,
-      marginTop: spacing.xs, marginBottom: spacing.sm,
+    // ── カテゴリー(アクセントバー付き浮きカード) ──
+    cat: {
+      flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2,
+      backgroundColor: catBg, borderRadius: radius.lg,
+      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: catBord,
+      paddingVertical: spacing.md + 3, paddingLeft: spacing.md, paddingRight: spacing.sm + 2,
+      marginTop: spacing.sm, marginBottom: spacing.xs, ...shadow,
     },
-    rowNest: {
-      backgroundColor: 'transparent',
-      borderLeftWidth: 2, borderLeftColor: c.blue,
-      paddingVertical: spacing.sm + 3, paddingHorizontal: spacing.md,
-      marginLeft: spacing.sm, marginBottom: spacing.xs,
-    },
-    rowOpen: { backgroundColor: openBg, borderColor: c.blue, borderLeftColor: c.blueDark },
-    rowTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.5 },
-    rowCatTxt: { fontSize: ty.h2 + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.8 },
-    rowTxtOpen: { color: c.blueDark },
-    caret: { fontSize: ty.small, fontWeight: '700', color: c.blue, width: 14, textAlign: 'center' },
-    caretOpen: { color: c.blueDark },
+    catOpen: { backgroundColor: openBg, borderColor: c.blue },
+    accent: { width: 4, height: 22, borderRadius: 2, backgroundColor: c.blue },
+    accentOpen: { backgroundColor: c.blueDark },
+    catTxt: { flex: 1, fontSize: ty.h2 + 2, fontWeight: '800', color: c.ink, letterSpacing: 0.6 },
 
+    // ── サブテーマ(ドット付き淡カード) ──
+    nest: {
+      flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2,
+      backgroundColor: nestBg, borderRadius: radius.md,
+      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.7)' : c.line,
+      paddingVertical: spacing.sm + 4, paddingLeft: spacing.md, paddingRight: spacing.sm + 2,
+      marginTop: spacing.xs, marginBottom: spacing.xs,
+    },
+    nestOpen: { backgroundColor: openBg, borderColor: c.blue },
+    dot: { width: 7, height: 7, borderRadius: 4, backgroundColor: c.blue },
+    dotOpen: { backgroundColor: c.blueDark },
+    nestTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.4 },
+    txtOpen: { color: c.blueDark },
+
+    // ── 開閉シェブロンチップ ──
+    chev: { width: 26, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center', backgroundColor: chipBg },
+    chevOpen: { backgroundColor: c.blue },
+    chevTxt: { fontSize: ty.small, fontWeight: '800', color: c.blue },
+    chevTxtOpen: { color: '#ffffff' },
+    pressed: { opacity: 0.86 },
+
+    // ── 項目(番号バッジ＋シェブロンチップのカード) ──
     item: {
       flexDirection: 'row', alignItems: 'center', gap: spacing.md,
-      backgroundColor: 'transparent',
-      borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: rule,
-      paddingVertical: spacing.md, paddingHorizontal: spacing.xs,
-      marginLeft: spacing.md,
+      backgroundColor: itemBg, borderRadius: radius.md,
+      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.82)' : c.line,
+      paddingVertical: spacing.sm + 5, paddingHorizontal: spacing.md,
+      marginTop: spacing.xs, marginBottom: spacing.xs, ...shadow, shadowOpacity: grad ? 0.04 : 0.05, shadowRadius: 6, elevation: 1,
     },
-    itemIdx: { fontSize: ty.small, fontWeight: '700', color: c.blue, width: 20, textAlign: 'center' },
-    itemTitle: { fontSize: ty.body + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.4 },
-    itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 2 },
-    itemChev: { fontSize: 20, color: c.trace, fontWeight: '700' },
+    itemPressed: { backgroundColor: openBg, borderColor: c.blue },
+    badge: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: c.blue },
+    badgeTxt: { color: '#ffffff', fontSize: ty.small, fontWeight: '800' },
+    itemTitle: { fontSize: ty.body + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.3 },
+    itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 2, fontWeight: '600' },
+    itemChevWrap: { width: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: chipBg },
+    itemChev: { fontSize: 18, color: c.blue, fontWeight: '800', marginTop: -2 },
 
     // detail
     scroll2: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },

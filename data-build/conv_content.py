@@ -8,7 +8,7 @@ OUT = os.path.join(APP, "src", "data", "content.json")
 FILES = [("短文", "短文.xlsx"), ("長文", "長文.xlsx")]
 ORDER = {
  "短文": ["生活力","文化","本音講座","日本と世界の違い","使える一言","グルメ","ことわざ","カタカナ語","擬音語"],
- "長文": ["カイの物語","ラジオトーク","ミステリー","ドキュメンタリー","昔話"],
+ "長文": ["カイの物語","ニュース","お便り相談室","ゲストインタビュー","2人のフリートーク","ミステリー","ドキュメンタリー","昔話"],
 }
 TABS = ["短文","長文"]
 data = {t: [] for t in TABS}
@@ -24,6 +24,7 @@ for tab, fn in FILES:
         ws = wb[sh]; rows = list(ws.iter_rows(values_only=True))
         if not rows: continue
         ci = {h: i for i, h in enumerate(rows[0])}
+        if "ID" not in ci: continue  # まとめ/索引など非コンテンツシートはスキップ
         for r in rows[1:]:
             if not r[ci["ID"]]: continue
             cat = str(r[ci["カテゴリー"]]).strip()

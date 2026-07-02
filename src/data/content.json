@@ -256,7 +256,7 @@
       "en": "Speaking of spring fun in Japan, it's hanami (cherry-blossom viewing). When the cherry trees bloom, people gather in parks, eating bento and chatting under the trees. The blossoms at night, 'yozakura,' are beautiful too. The blossoms scatter in about a week, so everyone enjoys that brief beauty together.",
       "key": "〜と いえば／〜たり 〜たり／散ってしまう",
       "point": "お花見の文化。",
-      "note": "1話者・朗読"
+      "note": "Gemini 2.5 Flash TTS / Kore（標準語アクセント指示）"
      },
      {
       "id": "S-C-002",
@@ -267,7 +267,7 @@
       "en": "Japanese hot springs have rules for everyone's enjoyment. First, wash your body well before getting in. Don't put your towel in the water; some people rest it on their head. Don't be loud—relax and warm up slowly. If you follow the manners, everyone can have a pleasant time.",
       "key": "〜てから／〜ません／〜ば",
       "point": "温泉の基本マナー。",
-      "note": "1話者・朗読"
+      "note": "Gemini 2.5 Flash TTS / Kore（標準語アクセント指示）"
      },
      {
       "id": "S-C-003",
@@ -278,7 +278,7 @@
       "en": "New Year is the most important event of the year in Japan. On New Year's Eve people eat 'toshikoshi soba,' and on New Year's Day they visit a shrine for 'hatsumode.' Families eat 'osechi' dishes, and children are delighted to receive 'otoshidama' (money gifts). People greet each other with 'Happy New Year' and celebrate the new year.",
       "key": "〜には／初詣／あけまして おめでとうございます",
       "point": "正月の主な習慣。",
-      "note": "1話者・朗読"
+      "note": "Gemini 2.5 Flash TTS / Kore（標準語アクセント指示）"
      },
      {
       "id": "S-C-004",
@@ -289,7 +289,7 @@
       "en": "Before eating, Japanese people say 'itadakimasu,' and after, 'gochisosama deshita.' These aren't just greetings. They are words of gratitude for the 'life' of the food—vegetables, meat—and for the person who cooked it. That's why many people say them quietly even when eating alone.",
       "key": "ただの〜では ない／〜てくれた／たとえ〜ても",
       "point": "食前後のあいさつの意味。",
-      "note": "1話者・朗読"
+      "note": "Gemini 2.5 Flash TTS / Kore（標準語アクセント指示）"
      },
      {
       "id": "S-C-005",
@@ -300,7 +300,7 @@
       "en": "Speaking of summer in Japan, it's fireworks festivals. People wear 'yukata' and buy yakisoba and shaved ice from food stalls. When big fireworks rise into the sky, everyone shouts 'Tamaya!' The booming sound and the light spreading across the night sky become the best memory of summer.",
       "key": "〜と いえば／〜を 着て／〜が 上がる",
       "point": "夏祭り・花火の風景。",
-      "note": "1話者・朗読"
+      "note": "Gemini 2.5 Flash TTS / Kore（標準語アクセント指示）"
      }
     ]
    },
@@ -536,14 +536,14 @@
       "items": [
        {
         "id": "S-U-002",
-        "title": "お礼と謝罪のひとこと",
-        "form": "一人称",
+        "title": "お礼と謝罪をつたえる",
+        "form": "対話",
         "level": "N4",
-        "text": "きのう、先輩（せんぱい）に 仕事（しごと）を 教（おし）えて もらった。とても 助（たす）かったので、「ありがとうございました。とても 勉強（べんきょう）に なりました」と お礼（れい）を 言（い）った。失敗（しっぱい）した ときは、「申（もう）し訳（わけ）ありません」と すぐに 謝（あやま）る。日本（にほん）では お礼と 謝罪（しゃざい）が とても 大切（たいせつ）だ。",
-        "en": "Yesterday a senior colleague taught me the work. It really helped, so I said, 'Thank you very much. I learned a lot.' When I make a mistake, I apologize right away with 'I'm very sorry.' In Japan, thanks and apologies are very important.",
-        "key": "勉強に なりました／申し訳ありません／すぐに 謝る",
-        "point": "お礼と謝罪の定番フレーズ。",
-        "note": "1話者・朗読"
+        "text": "A：先日（せんじつ）は、手伝（てつだ）ってくれて ありがとう。\nB：いいえ、気（き）にしないで。\nA：それと、返事（へんじ）が おそくなって ごめんね。\nB：だいじょうぶだよ。いそがしかったんでしょう？\nA：うん。本当（ほんとう）に たすかりました。\nB：また 何（なん）でも 言（い）ってね。",
+        "en": "A: Thanks for helping the other day. / B: No problem, dont worry about it. / A: Also, sorry for the late reply. / B: Its fine. You were busy, right? / A: Yeah. It really helped me. / B: Tell me anytime.",
+        "key": "〜てくれて ありがとう／〜て ごめんね／気にしないで",
+        "point": "お礼と謝罪を会話でつたえる。",
+        "note": "多声TTS:A/B"
        }
       ]
      },
@@ -603,14 +603,14 @@
      },
      {
       "id": "S-F-003",
-      "title": "居酒屋で注文する",
-      "form": "対話",
+      "title": "居酒屋での注文",
+      "form": "解説",
       "level": "N4",
-      "text": "店員（てんいん）：ご注文（ちゅうもん）は お決（き）まりですか。\n客：とりあえず、生（なま）ビールを 二（ふた）つ ください。\n店員：はい、生（なま） 二（ふた）つ。お料理（りょうり）は？\n客：からあげと、枝豆（えだまめ）を お願（ねが）いします。\n店員：かしこまりました。\n——居酒屋（いざかや）では『とりあえず 生（なま）！』が 定番（ていばん）。飲（の）み物（もの）を 先（さき）に たのんで、料理（りょうり）は あとから 少（すこ）しずつ 注文（ちゅうもん）します。",
-      "en": "Staff: Are you ready to order? / Customer: For now, two draft beers, please. / Staff: Sure, two drafts. And food? / Customer: Fried chicken and edamame, please. / Staff: Certainly. — At izakaya, 'a draft for now!' is the classic move. You order drinks first and add dishes little by little.",
-      "key": "とりあえず／〜を ください／お決まりですか",
-      "point": "居酒屋の注文。",
-      "note": "多声TTS:2名"
+      "text": "日本（にほん）の 居酒屋（いざかや）は、みんなで 料理（りょうり）を 分（わ）けて 食（た）べる 店（みせ）です。せきに つくと、まず 飲（の）み物（もの）を 注文（ちゅうもん）します。「とりあえず ビール」と 言（い）う 人（ひと）も 多（おお）いです。料理（りょうり）は 一品（いっぴん）ずつ たのんで、みんなで 少（すこ）しずつ 食（た）べます。店員（てんいん）を よぶ ときは、「すみません」と 声（こえ）を かけましょう。会計（かいけい）は せきで する 店（みせ）も、レジで する 店（みせ）も あります。",
+      "en": "A Japanese izakaya is a place where everyone shares dishes. When you sit down, you first order drinks - many people say beer for now. You order dishes one at a time and share a little of each. To call a server, say sumimasen. At some shops you pay at the table, at others at the register.",
+      "key": "とりあえず〜／一品ずつ／声を かける",
+      "point": "居酒屋の注文と会計の流れを知る。",
+      "note": "1話者・朗読"
      },
      {
       "id": "S-F-004",
@@ -943,115 +943,110 @@
     ]
    },
    {
-    "name": "ラジオトーク",
-    "children": [
+    "name": "ニュース",
+    "items": [
      {
-      "name": "ニュース",
-      "items": [
-       {
-        "id": "L-R-001",
-        "title": "桜が満開（国内）",
-        "form": "ニュース",
-        "level": "N3",
-        "text": "おはようございます。今朝（けさ）の ニュースです。昨日（きのう）、東京（とうきょう）の 公園（こうえん）で 桜（さくら）が 満開（まんかい）に なりました。週末（しゅうまつ）は たくさんの 家族（かぞく）連（づ）れで にぎわいそうです。天気（てんき）も よく、お花見（はなみ）に ぴったりの 一日（いちにち）に なるでしょう。一方（いっぽう）、来週（らいしゅう）からは 少（すこ）し 寒（さむ）く なるという 予報（よほう）も 出（で）ています。体調（たいちょう）に 気（き）を つけて お過（す）ごしください。では、今日（きょう）も よい 一日を。",
-        "en": "Good morning. Here's this morning's news. Yesterday, the cherry blossoms reached full bloom in a Tokyo park. This weekend it should be crowded with families. The weather is good too—a perfect day for hanami. On the other hand, it's forecast to get a bit colder from next week. Please take care of your health. Have a good day.",
-        "key": "今朝の ニュース／満開／〜そうです／一方",
-        "point": "ニュースの流れと話題転換「一方」。",
-        "note": "1話者・アナウンサー調"
-       },
-       {
-        "id": "L-R-002",
-        "title": "全国の天気（天気）",
-        "form": "天気予報",
-        "level": "N4",
-        "text": "全国（ぜんこく）の 天気（てんき）です。今日（きょう）は 西日本（にしにほん）で 晴（は）れますが、東日本（ひがしにほん）は 午後（ごご）から 雲（くも）が 多（おお）く なるでしょう。夜（よる）には 雨（あめ）が 降（ふ）る 所（ところ）も あります。傘（かさ）を 持（も）って 出（で）かけると 安心（あんしん）です。気温（きおん）は 各地（かくち）で 20度（ど）前後（ぜんご）、過（す）ごしやすい 一日（いちにち）に なりそうです。",
-        "en": "Here's the nationwide weather. Today it's sunny in western Japan, but in eastern Japan clouds will increase from the afternoon. Some areas may see rain at night. It's safer to take an umbrella. Temperatures will be around 20 degrees—a comfortable day.",
-        "key": "晴れます／雲が 多く なる／傘を 持って",
-        "point": "全国天気の聞き取り（地域差）。",
-        "note": "1話者・予報士調"
-       },
-       {
-        "id": "L-R-003",
-        "title": "海外のニュース（国際）",
-        "form": "ニュース",
-        "level": "N3",
-        "text": "こんにちは、国際（こくさい）ニュースです。アメリカで、新（あたら）しい 技術（ぎじゅつ）の 会議（かいぎ）が 開（ひら）かれました。世界中（せかいじゅう）から たくさんの 研究者（けんきゅうしゃ）が 集（あつ）まりました。日本（にほん）からも 多（おお）くの 企業（きぎょう）が 参加（さんか）し、注目（ちゅうもく）を 集（あつ）めています。来年（らいねん）は アジアでも 同（おな）じ 会議が 開かれる 予定（よてい）です。",
-        "en": "Hello, international news. In the U.S., a conference on new technology was held. Many researchers gathered from around the world. Many companies from Japan also took part and are drawing attention. Next year, the same conference is scheduled to be held in Asia too.",
-        "key": "国際ニュース／〜が 開かれました／注目を 集めています",
-        "point": "国際ニュースの定型表現。",
-        "note": "1話者・アナウンサー調"
-       },
-       {
-        "id": "L-R-004",
-        "title": "サッカーの試合（スポーツ）",
-        "form": "ニュース",
-        "level": "N4",
-        "text": "スポーツの ニュースです。昨日（きのう）、サッカーの 試合（しあい）が ありました。日本（にほん）チームは 2対（たい）1で 勝（か）ちました。最後（さいご）の ゴールは、とても すばらしかったです。スタジアムの ファンは 大（おお）きな 声（こえ）で 応援（おうえん）しました。次（つぎ）の 試合は 来週（らいしゅう）の 土曜日（どようび）です。楽（たの）しみですね。",
-        "en": "Sports news. Yesterday there was a soccer match. The Japan team won 2 to 1. The final goal was wonderful. Fans in the stadium cheered loudly. The next match is next Saturday. Something to look forward to.",
-        "key": "2対1で 勝ちました／応援しました／楽しみですね",
-        "point": "スポーツ結果(点数/勝敗)の聞き取り。",
-        "note": "1話者・アナウンサー調"
-       }
-      ]
+      "id": "L-R-001",
+      "title": "桜が満開（国内）",
+      "form": "ニュース",
+      "level": "N3",
+      "text": "おはようございます。今朝（けさ）の ニュースです。昨日（きのう）、東京（とうきょう）の 公園（こうえん）で 桜（さくら）が 満開（まんかい）に なりました。週末（しゅうまつ）は たくさんの 家族（かぞく）連（づ）れで にぎわいそうです。天気（てんき）も よく、お花見（はなみ）に ぴったりの 一日（いちにち）に なるでしょう。一方（いっぽう）、来週（らいしゅう）からは 少（すこ）し 寒（さむ）く なるという 予報（よほう）も 出（で）ています。体調（たいちょう）に 気（き）を つけて お過（す）ごしください。では、今日（きょう）も よい 一日を。",
+      "en": "Good morning. Here's this morning's news. Yesterday, the cherry blossoms reached full bloom in a Tokyo park. This weekend it should be crowded with families. The weather is good too—a perfect day for hanami. On the other hand, it's forecast to get a bit colder from next week. Please take care of your health. Have a good day.",
+      "key": "今朝の ニュース／満開／〜そうです／一方",
+      "point": "ニュースの流れと話題転換「一方」。",
+      "note": "1話者・アナウンサー調"
      },
      {
-      "name": "お便り相談室",
-      "items": [
-       {
-        "id": "L-R-005",
-        "title": "勉強が続かない",
-        "form": "トーク",
-        "level": "N3",
-        "text": "こんばんは、パーソナリティの ユウキです。今日（きょう）も 一日（いちにち）お疲（つか）れさまでした。さて、リスナーの みなさんから お便（たよ）りを いただきました。「最近（さいきん）、日本語（にほんご）の 勉強（べんきょう）が 続（つづ）かなくて 困（こま）っています」。わかります〜。でも、大丈夫（だいじょうぶ）。毎日（まいにち）5分（ふん）でも いいんです。好（す）きな ドラマや 歌（うた）で 楽（たの）しく 続（つづ）けましょう。それでは、今夜（こんや）の 一曲（いっきょく）です。",
-        "en": "Good evening, this is your host, Yuki. Thanks for your hard work today. Now, a message from a listener: 'Lately I can't keep up my Japanese study and I'm troubled.' I understand! But it's okay. Even 5 minutes a day is fine. Keep it up enjoyably with dramas or songs you like. Now, tonight's song.",
-        "key": "お疲れさまでした／お便り／〜ましょう",
-        "point": "相談＋励ましの語り口。",
-        "note": "1話者・パーソナリティ調"
-       },
-       {
-        "id": "L-R-006",
-        "title": "漢字が覚えられない",
-        "form": "トーク",
-        "level": "N3",
-        "text": "今日（きょう）の お便（たよ）りです。「漢字（かんじ）が なかなか 覚（おぼ）えられません」。わかります。漢字は 数（かず）が 多（おお）いですからね。おすすめは、毎日（まいにち）少（すこ）しずつ、生活（せいかつ）の 中（なか）で 見（み）た 漢字を 覚（おぼ）えることです。看板（かんばん）や メニューも いい 教材（きょうざい）ですよ。あせらず 続（つづ）けましょう。",
-        "en": "Today's listener message: 'I just can't memorize kanji.' I understand—there are so many. My tip: learn a little every day, from kanji you see in daily life. Signs and menus make good study material too. Don't rush—keep at it.",
-        "key": "なかなか 〜られません／少しずつ／あせらず 続けましょう",
-        "point": "相談＋アドバイスの語り。",
-        "note": "1話者・パーソナリティ調"
-       }
-      ]
+      "id": "L-R-002",
+      "title": "全国の天気（天気）",
+      "form": "天気予報",
+      "level": "N4",
+      "text": "全国（ぜんこく）の 天気（てんき）です。今日（きょう）は 西日本（にしにほん）で 晴（は）れますが、東日本（ひがしにほん）は 午後（ごご）から 雲（くも）が 多（おお）く なるでしょう。夜（よる）には 雨（あめ）が 降（ふ）る 所（ところ）も あります。傘（かさ）を 持（も）って 出（で）かけると 安心（あんしん）です。気温（きおん）は 各地（かくち）で 20度（ど）前後（ぜんご）、過（す）ごしやすい 一日（いちにち）に なりそうです。",
+      "en": "Here's the nationwide weather. Today it's sunny in western Japan, but in eastern Japan clouds will increase from the afternoon. Some areas may see rain at night. It's safer to take an umbrella. Temperatures will be around 20 degrees—a comfortable day.",
+      "key": "晴れます／雲が 多く なる／傘を 持って",
+      "point": "全国天気の聞き取り（地域差）。",
+      "note": "1話者・予報士調"
      },
      {
-      "name": "ゲストインタビュー",
-      "items": [
-       {
-        "id": "L-R-007",
-        "title": "ゲストのカイさん",
-        "form": "対話",
-        "level": "N4",
-        "text": "司会（しかい）：今日（きょう）の ゲストは、日本（にほん）で 勉強（べんきょう）している カイさんです。日本に 来て どのくらいですか。\nカイ：半年（はんとし）くらいです。\n司会：日本で 一番（いちばん）好（す）きな ものは？\nカイ：温泉（おんせん）です。とても 気持（きも）ちが いいです。\n司会：これから 何（なに）を したいですか。\nカイ：日本語（にほんご）を もっと 上手（じょうず）に なりたいです。\n司会：いいですね！ がんばってください。",
-        "en": "Host: Today's guest is Kai, who is studying in Japan. How long have you been in Japan? / Kai: About half a year. / Host: What's your favorite thing in Japan? / Kai: Hot springs. They feel so good. / Host: What do you want to do from now on? / Kai: I want to get better at Japanese. / Host: Nice! Keep it up.",
-        "key": "どのくらいですか／一番 好きな ものは？／がんばってください",
-        "point": "インタビューの定番質問。",
-        "note": "多声TTS:司会/ゲスト"
-       }
-      ]
+      "id": "L-R-003",
+      "title": "海外のニュース（国際）",
+      "form": "ニュース",
+      "level": "N3",
+      "text": "こんにちは、国際（こくさい）ニュースです。アメリカで、新（あたら）しい 技術（ぎじゅつ）の 会議（かいぎ）が 開（ひら）かれました。世界中（せかいじゅう）から たくさんの 研究者（けんきゅうしゃ）が 集（あつ）まりました。日本（にほん）からも 多（おお）くの 企業（きぎょう）が 参加（さんか）し、注目（ちゅうもく）を 集（あつ）めています。来年（らいねん）は アジアでも 同（おな）じ 会議が 開かれる 予定（よてい）です。",
+      "en": "Hello, international news. In the U.S., a conference on new technology was held. Many researchers gathered from around the world. Many companies from Japan also took part and are drawing attention. Next year, the same conference is scheduled to be held in Asia too.",
+      "key": "国際ニュース／〜が 開かれました／注目を 集めています",
+      "point": "国際ニュースの定型表現。",
+      "note": "1話者・アナウンサー調"
      },
      {
-      "name": "2人のフリートーク",
-      "items": [
-       {
-        "id": "L-R-008",
-        "title": "週末どうだった？",
-        "form": "対話",
-        "level": "N4",
-        "text": "ケンタ：週末（しゅうまつ）、どうだった？\nカイ：友（とも）だちの ミナと 海（うみ）に 行（い）ったよ。すごく きれいだった！\nケンタ：いいなあ。おれは 一日中（いちにちじゅう）、家（いえ）で ドラマを 見（み）てた。\nカイ：それも いいね。何（なに）の ドラマ？\nケンタ：日本（にほん）の 恋愛（れんあい）ドラマ。じつは 日本語の 勉強（べんきょう）にも なるんだぜ。\nカイ：へえ、いいね！",
-        "en": "Kenta: How was your weekend? / Kai: I went to the beach with my friend Mina. It was so beautiful! / Kenta: Nice. I watched dramas at home all day. / Kai: That's good too. What drama? / Kenta: A Japanese romance drama. Actually it's good Japanese study too. / Kai: Oh, nice!",
-        "key": "どうだった?／〜に 行ったよ／勉強にも なる",
-        "point": "相棒ケンタとカイのゆるい雑談(再登場)。",
-        "note": "多声TTS:ケンタ/カイ"
-       }
-      ]
+      "id": "L-R-004",
+      "title": "サッカーの試合（スポーツ）",
+      "form": "ニュース",
+      "level": "N4",
+      "text": "スポーツの ニュースです。昨日（きのう）、サッカーの 試合（しあい）が ありました。日本（にほん）チームは 2対（たい）1で 勝（か）ちました。最後（さいご）の ゴールは、とても すばらしかったです。スタジアムの ファンは 大（おお）きな 声（こえ）で 応援（おうえん）しました。次（つぎ）の 試合は 来週（らいしゅう）の 土曜日（どようび）です。楽（たの）しみですね。",
+      "en": "Sports news. Yesterday there was a soccer match. The Japan team won 2 to 1. The final goal was wonderful. Fans in the stadium cheered loudly. The next match is next Saturday. Something to look forward to.",
+      "key": "2対1で 勝ちました／応援しました／楽しみですね",
+      "point": "スポーツ結果(点数/勝敗)の聞き取り。",
+      "note": "1話者・アナウンサー調"
+     }
+    ]
+   },
+   {
+    "name": "お便り相談室",
+    "items": [
+     {
+      "id": "L-R-005",
+      "title": "勉強が続かない",
+      "form": "トーク",
+      "level": "N3",
+      "text": "こんばんは、パーソナリティの ユウキです。今日（きょう）も 一日（いちにち）お疲（つか）れさまでした。さて、リスナーの みなさんから お便（たよ）りを いただきました。「最近（さいきん）、日本語（にほんご）の 勉強（べんきょう）が 続（つづ）かなくて 困（こま）っています」。わかります〜。でも、大丈夫（だいじょうぶ）。毎日（まいにち）5分（ふん）でも いいんです。好（す）きな ドラマや 歌（うた）で 楽（たの）しく 続（つづ）けましょう。それでは、今夜（こんや）の 一曲（いっきょく）です。",
+      "en": "Good evening, this is your host, Yuki. Thanks for your hard work today. Now, a message from a listener: 'Lately I can't keep up my Japanese study and I'm troubled.' I understand! But it's okay. Even 5 minutes a day is fine. Keep it up enjoyably with dramas or songs you like. Now, tonight's song.",
+      "key": "お疲れさまでした／お便り／〜ましょう",
+      "point": "相談＋励ましの語り口。",
+      "note": "1話者・パーソナリティ調"
+     },
+     {
+      "id": "L-R-006",
+      "title": "漢字が覚えられない",
+      "form": "トーク",
+      "level": "N3",
+      "text": "今日（きょう）の お便（たよ）りです。「漢字（かんじ）が なかなか 覚（おぼ）えられません」。わかります。漢字は 数（かず）が 多（おお）いですからね。おすすめは、毎日（まいにち）少（すこ）しずつ、生活（せいかつ）の 中（なか）で 見（み）た 漢字を 覚（おぼ）えることです。看板（かんばん）や メニューも いい 教材（きょうざい）ですよ。あせらず 続（つづ）けましょう。",
+      "en": "Today's listener message: 'I just can't memorize kanji.' I understand—there are so many. My tip: learn a little every day, from kanji you see in daily life. Signs and menus make good study material too. Don't rush—keep at it.",
+      "key": "なかなか 〜られません／少しずつ／あせらず 続けましょう",
+      "point": "相談＋アドバイスの語り。",
+      "note": "1話者・パーソナリティ調"
+     }
+    ]
+   },
+   {
+    "name": "ゲストインタビュー",
+    "items": [
+     {
+      "id": "L-R-007",
+      "title": "ゲストのカイさん",
+      "form": "対話",
+      "level": "N4",
+      "text": "司会（しかい）：今日（きょう）の ゲストは、日本（にほん）で 勉強（べんきょう）している カイさんです。日本に 来て どのくらいですか。\nカイ：半年（はんとし）くらいです。\n司会：日本で 一番（いちばん）好（す）きな ものは？\nカイ：温泉（おんせん）です。とても 気持（きも）ちが いいです。\n司会：これから 何（なに）を したいですか。\nカイ：日本語（にほんご）を もっと 上手（じょうず）に なりたいです。\n司会：いいですね！ がんばってください。",
+      "en": "Host: Today's guest is Kai, who is studying in Japan. How long have you been in Japan? / Kai: About half a year. / Host: What's your favorite thing in Japan? / Kai: Hot springs. They feel so good. / Host: What do you want to do from now on? / Kai: I want to get better at Japanese. / Host: Nice! Keep it up.",
+      "key": "どのくらいですか／一番 好きな ものは？／がんばってください",
+      "point": "インタビューの定番質問。",
+      "note": "多声TTS:司会/ゲスト"
+     }
+    ]
+   },
+   {
+    "name": "2人のフリートーク",
+    "items": [
+     {
+      "id": "L-R-008",
+      "title": "週末どうだった？",
+      "form": "対話",
+      "level": "N4",
+      "text": "ケンタ：週末（しゅうまつ）、どうだった？\nカイ：友（とも）だちの ミナと 海（うみ）に 行（い）ったよ。すごく きれいだった！\nケンタ：いいなあ。おれは 一日中（いちにちじゅう）、家（いえ）で ドラマを 見（み）てた。\nカイ：それも いいね。何（なに）の ドラマ？\nケンタ：日本（にほん）の 恋愛（れんあい）ドラマ。じつは 日本語の 勉強（べんきょう）にも なるんだぜ。\nカイ：へえ、いいね！",
+      "en": "Kenta: How was your weekend? / Kai: I went to the beach with my friend Mina. It was so beautiful! / Kenta: Nice. I watched dramas at home all day. / Kai: That's good too. What drama? / Kenta: A Japanese romance drama. Actually it's good Japanese study too. / Kai: Oh, nice!",
+      "key": "どうだった?／〜に 行ったよ／勉強にも なる",
+      "point": "相棒ケンタとカイのゆるい雑談(再登場)。",
+      "note": "多声TTS:ケンタ/カイ"
      }
     ]
    },
