@@ -1,10 +1,6 @@
 // 自動生成: ID→音声(require)。
 export const AUDIO: Record<string, number> = {
-  'L-K-001': require('../../assets/audio/L-K-001.mp3'),
-  'L-K-002': require('../../assets/audio/L-K-002.mp3'),
-  'L-K-003': require('../../assets/audio/L-K-003.mp3'),
-  'L-K-004': require('../../assets/audio/L-K-004.mp3'),
-  'L-K-005': require('../../assets/audio/L-K-005.mp3'),
+  // L-K-001〜005 は連載刷新により旧内容の音声を除外(新カイ物語は音声準備中→後日再生成)
   'L-R-001': require('../../assets/audio/L-R-001.mp3'),
   'L-R-002': require('../../assets/audio/L-R-002.mp3'),
   'L-R-003': require('../../assets/audio/L-R-003.mp3'),
