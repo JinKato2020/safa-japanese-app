@@ -11,9 +11,10 @@ export interface Settings {
   theme: ThemeMode;
   language: string; // UI言語(en/ja)
   font: string;     // 表示フォント(system/maru/mincho/kyokasho)
+  listStyle: string; // 短文/長文のボタン意匠(B=和モダン明朝罫線 / C=やわらかフロスト教科書体)
 }
 
-const DEFAULT: Settings = { theme: 'sakura', language: 'en', font: 'maru' }; // 既定=英語＋丸ゴシック
+const DEFAULT: Settings = { theme: 'sakura', language: 'en', font: 'maru', listStyle: 'B' }; // 既定=英語＋丸ゴシック＋和モダン
 const STORAGE_KEY = 'safa-ja:settings';
 
 interface SettingsCtx {

@@ -92,6 +92,16 @@ export default function SettingsScreen() {
             ))}
           </View>
 
+          {/* 短文/長文のボタン意匠(B/C) */}
+          <Text style={s.setLbl}>{t.listDesign}</Text>
+          <View style={s.chipRow}>
+            {[{ v: 'B', label: t.listB }, { v: 'C', label: t.listC }].map((ls) => (
+              <Pressable key={ls.v} onPress={() => setSettings({ listStyle: ls.v })} style={[s.chip, (settings.listStyle || 'B') === ls.v && s.chipOn]}>
+                <Text style={[s.chipTxt, (settings.listStyle || 'B') === ls.v && s.chipTxtOn]}>{ls.label}</Text>
+              </Pressable>
+            ))}
+          </View>
+
           {/* 言語選択 */}
           <Text style={s.setLbl}>{t.language}</Text>
           <View style={s.chipRow}>

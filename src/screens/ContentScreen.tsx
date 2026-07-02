@@ -17,9 +17,10 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
 }) {
   const c = useColors();
   const t = useT();
-  const lang = useSettings().settings.language;
+  const { language: lang, listStyle } = useSettings().settings;
+  const st = listStyle === 'C' ? 'C' : 'B';
   const grad = isGradientTheme(useAppTheme());
-  const s = useMemo(() => makeStyles(c, grad), [c, grad]);
+  const s = useMemo(() => makeStyles(c, grad, st), [c, grad, st]);
   const [openPath, setOpenPath] = useState<string[]>([]);
   const [active, setActive] = useState<ContentItem | null>(null);
 
@@ -44,13 +45,11 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
               pressed && s.pressed,
             ]}
           >
-            {isCat ? <View style={[s.accent, open && s.accentOpen]} /> : <View style={[s.dot, open && s.dotOpen]} />}
+            {isCat && st === 'B' ? <View style={[s.dot, open && s.dotOpen]} /> : null}
             <Text style={[isCat ? s.catTxt : s.nestTxt, open && s.txtOpen]} numberOfLines={2}>
               {label(node.name, lang)}
             </Text>
-            <View style={[s.chev, open && s.chevOpen]}>
-              <Text style={[s.chevTxt, open && s.chevTxtOpen]}>{open ? '▾' : '▸'}</Text>
-            </View>
+            <Text style={[s.chev, open && s.chevOpen]}>{open ? '▾' : '▸'}</Text>
           </Pressable>
 
           {open && node.children ? renderNodes(node.children, level + 1) : null}
@@ -62,12 +61,12 @@ export default function ContentScreen({ tab, kicker, title, sub }: {
                   onPress={() => setActive(it)}
                   style={({ pressed }) => [s.item, { marginLeft: (level + 1) * spacing.md }, pressed && s.itemPressed]}
                 >
-                  <View style={s.badge}><Text style={s.badgeTxt}>{i + 1}</Text></View>
+                  <Text style={s.itemNo}>{String(i + 1).padStart(2, '0')}</Text>
                   <View style={{ flex: 1 }}>
                     <Text style={s.itemTitle} numberOfLines={2}>{it.title}</Text>
                     <Text style={s.itemMeta}>{formLabel(it.form, lang)}</Text>
                   </View>
-                  <View style={s.itemChevWrap}><Text style={s.itemChev}>›</Text></View>
+                  <Text style={s.itemChev}>›</Text>
                 </Pressable>
               ))
             : null}
@@ -124,16 +123,26 @@ function Detail({ s, t, lang, item, onClose }: {
   );
 }
 
-const makeStyles = (c: ThemeColors, grad = false) => {
-  // 水彩テーマでは半透明フロスト(背景が透ける)。単色テーマでは不透明カード。
-  // 洗練カード: カテゴリー=アクセントバー付き浮きカード / サブテーマ=ドット付き淡カード / 項目=番号バッジ＋シェブロンチップのカード。
-  const catBg = grad ? 'rgba(255,255,255,0.58)' : c.surface;
-  const catBord = grad ? 'rgba(255,255,255,0.9)' : c.line;
-  const nestBg = grad ? 'rgba(255,255,255,0.4)' : c.bgSoft;
-  const itemBg = grad ? 'rgba(255,255,255,0.68)' : c.surface;
-  const chipBg = grad ? 'rgba(255,255,255,0.66)' : c.bgSoft;
+const makeStyles = (c: ThemeColors, grad = false, st: 'B' | 'C' = 'B') => {
+  const isC = st === 'C';
+  // フォント: B=明朝(Shippori Mincho) / C=教科書体(Klee One)。番号・三角は素の小さいスタイル(B/C共通)。
+  const titleFam = isC ? 'KleeOne-SemiBold' : 'ShipporiMincho-Bold';
+  const titleFamR = isC ? 'KleeOne-Regular' : 'ShipporiMincho-Regular';
+  const cardBg = grad ? 'rgba(255,255,255,0.7)' : c.surface;
+  const cardBord = grad ? 'rgba(255,255,255,0.9)' : c.line;
+  const itemBg = grad ? 'rgba(255,255,255,0.66)' : c.surface;
   const openBg = grad ? 'rgba(225,237,255,0.78)' : c.blueLight;
-  const shadow = { shadowColor: '#0f172a', shadowOpacity: grad ? 0.05 : 0.06, shadowRadius: 10, shadowOffset: { width: 0, height: 3 }, elevation: 2 };
+  const soft = { shadowColor: '#1e3a8a', shadowOpacity: grad ? 0.06 : 0.08, shadowRadius: 12, shadowOffset: { width: 0, height: 4 }, elevation: 2 };
+  // B=罫線ミニマル(透明・下罫線) / C=フロスト浮きカード
+  const catBox = isC
+    ? { backgroundColor: cardBg, borderRadius: radius.lg, borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: cardBord, paddingVertical: spacing.md + 2, paddingHorizontal: spacing.md, marginTop: spacing.sm, marginBottom: spacing.xs, ...soft }
+    : { borderBottomWidth: 2, borderBottomColor: c.ink, paddingVertical: spacing.sm + 4, paddingHorizontal: spacing.xs, marginTop: spacing.md, marginBottom: spacing.xs };
+  const nestBox = isC
+    ? { backgroundColor: grad ? 'rgba(255,255,255,0.44)' : c.bgSoft, borderRadius: radius.md, borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.75)' : c.line, paddingVertical: spacing.sm + 3, paddingHorizontal: spacing.md, marginTop: spacing.xs, marginBottom: spacing.xs }
+    : { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: c.line, paddingVertical: spacing.sm + 2, paddingHorizontal: spacing.xs, marginTop: spacing.xs, marginBottom: spacing.xs };
+  const itemBox = isC
+    ? { backgroundColor: itemBg, borderRadius: radius.md, borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.82)' : c.line, paddingVertical: spacing.sm + 4, paddingHorizontal: spacing.md, marginTop: spacing.xs, marginBottom: spacing.xs, ...soft, shadowOpacity: grad ? 0.05 : 0.06, shadowRadius: 7, elevation: 1 }
+    : { borderBottomWidth: StyleSheet.hairlineWidth, borderBottomColor: c.line, paddingVertical: spacing.sm + 5, paddingHorizontal: spacing.xs };
   return StyleSheet.create({
     c: { flex: 1, backgroundColor: c.bg },
     head: { paddingHorizontal: spacing.lg, paddingTop: spacing.lg, paddingBottom: spacing.sm },
@@ -142,55 +151,31 @@ const makeStyles = (c: ThemeColors, grad = false) => {
     sub: { fontSize: ty.small, color: c.mute, marginTop: spacing.xs, lineHeight: 18 },
     scroll: { paddingHorizontal: spacing.lg, paddingTop: spacing.sm },
 
-    // ── カテゴリー(アクセントバー付き浮きカード) ──
-    cat: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2,
-      backgroundColor: catBg, borderRadius: radius.lg,
-      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: catBord,
-      paddingVertical: spacing.md + 3, paddingLeft: spacing.md, paddingRight: spacing.sm + 2,
-      marginTop: spacing.sm, marginBottom: spacing.xs, ...shadow,
-    },
-    catOpen: { backgroundColor: openBg, borderColor: c.blue },
-    accent: { width: 4, height: 22, borderRadius: 2, backgroundColor: c.blue },
-    accentOpen: { backgroundColor: c.blueDark },
-    catTxt: { flex: 1, fontSize: ty.h2 + 2, fontWeight: '800', color: c.ink, letterSpacing: 0.6 },
-
-    // ── サブテーマ(ドット付き淡カード) ──
-    nest: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2,
-      backgroundColor: nestBg, borderRadius: radius.md,
-      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.7)' : c.line,
-      paddingVertical: spacing.sm + 4, paddingLeft: spacing.md, paddingRight: spacing.sm + 2,
-      marginTop: spacing.xs, marginBottom: spacing.xs,
-    },
-    nestOpen: { backgroundColor: openBg, borderColor: c.blue },
-    dot: { width: 7, height: 7, borderRadius: 4, backgroundColor: c.blue },
+    // カテゴリー
+    cat: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, ...catBox },
+    catOpen: isC ? { backgroundColor: openBg, borderColor: c.blue } : { borderBottomColor: c.blue },
+    catTxt: { flex: 1, fontFamily: titleFam, fontSize: ty.h2 + 3, color: c.ink, letterSpacing: 0.8 },
+    dot: { width: 9, height: 9, borderRadius: 5, backgroundColor: c.blue },
     dotOpen: { backgroundColor: c.blueDark },
-    nestTxt: { flex: 1, fontSize: ty.body + 1, fontWeight: '700', color: c.ink2, letterSpacing: 0.4 },
+
+    // サブテーマ
+    nest: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm + 2, ...nestBox },
+    nestOpen: isC ? { backgroundColor: openBg, borderColor: c.blue } : { borderBottomColor: c.blue },
+    nestTxt: { flex: 1, fontFamily: titleFamR, fontSize: ty.body + 2, color: c.ink2 },
     txtOpen: { color: c.blueDark },
 
-    // ── 開閉シェブロンチップ ──
-    chev: { width: 26, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center', backgroundColor: chipBg },
-    chevOpen: { backgroundColor: c.blue },
-    chevTxt: { fontSize: ty.small, fontWeight: '800', color: c.blue },
-    chevTxtOpen: { color: '#ffffff' },
+    // 開閉三角(小さい素の▾/▸・B/C共通)
+    chev: { fontSize: ty.small + 1, color: c.mute, marginLeft: spacing.xs },
+    chevOpen: { color: c.blue },
     pressed: { opacity: 0.86 },
 
-    // ── 項目(番号バッジ＋シェブロンチップのカード) ──
-    item: {
-      flexDirection: 'row', alignItems: 'center', gap: spacing.md,
-      backgroundColor: itemBg, borderRadius: radius.md,
-      borderWidth: grad ? StyleSheet.hairlineWidth : 1, borderColor: grad ? 'rgba(255,255,255,0.82)' : c.line,
-      paddingVertical: spacing.sm + 5, paddingHorizontal: spacing.md,
-      marginTop: spacing.xs, marginBottom: spacing.xs, ...shadow, shadowOpacity: grad ? 0.04 : 0.05, shadowRadius: 6, elevation: 1,
-    },
-    itemPressed: { backgroundColor: openBg, borderColor: c.blue },
-    badge: { width: 30, height: 30, borderRadius: 15, alignItems: 'center', justifyContent: 'center', backgroundColor: c.blue },
-    badgeTxt: { color: '#ffffff', fontSize: ty.small, fontWeight: '800' },
-    itemTitle: { fontSize: ty.body + 2, fontWeight: '700', color: c.ink, letterSpacing: 0.3 },
+    // 項目(枠なし番号「01」＋小さい›)
+    item: { flexDirection: 'row', alignItems: 'center', gap: spacing.md, ...itemBox },
+    itemPressed: isC ? { backgroundColor: openBg, borderColor: c.blue } : { backgroundColor: openBg },
+    itemNo: { fontSize: ty.small, color: c.blue, fontWeight: '700', minWidth: 22 },
+    itemTitle: { fontSize: ty.body + 3, fontFamily: titleFamR, color: c.ink, letterSpacing: 0.3 },
     itemMeta: { fontSize: ty.tiny, color: c.faint, marginTop: 2, fontWeight: '600' },
-    itemChevWrap: { width: 24, height: 24, borderRadius: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: chipBg },
-    itemChev: { fontSize: 18, color: c.blue, fontWeight: '800', marginTop: -2 },
+    itemChev: { fontSize: 18, color: c.faint, fontWeight: '700', marginLeft: spacing.xs },
 
     // detail
     scroll2: { paddingHorizontal: spacing.lg, paddingTop: spacing.xs },

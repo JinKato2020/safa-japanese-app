@@ -5,8 +5,7 @@ export const AUDIO: Record<string, number> = {
   'L-R-002': require('../../assets/audio/L-R-002.mp3'),
   'L-R-003': require('../../assets/audio/L-R-003.mp3'),
   'L-R-004': require('../../assets/audio/L-R-004.mp3'),
-  'L-R-005': require('../../assets/audio/L-R-005.mp3'),
-  'L-R-006': require('../../assets/audio/L-R-006.mp3'),
+  // L-R-005/006(旧お便り)は台本刷新＋ID刷新(L-O-001/002)につき除外
   'S-C-001': require('../../assets/audio/S-C-001.mp3'),
   'S-C-002': require('../../assets/audio/S-C-002.mp3'),
   'S-C-003': require('../../assets/audio/S-C-003.mp3'),
